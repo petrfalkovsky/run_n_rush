@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -30,17 +32,83 @@ class Main extends StatexWidget<MyBookingsController> {
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        toolbarHeight: 200,
-        automaticallyImplyLeading: false,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(227),
+        child: Stack(
           children: [
-            AppIcons.svgWidget(AppIcons.settings),
-            const _BookingsTypeSelector(),
+            Image.asset(
+              'assets/images/appbar_frame.png',
+              fit: BoxFit.cover,
+              width: MediaQuery.of(context).size.width,
+            ),
+            AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 100,
+              automaticallyImplyLeading: false,
+              flexibleSpace: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [],
+              ),
+            ),
+            Positioned(
+              right: 27,
+              top: MediaQuery.of(context).size.height * 0.12,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 16,
+                      offset: Offset(0, 14),
+                    ),
+                  ],
+                ),
+                child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
+              ),
+            ),
+            Positioned(
+              bottom: 45,
+              left: MediaQuery.of(context).size.width / 2 - 72,
+              child: Container(
+                width: 152,
+                height: 152,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.1),
+                    width: 2,
+                  ),
+                ),
+                child: ClipOval(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Center(
+                        child: Container(
+                          width: 138,
+                          height: 138,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFFF01B8FF),
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              AppIcons.avatar,
+                              width: 59,
+                              height: 59,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -431,30 +499,7 @@ class _EmptyBookingList extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 110),
-            child: SvgPicture.asset(
-              Assets.icons.star,
-              width: 189,
-              height: 189,
-              fit: BoxFit.contain,
-            ),
-          ),
-          30.h,
-          Text(
-            'noReservations'.tr(),
-            overflow: TextOverflow.visible,
-            textAlign: TextAlign.center,
-          ),
-          24.h,
-          StdButton(
-            text: 'makeReservation'.tr(),
-            isActive: true,
-            onPress: () {
-              final generalController = Get.find<GeneralScaffoldService>();
-              generalController.goToPage(1);
-            },
-          ),
+          // сюда весь контент страницы
         ],
       ),
     );

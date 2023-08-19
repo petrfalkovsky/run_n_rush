@@ -156,15 +156,14 @@ class _BottomAppBarButton extends StatelessWidget {
         Color.lerp(lightColor, darkColor, middleFraction)!,
       ],
       stops: const [0.0, middleFraction, 1.0],
-      center: Alignment.center, // Center of the gradient
+      center: Alignment.center,
       focal: Alignment.center,
-      focalRadius:
-          0.01, // Adjust this value to control the spread of the gradient
-      radius: 1.0, // Controls the size of the circular gradient
+      focalRadius: 0.01,
+      radius: 1.0,
     );
 
     return Container(
-      width: 100.0, // Adjust the width as needed
+      width: 100.0,
       decoration: BoxDecoration(
         gradient: isSelected ? purpleGradient : null,
       ),
