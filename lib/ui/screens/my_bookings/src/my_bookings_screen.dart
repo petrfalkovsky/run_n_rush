@@ -18,8 +18,8 @@ import 'package:riverside/ui/shared/widgets/buttons/custom_ink_well.dart';
 import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 import 'package:riverside/ui/shared/widgets/std_button.dart';
 
-class MyBookings extends StatexWidget<MyBookingsController> {
-  MyBookings({Key? key}) : super(() => MyBookingsController(), key: key) {
+class Main extends StatexWidget<MyBookingsController> {
+  Main({Key? key}) : super(() => MyBookingsController(), key: key) {
     debugPrint(' MyBookings.MyBookings');
   }
 

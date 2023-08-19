@@ -21,7 +21,7 @@ class AppRoutes {
   static const String resetPassword = '/resetPassword';
   static const String signUp = '/signUp';
   static const String createProfileSignUp = '/createProfileSignUp';
-  static const String myBookings = '/myBookings';
+  static const String main = '/main';
   static const String bookings = '/bookings';
   static const String settings = '/settings';
   static const String currentBookings = '/currentBookings';
@@ -77,8 +77,8 @@ final List<GetPage> routes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: AppRoutes.myBookings,
-    page: () => MyBookings(),
+    name: AppRoutes.main,
+    page: () => Main(),
     transition: Transition.fadeIn,
   ),
   GetPage(

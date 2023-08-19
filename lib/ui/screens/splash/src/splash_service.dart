@@ -27,7 +27,7 @@ class SplashScreenService extends GetxService with StreamSubscriberMixin {
             color: AppColors.notification.errorLight);
       }
     } else {
-      Get.offAllNamed(AppRoutes.myBookings);
+      Get.offAllNamed(AppRoutes.main);
     }
   }
 

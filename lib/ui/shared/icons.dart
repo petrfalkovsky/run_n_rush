@@ -7,7 +7,6 @@ class AppIcons {
   static const AssetImage background =
       AssetImage('$_basePathImg/splash_screen_bg.png');
   static const AssetImage appBarBackground =
-  
       AssetImage('$_basePathImg/appbar_frame.png');
   static const add = '$_basePathIcons/add_icon.svg';
   static const remove = '$_basePathIcons/remove_icon.svg';
@@ -30,6 +29,10 @@ class AppIcons {
   static const settings = '$_basePathIcons/settings.svg';
   static const star = '$_basePathIcons/star.svg';
   static const tickSquare = '$_basePathIcons/tick_square.svg';
+  static const cart = '$_basePathIcons/cart.svg';
+  static const run = '$_basePathIcons/run.svg';
+  static const podium = '$_basePathIcons/podium.svg';
+  static const sneaker = '$_basePathIcons/sneaker.svg';
 
   static const laskinoPng = '$_basePathImg/laskino.png';
   static const welcomeScreenBg = '$_basePathImg/welcome_screen_bg.png';
