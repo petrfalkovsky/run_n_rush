@@ -7,7 +7,7 @@ import 'package:riverside/core/utils/stream_subscriber.dart';
 import 'package:riverside/domain/my_booking/booking_entity.dart';
 import 'package:riverside/ui/router/routing.dart';
 import 'package:riverside/ui/screens/internet/src/internet_service.dart';
-import 'package:riverside/ui/screens/my_bookings/src/my_bookings_service.dart';
+import 'package:riverside/ui/screens/main/src/main_service.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
 import 'package:riverside/ui/shared/widgets/general_scaffold/src/bottom_bar.dart';
@@ -15,12 +15,12 @@ import 'package:riverside/ui/shared/widgets/general_scaffold/src/bottom_bar.dart
 class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   GeneralScaffoldService({
     InternetScreenService? internetScreenService,
-    MyBookingsService? myBookingService,
+    MainService? myBookingService,
   })  : _internetScreenService = internetScreenService ?? Get.find(),
         _myBookingService = myBookingService ?? Get.find();
 
   final InternetScreenService _internetScreenService;
-  final MyBookingsService _myBookingService;
+  final MainService _myBookingService;
 
   final _currentNavIndex = 0.obs; // для BottomNavigationBar index
   int get currentNavIndex$ => _currentNavIndex();

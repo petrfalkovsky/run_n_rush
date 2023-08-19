@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/screens/my_bookings/src/widgets/circular_switcher.dart';
+import 'package:riverside/ui/screens/main/src/widgets/circular_switcher.dart';
 import 'package:riverside/ui/shared/themes/app_text_theme.dart';
 
 Future<int?> showYearPicker(

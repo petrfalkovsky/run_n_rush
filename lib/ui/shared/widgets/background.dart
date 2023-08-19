@@ -10,7 +10,7 @@ class Background extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AppIcons.background,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
     );

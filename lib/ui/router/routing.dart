@@ -8,7 +8,7 @@ import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_screen.dart';
 import 'package:riverside/ui/screens/scan/entry_code.dart';
 import 'package:riverside/ui/screens/auth/src/auth_welcome_screen.dart';
 import 'package:riverside/ui/screens/bookings/bookings.dart';
-import 'package:riverside/ui/screens/my_bookings/my_bookings.dart';
+import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/screens/settings/src/settings_screen.dart';
 import 'package:riverside/ui/screens/settings/src/update_screen.dart';
 import 'package:riverside/ui/screens/splash/splash.dart';

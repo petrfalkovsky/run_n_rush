@@ -34,10 +34,12 @@ class AppIcons {
   static const podium = '$_basePathIcons/podium.svg';
   static const sneaker = '$_basePathIcons/sneaker.svg';
 
+  static const coin = '$_basePathImg/blue_coin.png';
   static const laskinoPng = '$_basePathImg/laskino.png';
   static const welcomeScreenBg = '$_basePathImg/welcome_screen_bg.png';
   static const splashScreen = '$_basePathImg/splash_screen_bg.png';
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';
+  static const mono_jogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
 
   static Widget svgWidget(String path,

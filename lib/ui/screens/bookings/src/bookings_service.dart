@@ -8,7 +8,7 @@ import 'package:riverside/data/repository/local/local_repository.dart';
 import 'package:riverside/domain/bookings/check_reserved.dart';
 import 'package:riverside/domain/profile/profile_info.dart';
 import 'package:riverside/logic/bookings/bookings_bloc.dart';
-import 'package:riverside/ui/screens/my_bookings/my_bookings.dart';
+import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
 
@@ -80,7 +80,7 @@ class BookingsService extends GetxService with StreamSubscriberMixin {
         alert(value: 'Оплачено', color: AppColors.notification.success);
         _isLoading(false);
         Get.back(result: 'SUCCESS');
-        MyBookingsController().getReservations();
+        MainController().getReservations();
       },
       orElse: () {
         debugPrint('getMyBooking ERROR');

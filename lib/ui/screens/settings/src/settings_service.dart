@@ -10,7 +10,7 @@ import 'package:riverside/logic/auth/logout_bloc.dart';
 import 'package:riverside/logic/profile/update_profile_bloc.dart';
 import 'package:riverside/ui/router/routing.dart';
 import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/screens/my_bookings/my_bookings.dart';
+import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
 
@@ -19,7 +19,7 @@ class SettingsService extends GetxService with StreamSubscriberMixin {
     LogoutBloc? logoutBloc,
     UpdateProfileBloc? updateProfile,
     SignUpService? signUpService,
-    MyBookingsService? myBookingService,
+    MainService? myBookingService,
     LocalRepository? repoLocal,
   })  : _logoutBloc = logoutBloc ?? GetIt.I.get(),
         _updateProfileBloc = updateProfile ?? GetIt.I.get(),
@@ -30,7 +30,7 @@ class SettingsService extends GetxService with StreamSubscriberMixin {
   final LogoutBloc _logoutBloc;
   final UpdateProfileBloc _updateProfileBloc;
   final SignUpService _signUpService;
-  final MyBookingsService _myBookingService;
+  final MainService _myBookingService;
 
   final LocalRepository _repoLocal;
 

@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:riverside/data/repository/local/local_repository.dart';
 import 'package:riverside/domain/my_booking/booking_entity.dart';
 import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/my_bookings/my_bookings.dart';
-import 'package:riverside/ui/screens/my_bookings/src/widgets/month_picker_dialog.dart';
-import 'package:riverside/ui/screens/my_bookings/src/widgets/year_picker_dialog.dart';
+import 'package:riverside/ui/screens/main/main.dart';
+import 'package:riverside/ui/screens/main/src/widgets/month_picker_dialog.dart';
+import 'package:riverside/ui/screens/main/src/widgets/year_picker_dialog.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class MyBookingsController extends StatexController {
-  MyBookingsController({LocalRepository? repoLocal, MyBookingsService? service})
+class MainController extends StatexController {
+  MainController({LocalRepository? repoLocal, MainService? service})
       : _service = service ?? Get.find();
 
-  final MyBookingsService _service;
+  final MainService _service;
 
   void getReservations() => _service.getReservations();
 

@@ -4,7 +4,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:riverside/data/%20dto/qr/qr_dto.dart';
 import 'package:riverside/domain/my_booking/booking_entity.dart';
-import 'package:riverside/ui/screens/my_bookings/my_bookings.dart';
+import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_service.dart';
 import 'package:riverside/ui/shared/alert.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
@@ -13,12 +13,12 @@ import 'package:vfx_flutter_common/vfx_flutter_common.dart';
 class QrScannerController extends StatexController {
   QrScannerController({
     QrScannerService? service,
-    MyBookingsService? myBookingService,
+    MainService? myBookingService,
   })  : _service = service ?? Get.find(),
         _myBookingService = myBookingService ?? Get.find();
 
   final QrScannerService _service;
-  final MyBookingsService _myBookingService;
+  final MainService _myBookingService;
   List get activeBookingList => _myBookingService.activeBookingList$;
 
   final listTab = ['scanQR', 'inputCode'].obs;

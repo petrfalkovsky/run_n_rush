@@ -10,8 +10,8 @@ import 'package:riverside/logic/my_booking/my_bookings_bloc.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
 
-class MyBookingsService extends GetxService with StreamSubscriberMixin {
-  MyBookingsService({MyBookingsBloc? myBookingBloc})
+class MainService extends GetxService with StreamSubscriberMixin {
+  MainService({MyBookingsBloc? myBookingBloc})
       : _myBookingBloc = myBookingBloc ?? GetIt.I.get();
 
   final MyBookingsBloc _myBookingBloc;
