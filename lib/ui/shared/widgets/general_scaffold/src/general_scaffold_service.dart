@@ -44,20 +44,25 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
 
   final bottomAppBarItems = <BottomAppBarItem>[
     const BottomAppBarItem(
-      text: 'allMyReservations',
+      // text: 'allMyReservations',
       iconAsset: AppIcons.star,
       router: AppRoutes.myBookings,
     ),
     const BottomAppBarItem(
-      text: 'reservation',
+      // text: 'reservation',
       iconAsset: AppIcons.calendar,
       router: AppRoutes.bookings,
     ),
     const BottomAppBarItem(
-      text: 'settings',
+      // text: 'settings',
       iconAsset: AppIcons.settings,
       router: AppRoutes.settings,
     ),
+    const BottomAppBarItem(
+      // text: 'shop',
+      iconAsset: AppIcons.add,
+      router: AppRoutes.shop,
+    )
   ];
 
   ConnectivityResult get connectionStatus$ =>

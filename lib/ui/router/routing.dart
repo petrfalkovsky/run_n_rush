@@ -27,8 +27,8 @@ class AppRoutes {
   static const String currentBookings = '/currentBookings';
   static const String updateProfile = '/updateProfile';
   static const String qrScanner = '/qrScanner';
-  // static const String entryQrCode = '/entryQrCode';
   static const String payment = '/payment';
+  static const String shop = '/shop';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -106,16 +106,9 @@ final List<GetPage> routes = [
     page: () => QrScannerScreen(),
     transition: Transition.fadeIn,
   ),
-  // GetPage(
-  //   name: AppRoutes.entryQrCode,
-  //   page: () => const EntryCode(),
-  //   transition: Transition.fadeIn,
-  // ),
-  //entryQrCode
-  //qrScanner
-  // GetPage(
-  //   name: AppRoutes.payment,
-  //   page: () => const PaymentScreen(),
-  //   transition: Transition.fadeIn,
-  // ),
+  GetPage(
+    name: AppRoutes.shop,
+    page: () => BookingScreen(),
+    transition: Transition.fadeIn,
+  ),
 ];

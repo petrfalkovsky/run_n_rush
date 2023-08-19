@@ -85,8 +85,3 @@ class App extends StatelessWidget {
 Future _initServices() async {
   Get.put(GeneralService());
 }
-//фильтр для vs code
-//!AssistStructure,!TextInputPlugin,!IInputConnectionWrapper,!InputMethodManager,!EGL_emulation,!InsetsController,!ViewRootImpl
-
-
-// email: PavelAntipov39@gmail.com, password: 1990007b

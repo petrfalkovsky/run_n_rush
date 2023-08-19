@@ -28,20 +28,18 @@ class MyBookings extends StatexWidget<MyBookingsController> {
     final textTheme = AppTextTheme.fromPlatform;
     debugPrint('controller.activeBookingList ${controller.activeBookingList}');
     return GeneralScaffold(
-      backgroundColor: const AppColorsThemeLight().other.white,
+      backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: 100,
+        toolbarHeight: 200,
         automaticallyImplyLeading: false,
         flexibleSpace: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
-              child: Text('allMyReservations'.tr(), style: textTheme.h1_1),
-            ),
+            AppIcons.svgWidget(AppIcons.settings),
             const _BookingsTypeSelector(),
           ],
         ),

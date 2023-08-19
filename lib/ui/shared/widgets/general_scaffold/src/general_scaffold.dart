@@ -51,19 +51,6 @@ class GeneralScaffold extends GetView<GeneralScaffoldService> {
                       child: child,
                     ),
                   ),
-                  floatingActionButtonLocation:
-                      FloatingActionButtonLocation.endDocked,
-                  floatingActionButton: FloatingActionButton(
-                    backgroundColor: controller.isNotToday
-                        ? AppColors.accent.accent1
-                        : const OtherColors().grey,
-                    onPressed:
-                        controller.isNotToday ? controller.goToQRScaner : null,
-                    child: AppIcons.svgWidget(
-                      AppIcons.scan,
-                      color: AppColors.background.bgB2,
-                    ),
-                  ),
                   bottomNavigationBar: const CustomBottomAppBar(),
                 );
               } else {

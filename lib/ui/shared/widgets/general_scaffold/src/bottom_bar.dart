@@ -2,16 +2,17 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
 import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
 @immutable
 class BottomAppBarItem {
-  final String text;
+  // final String text;
   final String iconAsset;
   final String router;
 
   const BottomAppBarItem({
-    required this.text,
+    // required this.text,
     required this.iconAsset,
     required this.router,
   });
@@ -23,6 +24,7 @@ class CustomBottomAppBar extends GetView<GeneralScaffoldService> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      color: const AppColorsThemeLight().other.black,
       notchMargin: 10.0,
       shape: const CircularNotchedRectangle(),
       child: Padding(
@@ -43,7 +45,7 @@ class CustomBottomAppBar extends GetView<GeneralScaffoldService> {
                           behavior: HitTestBehavior.translucent,
                           onTap: () => controller.goToPage(index),
                           child: _BottomAppBarButton(
-                            text: item.text,
+                            // text: item.text,
                             iconAsset: item.iconAsset,
                             isSelected: index == controller.currentNavIndex$,
                           ),
@@ -65,12 +67,12 @@ class CustomBottomAppBar extends GetView<GeneralScaffoldService> {
 }
 
 class _BottomAppBarButton extends StatelessWidget {
-  final String text;
+  // final String text;
   final String iconAsset;
   final bool isSelected;
 
   const _BottomAppBarButton({
-    required this.text,
+    // required this.text,
     required this.iconAsset,
     this.isSelected = false,
     Key? key,
@@ -89,18 +91,18 @@ class _BottomAppBarButton extends StatelessWidget {
           color: isSelected ? selectedColor : unselectedColor,
         ),
         const SizedBox(height: 12.0),
-        Text(
-          text.tr(),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: isSelected ? selectedColor : unselectedColor,
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w500,
-            fontSize: 11.0,
-          ),
-        ),
+        // Text(
+        // text.tr(),
+        // maxLines: 1,
+        // overflow: TextOverflow.ellipsis,
+        // textAlign: TextAlign.center,
+        // style: TextStyle(
+        //   color: isSelected ? selectedColor : unselectedColor,
+        //   fontStyle: FontStyle.normal,
+        //   fontWeight: FontWeight.w500,
+        //   fontSize: 11.0,
+        // ),
+        // ),
       ],
     );
   }

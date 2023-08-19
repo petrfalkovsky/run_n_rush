@@ -6,7 +6,9 @@ class AppIcons {
   static const _basePathImg = 'assets/images';
   static const AssetImage background =
       AssetImage('$_basePathImg/splash_screen_bg.png');
-
+  static const AssetImage appBarBackground =
+  
+      AssetImage('$_basePathImg/appbar_frame.png');
   static const add = '$_basePathIcons/add_icon.svg';
   static const remove = '$_basePathIcons/remove_icon.svg';
   static const arrowDown = '$_basePathIcons/arrow_down.svg';

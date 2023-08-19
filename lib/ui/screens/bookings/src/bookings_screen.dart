@@ -22,24 +22,37 @@ class BookingScreen extends StatexWidget<BookingsController> {
     final textTheme = AppTextTheme.fromPlatform;
 
     return GeneralScaffold(
-      backgroundColor: const AppColorsThemeLight().other.white,
+      backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
-      appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 100,
-        automaticallyImplyLeading: false,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(227),
+        child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 24,
-                bottom: 5,
-              ),
-              child: Text('reservation'.tr(), style: textTheme.h1_1),
+            Image.asset(
+              'assets/images/appbar_frame.png',
+              fit: BoxFit.cover,
+              width: MediaQuery.of(context).size.width,
             ),
-            const _BookingsTypeSelector(),
+            AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 100,
+              automaticallyImplyLeading: false,
+              flexibleSpace: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 24,
+                      bottom: 5,
+                    ),
+                    child: Text('reservation'.tr(), style: textTheme.h1_1),
+                  ),
+                  const _BookingsTypeSelector(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -48,15 +61,15 @@ class BookingScreen extends StatexWidget<BookingsController> {
         child: Obx(() {
           return Column(
             children: [
-              CTableCalendar(
-                focusedDay: controller.daySelected,
-                currentDay: controller.daySelected,
-                onDaySelected: (day, days) {
-                  controller.changeDaySelected(day);
-                },
-                startingDayOfWeek: StartingDayOfWeek.monday,
-              ),
-              8.h,
+              // CTableCalendar(
+              //   focusedDay: controller.daySelected,
+              //   currentDay: controller.daySelected,
+              //   onDaySelected: (day, days) {
+              //     controller.changeDaySelected(day);
+              //   },
+              //   startingDayOfWeek: StartingDayOfWeek.monday,
+              // ),
+              // 8.h,
               Expanded(
                 child: Stack(
                   children: [

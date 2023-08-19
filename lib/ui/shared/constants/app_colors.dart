@@ -117,7 +117,7 @@ class _BackgroundColors extends ColorSwatch<int> {
 class OtherColors {
   const OtherColors();
 
-  Color get black => Colors.black;
+  Color get black => const Color(0xFF101113);
 
   Color get transparent => Colors.transparent;
 
