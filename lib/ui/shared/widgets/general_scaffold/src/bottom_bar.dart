@@ -29,7 +29,7 @@ class CustomBottomAppBar extends GetView<GeneralScaffoldService> {
     Map bottomAppBarMargin = {
       'left': 20.0,
       'right': 20.0,
-      'bottom': 22.0,
+      'bottom': 29.0,
       'top': 0.0,
     };
 
@@ -48,7 +48,7 @@ class CustomBottomAppBar extends GetView<GeneralScaffoldService> {
               // clipBehavior: Clip.antiAlias,
               positionHorizontal: (0.0 - bottomAppBarMargin['left']),
               elevation: 10,
-              color: const AppColorsThemeLight().other.grey,
+              color: const AppColorsThemeLight().other.black,
               // notchMargin: 10.0,
               // shape: const CircularNotchedRectangle(),
               child: SizedBox(
@@ -145,29 +145,42 @@ class _BottomAppBarButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const unselectedColor = Color(0xFF5C5D5F);
     const selectedColor = Color(0xFFFFFFFF);
+    const lightColor = Color.fromARGB(255, 8, 9, 10);
+    const darkColor = Color(0xFF3A3956);
+    const middleFraction = 0.02;
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        SvgPicture.asset(
-          height: 21,
-          iconAsset,
-          color: isSelected ? selectedColor : unselectedColor,
-        ),
-        // const SizedBox(height: 12.0),
-        // Text(
-        // text.tr(),
-        // maxLines: 1,
-        // overflow: TextOverflow.ellipsis,
-        // textAlign: TextAlign.center,
-        // style: TextStyle(
-        //   color: isSelected ? selectedColor : unselectedColor,
-        //   fontStyle: FontStyle.normal,
-        //   fontWeight: FontWeight.w500,
-        //   fontSize: 11.0,
-        // ),
-        // ),
+    final purpleGradient = RadialGradient(
+      colors: [
+        Color.lerp(lightColor, darkColor, middleFraction)!,
+        darkColor,
+        Color.lerp(lightColor, darkColor, middleFraction)!,
       ],
+      stops: const [0.0, middleFraction, 1.0],
+      center: Alignment.center, // Center of the gradient
+      focal: Alignment.center,
+      focalRadius:
+          0.01, // Adjust this value to control the spread of the gradient
+      radius: 1.0, // Controls the size of the circular gradient
+    );
+
+    return Container(
+      width: 100.0, // Adjust the width as needed
+      decoration: BoxDecoration(
+        gradient: isSelected ? purpleGradient : null,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 21.5),
+            child: SvgPicture.asset(
+              iconAsset,
+              height: 21,
+              color: isSelected ? selectedColor : unselectedColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
