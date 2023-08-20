@@ -130,7 +130,7 @@ class _CustomElevatedButton extends StatelessWidget {
           : null,
       style: ButtonStyle(
         padding: MaterialStateProperty.all(
-            padding ?? const EdgeInsets.symmetric(vertical: 0, horizontal: 20)),
+            padding ?? const EdgeInsets.symmetric(vertical: 0, horizontal: 0)),
         elevation: MaterialStateProperty.all(0),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

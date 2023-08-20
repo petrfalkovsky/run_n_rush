@@ -14,6 +14,7 @@ import 'package:riverside/ui/shared/constants/app_colors.dart';
 
 class ShopService extends GetxService with StreamSubscriberMixin {
   ShopService({
+    ShopService? service,
     BookingsBloc? bookingBloc,
     LocalRepository? repoLocal,
   })  : _bookingBloc = bookingBloc ?? GetIt.I.get(),

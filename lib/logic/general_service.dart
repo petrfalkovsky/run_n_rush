@@ -7,6 +7,8 @@ import 'package:riverside/ui/screens/language/language.dart';
 import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_service.dart';
 import 'package:riverside/ui/screens/settings/settings.dart';
+import 'package:riverside/ui/screens/shop/src/shop_controller.dart';
+import 'package:riverside/ui/screens/shop/src/shop_service.dart';
 import 'package:riverside/ui/screens/splash/splash.dart';
 import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
@@ -19,13 +21,15 @@ class GeneralService extends GetxService {
       ..put(LanguageScreenService())
       ..put(InternetScreenService())
       ..lazyPut(() => SplashScreenService())
-      // ..lazyPut(() => AuthService())
       ..lazyPut(() => SignInService())
       ..lazyPut(() => SignUpService())
       ..lazyPut(() => MainService())
       ..lazyPut(() => InventoryService())
       ..lazyPut(() => SettingsService())
       ..lazyPut(() => GeneralScaffoldService())
+      ..lazyPut(() => InventoryService())
+      ..lazyPut(() => InventoryController())
+      ..lazyPut(() => ShopService())
       ..lazyPut(() => QrScannerService());
   }
 }

@@ -72,7 +72,7 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                   children: [
                     FilterDropdown(),
                     const Spacer(),
-                    ThemeAnimatedSwitchToggle(
+                    AnimatedSwitcherWidget(
                       onTap: () {},
                     ),
                   ],

@@ -11,6 +11,7 @@ import 'package:riverside/ui/shared/widgets/ctable_calendar.dart';
 import 'package:riverside/ui/shared/widgets/drop_down.dart';
 import 'package:riverside/ui/shared/widgets/std_button.dart';
 import 'package:riverside/ui/shared/widgets/toggle_swithcer.dart';
+import 'package:riverside/ui/shared/widgets/toggle_swithcer_two.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
@@ -39,17 +40,41 @@ class ShopScreen extends StatexWidget<InventoryController> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 24),
+                    padding:
+                        const EdgeInsets.only(bottom: 24, left: 24, right: 24),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'ShopScreen',
+                      children: [
+                        const Text(
+                          'Shop',
                           style: TextStyle(
                             fontStyle: FontStyle.italic,
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 20,
+                          ),
+                        ),
+                        const Spacer(),
+                        SizedBox(
+                          width: 200,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Image.asset(AppIcons.coin),
+                              const SizedBox(width: 5),
+                              const Text(
+                                '00.0025',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              8.w,
+                              StdButton(
+                                  width: 65,
+                                  text: 'BUY',
+                                  isActive: true,
+                                  onPress: () {})
+                            ],
                           ),
                         )
                       ],
@@ -72,7 +97,11 @@ class ShopScreen extends StatexWidget<InventoryController> {
                   children: [
                     FilterDropdown(),
                     const Spacer(),
-                    ThemeAnimatedSwitchToggle(
+                    AnimatedSwitcherWidgetTwo(
+                      allText: 'Buy',
+                      dressedText: 'Sell',
+                      animatedContainerWidth: 120,
+                      smallContainerWidth: 60,
                       onTap: () {},
                     ),
                   ],
@@ -161,6 +190,10 @@ class ProductListWidget extends StatelessWidget {
                                             height: 118,
                                             color:
                                                 Colors.black.withOpacity(0.05),
+                                            child: Image.asset(
+                                              AppIcons.jogger_2,
+                                              // fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -207,11 +240,11 @@ class ProductListWidget extends StatelessWidget {
                       ),
                       Positioned(
                         bottom: 6,
-                        left: 32,
+                        left: 45,
                         child: StdButton(
                             height: 36,
-                            width: 122,
-                            text: 'PUT ON',
+                            width: 97,
+                            text: 'BUY',
                             isActive: true,
                             onPress: () {}),
                       ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AnimatedSwitcherWidget extends StatefulWidget {
+/// todo обязательно переделать чтобы не повторять код
+class AnimatedSwitcherWidgetTwo extends StatefulWidget {
   final VoidCallback onTap;
   final double animatedContainerWidth;
   final double smallContainerWidth;
   final String allText;
   final String dressedText;
 
-  AnimatedSwitcherWidget({
+  AnimatedSwitcherWidgetTwo({
     required this.onTap,
     this.animatedContainerWidth = 156,
     this.smallContainerWidth = 80,
@@ -16,10 +17,11 @@ class AnimatedSwitcherWidget extends StatefulWidget {
   });
 
   @override
-  _AnimatedSwitcherWidgetState createState() => _AnimatedSwitcherWidgetState();
+  _AnimatedSwitcherWidgetTwoState createState() =>
+      _AnimatedSwitcherWidgetTwoState();
 }
 
-class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
+class _AnimatedSwitcherWidgetTwoState extends State<AnimatedSwitcherWidgetTwo> {
   var isEnabled = false;
   final animationDuration = const Duration(milliseconds: 500);
 
@@ -77,7 +79,7 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Text(
-                    isEnabled ? '      ${widget.allText}' : widget.dressedText,
+                    isEnabled ? '    ${widget.allText}' : widget.dressedText,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
