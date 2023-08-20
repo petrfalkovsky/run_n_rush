@@ -27,7 +27,7 @@ class _ThemeAnimatedSwitchToggleState extends State<ThemeAnimatedSwitchToggle> {
         borderRadius: BorderRadius.circular(30),
         child: AnimatedContainer(
           height: 36,
-          width: 170,
+          width: 156,
           duration: animationDuration,
           decoration: BoxDecoration(
             color:
@@ -40,12 +40,21 @@ class _ThemeAnimatedSwitchToggleState extends State<ThemeAnimatedSwitchToggle> {
                 alignment:
                     isEnabled ? Alignment.centerRight : Alignment.centerLeft,
                 child: Container(
-                  width: 57,
+                  width: 80,
                   height: 27,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     color: const Color(0xFF5A57AC),
                     borderRadius: BorderRadius.circular(30), // Rounded corners
+                  ),
+                  child: Center(
+                    child: Text(
+                      isEnabled ? 'Dressed' : 'All',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -54,12 +63,12 @@ class _ThemeAnimatedSwitchToggleState extends State<ThemeAnimatedSwitchToggle> {
                 alignment:
                     isEnabled ? Alignment.centerLeft : Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Text(
-                    isEnabled ? 'All' : 'Dressed',
+                    isEnabled ? '      All' : 'Dressed',
                     style: const TextStyle(
-                      color: Colors.white, // Text color
-                      fontWeight: FontWeight.bold, // Text weight
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
