@@ -2,7 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/screens/bookings/bookings.dart';
+import 'package:riverside/ui/screens/inventory/inventory.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
 import 'package:riverside/ui/shared/themes/app_text_theme.dart';
@@ -14,8 +14,8 @@ import 'package:riverside/ui/shared/widgets/toggle_swithcer.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class BookingScreen extends StatexWidget<BookingsController> {
-  BookingScreen({Key? key}) : super(() => BookingsController(), key: key) {
+class InventoryScreen extends StatexWidget<InventoryController> {
+  InventoryScreen({Key? key}) : super(() => InventoryController(), key: key) {
     debugPrint(' Bookings.Bookings');
   }
 
@@ -204,7 +204,7 @@ class ProductListWidget extends StatelessWidget {
                       ),
                       Positioned(
                         bottom: 6,
-                        left: 46,
+                        left: 32,
                         child: StdButton(
                             height: 36,
                             width: 122,

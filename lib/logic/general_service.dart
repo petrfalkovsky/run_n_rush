@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:riverside/ui/screens/auth/src/sign_in/sign_in.dart';
 import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/screens/bookings/bookings.dart';
+import 'package:riverside/ui/screens/inventory/inventory.dart';
 import 'package:riverside/ui/screens/internet/internet.dart';
 import 'package:riverside/ui/screens/language/language.dart';
 import 'package:riverside/ui/screens/main/main.dart';
@@ -23,7 +23,7 @@ class GeneralService extends GetxService {
       ..lazyPut(() => SignInService())
       ..lazyPut(() => SignUpService())
       ..lazyPut(() => MainService())
-      ..lazyPut(() => BookingsService())
+      ..lazyPut(() => InventoryService())
       ..lazyPut(() => SettingsService())
       ..lazyPut(() => GeneralScaffoldService())
       ..lazyPut(() => QrScannerService());

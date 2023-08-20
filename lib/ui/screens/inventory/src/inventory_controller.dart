@@ -7,18 +7,18 @@ import 'package:riverside/core/utils/stream_subscriber.dart';
 import 'package:riverside/data/%20dto/bookings/post_booking_dto.dart';
 import 'package:riverside/domain/bookings/check_reserved.dart';
 import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/bookings/src/bookings_service.dart';
+import 'package:riverside/ui/screens/inventory/src/inventory_service.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class BookingsController extends StatexController with StreamSubscriberMixin {
-  BookingsController({
-    BookingsService? service,
+class InventoryController extends StatexController with StreamSubscriberMixin {
+  InventoryController({
+    InventoryService? service,
   }) : _service = service ?? Get.find();
 
   final indexServices = 0.obs;
 
-  final BookingsService _service;
+  final InventoryService _service;
 
   bool get isLoading => _service.isLoading;
 

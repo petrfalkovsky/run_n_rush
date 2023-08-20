@@ -12,8 +12,8 @@ import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/constants/app_colors.dart';
 
-class BookingsService extends GetxService with StreamSubscriberMixin {
-  BookingsService({
+class InventoryService extends GetxService with StreamSubscriberMixin {
+  InventoryService({
     BookingsBloc? bookingBloc,
     LocalRepository? repoLocal,
   })  : _bookingBloc = bookingBloc ?? GetIt.I.get(),
