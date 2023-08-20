@@ -41,10 +41,10 @@ abstract class AppColors {
   static _BackgroundColors background = const _BackgroundColors(
     0xFFF9F9FA,
     <int, Color>{
-      1: Color(0xFFF9F9FA),
-      2: Color(0xFFF4F4F4),
-      3: Color(0xFFE9E9E9),
-      4: Color(0xFFFFFFFF),
+      1: Color(0xFF101113),
+      2: Color(0xFF101113),
+      3: Color(0xFF101113),
+      4: Color(0xFF101113),
       5: Colors.transparent,
     },
   );

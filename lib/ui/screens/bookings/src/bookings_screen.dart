@@ -8,6 +8,7 @@ import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
 import 'package:riverside/ui/shared/themes/app_text_theme.dart';
 import 'package:riverside/ui/shared/widgets/buttons/custom_ink_well.dart';
 import 'package:riverside/ui/shared/widgets/ctable_calendar.dart';
+import 'package:riverside/ui/shared/widgets/drop_down.dart';
 import 'package:riverside/ui/shared/widgets/std_button.dart';
 import 'package:riverside/ui/shared/widgets/toggle_swithcer.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -58,25 +59,21 @@ class BookingScreen extends StatexWidget<BookingsController> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        padding: const EdgeInsets.only(top: 16),
         child: Obx(() {
           return Column(
             children: [
-              Row(
-                children: [
-                  const Text(
-                    "Lower Price",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white),
-                  ),
-                  const Spacer(),
-                  ThemeAnimatedSwitchToggle(
-                    onTap: () {},
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: [
+                    FilterDropdown(),
+                    const Spacer(),
+                    ThemeAnimatedSwitchToggle(
+                      onTap: () {},
+                    ),
+                  ],
+                ),
               ),
               20.h,
               Expanded(
@@ -108,92 +105,114 @@ class ProductListWidget extends StatelessWidget {
         children: [
           GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisExtent: 300,
+              mainAxisExtent: 310,
               crossAxisCount: 2,
               mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
+              crossAxisSpacing: 0,
             ),
             // число карточек в списке
-            itemCount: 2,
+            itemCount: 4,
             itemBuilder: (context, index) {
               return Stack(
                 children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: const BorderSide(
-                        color: Colors.blue, // Blue border color
-                        width: 2,
-                      ),
-                    ),
-                    color: Colors.transparent, // Transparent background
-                    child: Stack(
-                      children: [
-                        Column(
+                  Stack(
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          side: const BorderSide(
+                              // color: Colors.grey,
+                              ),
+                        ),
+                        color: Colors.transparent,
+                        child: Stack(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: DottedBorder(
-                                dashPattern: const [12, 4],
-                                color: Colors.blue, // Blue border color
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(12),
-                                padding: const EdgeInsets.all(6),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Container(
-                                    width: 122,
-                                    height: 118,
-                                    color: Colors.black.withOpacity(0.05),
+                              padding: const EdgeInsets.only(
+                                  bottom: 18, top: 12, left: 10, right: 10),
+                              child: Container(
+                                // height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: const Color(0xFF134552),
+                                    width: 2,
                                   ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 14, right: 14, top: 14),
+                                      child: DottedBorder(
+                                        dashPattern: const [12, 4],
+                                        color: const Color(0xFF134552),
+                                        borderType: BorderType.RRect,
+                                        radius: const Radius.circular(12),
+                                        // padding: const EdgeInsets.all(6),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          child: Container(
+                                            width: 122,
+                                            height: 118,
+                                            color:
+                                                Colors.black.withOpacity(0.05),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    15.h,
+                                    const Text(
+                                      "Jogger 4-10 km/h",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.white),
+                                    ),
+                                    15.h,
+                                    const Text(
+                                      "#145265874",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white),
+                                    ),
+                                    const SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(AppIcons.coin),
+                                        const SizedBox(width: 5),
+                                        const Text(
+                                          '00.0000',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                            15.h,
-                            const Text(
-                              "Jogger 4-10 km/h",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.white),
-                            ),
-                            15.h,
-                            const Text(
-                              "#145265874",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white),
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(AppIcons.coin),
-                                const SizedBox(width: 5),
-                                const Text(
-                                  '00.0000',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    left: 30,
-                    child: StdButton(
-                        width: 122,
-                        text: 'text',
-                        isActive: true,
-                        onPress: () {}),
+                      ),
+                      Positioned(
+                        bottom: 6,
+                        left: 46,
+                        child: StdButton(
+                            height: 36,
+                            width: 122,
+                            text: 'PUT ON',
+                            isActive: true,
+                            onPress: () {}),
+                      ),
+                    ],
                   ),
                 ],
               );

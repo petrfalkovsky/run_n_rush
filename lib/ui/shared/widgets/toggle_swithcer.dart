@@ -35,24 +35,28 @@ class _ThemeAnimatedSwitchToggleState extends State<ThemeAnimatedSwitchToggle> {
           ),
           child: Stack(
             children: [
-              AnimatedAlign(
-                duration: animationDuration,
-                alignment:
-                    isEnabled ? Alignment.centerRight : Alignment.centerLeft,
-                child: Container(
-                  width: 80,
-                  height: 27,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: const Color(0xFF5A57AC),
-                    borderRadius: BorderRadius.circular(30), // Rounded corners
-                  ),
-                  child: Center(
-                    child: Text(
-                      isEnabled ? 'Dressed' : 'All',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: AnimatedAlign(
+                  duration: animationDuration,
+                  alignment:
+                      isEnabled ? Alignment.centerRight : Alignment.centerLeft,
+                  child: Container(
+                    width: 80,
+                    height: 27,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      color: const Color(0xFF5A57AC),
+                      borderRadius:
+                          BorderRadius.circular(30), // Rounded corners
+                    ),
+                    child: Center(
+                      child: Text(
+                        isEnabled ? 'Dressed' : 'All',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),

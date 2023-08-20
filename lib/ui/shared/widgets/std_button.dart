@@ -12,6 +12,7 @@ class StdButton extends StatelessWidget {
       this.isLoading = false,
       this.padding,
       this.width,
+      this.height,
       required this.onPress,
       Key? key})
       : super(key: key);
@@ -23,12 +24,14 @@ class StdButton extends StatelessWidget {
   final VoidCallback onPress;
   final EdgeInsets? padding;
   final double? width;
+  final double? height;
   final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? Get.width,
+      height: height,
       child: isOutlined
           ? _CustomOutlinaButton(
               text: text,
@@ -126,8 +129,8 @@ class _CustomElevatedButton extends StatelessWidget {
               : onPress
           : null,
       style: ButtonStyle(
-        padding: MaterialStateProperty.all(padding ??
-            const EdgeInsets.symmetric(vertical: 15, horizontal: 20)),
+        padding: MaterialStateProperty.all(
+            padding ?? const EdgeInsets.symmetric(vertical: 0, horizontal: 20)),
         elevation: MaterialStateProperty.all(0),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
