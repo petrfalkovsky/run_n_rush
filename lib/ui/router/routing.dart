@@ -3,7 +3,6 @@ import 'package:get/get.dart' hide Trans;
 import 'package:riverside/ui/screens/auth/src/sign_in/sign_in.dart';
 import 'package:riverside/ui/screens/auth/src/sign_in/src/reset_password.dart';
 import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/screens/bookings/src/current_bookings.dart';
 import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_screen.dart';
 import 'package:riverside/ui/screens/scan/entry_code.dart';
 import 'package:riverside/ui/screens/auth/src/auth_welcome_screen.dart';
@@ -89,11 +88,6 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.settings,
     page: () => Settings(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.currentBookings,
-    page: () => const CurrentBookingScreen(),
     transition: Transition.fadeIn,
   ),
   GetPage(

@@ -16,6 +16,8 @@ class BookingsController extends StatexController with StreamSubscriberMixin {
     BookingsService? service,
   }) : _service = service ?? Get.find();
 
+  final indexServices = 0.obs;
+
   final BookingsService _service;
 
   bool get isLoading => _service.isLoading;
@@ -30,8 +32,6 @@ class BookingsController extends StatexController with StreamSubscriberMixin {
   void changeDaySelected(DateTime day) {
     _daySelected(day);
     _service.getCheckReserved(date: day);
-
-    clearAll();
   }
 
   final listTab = ['swimmingPool', 'tennisCourt'].obs;
@@ -197,63 +197,6 @@ class BookingsController extends StatexController with StreamSubscriberMixin {
 
   int get indexTab => _service.indexTab;
   PageController get pageController => _service.pageController;
-  void changeIndexTab(int index) => _service.changeIndexTab(index);
-
-  Future goToMyBooking() async {
-    totalPrice();
-    final data = await Get.toNamed(AppRoutes.currentBookings);
-    if (data == 'SUCCESS') {
-      changeDaySelected(DateTime.now());
-    }
-  }
-
-  void updateLounge() {
-    if (listReserved.isNotEmpty) {
-      // бассеин
-      _listTypeLounge[0].descCount = listReserved[0].freeIndSeats.toString();
-      _listTypeLounge[1].descCount = listReserved[0].freeFamSeats.toString();
-      _listTypeLounge[0].price = listReserved[0].indSeatPrice.toString();
-      _listTypeLounge[1].price = listReserved[0].famSeatPrice.toString();
-
-      _listTypeLounge.refresh();
-
-      //корты
-      final cortIndex = _indexCourt() + 1;
-      _priceCourt(listReserved[cortIndex].hourPrice);
-    }
-  }
-
-  void clearAll() {
-    _indexCourt(0);
-    _listIndexTime([]);
-    _listOfTimes([]);
-    _listChosenTime([]);
-    _showButton(false);
-
-    for (TypeLoungeModel type in _listTypeLounge()) {
-      type.count = 0;
-      type.isActive = false;
-    }
-  }
-
-  void send() {
-    final l = <int>[];
-    for (var i = 0; i < _listChosenTime.length; i++) {
-      l.add(_listIndexTime[_listChosenTime[i]]);
-    }
-    l.sort((a, b) => a.compareTo(b));
-    _service.payment(
-      body: ReservationBody(
-        resDate: DateFormat('yyyy-MM-dd').format(_daySelected()),
-        indSeatQty: _listTypeLounge[0].count,
-        famSeatQty: _listTypeLounge[1].count,
-        tennisHours: l,
-        court: _indexCourt() + 1,
-        paymentStatus: 'w',
-        paymentTime: null,
-      ),
-    );
-  }
 
   @override
   Future onReady() async {
@@ -262,7 +205,6 @@ class BookingsController extends StatexController with StreamSubscriberMixin {
     subscribeIt(
       listReservedStream.listen((event) {
         createTimes();
-        updateLounge();
       }),
     );
   }

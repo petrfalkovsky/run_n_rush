@@ -1,14 +1,15 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:riverside/ui/screens/bookings/bookings.dart';
-import 'package:riverside/ui/screens/bookings/src/pool_screen.dart';
-import 'package:riverside/ui/screens/bookings/src/tennis_screen.dart';
 import 'package:riverside/ui/shared/all_shared.dart';
 import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
 import 'package:riverside/ui/shared/themes/app_text_theme.dart';
 import 'package:riverside/ui/shared/widgets/buttons/custom_ink_well.dart';
 import 'package:riverside/ui/shared/widgets/ctable_calendar.dart';
+import 'package:riverside/ui/shared/widgets/std_button.dart';
+import 'package:riverside/ui/shared/widgets/toggle_swithcer.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
@@ -25,31 +26,31 @@ class BookingScreen extends StatexWidget<BookingsController> {
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(227),
+        preferredSize: const Size.fromHeight(64),
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/appbar_frame.png',
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
-            ),
             AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor: const Color(0xFF8784D3),
               elevation: 0,
-              toolbarHeight: 100,
+              toolbarHeight: 0,
               automaticallyImplyLeading: false,
-              flexibleSpace: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              flexibleSpace: Stack(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 24,
-                      bottom: 5,
+                  Positioned(
+                    top: 76,
+                    // left: MediaQuery.of(context).size.width / 2 - 48,
+                    left: MediaQuery.of(context).size.width * 0.385,
+                    child: const Text(
+                      textAlign: TextAlign.center,
+                      'Inventory',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
                     ),
-                    child: Text('reservation'.tr(), style: textTheme.h1_1),
-                  ),
-                  const _BookingsTypeSelector(),
+                  )
                 ],
               ),
             ),
@@ -57,30 +58,31 @@ class BookingScreen extends StatexWidget<BookingsController> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: Obx(() {
           return Column(
             children: [
-              // CTableCalendar(
-              //   focusedDay: controller.daySelected,
-              //   currentDay: controller.daySelected,
-              //   onDaySelected: (day, days) {
-              //     controller.changeDaySelected(day);
-              //   },
-              //   startingDayOfWeek: StartingDayOfWeek.monday,
-              // ),
-              // 8.h,
+              Row(
+                children: [
+                  const Text(
+                    "Lower Price",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white),
+                  ),
+                  const Spacer(),
+                  ThemeAnimatedSwitchToggle(
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              20.h,
               Expanded(
                 child: Stack(
                   children: [
-                    PageView(
-                        controller: controller.pageController,
-                        physics: const BouncingScrollPhysics(),
-                        onPageChanged: controller.changeIndexTab,
-                        children: const [
-                          PoolScreen(),
-                          TennisScreen(),
-                        ]),
+                    const ProductListWidget(),
                     if (controller.isLoading) Consts().preloader,
                   ],
                 ),
@@ -93,30 +95,110 @@ class BookingScreen extends StatexWidget<BookingsController> {
   }
 }
 
-class _BookingsTypeSelector extends GetView<BookingsController>
-    implements PreferredSizeWidget {
-  const _BookingsTypeSelector({Key? key}) : super(key: key);
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+class ProductListWidget extends StatelessWidget {
+  const ProductListWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: preferredSize.height,
-      child: Obx(
-        () => Row(
-          children: <Widget>[
-            const SizedBox(width: 24.0),
-            for (var i = 0; i < controller.listTab.length; i++)
-              CustomInkWell(
-                onTap: () => controller.changeIndexTab(i),
-                isActive: i == controller.indexTab,
-                text: controller.listTab[i].tr(),
-              ),
-          ],
-        ),
-      ),
-    );
+    return PageView(
+        // controller: controller.pageController,
+        physics: const BouncingScrollPhysics(),
+        children: [
+          GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              mainAxisExtent: 300,
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+            ),
+            // число карточек в списке
+            itemCount: 2,
+            itemBuilder: (context, index) {
+              return Stack(
+                children: [
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: const BorderSide(
+                        color: Colors.blue, // Blue border color
+                        width: 2,
+                      ),
+                    ),
+                    color: Colors.transparent, // Transparent background
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: DottedBorder(
+                                dashPattern: const [12, 4],
+                                color: Colors.blue, // Blue border color
+                                borderType: BorderType.RRect,
+                                radius: const Radius.circular(12),
+                                padding: const EdgeInsets.all(6),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Container(
+                                    width: 122,
+                                    height: 118,
+                                    color: Colors.black.withOpacity(0.05),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            15.h,
+                            const Text(
+                              "Jogger 4-10 km/h",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.white),
+                            ),
+                            15.h,
+                            const Text(
+                              "#145265874",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white),
+                            ),
+                            const SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(AppIcons.coin),
+                                const SizedBox(width: 5),
+                                const Text(
+                                  '00.0000',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    left: 30,
+                    child: StdButton(
+                        width: 122,
+                        text: 'text',
+                        isActive: true,
+                        onPress: () {}),
+                  ),
+                ],
+              );
+            },
+          ),
+        ]);
   }
 }
