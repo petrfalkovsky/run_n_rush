@@ -130,7 +130,7 @@ class _CustomElevatedButton extends StatelessWidget {
             const EdgeInsets.symmetric(vertical: 15, horizontal: 20)),
         elevation: MaterialStateProperty.all(0),
         shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         ),
         backgroundColor: MaterialStateProperty.all(resolvedButtonColor),
       ),
@@ -148,8 +148,10 @@ class _CustomElevatedButton extends StatelessWidget {
               text,
               softWrap: false,
               style: theme.appTextTheme.b2_0.copyWith(
-                color: resolvedTextColor,
-              ),
+                  color: resolvedTextColor,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic),
             ),
     );
   }

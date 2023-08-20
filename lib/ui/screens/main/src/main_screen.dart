@@ -35,77 +35,191 @@ class Main extends StatexWidget<MainController> {
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(227),
-        child: Stack(
-          children: [
-            AppIcons.svgWidget(AppIcons.settings),
-            Image.asset(
-              'assets/images/appbar_frame.png',
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
-            ),
-            AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              toolbarHeight: 100,
-              automaticallyImplyLeading: false,
-              flexibleSpace: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [],
-              ),
-            ),
-            Positioned(
-              right: 27,
-              top: MediaQuery.of(context).size.height * 0.12,
-              child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      blurRadius: 16,
-                      offset: const Offset(0, 14),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(227),
+        child: AppBarWidget(),
+      ),
+      child: Obx(
+        () => SingleChildScrollView(
+          child: Column(
+            children: [
+              controller.indexTab == 1
+                  ? controller.archiveBookingList.isNotEmpty
+                      ? const SizedBox.shrink()
+                      : const SizedBox.shrink()
+                  : const Text(
+                      'Hello, d.push91@gmail.com',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontStyle: FontStyle.italic),
                     ),
-                  ],
+              5.h,
+              const GreatingBalanceWidget(),
+              40.h,
+              const AddSneakerWidget(),
+              20.h,
+              const ListAddSneakersWidget(),
+              40.h,
+              const SneakerDataWidget(),
+              16.h,
+              const LightningDataWidget(),
+              46.h,
+              StdButton(text: 'Start', isActive: true, onPress: () {})
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class LightningDataWidget extends StatelessWidget {
+  const LightningDataWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(30)),
+      child: Container(
+        color: Colors.black,
+        width: double.infinity,
+        height: 32,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Row(children: [
+            Container(
+                alignment: Alignment.center,
+                width: 28,
+                child: AppIcons.svgWidget(AppIcons.lightning, width: 14)),
+            const Spacer(),
+            const Text(
+              '0.0/0.0',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w600),
+            )
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+class SneakerDataWidget extends StatelessWidget {
+  const SneakerDataWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(30)),
+      child: Container(
+        color: Colors.black,
+        width: double.infinity,
+        height: 32,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Row(children: [
+            Container(
+                alignment: Alignment.center,
+                width: 28,
+                child: AppIcons.svgWidget(AppIcons.sneaker, height: 28)),
+            const Spacer(),
+            const Text(
+              '0.00K /50K',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w600),
+            )
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        AppIcons.svgWidget(AppIcons.settings),
+        Image.asset(
+          'assets/images/appbar_frame.png',
+          fit: BoxFit.cover,
+          width: MediaQuery.of(context).size.width,
+        ),
+        AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          toolbarHeight: 100,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: const [],
+          ),
+        ),
+        Positioned(
+          right: 27,
+          top: MediaQuery.of(context).size.height * 0.12,
+          child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 16,
+                  offset: const Offset(0, 14),
                 ),
-                child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
+              ],
+            ),
+            child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
+          ),
+        ),
+        Positioned(
+          bottom: 45,
+          left: MediaQuery.of(context).size.width / 2 - 72,
+          child: Container(
+            width: 152,
+            height: 152,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.white.withOpacity(0.1),
+                width: 2,
               ),
             ),
-            Positioned(
-              bottom: 45,
-              left: MediaQuery.of(context).size.width / 2 - 72,
-              child: Container(
-                width: 152,
-                height: 152,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.1),
-                    width: 2,
-                  ),
-                ),
-                child: ClipOval(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: ClipOval(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  color: Colors.transparent,
+                  child: Center(
                     child: Container(
-                      color: Colors.transparent,
+                      width: 138,
+                      height: 138,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xFF01B8FF),
+                      ),
                       child: Center(
-                        child: Container(
-                          width: 138,
-                          height: 138,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xFF01B8FF),
-                          ),
-                          child: Center(
-                            child: Image.asset(
-                              AppIcons.avatar,
-                              width: 59,
-                              height: 59,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                        child: Image.asset(
+                          AppIcons.avatar,
+                          width: 59,
+                          height: 59,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -113,70 +227,119 @@ class Main extends StatexWidget<MainController> {
                 ),
               ),
             ),
-          ],
+          ),
         ),
-      ),
-      child: Obx(
-        () => Column(
-          children: [
-            controller.indexTab == 1
-                ? controller.archiveBookingList.isNotEmpty
-                    ? const SizedBox.shrink()
-                    : const SizedBox.shrink()
-                : const Text(
-                    'Hello, d.push91@gmail.com',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontStyle: FontStyle.italic),
-                  ),
-            5.h,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(AppIcons.coin),
-                10.w,
-                const Text(
-                  '00.0000',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            40.h,
-            DottedBorder(
-              dashPattern: [12, 4],
-              color: const Color(0xFF1DB9DD),
-              borderType: BorderType.RRect,
-              radius: const Radius.circular(12),
-              padding: const EdgeInsets.all(6),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                child: Container(
-                  width: double.infinity,
-                  height: 88,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.asset(AppIcons.mono_jogger),
-                      Container(
-                        color: Colors.black.withOpacity(0.5),
-                      ),
-                      const Icon(
-                        Icons.add,
-                        color: Color(0xFF1DB9DD),
-                        size: 36,
-                      ),
-                    ],
+      ],
+    );
+  }
+}
+
+class ListAddSneakersWidget extends StatelessWidget {
+  const ListAddSneakersWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        for (int i = 0; i < 4; i++)
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DottedBorder(
+                dashPattern: const [12, 4],
+                color: const Color(0xFF1DB9DD),
+                borderType: BorderType.RRect,
+                radius: const Radius.circular(12),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  child: SizedBox(
+                    height: 59,
+                    child: Stack(
+                      children: [
+                        Container(
+                          color: Colors.black.withOpacity(0.05),
+                        ),
+                        const Positioned(
+                          left: 26,
+                          top: 11,
+                          child: Icon(Icons.add,
+                              color: Color(0xFF1DB9DD), size: 36),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ],
+          ),
+      ],
+    );
+  }
+}
+
+class AddSneakerWidget extends StatelessWidget {
+  const AddSneakerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: DottedBorder(
+        dashPattern: const [12, 4],
+        color: const Color(0xFF1DB9DD),
+        borderType: BorderType.RRect,
+        radius: const Radius.circular(12),
+        padding: const EdgeInsets.all(6),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
+          child: SizedBox(
+            width: double.infinity,
+            height: 88,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Image.asset(AppIcons.mono_jogger),
+                Container(
+                  color: Colors.black.withOpacity(0.05),
+                ),
+                const Icon(
+                  Icons.add,
+                  color: Color(0xFF1DB9DD),
+                  size: 36,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
+    );
+  }
+}
+
+class GreatingBalanceWidget extends StatelessWidget {
+  const GreatingBalanceWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(AppIcons.coin),
+        10.w,
+        const Text(
+          '00.0000',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+      ],
     );
   }
 }

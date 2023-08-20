@@ -8,10 +8,18 @@ abstract class AppColors {
   static _AccentColors accent = const _AccentColors(
     0xFF4AAE3A,
     <int, Color>{
-      1: Color(0xFF4AAE3A),
+      1: Color(0xFF1DB9DD),
       2: Color(0xFFFF9900),
     },
   );
+
+  static Gradient get accentGradient {
+    return LinearGradient(
+      colors: [accent.accent1, Color(0xFF1DB9DD)],
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+    );
+  }
 
   static _TextColors text = const _TextColors(
     0xFF222222,
