@@ -10,6 +10,7 @@ import 'package:riverside/ui/screens/inventory/inventory.dart';
 import 'package:riverside/ui/screens/main/main.dart';
 import 'package:riverside/ui/screens/settings/src/settings_screen.dart';
 import 'package:riverside/ui/screens/settings/src/update_screen.dart';
+import 'package:riverside/ui/screens/shop/src/shop_screen.dart';
 import 'package:riverside/ui/screens/splash/splash.dart';
 
 class AppRoutes {
@@ -102,7 +103,7 @@ final List<GetPage> routes = [
   ),
   GetPage(
     name: AppRoutes.shop,
-    page: () => InventoryScreen(),
+    page: () => ShopScreen(),
     transition: Transition.fadeIn,
   ),
 ];

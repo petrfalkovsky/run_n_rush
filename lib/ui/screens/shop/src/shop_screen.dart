@@ -14,8 +14,8 @@ import 'package:riverside/ui/shared/widgets/toggle_swithcer.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class InventoryScreen extends StatexWidget<InventoryController> {
-  InventoryScreen({Key? key}) : super(() => InventoryController(), key: key) {
+class ShopScreen extends StatexWidget<InventoryController> {
+  ShopScreen({Key? key}) : super(() => InventoryController(), key: key) {
     debugPrint(' Bookings.Bookings');
   }
 
@@ -44,7 +44,7 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'Inventory',
+                          'ShopScreen',
                           style: TextStyle(
                             fontStyle: FontStyle.italic,
                             color: Colors.white,

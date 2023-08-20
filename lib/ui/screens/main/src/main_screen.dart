@@ -172,41 +172,87 @@ class AppBarWidget extends StatelessWidget {
             children: const [],
           ),
         ),
-        Positioned(
-          right: 27,
-          top: MediaQuery.of(context).size.height * 0.12,
-          child: Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  blurRadius: 16,
-                  offset: const Offset(0, 14),
-                ),
-              ],
-            ),
-            child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
-          ),
-        ),
-        Positioned(
-          bottom: 45,
-          left: MediaQuery.of(context).size.width / 2 - 72,
-          child: Container(
-            width: 152,
-            height: 152,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.white.withOpacity(0.1),
-                width: 2,
-              ),
-            ),
-            child: ClipOval(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(
-                  color: Colors.transparent,
-                  child: Center(
+        const SettingsIconWidget(),
+        const AvatarWidget(),
+        // Positioned(
+        //   bottom: MediaQuery.of(context).size.height * 0.078,
+        //   left: MediaQuery.of(context).size.width / 2 - 72,
+        //   child: Container(
+        //     width: 152,
+        //     height: 152,
+        //     decoration: BoxDecoration(
+        //       shape: BoxShape.circle,
+        //       border: Border.all(
+        //         color: Colors.white.withOpacity(0.1),
+        //         width: 2,
+        //       ),
+        //     ),
+        //     child: ClipOval(
+        //       child: BackdropFilter(
+        //         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        //         child: Container(
+        //           color: Colors.transparent,
+        //           child: Center(
+        //             child: Container(
+        //               width: 138,
+        //               height: 138,
+        //               decoration: const BoxDecoration(
+        //                 shape: BoxShape.circle,
+        //                 color: Color(0xFF01B8FF),
+        //               ),
+        //               child: Center(
+        //                 child: Image.asset(
+        //                   AppIcons.avatar,
+        //                   width: 59,
+        //                   height: 59,
+        //                   fit: BoxFit.cover,
+        //                 ),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
+      ],
+    );
+  }
+}
+
+class AvatarWidget extends StatelessWidget {
+  const AvatarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 48),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    width: 148,
+                    height: 148,
+                    child: ClipOval(
+                      /// заблюренный круг
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                        child: Container(
+                          color: Colors.transparent,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 5,
+                    top: 5,
                     child: Container(
                       width: 138,
                       height: 138,
@@ -224,12 +270,38 @@ class AppBarWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
+                ],
+              )
+            ],
           ),
         ),
       ],
+    );
+  }
+}
+
+class SettingsIconWidget extends StatelessWidget {
+  const SettingsIconWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      right: 27,
+      top: MediaQuery.of(context).size.height * 0.12,
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 16,
+              offset: const Offset(0, 14),
+            ),
+          ],
+        ),
+        child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
+      ),
     );
   }
 }
