@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/constants/app_text_style.dart';
-import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
+import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
 PreferredSizeWidget getStatAppBar(
   BuildContext context, {

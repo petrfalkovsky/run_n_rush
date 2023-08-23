@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/%20dto/auth/sign_up.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/%20dto/auth/sign_up.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 ///

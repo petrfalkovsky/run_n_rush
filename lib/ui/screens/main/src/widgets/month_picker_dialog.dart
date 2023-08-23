@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/screens/main/src/widgets/circular_switcher.dart';
-import 'package:riverside/ui/shared/themes/app_text_theme.dart';
+import 'package:run_n_rush/ui/screens/main/src/widgets/circular_switcher.dart';
+import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
 /// Return month index in range [DateTime.january] - [DateTime.december].
 Future<int?> showMonthPicker(

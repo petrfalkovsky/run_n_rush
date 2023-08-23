@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:riverside/ui/shared/widgets/general_scaffold/general_scaffold.dart';
+// import 'package:run_n_rush/ui/shared/widgets/general_scaffold/general_scaffold.dart';
 // import 'package:tinkoff_sdk/tinkoff_sdk.dart';
 
 // const String customerKey = 'mensaje42@gmail.com';

@@ -1,19 +1,19 @@
 import 'package:flutter/foundation.dart';
-import 'package:riverside/core/safe_coding/safe_coding.dart';
-import 'package:riverside/data/%20dto/auth/detail.dart';
-import 'package:riverside/data/%20dto/auth/sign_up.dart';
-import 'package:riverside/data/%20dto/bookings/post_booking_dto.dart';
-import 'package:riverside/data/%20dto/qr/qr_dto.dart';
-import 'package:riverside/data/%20dto/settings/change_email_dto.dart';
-import 'package:riverside/data/%20dto/settings/profile_dto.dart';
-import 'package:riverside/domain/auth/detail.dart';
-import 'package:riverside/domain/auth/user_data.dart';
-import 'package:riverside/domain/bookings/check_reserved.dart';
-import 'package:riverside/domain/bookings/post_bookings.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/domain/my_booking/booking_entity.dart';
-import 'package:riverside/domain/qr_code/qr_code.dart';
-import 'package:riverside/domain/profile/profile_info.dart';
+import 'package:run_n_rush/core/safe_coding/safe_coding.dart';
+import 'package:run_n_rush/data/%20dto/auth/detail.dart';
+import 'package:run_n_rush/data/%20dto/auth/sign_up.dart';
+import 'package:run_n_rush/data/%20dto/bookings/post_booking_dto.dart';
+import 'package:run_n_rush/data/%20dto/qr/qr_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/change_email_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/profile_dto.dart';
+import 'package:run_n_rush/domain/auth/detail.dart';
+import 'package:run_n_rush/domain/auth/user_data.dart';
+import 'package:run_n_rush/domain/bookings/check_reserved.dart';
+import 'package:run_n_rush/domain/bookings/post_bookings.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
+import 'package:run_n_rush/domain/qr_code/qr_code.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
 
 abstract class Repository extends ChangeNotifier {
   Future<Either<ExtendedErrors, UserData>> signIn(

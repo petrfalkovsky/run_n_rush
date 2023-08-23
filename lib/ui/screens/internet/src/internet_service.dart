@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
 
 class InternetScreenService extends GetxService with StreamSubscriberMixin {
   InternetScreenService({

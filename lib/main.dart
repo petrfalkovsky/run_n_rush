@@ -4,13 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
 import 'package:overlay_support/overlay_support.dart';
-import 'package:riverside/app_config.dart';
-import 'package:riverside/injection.dart';
-import 'package:riverside/logic/general_service.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/language/language.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/themes/themes.dart';
+import 'package:run_n_rush/app_config.dart';
+import 'package:run_n_rush/injection.dart';
+import 'package:run_n_rush/logic/general_service.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/language/language.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/themes/themes.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

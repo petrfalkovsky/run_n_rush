@@ -1,4 +1,4 @@
-import 'package:riverside/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
 
 abstract class Option<A> {
   const Option();

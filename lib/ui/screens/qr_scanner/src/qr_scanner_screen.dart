@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/constants/app_text_style.dart';
-import 'package:riverside/ui/shared/constants/constants.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
-import 'package:riverside/ui/shared/widgets/qr_scan_selector.dart';
-import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_controller.dart';
-import 'package:riverside/ui/shared/constants/assets.dart';
-import 'package:riverside/ui/shared/themes/app_text_theme.dart';
-import 'package:riverside/ui/shared/widgets/app_icon.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
+import 'package:run_n_rush/ui/shared/constants/constants.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/qr_scan_selector.dart';
+import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_controller.dart';
+import 'package:run_n_rush/ui/shared/constants/assets.dart';
+import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/app_icon.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:riverside/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class QrScannerScreen extends StatexWidget<QrScannerController> {
   QrScannerScreen({Key? key}) : super(() => QrScannerController(), key: key) {

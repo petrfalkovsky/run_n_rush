@@ -2,14 +2,14 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:riverside/core/safe_coding/safe_coding.dart';
-import 'package:riverside/data/%20dto/auth/detail.dart';
-import 'package:riverside/data/%20dto/settings/change_email_dto.dart';
-import 'package:riverside/data/%20dto/settings/profile_dto.dart';
-import 'package:riverside/domain/auth/detail.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/domain/profile/profile_info.dart';
-import 'package:riverside/logic/repository/repository.dart';
+import 'package:run_n_rush/core/safe_coding/safe_coding.dart';
+import 'package:run_n_rush/data/%20dto/auth/detail.dart';
+import 'package:run_n_rush/data/%20dto/settings/change_email_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/profile_dto.dart';
+import 'package:run_n_rush/domain/auth/detail.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
+import 'package:run_n_rush/logic/repository/repository.dart';
 
 part 'update_profile_bloc.freezed.dart';
 

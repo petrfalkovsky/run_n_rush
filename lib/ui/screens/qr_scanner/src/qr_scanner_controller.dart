@@ -2,12 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:riverside/data/%20dto/qr/qr_dto.dart';
-import 'package:riverside/domain/my_booking/booking_entity.dart';
-import 'package:riverside/ui/screens/main/main.dart';
-import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_service.dart';
-import 'package:riverside/ui/shared/alert.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/data/%20dto/qr/qr_dto.dart';
+import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
+import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_service.dart';
+import 'package:run_n_rush/ui/shared/alert.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:vfx_flutter_common/vfx_flutter_common.dart';
 
 class QrScannerController extends StatexController {

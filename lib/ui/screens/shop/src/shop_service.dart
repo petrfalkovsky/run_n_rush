@@ -2,15 +2,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/%20dto/bookings/post_booking_dto.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/domain/bookings/check_reserved.dart';
-import 'package:riverside/domain/profile/profile_info.dart';
-import 'package:riverside/logic/bookings/bookings_bloc.dart';
-import 'package:riverside/ui/screens/main/main.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/%20dto/bookings/post_booking_dto.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/domain/bookings/check_reserved.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
+import 'package:run_n_rush/logic/bookings/bookings_bloc.dart';
+import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 class ShopService extends GetxService with StreamSubscriberMixin {
   ShopService({

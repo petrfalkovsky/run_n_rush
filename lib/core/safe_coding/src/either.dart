@@ -1,4 +1,4 @@
-import 'package:riverside/core/safe_coding/safe_coding.dart';
+import 'package:run_n_rush/core/safe_coding/safe_coding.dart';
 
 abstract class Either<L, R> {
   const Either();

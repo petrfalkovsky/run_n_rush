@@ -1,5 +1,5 @@
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/domain/core/failures.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/domain/core/failures.dart';
 
 /// Валидирование строки, как EMail
 Either<ValueFailure<String>, String> validateEmail(String input,

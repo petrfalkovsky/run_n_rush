@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 
 class CircularSwitcher extends StatelessWidget {
   final bool value;

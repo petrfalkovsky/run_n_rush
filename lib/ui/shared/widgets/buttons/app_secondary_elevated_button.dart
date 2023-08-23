@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/shared/constants/constants.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/constants/constants.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 
 class AppSecondaryElevatedButton extends StatelessWidget {
   final String title;

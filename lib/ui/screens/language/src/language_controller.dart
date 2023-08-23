@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/ui/screens/language/language.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/ui/screens/language/language.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class LanguageScreenController extends StatexController {

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/data/%20dto/auth/auth_dto.dart';
-import 'package:riverside/domain/auth/detail.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/data/%20dto/auth/auth_dto.dart';
+import 'package:run_n_rush/domain/auth/detail.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
 
 part 'detail.g.dart';
 

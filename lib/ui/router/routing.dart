@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/screens/auth/src/sign_in/sign_in.dart';
-import 'package:riverside/ui/screens/auth/src/sign_in/src/reset_password.dart';
-import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_screen.dart';
-import 'package:riverside/ui/screens/scan/entry_code.dart';
-import 'package:riverside/ui/screens/auth/src/auth_welcome_screen.dart';
-import 'package:riverside/ui/screens/inventory/inventory.dart';
-import 'package:riverside/ui/screens/main/main.dart';
-import 'package:riverside/ui/screens/settings/src/settings_screen.dart';
-import 'package:riverside/ui/screens/settings/src/update_screen.dart';
-import 'package:riverside/ui/screens/shop/src/shop_screen.dart';
-import 'package:riverside/ui/screens/splash/splash.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_in/sign_in.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_in/src/reset_password.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
+import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_screen.dart';
+import 'package:run_n_rush/ui/screens/scan/entry_code.dart';
+import 'package:run_n_rush/ui/screens/auth/src/auth_welcome_screen.dart';
+import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
+import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/settings/src/refferal_screen.dart';
+import 'package:run_n_rush/ui/screens/settings/src/update_screen.dart';
+import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
+import 'package:run_n_rush/ui/screens/splash/splash.dart';
 
 class AppRoutes {
   static const String splash = '/';

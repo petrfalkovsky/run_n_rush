@@ -4,12 +4,12 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart' hide Trans, Response;
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:riverside/app_config.dart';
-import 'package:riverside/core/services/app_logger.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/shared/alert.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/app_config.dart';
+import 'package:run_n_rush/core/services/app_logger.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/shared/alert.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 abstract class IDioProvider {
   Dio get dio;

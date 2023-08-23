@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:riverside/data/%20dto/auth/detail.dart';
-import 'package:riverside/data/%20dto/auth/sign_in.dart';
-import 'package:riverside/data/%20dto/auth/auth_dto.dart';
-import 'package:riverside/data/%20dto/auth/sign_up.dart';
-import 'package:riverside/data/%20dto/bookings/bookings_dto.dart';
-import 'package:riverside/data/%20dto/my_booking/booking_dto.dart';
-import 'package:riverside/data/%20dto/bookings/post_booking_dto.dart';
-import 'package:riverside/data/%20dto/qr/qr_dto.dart';
-import 'package:riverside/data/%20dto/settings/change_email_dto.dart';
-import 'package:riverside/data/%20dto/settings/profile_dto.dart';
+import 'package:run_n_rush/data/%20dto/auth/detail.dart';
+import 'package:run_n_rush/data/%20dto/auth/sign_in.dart';
+import 'package:run_n_rush/data/%20dto/auth/auth_dto.dart';
+import 'package:run_n_rush/data/%20dto/auth/sign_up.dart';
+import 'package:run_n_rush/data/%20dto/bookings/bookings_dto.dart';
+import 'package:run_n_rush/data/%20dto/my_booking/booking_dto.dart';
+import 'package:run_n_rush/data/%20dto/bookings/post_booking_dto.dart';
+import 'package:run_n_rush/data/%20dto/qr/qr_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/change_email_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/profile_dto.dart';
 
 part 'rest_client.g.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/widgets/date_pickers/circular_switcher.dart';
-import 'package:riverside/ui/widgets/date_pickers/date_helper.dart';
-// import 'package:riverside/modules/core/presentation/circular_switcher.dart';
-// import 'package:riverside/modules/core/presentation/date_helper.dart';
+import 'package:run_n_rush/ui/widgets/date_pickers/circular_switcher.dart';
+import 'package:run_n_rush/ui/widgets/date_pickers/date_helper.dart';
+// import 'package:run_n_rush/modules/core/presentation/circular_switcher.dart';
+// import 'package:run_n_rush/modules/core/presentation/date_helper.dart';
 
 /// Return month index in range [DateTime.january] - [DateTime.december].
 Future<int?> showMonthPicker(

@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:number_inc_dec/number_inc_dec.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/constants/app_text_style.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
 
 class AppDatePicker extends StatelessWidget {
   final String? title;

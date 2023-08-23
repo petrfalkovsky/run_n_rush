@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
-import 'package:riverside/ui/shared/widgets/general_scaffold/src/custom_bottom_appbar.dart';
-import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/custom_bottom_appbar.dart';
+import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
 @immutable
 class BottomAppBarItem {

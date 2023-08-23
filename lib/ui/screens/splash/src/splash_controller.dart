@@ -1,5 +1,5 @@
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/ui/screens/splash/src/splash_service.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/ui/screens/splash/src/splash_service.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 import 'package:get/get.dart';
 

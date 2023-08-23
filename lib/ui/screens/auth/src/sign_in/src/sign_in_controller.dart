@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/auth/src/sign_in/sign_in.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_in/sign_in.dart';
 
 import 'package:vfx_flutter_common/getx_helpers.dart';
 

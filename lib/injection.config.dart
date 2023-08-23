@@ -6,27 +6,27 @@
 
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:riverside/core/services/access_token_service.dart' as _i3;
-import 'package:riverside/data/repository/local/local_repository.dart' as _i8;
-import 'package:riverside/data/repository/local/src/shared_pref_repo_impl.dart'
+import 'package:run_n_rush/core/services/access_token_service.dart' as _i3;
+import 'package:run_n_rush/data/repository/local/local_repository.dart' as _i8;
+import 'package:run_n_rush/data/repository/local/src/shared_pref_repo_impl.dart'
     as _i9;
-import 'package:riverside/data/repository/remote/remote_repository.dart'
+import 'package:run_n_rush/data/repository/remote/remote_repository.dart'
     as _i13;
-import 'package:riverside/data/repository/remote/src/http/api_client.dart'
+import 'package:run_n_rush/data/repository/remote/src/http/api_client.dart'
     as _i4;
-import 'package:riverside/data/repository/remote/src/http/dio_builder.dart'
+import 'package:run_n_rush/data/repository/remote/src/http/dio_builder.dart'
     as _i5;
-import 'package:riverside/data/repository/remote/src/remote_remote_repo_impl.dart'
+import 'package:run_n_rush/data/repository/remote/src/remote_remote_repo_impl.dart'
     as _i14;
-import 'package:riverside/data/repository/repository.dart' as _i15;
-import 'package:riverside/logic/auth/logout_bloc.dart' as _i10;
-import 'package:riverside/logic/auth/sign_in_bloc.dart' as _i16;
-import 'package:riverside/logic/auth/sign_up_bloc.dart' as _i17;
-import 'package:riverside/logic/bookings/bookings_bloc.dart' as _i6;
-import 'package:riverside/logic/my_booking/my_bookings_bloc.dart' as _i11;
-import 'package:riverside/logic/profile/update_profile_bloc.dart' as _i18;
-import 'package:riverside/logic/qr_code/qr_code_bloc.dart' as _i12;
-import 'package:riverside/logic/repository/repository.dart' as _i7;
+import 'package:run_n_rush/data/repository/repository.dart' as _i15;
+import 'package:run_n_rush/logic/auth/logout_bloc.dart' as _i10;
+import 'package:run_n_rush/logic/auth/sign_in_bloc.dart' as _i16;
+import 'package:run_n_rush/logic/auth/sign_up_bloc.dart' as _i17;
+import 'package:run_n_rush/logic/bookings/bookings_bloc.dart' as _i6;
+import 'package:run_n_rush/logic/my_booking/my_bookings_bloc.dart' as _i11;
+import 'package:run_n_rush/logic/profile/update_profile_bloc.dart' as _i18;
+import 'package:run_n_rush/logic/qr_code/qr_code_bloc.dart' as _i12;
+import 'package:run_n_rush/logic/repository/repository.dart' as _i7;
 
 const String _prod = 'prod';
 // ignore_for_file: unnecessary_lambdas

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 
 // карточка для экрана бронирования бассейна
 

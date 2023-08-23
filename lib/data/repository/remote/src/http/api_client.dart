@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:riverside/data/repository/remote/src/http/dio_builder.dart';
-import 'package:riverside/data/repository/remote/src/http/rest_client.dart';
+import 'package:run_n_rush/data/repository/remote/src/http/dio_builder.dart';
+import 'package:run_n_rush/data/repository/remote/src/http/rest_client.dart';
 
 @prod
 @lazySingleton

@@ -1,4 +1,4 @@
-import 'package:riverside/domain/profile/profile_info.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
 
 export 'src/shared_pref_repo_impl.dart';
 

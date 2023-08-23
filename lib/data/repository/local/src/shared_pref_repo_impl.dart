@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/domain/profile/profile_info.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Имплементация локального репозитория
@@ -91,5 +91,4 @@ class SharedPreferenceRepositoryImpl implements LocalRepository {
   // }
 
   // ~ Спрячем базовый интерфейс
-
 }

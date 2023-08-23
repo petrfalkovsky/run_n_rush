@@ -2,13 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/%20dto/auth/sign_up.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/logic/auth/sign_up_bloc.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/%20dto/auth/sign_up.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/logic/auth/sign_up_bloc.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
 class SignUpService extends GetxService with StreamSubscriberMixin {
   SignUpService({

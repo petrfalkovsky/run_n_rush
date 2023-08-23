@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/domain/bookings/post_bookings.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/domain/bookings/post_bookings.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
 
 part 'post_booking_dto.g.dart';
 

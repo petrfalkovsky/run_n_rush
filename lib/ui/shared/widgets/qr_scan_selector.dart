@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/screens/qr_scanner/src/qr_scanner_controller.dart';
-import 'package:riverside/ui/shared/widgets/buttons/custom_inkwell_qr_scan.dart';
+import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_controller.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/custom_inkwell_qr_scan.dart';
 
 class QrScannerSelectorToEntryCode extends GetView<QrScannerController>
     implements PreferredSizeWidget {

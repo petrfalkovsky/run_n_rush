@@ -3,12 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/data/%20dto/auth/detail.dart';
-import 'package:riverside/domain/auth/detail.dart';
-import 'package:riverside/domain/auth/user_data.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/logic/repository/repository.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/data/%20dto/auth/detail.dart';
+import 'package:run_n_rush/domain/auth/detail.dart';
+import 'package:run_n_rush/domain/auth/user_data.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/logic/repository/repository.dart';
 
 part 'sign_in_bloc.freezed.dart';
 

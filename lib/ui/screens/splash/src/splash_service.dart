@@ -1,10 +1,10 @@
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/shared/alert.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/shared/alert.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 class SplashScreenService extends GetxService with StreamSubscriberMixin {
   SplashScreenService({

@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/core/safe_coding/safe_coding.dart';
-import 'package:riverside/domain/bookings/check_reserved.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
+import 'package:run_n_rush/core/safe_coding/safe_coding.dart';
+import 'package:run_n_rush/domain/bookings/check_reserved.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
 part 'bookings_dto.g.dart';
 
 @JsonSerializable()

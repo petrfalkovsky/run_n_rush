@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/domain/core/value_objects.dart';
+import 'package:run_n_rush/domain/core/value_objects.dart';
 
 /// Предполагается, что сохранены значение и возможный [failureTag].
 /// Если [failureTag] отсутствует, он заменяется на [noTag

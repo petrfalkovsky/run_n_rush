@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/domain/my_booking/booking_entity.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
 
 part 'booking_dto.g.dart';
 

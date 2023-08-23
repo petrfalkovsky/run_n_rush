@@ -2,11 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:riverside/ui/screens/auth/src/sign_up/src/sign_up_controller.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_text_style.dart';
-import 'package:riverside/ui/shared/widgets/std_button.dart';
-import 'package:riverside/ui/shared/widgets/std_input.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_up/src/sign_up_controller.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
+import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
+import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
 
 class CreateProfileSignUp extends GetView<SignUpController> {
   const CreateProfileSignUp({Key? key}) : super(key: key);

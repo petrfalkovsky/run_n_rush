@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/shared/constants/app_colors.dart';
-import 'package:riverside/ui/shared/constants/app_text_style.dart';
-import 'package:riverside/ui/shared/widgets/std_button.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
+import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:riverside/ui/screens/settings/settings.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/screens/settings/refferal.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Settings extends StatexWidget<SettingsController> {
   Settings({Key? key}) : super(() => SettingsController(), key: key) {

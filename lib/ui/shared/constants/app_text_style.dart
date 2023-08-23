@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 abstract class AppTextStyles {
   const AppTextStyles._();

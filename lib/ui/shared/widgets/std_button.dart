@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
-import 'package:riverside/ui/shared/themes/app_text_theme.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
 class StdButton extends StatelessWidget {
   const StdButton(

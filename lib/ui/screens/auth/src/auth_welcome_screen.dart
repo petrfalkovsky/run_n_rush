@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:riverside/ui/screens/auth/src/auth_controller.dart';
-import 'package:riverside/ui/shared/constants/assets.dart';
-import 'package:riverside/ui/shared/themes/app_colors_theme.dart';
-import 'package:riverside/ui/shared/themes/app_text_theme.dart';
-import 'package:riverside/ui/shared/widgets/buttons/custom_rounded_button.dart';
+import 'package:run_n_rush/ui/screens/auth/src/auth_controller.dart';
+import 'package:run_n_rush/ui/shared/constants/assets.dart';
+import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/custom_rounded_button.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class AuthWelcomeScreen extends StatexWidget<AuthController> {

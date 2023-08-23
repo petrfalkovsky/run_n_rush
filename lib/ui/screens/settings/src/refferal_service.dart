@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/%20dto/settings/change_email_dto.dart';
-import 'package:riverside/data/%20dto/settings/profile_dto.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
-import 'package:riverside/domain/profile/profile_info.dart';
-import 'package:riverside/logic/auth/logout_bloc.dart';
-import 'package:riverside/logic/profile/update_profile_bloc.dart';
-import 'package:riverside/ui/router/routing.dart';
-import 'package:riverside/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:riverside/ui/screens/main/main.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/%20dto/settings/change_email_dto.dart';
+import 'package:run_n_rush/data/%20dto/settings/profile_dto.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/domain/profile/profile_info.dart';
+import 'package:run_n_rush/logic/auth/logout_bloc.dart';
+import 'package:run_n_rush/logic/profile/update_profile_bloc.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
+import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 class SettingsService extends GetxService with StreamSubscriberMixin {
   SettingsService({

@@ -1,11 +1,11 @@
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/data/%20dto/qr/qr_dto.dart';
-import 'package:riverside/logic/qr_code/qr_code_bloc.dart';
-import 'package:riverside/ui/screens/main/main.dart';
-import 'package:riverside/ui/shared/alert.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/data/%20dto/qr/qr_dto.dart';
+import 'package:run_n_rush/logic/qr_code/qr_code_bloc.dart';
+import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/shared/alert.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 class QrScannerService extends GetxService with StreamSubscriberMixin {
   QrScannerService({

@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverside/core/safe_coding/src/either.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/domain/qr_code/qr_code.dart';
+import 'package:run_n_rush/core/safe_coding/src/either.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/domain/qr_code/qr_code.dart';
 
 part 'qr_dto.g.dart';
 

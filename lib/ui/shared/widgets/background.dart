@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Background extends StatelessWidget {
   const Background({Key? key}) : super(key: key);

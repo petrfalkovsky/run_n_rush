@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:riverside/ui/router/routing.dart';
+import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class AuthController extends StatexController {

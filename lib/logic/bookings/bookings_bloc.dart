@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:riverside/core/safe_coding/safe_coding.dart';
-import 'package:riverside/data/%20dto/bookings/post_booking_dto.dart';
-import 'package:riverside/domain/bookings/check_reserved.dart';
-import 'package:riverside/domain/bookings/post_bookings.dart';
-import 'package:riverside/domain/core/extended_errors.dart';
-import 'package:riverside/logic/repository/repository.dart';
+import 'package:run_n_rush/core/safe_coding/safe_coding.dart';
+import 'package:run_n_rush/data/%20dto/bookings/post_booking_dto.dart';
+import 'package:run_n_rush/domain/bookings/check_reserved.dart';
+import 'package:run_n_rush/domain/bookings/post_bookings.dart';
+import 'package:run_n_rush/domain/core/extended_errors.dart';
+import 'package:run_n_rush/logic/repository/repository.dart';
 
 part 'bookings_bloc.freezed.dart';
 

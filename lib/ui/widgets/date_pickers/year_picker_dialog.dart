@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riverside/ui/widgets/date_pickers/circular_switcher.dart';
-// import 'package:riverside/modules/core/presentation/circular_switcher.dart';
+import 'package:run_n_rush/ui/widgets/date_pickers/circular_switcher.dart';
+// import 'package:run_n_rush/modules/core/presentation/circular_switcher.dart';
 
 Future<int?> showYearPicker(
   BuildContext context, {

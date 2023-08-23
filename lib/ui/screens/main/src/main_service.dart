@@ -4,11 +4,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
-import 'package:riverside/core/utils/stream_subscriber.dart';
-import 'package:riverside/domain/my_booking/booking_entity.dart';
-import 'package:riverside/logic/my_booking/my_bookings_bloc.dart';
-import 'package:riverside/ui/shared/all_shared.dart';
-import 'package:riverside/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/core/utils/stream_subscriber.dart';
+import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
+import 'package:run_n_rush/logic/my_booking/my_bookings_bloc.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
 class MainService extends GetxService with StreamSubscriberMixin {
   MainService({MyBookingsBloc? myBookingBloc})

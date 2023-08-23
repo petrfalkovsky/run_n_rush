@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:riverside/data/repository/local/local_repository.dart';
+import 'package:run_n_rush/data/repository/local/local_repository.dart';
 
 enum LanguageApp { ru, en }
 
