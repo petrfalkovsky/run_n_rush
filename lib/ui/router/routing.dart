@@ -9,7 +9,6 @@ import 'package:run_n_rush/ui/screens/auth/src/auth_welcome_screen.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
 import 'package:run_n_rush/ui/screens/settings/src/referral_screen.dart';
-import 'package:run_n_rush/ui/screens/settings/src/update_screen.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';
 
@@ -89,11 +88,6 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.settings,
     page: () => Referral(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.updateProfile,
-    page: () => const UpdateProfileScreen(),
     transition: Transition.fadeIn,
   ),
   GetPage(
