@@ -16,7 +16,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class InventoryScreen extends StatexWidget<InventoryController> {
   InventoryScreen({Key? key}) : super(() => InventoryController(), key: key) {
-    debugPrint(' Bookings.Bookings');
+    debugPrint(' экран склада');
   }
 
   @override
@@ -26,40 +26,9 @@ class InventoryScreen extends StatexWidget<InventoryController> {
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(64),
-        child: Stack(
-          children: [
-            AppBar(
-              backgroundColor: const Color(0xFF8784D3),
-              elevation: 0,
-              toolbarHeight: 0,
-              automaticallyImplyLeading: false,
-              flexibleSpace: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Inventory',
-                          style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(64),
+        child: AppBarWidget(),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 16),
@@ -101,6 +70,48 @@ class InventoryScreen extends StatexWidget<InventoryController> {
   }
 }
 
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        AppBar(
+          backgroundColor: const Color(0xFF8784D3),
+          elevation: 0,
+          toolbarHeight: 0,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'Inventory',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class ProductListWidget extends StatelessWidget {
   const ProductListWidget({
     super.key,
@@ -121,7 +132,7 @@ class ProductListWidget extends StatelessWidget {
               crossAxisSpacing: 0,
             ),
             // число карточек в списке
-            itemCount: 4,
+            itemCount: 8,
             itemBuilder: (context, index) {
               return Stack(
                 children: [

@@ -17,75 +17,19 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class ShopScreen extends StatexWidget<InventoryController> {
   ShopScreen({Key? key}) : super(() => InventoryController(), key: key) {
-    debugPrint(' Bookings.Bookings');
+    debugPrint(' экран магазина');
   }
 
   @override
   Widget buildWidget(BuildContext context) {
-    final textTheme = AppTextTheme.fromPlatform;
+    // final textTheme = AppTextTheme.fromPlatform;
 
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(64),
-        child: Stack(
-          children: [
-            AppBar(
-              backgroundColor: const Color(0xFF8784D3),
-              elevation: 0,
-              toolbarHeight: 0,
-              automaticallyImplyLeading: false,
-              flexibleSpace: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  /// строка элементов эппбара, заголовок + баланс
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 24, left: 24, right: 24),
-                    child: Row(
-                      children: [
-                        const Text(
-                          'Shop',
-                          style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                          ),
-                        ),
-                        const Spacer(),
-                        SizedBox(
-                          width: 200,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Image.asset(AppIcons.coin),
-                              const SizedBox(width: 5),
-                              const Text(
-                                '00.0025',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              8.w,
-                              StdButton(
-                                  width: 65,
-                                  text: 'BUY',
-                                  isActive: true,
-                                  onPress: () {})
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(64),
+        child: AppBarWidget(),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 16),
@@ -131,6 +75,72 @@ class ShopScreen extends StatexWidget<InventoryController> {
   }
 }
 
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        AppBar(
+          backgroundColor: const Color(0xFF8784D3),
+          elevation: 0,
+          toolbarHeight: 0,
+          automaticallyImplyLeading: false,
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              /// строка элементов эппбара, заголовок + баланс
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24, left: 24, right: 24),
+                child: Row(
+                  children: [
+                    const Text(
+                      'Shop',
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                    const Spacer(),
+                    SizedBox(
+                      width: 200,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Image.asset(AppIcons.coin),
+                          const SizedBox(width: 5),
+                          const Text(
+                            '00.0025',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                            ),
+                          ),
+                          8.w,
+                          StdButton(
+                              width: 65,
+                              text: 'BUY',
+                              isActive: true,
+                              onPress: () {})
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class ProductListWidget extends StatelessWidget {
   const ProductListWidget({
     super.key,
@@ -153,7 +163,7 @@ class ProductListWidget extends StatelessWidget {
             ),
 
             /// число карточек в списке
-            itemCount: 4,
+            itemCount: 12,
             itemBuilder: (context, index) {
               return Stack(
                 children: [

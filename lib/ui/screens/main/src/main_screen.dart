@@ -40,33 +40,41 @@ class Main extends StatexWidget<MainController> {
         child: AppBarWidget(),
       ),
       child: Obx(
-        () => SingleChildScrollView(
-          child: Column(
-            children: [
-              controller.indexTab == 1
-                  ? controller.archiveBookingList.isNotEmpty
-                      ? const SizedBox.shrink()
-                      : const SizedBox.shrink()
-                  : const Text(
-                      'Hello, d.push91@gmail.com',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontStyle: FontStyle.italic),
-                    ),
-              5.h,
-              const GreatingBalanceWidget(),
-              40.h,
-              const AddSneakerWidget(),
-              20.h,
-              const ListAddSneakersWidget(),
-              40.h,
-              const SneakerDataWidget(),
-              16.h,
-              const LightningDataWidget(),
-              46.h,
-              StdButton(text: 'Start', isActive: true, onPress: () {})
-            ],
+        () => SafeArea(
+          minimum: const EdgeInsets.symmetric(horizontal: 24),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                controller.indexTab == 1
+                    ? controller.archiveBookingList.isNotEmpty
+                        ? const SizedBox.shrink()
+                        : const SizedBox.shrink()
+                    : const Text(
+                        'Hello, d.push91@gmail.com',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontStyle: FontStyle.italic),
+                      ),
+                5.h,
+                const GreatingBalanceWidget(),
+                40.h,
+                const AddSneakerWidget(),
+                20.h,
+                const ListAddSneakersWidget(),
+                40.h,
+                const SneakerDataWidget(),
+                16.h,
+                const LightningDataWidget(),
+                46.h,
+                StdButton(
+                  height: 52,
+                  text: 'Start',
+                  isActive: true,
+                  onPress: () {},
+                )
+              ],
+            ),
           ),
         ),
       ),

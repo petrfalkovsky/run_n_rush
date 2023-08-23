@@ -36,7 +36,7 @@ class _InternetScreen extends GetView<InternetScreenController> {
                   40.h,
                   Text(
                     'No internet connection',
-                    style: AppStyles.text17
+                    style: AppStyles.body
                         .andWeight(FontWeight.bold)
                         .andColor(AppColors.text.secondary),
                   ),

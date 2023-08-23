@@ -28,10 +28,10 @@ class BottomBarButton extends StatelessWidget {
         duration: kThemeAnimationDuration,
         curve: Curves.fastOutSlowIn,
         tween: ColorTween(
-          begin: theme.appColorsScheme.colors.text.tertiary,
+          begin: theme.appColorsScheme.colors.text.secondaryTwo,
           end: isActive
               ? theme.appColorsScheme.colors.text.primary
-              : theme.appColorsScheme.colors.text.tertiary,
+              : theme.appColorsScheme.colors.text.secondaryTwo,
         ),
         builder: (_, Color? color, __) {
           return Column(

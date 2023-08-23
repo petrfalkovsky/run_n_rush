@@ -4,38 +4,41 @@ import 'package:flutter/widgets.dart';
 class AppStyles {
   static const fontRegular = 'Proxima-Nova';
 
-  static const text10 = TextStyle(
-    fontSize: 10,
+  static const largeTitle = TextStyle(
+    fontSize: 72,
     fontFamily: fontRegular,
   );
 
-  static const text12 = TextStyle(
-    fontSize: 12,
+  static const title = TextStyle(
+    fontSize: 32,
     fontFamily: fontRegular,
   );
 
-  static const text14 = TextStyle(
-    fontSize: 14,
+  static const title2 = TextStyle(
+    fontSize: 28,
     fontFamily: fontRegular,
+    fontWeight: FontWeight.w600,
   );
 
-  static const text16 = TextStyle(
+  static const headline = TextStyle(
+    fontSize: 20,
+    fontFamily: fontRegular,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const body = TextStyle(
+    fontSize: 16,
+    fontFamily: fontRegular,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const plainText = TextStyle(
     fontSize: 16,
     fontFamily: fontRegular,
   );
 
-  static const text17 = TextStyle(
-    fontSize: 17,
-    fontFamily: fontRegular,
-  );
-
-  static const text18 = TextStyle(
-    fontSize: 18,
-    fontFamily: fontRegular,
-  );
-
-  static const text20 = TextStyle(
-    fontSize: 20,
+  static const caption = TextStyle(
+    fontSize: 12,
     fontFamily: fontRegular,
   );
 

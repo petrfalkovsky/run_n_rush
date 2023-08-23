@@ -4,18 +4,19 @@ import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
 class StdButton extends StatelessWidget {
-  const StdButton(
-      {required this.text,
-      required this.isActive,
-      this.color,
-      this.isOutlined = false,
-      this.isLoading = false,
-      this.padding,
-      this.width,
-      this.height,
-      required this.onPress,
-      Key? key})
-      : super(key: key);
+  const StdButton({
+    required this.text,
+    required this.isActive,
+    this.color,
+    this.textColor,
+    this.isOutlined = false,
+    this.isLoading = false,
+    this.padding,
+    this.width,
+    this.height,
+    required this.onPress,
+    Key? key,
+  }) : super(key: key);
 
   final String text;
   final bool isActive;
@@ -26,6 +27,7 @@ class StdButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? color;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class StdButton extends StatelessWidget {
               isActive: isActive,
               isLoading: isLoading,
               onPress: onPress,
+              textColor: textColor,
             )
           : _CustomElevatedButton(
               text: text,
@@ -47,6 +50,7 @@ class StdButton extends StatelessWidget {
               isLoading: isLoading,
               onPress: onPress,
               color: color,
+              textColor: textColor,
             ),
     );
   }
@@ -60,6 +64,7 @@ class _CustomOutlinaButton extends StatelessWidget {
     required this.isLoading,
     required this.onPress,
     this.padding,
+    this.textColor,
   }) : super(key: key);
 
   final String text;
@@ -67,6 +72,8 @@ class _CustomOutlinaButton extends StatelessWidget {
   final bool isLoading;
   final Function() onPress;
   final EdgeInsets? padding;
+  final Color? textColor;
+
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
@@ -92,7 +99,9 @@ class _CustomOutlinaButton extends StatelessWidget {
             )
           : Text(
               text,
-              style: AppTextTheme.fromPlatform.b2_0,
+              style: AppTextTheme.fromPlatform.b2_0.copyWith(
+                color: textColor,
+              ),
             ),
     );
   }
@@ -107,6 +116,7 @@ class _CustomElevatedButton extends StatelessWidget {
     required this.onPress,
     required this.color,
     this.padding,
+    this.textColor,
   }) : super(key: key);
 
   final String text;
@@ -115,13 +125,15 @@ class _CustomElevatedButton extends StatelessWidget {
   final Function() onPress;
   final EdgeInsets? padding;
   final Color? color;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorsScheme = theme.appColorsScheme;
     final resolvedButtonColor = color ?? colorsScheme.colors.accent.accent1;
-    final resolvedTextColor = colorsScheme.other.white;
+    final resolvedTextColor = textColor ?? colorsScheme.other.white;
+
     return ElevatedButton(
       onPressed: isActive
           ? isLoading
@@ -151,10 +163,11 @@ class _CustomElevatedButton extends StatelessWidget {
               text,
               softWrap: false,
               style: theme.appTextTheme.b2_0.copyWith(
-                  color: resolvedTextColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic),
+                color: resolvedTextColor,
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+              ),
             ),
     );
   }

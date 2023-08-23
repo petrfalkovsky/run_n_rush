@@ -24,10 +24,14 @@ abstract class AppColors {
   static _TextColors text = const _TextColors(
     0xFF222222,
     <int, Color>{
-      1: Color(0xFF222222),
-      2: Color(0xFF7D8082),
+      // primary
+      1: Color(0xFFFFFFFF),
+      // secondary
+      2: Color(0xFFA0A0A1),
+      // пока не нужен
       3: Color(0xFF58616C),
-      4: Color(0xFFA4A8AB),
+      // secondaryTwo
+      4: Color(0xFFBDBCDE),
     },
   );
   static _NotificationColors notification = const _NotificationColors(
@@ -97,7 +101,7 @@ class _TextColors extends ColorSwatch<int> {
 
   Color get card => this[3]!;
 
-  Color get tertiary => this[4]!;
+  Color get secondaryTwo => this[4]!;
 }
 
 class _NotificationColors extends ColorSwatch<int> {

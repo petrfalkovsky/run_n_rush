@@ -20,7 +20,7 @@ void showDialogYesNo({
         alignment: Alignment.center,
         child: Text(
           text.tr(),
-          style: AppStyles.text17.andWeight(FontWeight.bold),
+          style: AppStyles.body.andWeight(FontWeight.bold),
         ),
       ),
       actions: [

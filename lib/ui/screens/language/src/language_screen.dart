@@ -38,8 +38,8 @@ class LanguageScreen extends StatexWidget<LanguageScreenController> {
                           Text(
                             language[i].lang,
                             style: controller.selectedLang(locale[i])
-                                ? AppStyles.text16.andWeight(FontWeight.bold)
-                                : AppStyles.text14.andWeight(FontWeight.normal),
+                                ? AppStyles.headline.andWeight(FontWeight.bold)
+                                : AppStyles.title2.andWeight(FontWeight.normal),
                           ),
                         ],
                       ),

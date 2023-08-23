@@ -62,7 +62,7 @@ class StdInput extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15.0),
               child: Text(
                 label ?? '',
-                style: AppStyles.text12,
+                style: AppStyles.title,
                 // .andWeight(FontWeight.w600)
                 // .copyWith(color: AppColors.textGrey),
               ),

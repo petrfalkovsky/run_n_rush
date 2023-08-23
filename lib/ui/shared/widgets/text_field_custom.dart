@@ -35,7 +35,7 @@ class TextFieldCustom extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15.0),
               child: Text(
                 label ?? '',
-                style: AppStyles.text12.andWeight(FontWeight.w600),
+                style: AppStyles.title.andWeight(FontWeight.w600),
                 // .copyWith(color: AppColors.textGrey),
               ),
             ),
@@ -45,7 +45,7 @@ class TextFieldCustom extends StatelessWidget {
             height: height ?? 230,
             child: TextField(
               textAlignVertical: TextAlignVertical.top,
-              style: AppStyles.text16,
+              style: AppStyles.headline,
               strutStyle: const StrutStyle(
                   fontSize: 16, fontFamily: AppStyles.fontRegular),
               onChanged: onChanged,
@@ -60,7 +60,7 @@ class TextFieldCustom extends StatelessWidget {
                 hintMaxLines: 2,
                 hintText: hintText,
                 contentPadding: const EdgeInsets.all(15),
-                hintStyle: AppStyles.text14.andWeight(FontWeight.bold),
+                hintStyle: AppStyles.title2.andWeight(FontWeight.bold),
                 // .andColor(AppColors.textDark),
                 border: InputBorder.none,
                 // focusedBorder: const OutlineInputBorder(
