@@ -374,7 +374,7 @@ class AddSneakerWidget extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Image.asset(AppIcons.mono_jogger),
+                Image.asset(AppIcons.monoJogger),
                 Container(
                   color: Colors.black.withOpacity(0.05),
                 ),

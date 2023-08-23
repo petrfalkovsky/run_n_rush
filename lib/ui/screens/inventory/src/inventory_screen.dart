@@ -70,8 +70,11 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
+                    /// фильтр
                     FilterDropdown(),
                     const Spacer(),
+
+                    /// переключатель предложений купить/продать
                     AnimatedSwitcherWidget(
                       onTap: () {},
                     ),
@@ -82,7 +85,10 @@ class InventoryScreen extends StatexWidget<InventoryController> {
               Expanded(
                 child: Stack(
                   children: [
+                    /// товары
                     const ProductListWidget(),
+
+                    /// todo удалить/поменять контроллер
                     if (controller.isLoading) Consts().preloader,
                   ],
                 ),
@@ -108,7 +114,8 @@ class ProductListWidget extends StatelessWidget {
         children: [
           GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisExtent: 310,
+              /// можно регулировать высоту карточки
+              mainAxisExtent: 300,
               crossAxisCount: 2,
               mainAxisSpacing: 16,
               crossAxisSpacing: 0,
@@ -132,7 +139,12 @@ class ProductListWidget extends StatelessWidget {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  bottom: 18, top: 12, left: 10, right: 10),
+
+                                  /// боттом - центрировать кнопку к бордеру карточки по вертикали
+                                  bottom: 14,
+                                  top: 12,
+                                  left: 10,
+                                  right: 10),
                               child: Container(
                                 // height: 300,
                                 decoration: BoxDecoration(
@@ -205,15 +217,21 @@ class ProductListWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Positioned(
-                        bottom: 6,
-                        left: 32,
-                        child: StdButton(
-                            height: 36,
-                            width: 122,
-                            text: 'PUT ON',
-                            isActive: true,
-                            onPress: () {}),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              StdButton(
+                                  height: 36,
+                                  width: 122,
+                                  text: 'PUT ON',
+                                  isActive: true,
+                                  onPress: () {}),
+                            ],
+                          ),
+                        ],
                       ),
                     ],
                   ),

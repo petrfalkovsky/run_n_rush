@@ -41,7 +41,7 @@ class AppIcons {
   static const welcomeScreenBg = '$_basePathImg/welcome_screen_bg.png';
   static const splashScreen = '$_basePathImg/splash_screen_bg.png';
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';
-  static const mono_jogger = '$_basePathImg/mono_jogger.png';
+  static const monoJogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
 
   static Widget svgWidget(String path,

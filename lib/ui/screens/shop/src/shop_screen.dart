@@ -39,6 +39,7 @@ class ShopScreen extends StatexWidget<InventoryController> {
               flexibleSpace: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  /// строка элементов эппбара, заголовок + баланс
                   Padding(
                     padding:
                         const EdgeInsets.only(bottom: 24, left: 24, right: 24),
@@ -95,8 +96,11 @@ class ShopScreen extends StatexWidget<InventoryController> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
+                    /// фильтр
                     FilterDropdown(),
                     const Spacer(),
+
+                    /// переключатель предложений купить/продать
                     AnimatedSwitcherWidgetTwo(
                       allText: 'Buy',
                       dressedText: 'Sell',
@@ -111,7 +115,10 @@ class ShopScreen extends StatexWidget<InventoryController> {
               Expanded(
                 child: Stack(
                   children: [
+                    /// товары
                     const ProductListWidget(),
+
+                    /// todo удалить/поменять контроллер
                     if (controller.isLoading) Consts().preloader,
                   ],
                 ),
@@ -132,17 +139,20 @@ class ProductListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
-        // controller: controller.pageController,
+
+        /// controller: controller.pageController,
         physics: const BouncingScrollPhysics(),
         children: [
           GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisExtent: 310,
+              /// можно регулировать высоту карточки
+              mainAxisExtent: 300,
               crossAxisCount: 2,
               mainAxisSpacing: 16,
               crossAxisSpacing: 0,
             ),
-            // число карточек в списке
+
+            /// число карточек в списке
             itemCount: 4,
             itemBuilder: (context, index) {
               return Stack(
@@ -152,18 +162,21 @@ class ProductListWidget extends StatelessWidget {
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
-                          side: const BorderSide(
-                              // color: Colors.grey,
-                              ),
+                          side: const BorderSide(),
                         ),
                         color: Colors.transparent,
                         child: Stack(
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  bottom: 18, top: 12, left: 10, right: 10),
+
+                                  /// боттом - центрировать кнопку к бордеру карточки по вертикали
+                                  bottom: 14,
+                                  top: 12,
+                                  left: 10,
+                                  right: 10),
                               child: Container(
-                                // height: 300,
+                                /// height: 300,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
@@ -181,7 +194,8 @@ class ProductListWidget extends StatelessWidget {
                                         color: const Color(0xFF134552),
                                         borderType: BorderType.RRect,
                                         radius: const Radius.circular(12),
-                                        // padding: const EdgeInsets.all(6),
+
+                                        /// padding: const EdgeInsets.all(6),
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(12),
@@ -192,7 +206,8 @@ class ProductListWidget extends StatelessWidget {
                                                 Colors.black.withOpacity(0.05),
                                             child: Image.asset(
                                               AppIcons.jogger_2,
-                                              // fit: BoxFit.cover,
+
+                                              /// fit: BoxFit.cover,
                                             ),
                                           ),
                                         ),
@@ -238,15 +253,21 @@ class ProductListWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Positioned(
-                        bottom: 6,
-                        left: 45,
-                        child: StdButton(
-                            height: 36,
-                            width: 97,
-                            text: 'BUY',
-                            isActive: true,
-                            onPress: () {}),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              StdButton(
+                                  height: 36,
+                                  width: 97,
+                                  text: 'BUY',
+                                  isActive: true,
+                                  onPress: () {}),
+                            ],
+                          ),
+                        ],
                       ),
                     ],
                   ),
