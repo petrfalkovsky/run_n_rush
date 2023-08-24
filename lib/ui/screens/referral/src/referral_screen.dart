@@ -7,7 +7,7 @@ import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:run_n_rush/ui/screens/settings/referral.dart';
+import 'package:run_n_rush/ui/screens/referral/referral.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Referral extends StatexWidget<SettingsController> {

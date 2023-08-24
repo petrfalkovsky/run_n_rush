@@ -8,7 +8,8 @@ import 'package:run_n_rush/ui/screens/scan/entry_code.dart';
 import 'package:run_n_rush/ui/screens/auth/src/auth_welcome_screen.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
-import 'package:run_n_rush/ui/screens/settings/src/referral_screen.dart';
+import 'package:run_n_rush/ui/screens/referral/src/referral_screen.dart';
+import 'package:run_n_rush/ui/screens/settings/src/settings_screen.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';
 
@@ -21,13 +22,14 @@ class AppRoutes {
   static const String signUp = '/signUp';
   static const String createProfileSignUp = '/createProfileSignUp';
   static const String main = '/main';
-  static const String bookings = '/bookings';
-  static const String settings = '/settings';
+  static const String inventory = '/bookings';
+  static const String referral = '/referral';
   static const String currentBookings = '/currentBookings';
   static const String updateProfile = '/updateProfile';
   static const String qrScanner = '/qrScanner';
   static const String payment = '/payment';
   static const String shop = '/shop';
+  static const String settings = '/settings';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -81,12 +83,12 @@ final List<GetPage> routes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: AppRoutes.bookings,
+    name: AppRoutes.inventory,
     page: () => InventoryScreen(),
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: AppRoutes.settings,
+    name: AppRoutes.referral,
     page: () => Referral(),
     transition: Transition.fadeIn,
   ),
@@ -98,6 +100,11 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.shop,
     page: () => ShopScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.settings,
+    page: () => Settings(),
     transition: Transition.fadeIn,
   ),
 ];

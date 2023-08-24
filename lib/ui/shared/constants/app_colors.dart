@@ -6,7 +6,7 @@ abstract class AppColors {
   const AppColors._();
 
   static _AccentColors accent = const _AccentColors(
-    0xFF4AAE3A,
+    0xFFFEFEFF,
     <int, Color>{
       1: Color(0xFF1DB9DD),
       2: Color(0xFFFF9900),

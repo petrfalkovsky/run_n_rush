@@ -34,6 +34,7 @@ class AppIcons {
   static const podium = '$_basePathIcons/podium.svg';
   static const sneaker = '$_basePathIcons/sneaker.svg';
   static const lightning = '$_basePathIcons/lightning.svg';
+  static const arrowForward = '$_basePathIcons/arrow_forward.svg';
 
   static const jogger_2 = '$_basePathImg/jogger_2.png';
   static const coin = '$_basePathImg/blue_coin.png';

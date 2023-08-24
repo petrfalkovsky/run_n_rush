@@ -6,7 +6,7 @@ import 'package:run_n_rush/ui/screens/internet/internet.dart';
 import 'package:run_n_rush/ui/screens/language/language.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
 import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_service.dart';
-import 'package:run_n_rush/ui/screens/settings/referral.dart';
+import 'package:run_n_rush/ui/screens/referral/referral.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_controller.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_service.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';

@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
@@ -29,9 +30,9 @@ class Main extends StatexWidget<MainController> {
   @override
   Widget buildWidget(BuildContext context) {
     // todo убрать хардкод и переменные добавить
-    final textTheme = AppTextTheme.fromPlatform;
+    // final textTheme = AppTextTheme.fromPlatform;
 
-    debugPrint('controller.activeBookingList ${controller.activeBookingList}');
+    // debugPrint('controller.activeBookingList ${controller.activeBookingList}');
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
@@ -49,10 +50,10 @@ class Main extends StatexWidget<MainController> {
                     ? controller.archiveBookingList.isNotEmpty
                         ? const SizedBox.shrink()
                         : const SizedBox.shrink()
-                    : const Text(
+                    : Text(
                         'Hello, d.push91@gmail.com',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: AppColors.accent,
                             fontSize: 24,
                             fontStyle: FontStyle.italic),
                       ),
@@ -99,9 +100,10 @@ class LightningDataWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 18.0),
           child: Row(children: [
             Container(
-                alignment: Alignment.center,
-                width: 28,
-                child: AppIcons.svgWidget(AppIcons.lightning, width: 14)),
+              alignment: Alignment.center,
+              width: 28,
+              child: AppIcons.svgWidget(AppIcons.lightning, width: 14),
+            ),
             const Spacer(),
             const Text(
               '0.0/0.0',
@@ -163,7 +165,6 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AppIcons.svgWidget(AppIcons.settings),
         Image.asset(
           'assets/images/appbar_frame.png',
           fit: BoxFit.cover,
@@ -182,47 +183,6 @@ class AppBarWidget extends StatelessWidget {
         ),
         const SettingsIconWidget(),
         const AvatarWidget(),
-        // Positioned(
-        //   bottom: MediaQuery.of(context).size.height * 0.078,
-        //   left: MediaQuery.of(context).size.width / 2 - 72,
-        //   child: Container(
-        //     width: 152,
-        //     height: 152,
-        //     decoration: BoxDecoration(
-        //       shape: BoxShape.circle,
-        //       border: Border.all(
-        //         color: Colors.white.withOpacity(0.1),
-        //         width: 2,
-        //       ),
-        //     ),
-        //     child: ClipOval(
-        //       child: BackdropFilter(
-        //         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        //         child: Container(
-        //           color: Colors.transparent,
-        //           child: Center(
-        //             child: Container(
-        //               width: 138,
-        //               height: 138,
-        //               decoration: const BoxDecoration(
-        //                 shape: BoxShape.circle,
-        //                 color: Color(0xFF01B8FF),
-        //               ),
-        //               child: Center(
-        //                 child: Image.asset(
-        //                   AppIcons.avatar,
-        //                   width: 59,
-        //                   height: 59,
-        //                   fit: BoxFit.cover,
-        //                 ),
-        //               ),
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }
@@ -308,7 +268,9 @@ class SettingsIconWidget extends StatelessWidget {
             ),
           ],
         ),
-        child: AppIcons.svgWidget(AppIcons.settings, width: 26.5),
+        child: InkWell(
+            onTap: () => Get.toNamed(AppRoutes.settings),
+            child: AppIcons.svgWidget(AppIcons.settings, width: 26.5)),
       ),
     );
   }
