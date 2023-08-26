@@ -25,7 +25,7 @@ class GeneralService extends GetxService {
       ..lazyPut(() => SignUpService())
       ..lazyPut(() => MainService())
       ..lazyPut(() => InventoryService())
-      ..lazyPut(() => SettingsService())
+      ..lazyPut(() => ReferralsService())
       ..lazyPut(() => GeneralScaffoldService())
       ..lazyPut(() => InventoryService())
       ..lazyPut(() => InventoryController())

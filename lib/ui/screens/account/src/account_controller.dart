@@ -14,8 +14,8 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 enum TypeSetting { name, sername, birthday, phone, password, email, code, none }
 
-class SettingsController extends StatexController with StreamSubscriberMixin {
-  SettingsController({
+class AccountController extends StatexController with StreamSubscriberMixin {
+  AccountController({
     ReferralsService? service,
     LocalRepository? repoLocal,
   })  : _service = service ?? Get.find(),

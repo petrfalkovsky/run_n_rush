@@ -10,8 +10,8 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 import 'package:run_n_rush/ui/screens/referral/referral.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 
-class Referral extends StatexWidget<SettingsController> {
-  Referral({Key? key}) : super(() => SettingsController(), key: key) {
+class Referral extends StatexWidget<ReferralsController> {
+  Referral({Key? key}) : super(() => ReferralsController(), key: key) {
     debugPrint(' экран реферальной программы"');
   }
 

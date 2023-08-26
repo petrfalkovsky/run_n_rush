@@ -14,14 +14,14 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 enum TypeSetting { name, sername, birthday, phone, password, email, code, none }
 
-class SettingsController extends StatexController with StreamSubscriberMixin {
-  SettingsController({
-    SettingsService? service,
+class ReferralsController extends StatexController with StreamSubscriberMixin {
+  ReferralsController({
+    ReferralsService? service,
     LocalRepository? repoLocal,
   })  : _service = service ?? Get.find(),
         _repoLocal = repoLocal ?? GetIt.I.get();
 
-  final SettingsService _service;
+  final ReferralsService _service;
   final LocalRepository _repoLocal;
 
   final _userData = ProfileInfo.empty().obs;

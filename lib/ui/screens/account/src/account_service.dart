@@ -14,8 +14,8 @@ import 'package:run_n_rush/ui/screens/main/main.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 
-class ReferralsService extends GetxService with StreamSubscriberMixin {
-  ReferralsService({
+class AccountService extends GetxService with StreamSubscriberMixin {
+  AccountService({
     LogoutBloc? logoutBloc,
     UpdateProfileBloc? updateProfile,
     SignUpService? signUpService,

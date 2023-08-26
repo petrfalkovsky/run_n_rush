@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:run_n_rush/ui/screens/account/src/account_screen.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_in/sign_in.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_in/src/reset_password.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
@@ -30,6 +31,7 @@ class AppRoutes {
   static const String payment = '/payment';
   static const String shop = '/shop';
   static const String settings = '/settings';
+  static const String account = '/account';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -105,6 +107,11 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.settings,
     page: () => Settings(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.account,
+    page: () => Account(),
     transition: Transition.fadeIn,
   ),
 ];
