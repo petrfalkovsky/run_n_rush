@@ -29,7 +29,7 @@ abstract class AppColors {
       // secondary
       2: Color(0xFFA0A0A1),
       // пока не нужен
-      3: Color(0xFF58616C),
+      3: Colors.black,
       // secondaryTwo
       4: Color(0xFFBDBCDE),
     },

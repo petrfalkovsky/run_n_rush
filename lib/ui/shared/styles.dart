@@ -55,6 +55,10 @@ class AppStyles {
     fontSize: 30,
     fontFamily: fontRegular,
   );
+  static const input = TextStyle(
+    fontSize: 16,
+    fontFamily: fontRegular,
+  );
 }
 
 extension TextStyleX on TextStyle {

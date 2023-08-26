@@ -5,28 +5,28 @@ import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
 
 class StdInput extends StatelessWidget {
-  StdInput(
-      {Key? key,
-      TextEditingController? controller,
-      this.label,
-      this.onChanged,
-      this.obscureText = false,
-      this.readOnly = false,
-      this.autofocus = false,
-      this.focusNode,
-      this.error = false,
-      this.value = '',
-      this.hintText = '',
-      this.keyboardType,
-      this.icon = '',
-      this.iconWidth,
-      this.iconHeight,
-      this.iconFunc,
-      this.inputFormatters,
-      this.suffixIcon,
-      this.isPhone = false,
-      EdgeInsetsGeometry? padding})
-      : controller = controller ?? TextEditingController(),
+  StdInput({
+    Key? key,
+    TextEditingController? controller,
+    this.label,
+    this.onChanged,
+    this.obscureText = false,
+    this.readOnly = false,
+    this.autofocus = false,
+    this.focusNode,
+    this.error = false,
+    this.value = '',
+    this.hintText = '',
+    this.keyboardType,
+    this.icon = '',
+    this.iconWidth,
+    this.iconHeight,
+    this.iconFunc,
+    this.inputFormatters,
+    this.suffixIcon,
+    this.isPhone = false,
+    EdgeInsetsGeometry? padding,
+  })  : controller = controller ?? TextEditingController(),
         padding = padding ?? const EdgeInsets.all(0),
         super(key: key);
 
@@ -53,22 +53,37 @@ class StdInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 52,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(50)),
+        // color: AppColors.accent, // фон
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF8784D3),
+          ),
+          BoxShadow(
+            color: Colors.white,
+            spreadRadius: -2.0,
+            blurRadius: 5.0,
+          ),
+        ],
+      ),
       padding: padding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (label != null)
             Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+              padding: const EdgeInsets.only(left: 32.0, bottom: 0),
               child: Text(
                 label ?? '',
-                style: AppStyles.title,
-                // .andWeight(FontWeight.w600)
-                // .copyWith(color: AppColors.textGrey),
+                style: AppStyles.input.andWeight(FontWeight.w600).copyWith(
+                      color: AppColors.text[3],
+                    ),
               ),
             ),
-          4.h,
           TextField(
+            textAlignVertical: TextAlignVertical.center,
             autofocus: autofocus,
             focusNode: focusNode,
             controller: controller,
@@ -77,14 +92,23 @@ class StdInput extends StatelessWidget {
             keyboardType: keyboardType,
             readOnly: readOnly,
             obscureText: obscureText,
-            style: AppTextStyles.b2Regular,
+            style: AppStyles.input.andWeight(FontWeight.w600).copyWith(
+                  color: AppColors.text[3],
+                ),
             decoration: InputDecoration(
-              fillColor: AppColors.background.bgB1,
-              label: Text(
-                hintText,
-                style: AppTextStyles.captionMob,
-              ),
-              hintStyle: AppTextStyles.b2Regular,
+              focusedBorder: InputBorder.none,
+              floatingLabelBehavior: FloatingLabelBehavior.never,
+              filled: true, // заполнить фон
+              // fillColor: AppColors.accent, // фон
+              contentPadding: const EdgeInsets.only(
+                  left: 32.0, bottom: 16), // отступы внутри
+              hintStyle: AppStyles.input
+                  .andWeight(FontWeight.w600)
+                  .copyWith(color: AppColors.text[2]),
+              labelText: hintText,
+              labelStyle: AppStyles.input
+                  .andWeight(FontWeight.w600)
+                  .copyWith(color: AppColors.text[2]),
               prefix: isPhone ? const Text('+7') : null,
               prefixStyle: AppTextStyles.b2Regular,
               suffixIcon: icon != ''

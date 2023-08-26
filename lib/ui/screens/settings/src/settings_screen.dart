@@ -24,7 +24,7 @@ class Settings extends StatexWidget<ReferralsController> {
     return Obx(
       () => GeneralScaffold(
           backgroundColor: const AppColorsThemeLight().other.black,
-          navBarEnable: true,
+          navBarEnable: false,
           appBar: const PreferredSize(
             preferredSize: Size.fromHeight(64),
             child: AppBarWidget(),
