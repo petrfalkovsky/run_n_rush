@@ -1,11 +1,21 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/auth/src/auth_controller.dart';
+import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/constants/assets.dart';
+import 'package:run_n_rush/ui/shared/icons.dart';
+import 'package:run_n_rush/ui/shared/styles.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/buttons/custom_rounded_button.dart';
+import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
+import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class AuthWelcomeScreen extends StatexWidget<AuthController> {
@@ -21,20 +31,94 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
           const Positioned.fill(
             child: _BackgroundImage(),
           ),
-          const _TransparentGradientMask(),
           SafeArea(
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: const [
-                    _Title(),
-                    // SizedBox(height: 12),
-                    _Subtitle(),
-                    SizedBox(height: 32.0),
-                    _Buttons(),
+                  children: [
+                    /// лого
+                    Image.asset(AppIcons.logo),
+                    24.h,
+
+                    /// форма входа
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF5A57AC).withOpacity(0.95),
+                        border: Border.all(
+                            color: const Color(0xFF1DB9DD), width: 1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.90,
+                      height: MediaQuery.of(context).size.height * 0.54,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const _Title(),
+                            26.h,
+                            StdInput(
+                              hintText: 'Your Email',
+                            ),
+                            15.h,
+                            StdInput(
+                              hintText: 'Verification Code',
+                              suffixIcon: TextButton(
+                                onPressed: () {
+                                  // todo: добавить логику для таймера и подмену виджета
+                                },
+                                child: const Text(
+                                  'Sendcode ',
+                                  style: TextStyle(color: Colors.blue),
+                                ),
+                              ),
+                            ),
+                            15.h,
+                            StdInput(
+                              hintText: 'Referral ID (Optional)',
+                            ),
+                            15.h,
+                            Row(
+                              children: [
+                                Checkbox(
+                                  activeColor: Colors.white,
+                                  focusColor: Colors.white,
+                                  hoverColor: Colors.white,
+                                  checkColor: Colors.black,
+                                  side: const BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                  value: true,
+                                  shape: const CircleBorder(),
+                                  onChanged: (value) {
+                                    // controller.isChecked.value = value!;
+                                  },
+                                ),
+                                SizedBox(
+                                  width: 220,
+                                  child: Text(
+                                    'I agree to RUN&RUSH Terms of Use & Privacy Policy',
+                                    style: AppStyles.caption
+                                        .andColor(AppColors.accent),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 3,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            StdButton(
+                              height: 52,
+                              isActive: true,
+                              onPress: () {
+                                Get.toNamed(AppRoutes.main);
+                              },
+                              text: 'Login / Sign Up',
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -60,29 +144,6 @@ class _BackgroundImage extends StatelessWidget {
   }
 }
 
-class _TransparentGradientMask extends StatelessWidget {
-  const _TransparentGradientMask({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.black.withOpacity(0.0),
-            Colors.black.withOpacity(0.2),
-            Colors.black.withOpacity(0.8),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class _Title extends StatelessWidget {
   const _Title({
     Key? key,
@@ -90,34 +151,9 @@ class _Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Text(
-      'parkLaskino'.tr(),
-      style: theme.appTextTheme.h1_0.copyWith(
-        fontFamily: 'Montserrat',
-        color: theme.appColorsScheme.other.white,
-      ),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
-class _Subtitle extends StatelessWidget {
-  const _Subtitle({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Text(
-      'onboardingSubtitle'.tr(),
-      style: theme.appTextTheme.b1_1.copyWith(
-        fontFamily: 'Montserrat',
-        color: theme.appColorsScheme.other.white,
-      ),
+      'Welcome to best\nplay-to-earn project!',
+      style: AppStyles.headline.andColor(AppColors.accent),
       textAlign: TextAlign.center,
     );
   }
@@ -130,20 +166,13 @@ class _Buttons extends GetView<AuthController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Column(
       children: <Widget>[
-        CustomRoundedButton(
-          text: 'entryAccount'.tr(),
-          onPressed: controller.goToSignIn,
-        ),
-        const SizedBox(height: 16.0),
-        CustomRoundedButton(
-          text: 'registration'.tr(),
-          buttonColor: theme.appColorsScheme.other.white,
-          textColor: theme.appColorsScheme.colors.text.primary,
-          onPressed: controller.goToSignUp,
+        StdButton(
+          height: 52,
+          text: 'Login / Sign Up',
+          isActive: true,
+          onPress: () {},
         ),
       ],
     );

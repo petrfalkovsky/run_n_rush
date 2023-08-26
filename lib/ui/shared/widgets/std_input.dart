@@ -53,7 +53,7 @@ class StdInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
+      height: 52, // высота всего инпута
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50)),
         // color: AppColors.accent, // фон

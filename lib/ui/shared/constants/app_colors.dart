@@ -9,7 +9,7 @@ abstract class AppColors {
     0xFFFEFEFF,
     <int, Color>{
       1: Color(0xFF1DB9DD),
-      2: Color(0xFFFF9900),
+      2: Color(0xFF8784D3),
     },
   );
 
@@ -46,7 +46,7 @@ abstract class AppColors {
     0xFFF9F9FA,
     <int, Color>{
       1: Color(0xFF101113),
-      2: Color(0xFF101113),
+      2: Color(0xFF8784D3),
       3: Color(0xFF101113),
       4: Color(0xFF101113),
       5: Colors.transparent,
