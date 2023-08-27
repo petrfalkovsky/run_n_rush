@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:run_n_rush/ui/screens/auth/src/sign_in/sign_in.dart';
-import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/internet/internet.dart';
 import 'package:run_n_rush/ui/screens/language/language.dart';
@@ -20,8 +18,6 @@ class GeneralService extends GetxService {
       ..put(LanguageScreenService())
       ..put(InternetScreenService())
       ..lazyPut(() => SplashScreenService())
-      // ..lazyPut(() => SignInService())
-      ..lazyPut(() => SignUpService())
       ..lazyPut(() => MainService())
       ..lazyPut(() => InventoryService())
       ..lazyPut(() => ReferralsService())
