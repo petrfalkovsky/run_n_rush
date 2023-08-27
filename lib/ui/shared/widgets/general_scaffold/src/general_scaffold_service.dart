@@ -30,18 +30,6 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   bool get isNotToday => _isNotToday();
   void changeIsNotToday(bool b) => _isNotToday(b);
 
-  void checkIsNotToday() {
-    final date = DateTime.now();
-    final list = _myBookingService.activeBookingList$;
-    for (var l in list) {
-      if (l is BookingEntity) {
-        if (l.bookingDate.day == date.day) {
-          _isNotToday(true);
-        }
-      }
-    }
-  }
-
   final bottomAppBarItems = <BottomAppBarItem>[
     const BottomAppBarItem(
       // text: 'allMyReservations',
@@ -68,7 +56,7 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   ConnectivityResult get connectionStatus$ =>
       _internetScreenService.connectionStatus$;
 
-  void goToQRScaner() => Get.toNamed(AppRoutes.qrScanner);
+  // void goToQRScaner() => Get.toNamed(AppRoutes.qrScanner);
 
   void goToPage(int index) {
     Get.offNamed(bottomAppBarItems[index].router);
@@ -105,10 +93,6 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
     super.onInit();
     debugPrint('ONINIT SCAFFOLD SIRIUS SERVICE');
     _isNotToday(false);
-    // Передача состояния из BLoC
-    subscribeIt(_myBookingService.activeBookingListStream.listen((event) {
-      checkIsNotToday();
-    }));
   }
 }
 

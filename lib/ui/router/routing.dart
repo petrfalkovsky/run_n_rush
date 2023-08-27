@@ -4,8 +4,6 @@ import 'package:run_n_rush/ui/screens/account/src/account_screen.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_in/sign_in.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_in/src/reset_password.dart';
 import 'package:run_n_rush/ui/screens/auth/src/sign_up/sign_up.dart';
-import 'package:run_n_rush/ui/screens/qr_scanner/src/qr_scanner_screen.dart';
-import 'package:run_n_rush/ui/screens/scan/entry_code.dart';
 import 'package:run_n_rush/ui/screens/auth/src/auth_welcome_screen.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
@@ -17,18 +15,18 @@ import 'package:run_n_rush/ui/screens/splash/splash.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String authWelcome = '/authWelcome';
-  static const String authEntry = '/authEntry';
-  static const String signIn = '/signIn';
-  static const String resetPassword = '/resetPassword';
-  static const String signUp = '/signUp';
-  static const String createProfileSignUp = '/createProfileSignUp';
+  // static const String authEntry = '/authEntry';
+  // static const String signIn = '/signIn';
+  // static const String resetPassword = '/resetPassword';
+  // static const String signUp = '/signUp';
+  // static const String createProfileSignUp = '/createProfileSignUp';
   static const String main = '/main';
   static const String inventory = '/bookings';
   static const String referral = '/referral';
-  static const String currentBookings = '/currentBookings';
-  static const String updateProfile = '/updateProfile';
-  static const String qrScanner = '/qrScanner';
-  static const String payment = '/payment';
+  // static const String currentBookings = '/currentBookings';
+  // static const String updateProfile = '/updateProfile';
+  // static const String qrScanner = '/qrScanner';
+  // static const String payment = '/payment';
   static const String shop = '/shop';
   static const String settings = '/settings';
   static const String account = '/account';
@@ -49,36 +47,36 @@ final List<GetPage> routes = [
     page: () => AuthWelcomeScreen(),
     transition: Transition.fadeIn,
   ),
-  GetPage(
-    name: AppRoutes.authEntry,
-    page: () => const EntryCodeScreen(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.signIn,
-    page: () => SignInScreen(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.resetPassword,
-    page: () => const ResetPasswordScreen(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.signUp,
-    page: () => SignUpScreen(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.createProfileSignUp,
-    page: () => const CreateProfileSignUp(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.signIn,
-    page: () => SignInScreen(),
-    transition: Transition.fadeIn,
-  ),
+  // GetPage(
+  //   name: AppRoutes.authEntry,
+  //   page: () => const EntryCodeScreen(),
+  //   transition: Transition.fadeIn,
+  // ),
+  // GetPage(
+  //   name: AppRoutes.signIn,
+  //   page: () => SignInScreen(),
+  //   transition: Transition.fadeIn,
+  // ),
+  // GetPage(
+  //   name: AppRoutes.resetPassword,
+  //   page: () => const ResetPasswordScreen(),
+  //   transition: Transition.fadeIn,
+  // ),
+  // GetPage(
+  //   name: AppRoutes.signUp,
+  //   page: () => SignUpScreen(),
+  //   transition: Transition.fadeIn,
+  // ),
+  // GetPage(
+  //   name: AppRoutes.createProfileSignUp,
+  //   page: () => const CreateProfileSignUp(),
+  //   transition: Transition.fadeIn,
+  // ),
+  // GetPage(
+  //   name: AppRoutes.signIn,
+  //   page: () => SignInScreen(),
+  //   transition: Transition.fadeIn,
+  // ),
   GetPage(
     name: AppRoutes.main,
     page: () => Main(),
@@ -92,11 +90,6 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.referral,
     page: () => Referral(),
-    transition: Transition.fadeIn,
-  ),
-  GetPage(
-    name: AppRoutes.qrScanner,
-    page: () => QrScannerScreen(),
     transition: Transition.fadeIn,
   ),
   GetPage(
