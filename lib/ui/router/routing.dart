@@ -4,6 +4,7 @@ import 'package:run_n_rush/ui/screens/account/src/account_screen.dart';
 import 'package:run_n_rush/ui/screens/auth/src/welcome_screen.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/balance/balance.dart';
 import 'package:run_n_rush/ui/screens/referral/src/referral_screen.dart';
 import 'package:run_n_rush/ui/screens/settings/src/settings_screen.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
@@ -18,7 +19,7 @@ class AppRoutes {
   static const String shop = '/shop';
   static const String settings = '/settings';
   static const String account = '/account';
-  // static const String product = '/product';
+  static const String balance = '/balance';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -66,9 +67,9 @@ final List<GetPage> routes = [
     page: () => Account(),
     transition: Transition.fadeIn,
   ),
-  //   GetPage(
-  //   name: AppRoutes.product,
-  //   page: () => Product(),
-  //   transition: Transition.fadeIn,
-  // ),
+  GetPage(
+    name: AppRoutes.balance,
+    page: () => Balance(),
+    transition: Transition.fadeIn,
+  ),
 ];

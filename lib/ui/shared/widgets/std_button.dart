@@ -14,6 +14,7 @@ class StdButton extends StatelessWidget {
     this.padding,
     this.width,
     this.height,
+    this.icon,
     required this.onPress,
     Key? key,
   }) : super(key: key);
@@ -28,6 +29,7 @@ class StdButton extends StatelessWidget {
   final double? height;
   final Color? color;
   final Color? textColor;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class StdButton extends StatelessWidget {
               isLoading: isLoading,
               onPress: onPress,
               textColor: textColor,
+              icon: icon,
             )
           : _CustomElevatedButton(
               text: text,
@@ -51,6 +54,7 @@ class StdButton extends StatelessWidget {
               onPress: onPress,
               color: color,
               textColor: textColor,
+              icon: icon,
             ),
     );
   }
@@ -64,6 +68,7 @@ class _CustomOutlinaButton extends StatelessWidget {
     required this.isLoading,
     required this.onPress,
     this.padding,
+    this.icon,
     this.textColor,
   }) : super(key: key);
 
@@ -73,6 +78,7 @@ class _CustomOutlinaButton extends StatelessWidget {
   final Function() onPress;
   final EdgeInsets? padding;
   final Color? textColor;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -104,22 +110,28 @@ class _CustomOutlinaButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         ),
-        child: isLoading
-            ? const SizedBox(
-                height: 16,
-                child: FittedBox(
-                  child: CircularProgressIndicator(
-                    // color: AppColors.green,
-                    strokeWidth: 8,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) Image.asset(icon!),
+            SizedBox(width: 8),
+            isLoading
+                ? const SizedBox(
+                    height: 16,
+                    child: FittedBox(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 8,
+                      ),
+                    ),
+                  )
+                : Text(
+                    text,
+                    style: AppTextTheme.fromPlatform.b2_0.copyWith(
+                      color: textColor,
+                    ),
                   ),
-                ),
-              )
-            : Text(
-                text,
-                style: AppTextTheme.fromPlatform.b2_0.copyWith(
-                  color: textColor,
-                ),
-              ),
+          ],
+        ),
       ),
     );
   }
@@ -135,6 +147,7 @@ class _CustomElevatedButton extends StatelessWidget {
     required this.color,
     this.padding,
     this.textColor,
+    this.icon,
   }) : super(key: key);
 
   final String text;
@@ -144,6 +157,7 @@ class _CustomElevatedButton extends StatelessWidget {
   final EdgeInsets? padding;
   final Color? color;
   final Color? textColor;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -164,46 +178,50 @@ class _CustomElevatedButton extends StatelessWidget {
           BoxShadow(
             color: Color(0xFF1DB9DD),
             spreadRadius: -0.9,
-            blurRadius: 4.0,
+            blurRadius: 2.0,
           ),
         ],
       ),
       child: ElevatedButton(
-        onPressed: isActive
-            ? isLoading
-                ? null
-                : onPress
-            : null,
-        style: ButtonStyle(
-          padding: MaterialStateProperty.all(padding ??
-              const EdgeInsets.symmetric(vertical: 0, horizontal: 0)),
-          elevation: MaterialStateProperty.all(0),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          onPressed: isActive
+              ? isLoading
+                  ? null
+                  : onPress
+              : null,
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(padding ??
+                const EdgeInsets.symmetric(vertical: 0, horizontal: 0)),
+            elevation: MaterialStateProperty.all(0),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            ),
+            backgroundColor: MaterialStateProperty.all(resolvedButtonColor),
           ),
-          backgroundColor: MaterialStateProperty.all(resolvedButtonColor),
-        ),
-        child: isLoading
-            ? const SizedBox(
-                height: 16,
-                child: FittedBox(
-                  child: CircularProgressIndicator(
-                    strokeWidth: 8,
-                    color: Colors.white,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            if (icon != null)
+              Image.asset(icon!), // Display the icon if provided
+            SizedBox(width: 8), // Add some spacing between icon and text
+            isLoading
+                ? const SizedBox(
+                    height: 16,
+                    child: FittedBox(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 8,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                : Text(
+                    text,
+                    softWrap: false,
+                    style: theme.appTextTheme.b2_0.copyWith(
+                      color: resolvedTextColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
-                ),
-              )
-            : Text(
-                text,
-                softWrap: false,
-                style: theme.appTextTheme.b2_0.copyWith(
-                  color: resolvedTextColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-      ),
+          ])),
     );
   }
 }

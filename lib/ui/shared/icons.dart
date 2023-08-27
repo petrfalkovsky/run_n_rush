@@ -46,6 +46,8 @@ class AppIcons {
   static const monoJogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
   static const pair = '$_basePathImg/sneackers_pair.png';
+  static const outIcon = '$_basePathImg/out.png';
+  static const inIcon = '$_basePathImg/in.png';
 
   static Widget svgWidget(String path,
       {double? width, double? height, Color? color}) {
