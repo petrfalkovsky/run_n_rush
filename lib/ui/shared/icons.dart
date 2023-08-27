@@ -45,6 +45,7 @@ class AppIcons {
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';
   static const monoJogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
+  static const pair = '$_basePathImg/sneackers_pair.png';
 
   static Widget svgWidget(String path,
       {double? width, double? height, Color? color}) {

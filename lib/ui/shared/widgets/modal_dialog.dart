@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+/// диалог, фон затемняется, появляется любой виджет, который прикрутить можно в child
 class ModalDialog {
   void showModalDialog(
     context, {
@@ -21,7 +22,7 @@ class ModalDialog {
         return Center(
           child: Container(
             width: width ?? Get.width - 20,
-            height: height ?? Get.width + 80,
+            height: height ?? Get.height + 60,
             padding: containerPadding ?? const EdgeInsets.all(20),
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(

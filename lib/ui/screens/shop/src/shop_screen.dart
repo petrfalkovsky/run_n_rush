@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
 import 'package:run_n_rush/ui/shared/widgets/drop_down.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer_two.dart';
@@ -254,7 +256,13 @@ class ProductListWidget extends StatelessWidget {
                               width: 97,
                               text: 'BUY',
                               isActive: true,
-                              onPress: () {}),
+                              onPress: () {
+                                CustomModal.show(
+                                  color: Colors.black,
+                                  context,
+                                  child: const BottomSheetChildWidget(),
+                                );
+                              }),
                         ],
                       ),
                     ],
@@ -266,5 +274,141 @@ class ProductListWidget extends StatelessWidget {
         },
       ),
     ]);
+  }
+}
+
+class BottomSheetChildWidget extends StatelessWidget {
+  const BottomSheetChildWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
+      child: Column(
+        children: [
+          Text(
+            'Great choice!',
+            style: AppStyles.body
+                .andWeight(FontWeight.w600)
+                .andColor(AppColors.text.primary),
+          ),
+          26.h,
+          Image.asset(AppIcons.pair),
+          12.h,
+          Text(
+            '#145265874',
+            style: AppStyles.body
+                .andWeight(FontWeight.w600)
+                .andColor(AppColors.text.primary),
+          ),
+          28.h,
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.background[3],
+              borderRadius: const BorderRadius.all(Radius.circular(12)),
+            ),
+            width: double.maxFinite,
+            height: 64,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Jogger',
+                  style: AppStyles.body
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.primary),
+                ),
+                8.h,
+                Text(
+                  'Move at 4-10 km/h to earn token!',
+                  style: AppStyles.plainText.andColor(AppColors.text.primary),
+                ),
+              ],
+            ),
+          ),
+          26.h,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  const Spacer(),
+                  SizedBox(
+                    width: 176,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Class',
+                          style: AppStyles.caption
+                              .andWeight(FontWeight.normal)
+                              .andColor(AppColors.text.secondaryTwo),
+                        ),
+                        12.h,
+                        Text(
+                          'Jogger',
+                          style: AppStyles.body
+                              .andWeight(FontWeight.w600)
+                              .andColor(AppColors.text.primary),
+                        ),
+                      ],
+                    ),
+                  ),
+                  26.h,
+                  SizedBox(
+                    width: 176,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Durability',
+                          style: AppStyles.caption
+                              .andWeight(FontWeight.normal)
+                              .andColor(AppColors.text.secondaryTwo),
+                        ),
+                        12.h,
+                        Text(
+                          '100/100',
+                          style: AppStyles.body
+                              .andWeight(FontWeight.w600)
+                              .andColor(AppColors.text.primary),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(AppIcons.coin),
+              9.w,
+              Text(
+                '384 RAR Coin',
+                style: AppStyles.body.andColor(AppColors.text.primary),
+              ),
+            ],
+          ),
+          28.h,
+          StdButton(
+            color: Colors.transparent,
+            height: 52,
+            text: 'BUY',
+            isActive: true,
+            onPress: () {},
+          ),
+          20.h,
+          StdButton(
+            isOutlined: true,
+            text: 'Cancel',
+            isActive: true,
+            onPress: () {},
+          ),
+        ],
+      ),
+    );
   }
 }

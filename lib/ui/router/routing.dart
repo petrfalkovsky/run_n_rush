@@ -18,6 +18,7 @@ class AppRoutes {
   static const String shop = '/shop';
   static const String settings = '/settings';
   static const String account = '/account';
+  // static const String product = '/product';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -65,4 +66,9 @@ final List<GetPage> routes = [
     page: () => Account(),
     transition: Transition.fadeIn,
   ),
+  //   GetPage(
+  //   name: AppRoutes.product,
+  //   page: () => Product(),
+  //   transition: Transition.fadeIn,
+  // ),
 ];
