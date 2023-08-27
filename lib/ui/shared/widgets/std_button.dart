@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:run_n_rush/ui/shared/ext.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
@@ -113,8 +114,13 @@ class _CustomOutlinaButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (icon != null) Image.asset(icon!),
-            SizedBox(width: 8),
+            if (icon != null)
+              Row(
+                children: [
+                  Image.asset(icon!),
+                  8.w,
+                ],
+              ),
             isLoading
                 ? const SizedBox(
                     height: 16,
@@ -199,8 +205,12 @@ class _CustomElevatedButton extends StatelessWidget {
           ),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             if (icon != null)
-              Image.asset(icon!), // Display the icon if provided
-            SizedBox(width: 8), // Add some spacing between icon and text
+              Row(
+                children: [
+                  Image.asset(icon!),
+                  8.w,
+                ],
+              ),
             isLoading
                 ? const SizedBox(
                     height: 16,
