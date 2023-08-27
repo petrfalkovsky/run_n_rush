@@ -12,6 +12,8 @@ import 'package:run_n_rush/ui/screens/language/language.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/themes.dart';
 
+import 'ui/shared/constants/assets.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -58,6 +60,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(AssetImage(Assets.images.splashScreen), context);
+
     return OverlaySupport.global(
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
