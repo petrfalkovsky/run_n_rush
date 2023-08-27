@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +8,9 @@ import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
-import 'package:run_n_rush/ui/shared/widgets/buttons/custom_ink_well.dart';
-import 'package:run_n_rush/ui/shared/widgets/ctable_calendar.dart';
 import 'package:run_n_rush/ui/shared/widgets/drop_down.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer.dart';
-import 'package:table_calendar/table_calendar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class InventoryScreen extends StatexWidget<InventoryController> {
@@ -21,8 +20,6 @@ class InventoryScreen extends StatexWidget<InventoryController> {
 
   @override
   Widget buildWidget(BuildContext context) {
-    final textTheme = AppTextTheme.fromPlatform;
-
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
@@ -52,12 +49,9 @@ class InventoryScreen extends StatexWidget<InventoryController> {
             20.h,
             Expanded(
               child: Stack(
-                children: [
+                children: const [
                   /// товары
-                  const ProductListWidget(),
-
-                  /// todo удалить/поменять контроллер
-                  // if (controller.isLoading) Consts().preloader,
+                  ProductListWidget(),
                 ],
               ),
             ),

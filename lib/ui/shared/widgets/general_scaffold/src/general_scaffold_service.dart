@@ -4,7 +4,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/core/utils/stream_subscriber.dart';
-import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/internet/src/internet_service.dart';
 import 'package:run_n_rush/ui/screens/main/src/main_service.dart';
@@ -16,11 +15,9 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   GeneralScaffoldService({
     InternetScreenService? internetScreenService,
     MainService? myBookingService,
-  })  : _internetScreenService = internetScreenService ?? Get.find(),
-        _myBookingService = myBookingService ?? Get.find();
+  }) : _internetScreenService = internetScreenService ?? Get.find();
 
   final InternetScreenService _internetScreenService;
-  final MainService _myBookingService;
 
   final _currentNavIndex = 0.obs; // для BottomNavigationBar index
   int get currentNavIndex$ => _currentNavIndex();
@@ -55,8 +52,6 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
 
   ConnectivityResult get connectionStatus$ =>
       _internetScreenService.connectionStatus$;
-
-  // void goToQRScaner() => Get.toNamed(AppRoutes.qrScanner);
 
   void goToPage(int index) {
     Get.offNamed(bottomAppBarItems[index].router);

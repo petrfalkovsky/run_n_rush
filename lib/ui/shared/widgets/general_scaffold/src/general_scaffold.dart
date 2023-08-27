@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;

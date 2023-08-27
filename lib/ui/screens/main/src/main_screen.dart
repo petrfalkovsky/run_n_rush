@@ -1,25 +1,18 @@
+// ignore_for_file: unused_import
+
 import 'dart:ui';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:run_n_rush/domain/my_booking/booking_entity.dart';
 import 'package:run_n_rush/ui/screens/main/main.dart';
-import 'package:run_n_rush/ui/screens/main/src/widgets/date_helper.dart';
-import 'package:run_n_rush/ui/screens/main/src/widgets/knob.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
-import 'package:run_n_rush/ui/shared/constants/app_text_style.dart';
-import 'package:run_n_rush/ui/shared/constants/assets.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
-import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
-import 'package:run_n_rush/ui/shared/widgets/buttons/custom_ink_well.dart';
-import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class Main extends StatexWidget<MainController> {
@@ -197,7 +190,7 @@ class AvatarWidget extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 148,
                     height: 148,
                     child: ClipOval(

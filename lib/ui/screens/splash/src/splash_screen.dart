@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
-import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
-import 'package:run_n_rush/ui/shared/constants/assets.dart';
-import 'package:run_n_rush/ui/shared/widgets/background.dart';
-import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold.dart';
 
 import 'package:vfx_flutter_common/getx_helpers.dart';
 

@@ -53,7 +53,7 @@ class AppConfig implements IAppConfig {
   static bool _isIOS = false;
   static bool get isIOS => _isIOS;
 
-  static const String appName = 'Teremok';
+  static const String appName = 'Appname';
 
   static String _deviceName = '';
   // ignore: non_constant_identifier_names

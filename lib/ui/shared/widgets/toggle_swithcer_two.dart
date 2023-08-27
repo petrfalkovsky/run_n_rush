@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 
 /// todo обязательно переделать чтобы не повторять код
@@ -23,7 +25,9 @@ class AnimatedSwitcherWidgetTwo extends StatefulWidget {
 
 class _AnimatedSwitcherWidgetTwoState extends State<AnimatedSwitcherWidgetTwo> {
   var isEnabled = false;
-  final animationDuration = const Duration(milliseconds: 500);
+
+  /// скорость анимации
+  final animationDuration = const Duration(milliseconds: 300);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +81,8 @@ class _AnimatedSwitcherWidgetTwoState extends State<AnimatedSwitcherWidgetTwo> {
                 alignment:
                     isEnabled ? Alignment.centerLeft : Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  /// неактивный контейнер - настроить отступ внутри слова от кнопки
+                  padding: const EdgeInsets.only(left: 6, right: 14),
                   child: Text(
                     isEnabled ? '    ${widget.allText}' : widget.dressedText,
                     style: const TextStyle(

@@ -16,6 +16,7 @@ abstract class Themes {
       ).copyWith(
         secondary: colorsTheme.colors.accent.accent1,
       ),
+      // ignore: deprecated_member_use
       errorColor: colorsTheme.colors.notification.error,
       brightness: colorsTheme.brightness,
       scaffoldBackgroundColor: colorsTheme.other.white,

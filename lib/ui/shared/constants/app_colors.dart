@@ -15,7 +15,7 @@ abstract class AppColors {
 
   static Gradient get accentGradient {
     return LinearGradient(
-      colors: [accent.accent1, Color(0xFF1DB9DD)],
+      colors: [accent.accent1, const Color(0xFF1DB9DD)],
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
     );

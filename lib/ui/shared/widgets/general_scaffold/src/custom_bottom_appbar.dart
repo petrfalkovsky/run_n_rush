@@ -2,9 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// ignore_for_file: unnecessary_null_comparison, unused_local_variable, deprecated_member_use, duplicate_ignore
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // import 'bottom_app_bar_theme.dart';
 // import 'elevation_overlay.dart';
@@ -96,6 +97,7 @@ class BottomAppBarChildCustom extends StatefulWidget {
   ///
   /// If this property is null then [BottomAppBarTheme.color] of
   /// [ThemeData.bottomAppBarTheme] is used. If that's null then
+  // ignore: deprecated_member_use
   /// [ThemeData.bottomAppBarColor] is used.
   final Color? color;
 
