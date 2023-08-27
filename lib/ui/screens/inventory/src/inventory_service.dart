@@ -80,7 +80,7 @@ class InventoryService extends GetxService with StreamSubscriberMixin {
         alert(value: 'Оплачено', color: AppColors.notification.success);
         _isLoading(false);
         Get.back(result: 'SUCCESS');
-        MainController().getReservations();
+        // MainController().getReservations();
       },
       orElse: () {
         debugPrint('getMyBooking ERROR');

@@ -24,101 +24,95 @@ class Referral extends StatexWidget<ReferralsController> {
         preferredSize: Size.fromHeight(64),
         child: AppBarWidget(),
       ),
-      child: Obx(
-        () {
-          return ListView(
-            children: [
-              const BalanceWidget(),
-              const SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Refer friends.',
-                      style: AppStyles.title2
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.primary),
-                    ),
-                    Text(
-                      'Earn Money',
-                      style: AppStyles.title2
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.primary),
-                    ),
-                    16.h,
-                    Text(
-                      "Invite friends to sign up using your link \n and you'll get 10% of their purchase",
-                      style: AppStyles.body
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.primary),
-                    ),
-                    20.h,
-                    Text(
-                      "Your referral ID",
-                      style: AppStyles.caption
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.secondary),
-                    ),
-                    8.h,
-                    StdButton(
-                      textColor: Colors.black,
-                      color: Colors.white,
-                      text: '345465',
-                      isActive: false,
-                      isLoading: controller.isLoading,
-                      onPress: controller.logout,
-                    ),
-                    8.h,
-                    Text(
-                      "Friends must use your ID when sign up!",
-                      style: AppStyles.caption
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.secondary),
-                    ),
-                    16.h,
-                    StdButton(
-                      text: 'Copy Link',
-                      isActive: true,
-                      isLoading: controller.isLoading,
-                      onPress: controller.logout,
-                    ),
-                    40.h,
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Reward From Referrals",
-                        style: AppStyles.body
-                            .andWeight(FontWeight.w600)
-                            .andColor(AppColors.text.primary),
-                      ),
-                    ),
-                    18.h,
-                    ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            const ReferalItemWidget(),
-                            if (index < 9)
-                              const Divider(
-                                height: 0.5,
-                                color: Color(0xFF47466F),
-                              ),
-                            17.h,
-                          ],
-                        );
-                      },
-                    ),
-                  ],
+      child: ListView(
+        children: [
+          const BalanceWidget(),
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Refer friends.',
+                  style: AppStyles.title2
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.primary),
                 ),
-              ),
-            ],
-          );
-        },
+                Text(
+                  'Earn Money',
+                  style: AppStyles.title2
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.primary),
+                ),
+                16.h,
+                Text(
+                  "Invite friends to sign up using your link \n and you'll get 10% of their purchase",
+                  style: AppStyles.body
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.primary),
+                ),
+                20.h,
+                Text(
+                  "Your referral ID",
+                  style: AppStyles.caption
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.secondary),
+                ),
+                8.h,
+                StdButton(
+                  textColor: Colors.black,
+                  color: Colors.white,
+                  text: '345465',
+                  isActive: false,
+                  onPress: () {},
+                ),
+                8.h,
+                Text(
+                  "Friends must use your ID when sign up!",
+                  style: AppStyles.caption
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.secondary),
+                ),
+                16.h,
+                StdButton(
+                  text: 'Copy Link',
+                  isActive: true,
+                  onPress: () {},
+                ),
+                40.h,
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Reward From Referrals",
+                    style: AppStyles.body
+                        .andWeight(FontWeight.w600)
+                        .andColor(AppColors.text.primary),
+                  ),
+                ),
+                18.h,
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        const ReferalItemWidget(),
+                        if (index < 9)
+                          const Divider(
+                            height: 0.5,
+                            color: Color(0xFF47466F),
+                          ),
+                        17.h,
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

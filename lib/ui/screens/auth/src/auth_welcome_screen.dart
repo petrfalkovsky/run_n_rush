@@ -158,23 +158,3 @@ class _Title extends StatelessWidget {
     );
   }
 }
-
-class _Buttons extends GetView<AuthController> {
-  const _Buttons({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        StdButton(
-          height: 52,
-          text: 'Login / Sign Up',
-          isActive: true,
-          onPress: () {},
-        ),
-      ],
-    );
-  }
-}

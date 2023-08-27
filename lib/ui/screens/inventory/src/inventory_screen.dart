@@ -32,39 +32,37 @@ class InventoryScreen extends StatexWidget<InventoryController> {
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 16),
-        child: Obx(() {
-          return Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    /// фильтр
-                    FilterDropdown(),
-                    const Spacer(),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  /// фильтр
+                  FilterDropdown(),
+                  const Spacer(),
 
-                    /// переключатель предложений купить/продать
-                    AnimatedSwitcherWidget(
-                      onTap: () {},
-                    ),
-                  ],
-                ),
+                  /// переключатель предложений купить/продать
+                  AnimatedSwitcherWidget(
+                    onTap: () {},
+                  ),
+                ],
               ),
-              20.h,
-              Expanded(
-                child: Stack(
-                  children: [
-                    /// товары
-                    const ProductListWidget(),
+            ),
+            20.h,
+            Expanded(
+              child: Stack(
+                children: [
+                  /// товары
+                  const ProductListWidget(),
 
-                    /// todo удалить/поменять контроллер
-                    if (controller.isLoading) Consts().preloader,
-                  ],
-                ),
+                  /// todo удалить/поменять контроллер
+                  // if (controller.isLoading) Consts().preloader,
+                ],
               ),
-            ],
-          );
-        }),
+            ),
+          ],
+        ),
       ),
     );
   }

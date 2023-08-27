@@ -30,9 +30,7 @@ class Main extends StatexWidget<MainController> {
   @override
   Widget buildWidget(BuildContext context) {
     // todo убрать хардкод и переменные добавить
-    // final textTheme = AppTextTheme.fromPlatform;
 
-    // debugPrint('controller.activeBookingList ${controller.activeBookingList}');
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
@@ -40,42 +38,36 @@ class Main extends StatexWidget<MainController> {
         preferredSize: Size.fromHeight(227),
         child: AppBarWidget(),
       ),
-      child: Obx(
-        () => SafeArea(
-          minimum: const EdgeInsets.symmetric(horizontal: 24),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                controller.indexTab == 1
-                    ? controller.archiveBookingList.isNotEmpty
-                        ? const SizedBox.shrink()
-                        : const SizedBox.shrink()
-                    : Text(
-                        'Hello, d.push91@gmail.com',
-                        style: TextStyle(
-                            color: AppColors.accent,
-                            fontSize: 24,
-                            fontStyle: FontStyle.italic),
-                      ),
-                5.h,
-                const GreatingBalanceWidget(),
-                40.h,
-                const AddSneakerWidget(),
-                20.h,
-                const ListAddSneakersWidget(),
-                40.h,
-                const SneakerDataWidget(),
-                16.h,
-                const LightningDataWidget(),
-                46.h,
-                StdButton(
-                  height: 52,
-                  text: 'Start',
-                  isActive: true,
-                  onPress: () {},
-                )
-              ],
-            ),
+      child: SafeArea(
+        minimum: const EdgeInsets.symmetric(horizontal: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(
+                'Hello, d.push91@gmail.com',
+                style: TextStyle(
+                    color: AppColors.accent,
+                    fontSize: 24,
+                    fontStyle: FontStyle.italic),
+              ),
+              5.h,
+              const GreatingBalanceWidget(),
+              40.h,
+              const AddSneakerWidget(),
+              20.h,
+              const ListAddSneakersWidget(),
+              40.h,
+              const SneakerDataWidget(),
+              16.h,
+              const LightningDataWidget(),
+              46.h,
+              StdButton(
+                height: 52,
+                text: 'Start',
+                isActive: true,
+                onPress: () {},
+              )
+            ],
           ),
         ),
       ),
