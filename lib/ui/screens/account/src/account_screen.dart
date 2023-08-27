@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
@@ -10,7 +11,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Account extends StatexWidget<ReferralsController> {
   Account({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран реферальной программы"');
+    debugPrint(' экран реферальной программы');
   }
 
   @override
@@ -32,26 +33,12 @@ class Account extends StatexWidget<ReferralsController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   38.h,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 152,
-                        height: 152,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xFF01B8FF),
-                        ),
-                        child: Center(
-                          child: Image.asset(
-                            AppIcons.avatar,
-                            width: 59,
-                            height: 59,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
+                  BlurredAvatar(
+                    containerSize: 152,
+                    positionInsets: const EdgeInsets.all(7),
+                    innerContainer: 138,
+                    borderColor: Colors.white.withOpacity(0.3),
+                    avatarSize: 59,
                   ),
                   38.h,
                   StdInput(

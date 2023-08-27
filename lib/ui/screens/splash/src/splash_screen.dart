@@ -23,8 +23,8 @@ class SplashScreen extends StatexWidget<SplashScreenController> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Image.asset(AppIcons.logo),
+                  children: const [
+                    // Image.asset(AppIcons.logo),
                   ],
                 ),
               ),

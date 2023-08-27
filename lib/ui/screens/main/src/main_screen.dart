@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 import 'package:run_n_rush/ui/screens/main/main.dart';
@@ -188,42 +189,12 @@ class AvatarWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Stack(
-                children: [
-                  SizedBox(
-                    width: 148,
-                    height: 148,
-                    child: ClipOval(
-                      /// заблюренный круг
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                          color: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 5,
-                    top: 5,
-                    child: Container(
-                      width: 138,
-                      height: 138,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFF01B8FF),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          AppIcons.avatar,
-                          width: 59,
-                          height: 59,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              BlurredAvatar(
+                containerSize: 152,
+                positionInsets: const EdgeInsets.all(7),
+                innerContainer: 138,
+                borderColor: Colors.white.withOpacity(0.3),
+                avatarSize: 59,
               )
             ],
           ),
@@ -282,17 +253,18 @@ class ListAddSneakersWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(12)),
                   child: SizedBox(
-                    height: 59,
+                    width: double.infinity,
+                    height: 56,
                     child: Stack(
+                      alignment: Alignment.center,
                       children: [
                         Container(
                           color: Colors.black.withOpacity(0.05),
                         ),
-                        const Positioned(
-                          left: 26,
-                          top: 11,
-                          child: Icon(Icons.add,
-                              color: Color(0xFF1DB9DD), size: 36),
+                        const Icon(
+                          Icons.add,
+                          color: Color(0xFF1DB9DD),
+                          size: 36,
                         ),
                       ],
                     ),

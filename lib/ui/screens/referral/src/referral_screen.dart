@@ -13,7 +13,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Referral extends StatexWidget<ReferralsController> {
   Referral({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран реферальной программы"');
+    debugPrint(' экран реферальной программы');
   }
 
   @override

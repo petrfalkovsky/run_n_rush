@@ -1,10 +1,13 @@
 // ignore_for_file: unused_import
 
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
@@ -14,7 +17,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Settings extends StatexWidget<ReferralsController> {
   Settings({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран настроек"');
+    debugPrint(' экран настроек');
   }
 
   @override
@@ -236,21 +239,12 @@ class AboutUserWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 23),
       child: Row(
         children: [
-          Container(
-            width: 72,
-            height: 72,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFF01B8FF),
-            ),
-            child: Center(
-              child: Image.asset(
-                AppIcons.avatar,
-                width: 28,
-                height: 28,
-                fit: BoxFit.cover,
-              ),
-            ),
+          BlurredAvatar(
+            innerContainer: 65,
+            borderColor: Colors.white.withOpacity(0.3),
+            containerSize: 75,
+            positionInsets: const EdgeInsets.all(5),
+            avatarSize: 28,
           ),
           16.w,
           Column(
