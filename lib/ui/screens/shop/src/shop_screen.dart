@@ -252,17 +252,18 @@ class ProductListWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           StdButton(
-                              height: 36,
-                              width: 97,
-                              text: 'BUY',
-                              isActive: true,
-                              onPress: () {
-                                CustomModal.show(
-                                  color: Colors.black,
-                                  context,
-                                  child: const BottomSheetChildWidget(),
-                                );
-                              }),
+                            height: 36,
+                            width: 97,
+                            text: 'BUY',
+                            isActive: true,
+                            onPress: () {
+                              CustomModal.show(
+                                color: Colors.black,
+                                context,
+                                child: const BottomSheetChildWidget(),
+                              );
+                            },
+                          ),
                         ],
                       ),
                     ],

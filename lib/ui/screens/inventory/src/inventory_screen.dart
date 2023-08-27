@@ -5,9 +5,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
+import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
 import 'package:run_n_rush/ui/shared/widgets/drop_down.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer.dart';
@@ -227,11 +229,18 @@ class ProductListWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               StdButton(
-                                  height: 36,
-                                  width: 122,
-                                  text: 'PUT ON',
-                                  isActive: true,
-                                  onPress: () {}),
+                                height: 36,
+                                width: 122,
+                                text: 'PUT ON',
+                                isActive: true,
+                                onPress: () {
+                                  CustomModal.show(
+                                    color: Colors.black,
+                                    context,
+                                    child: const BottomSheetChildWidget(),
+                                  );
+                                },
+                              ),
                             ],
                           ),
                         ],
