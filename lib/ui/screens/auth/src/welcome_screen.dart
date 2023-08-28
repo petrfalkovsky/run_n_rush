@@ -15,8 +15,8 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class AuthWelcomeScreen extends StatexWidget<AuthController> {
-  AuthWelcomeScreen({Key? key}) : super(() => AuthController(), key: key) {
+class WelcomeScreen extends StatexWidget<AuthController> {
+  WelcomeScreen({Key? key}) : super(() => AuthController(), key: key) {
     debugPrint(' AuthWelcomeScreen.AuthWelcomeScreen');
   }
 
@@ -47,7 +47,7 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       width: MediaQuery.of(context).size.width * 0.90,
-                      height: MediaQuery.of(context).size.height * 0.54,
+                      height: 416,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14),
                         child: Column(
@@ -56,18 +56,22 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
                             const _Title(),
                             26.h,
                             StdInput(
+                              //  padding: EdgeInsets.only(top: 1),
                               hintText: 'Your Email',
                             ),
                             15.h,
                             StdInput(
                               hintText: 'Verification Code',
-                              suffixIcon: TextButton(
-                                onPressed: () {
-                                  // todo: добавить логику для таймера и подмену виджета
-                                },
-                                child: const Text(
-                                  'Sendcode ',
-                                  style: TextStyle(color: Colors.blue),
+                              suffixIcon: Padding(
+                                padding: const EdgeInsets.only(right: 12.0),
+                                child: TextButton(
+                                  onPressed: () {
+                                    // todo: добавить логику для таймера и подмену виджета
+                                  },
+                                  child: const Text(
+                                    'Sendcode',
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
                                 ),
                               ),
                             ),
@@ -75,7 +79,7 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
                             StdInput(
                               hintText: 'Referral ID (Optional)',
                             ),
-                            15.h,
+                            2.h,
                             Row(
                               children: [
                                 Checkbox(
@@ -93,10 +97,11 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
                                   },
                                 ),
                                 SizedBox(
-                                  width: 220,
+                                  width: 280,
                                   child: Text(
                                     'I agree to RUN&RUSH Terms of Use & Privacy Policy',
                                     style: AppStyles.caption
+                                        .andWeight(FontWeight.normal)
                                         .andColor(AppColors.accent),
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 3,
@@ -104,7 +109,9 @@ class AuthWelcomeScreen extends StatexWidget<AuthController> {
                                 ),
                               ],
                             ),
+                            2.h,
                             StdButton(
+                              color: Colors.transparent,
                               height: 52,
                               isActive: true,
                               onPress: () {

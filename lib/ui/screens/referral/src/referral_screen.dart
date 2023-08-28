@@ -37,7 +37,7 @@ class Referral extends StatexWidget<ReferralsController> {
                 Text(
                   'Refer friends.',
                   style: AppStyles.title2
-                      .andWeight(FontWeight.w600)
+                      .andWeight(FontWeight.bold)
                       .andColor(AppColors.text.primary),
                 ),
                 Text(
@@ -50,18 +50,20 @@ class Referral extends StatexWidget<ReferralsController> {
                 Text(
                   "Invite friends to sign up using your link \n and you'll get 10% of their purchase",
                   style: AppStyles.body
-                      .andWeight(FontWeight.w600)
+                      .andWeight(FontWeight.normal)
                       .andColor(AppColors.text.primary),
                 ),
                 20.h,
                 Text(
                   "Your referral ID",
                   style: AppStyles.caption
-                      .andWeight(FontWeight.w600)
+                      .andWeight(FontWeight.normal)
                       .andColor(AppColors.text.secondary),
                 ),
                 8.h,
                 StdButton(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 20,
                   textColor: Colors.black,
                   color: Colors.white,
                   text: '345465',
@@ -72,11 +74,13 @@ class Referral extends StatexWidget<ReferralsController> {
                 Text(
                   "Friends must use your ID when sign up!",
                   style: AppStyles.caption
-                      .andWeight(FontWeight.w600)
+                      .andWeight(FontWeight.normal)
                       .andColor(AppColors.text.secondary),
                 ),
                 16.h,
                 StdButton(
+                  fontSize: 20,
+                  color: Colors.transparent,
                   text: 'Copy Link',
                   isActive: true,
                   onPress: () {},
@@ -91,7 +95,7 @@ class Referral extends StatexWidget<ReferralsController> {
                         .andColor(AppColors.text.primary),
                   ),
                 ),
-                18.h,
+                22.h,
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -156,7 +160,7 @@ class ReferalItemWidget extends StatelessWidget {
               Text(
                 "11.12.2022, 18:43",
                 style: AppStyles.caption
-                    .andWeight(FontWeight.w600)
+                    .andWeight(FontWeight.normal)
                     .andColor(AppColors.text.secondary),
               ),
               9.h,
@@ -215,7 +219,7 @@ class BalanceWidget extends StatelessWidget {
                     Text(
                       '14',
                       style: AppStyles.title2
-                          .andWeight(FontWeight.w600)
+                          .andWeight(FontWeight.bold)
                           .andColor(AppColors.text.primary),
                     ),
                     Text(
@@ -240,7 +244,7 @@ class BalanceWidget extends StatelessWidget {
                         Text(
                           '273.54',
                           style: AppStyles.title2
-                              .andWeight(FontWeight.w600)
+                              .andWeight(FontWeight.bold)
                               .andColor(AppColors.text.primary),
                         ),
                       ],
@@ -281,18 +285,13 @@ class AppBarWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 24),
+                padding: const EdgeInsets.only(bottom: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
-                      'Refferal Program',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
+                      'Referal Program',
+                      style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],
                 ),

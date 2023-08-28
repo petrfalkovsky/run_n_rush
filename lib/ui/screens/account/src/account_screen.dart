@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
@@ -59,6 +60,7 @@ class Account extends StatexWidget<ReferralsController> {
                   16.h,
                   const Spacer(),
                   StdButton(
+                    color: Colors.transparent,
                     height: 52,
                     text: 'Save Changes',
                     onPress: () {},
@@ -109,15 +111,10 @@ class AppBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Account',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
+                      style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],
                 ),

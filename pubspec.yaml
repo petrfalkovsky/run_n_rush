@@ -86,19 +86,19 @@ flutter:
     - assets/fonts/
   
   fonts:
-  - family: SF UI Display
+  - family: Avenir BlackOblique
     fonts:
-      - asset: assets/fonts/SF-UI-Display-Bold.ttf
+      - asset: assets/fonts/Avenir_BlackOblique/Avenir-BlackOblique.ttf
         style: normal
-        weight: 600
-      - asset: assets/fonts/SF-UI-Display-Semibold.ttf
-        style: normal
-        weight: 500
-      - asset: assets/fonts/SF-UI-Display-Regular.ttf
+        # weight: 600
+      # - asset: assets/fonts/SF-UI-Display-Semibold.ttf
+      #   style: normal
+      #   weight: 500
+      - asset: assets/fonts/Avenir_BlackOblique/Avenir-Light-Oblique.ttf
         style: normal
         weight: 400
-  - family: Montserrat
+  - family: Avenir Book
     fonts:
-      - asset: assets/fonts/Montserrat/Montserrat-Bold.ttf
+      - asset: assets/fonts/Avenir_Book/Avenir-Book.ttf
         style: normal
-        weight: 700
+        # weight: 700

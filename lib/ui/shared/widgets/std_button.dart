@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/ext.dart';
+import 'package:run_n_rush/ui/shared/styles.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
@@ -10,6 +12,8 @@ class StdButton extends StatelessWidget {
     required this.isActive,
     this.color,
     this.textColor,
+    this.fontWeight,
+    this.fontSize,
     this.isOutlined = false,
     this.isLoading = false,
     this.padding,
@@ -30,6 +34,8 @@ class StdButton extends StatelessWidget {
   final double? height;
   final Color? color;
   final Color? textColor;
+  final double? fontSize;
+  final fontWeight;
   final String? icon;
 
   @override
@@ -45,6 +51,8 @@ class StdButton extends StatelessWidget {
               isLoading: isLoading,
               onPress: onPress,
               textColor: textColor,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
               icon: icon,
             )
           : _CustomElevatedButton(
@@ -55,6 +63,8 @@ class StdButton extends StatelessWidget {
               onPress: onPress,
               color: color,
               textColor: textColor,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
               icon: icon,
             ),
     );
@@ -71,6 +81,8 @@ class _CustomOutlinaButton extends StatelessWidget {
     this.padding,
     this.icon,
     this.textColor,
+    this.fontSize,
+    this.fontWeight,
   }) : super(key: key);
 
   final String text;
@@ -79,6 +91,8 @@ class _CustomOutlinaButton extends StatelessWidget {
   final Function() onPress;
   final EdgeInsets? padding;
   final Color? textColor;
+  final double? fontSize;
+  final fontWeight;
   final String? icon;
 
   @override
@@ -153,6 +167,8 @@ class _CustomElevatedButton extends StatelessWidget {
     required this.color,
     this.padding,
     this.textColor,
+    this.fontSize,
+    this.fontWeight,
     this.icon,
   }) : super(key: key);
 
@@ -163,6 +179,8 @@ class _CustomElevatedButton extends StatelessWidget {
   final EdgeInsets? padding;
   final Color? color;
   final Color? textColor;
+  final double? fontSize;
+  final fontWeight;
   final String? icon;
 
   @override
@@ -170,7 +188,7 @@ class _CustomElevatedButton extends StatelessWidget {
     final theme = Theme.of(context);
     final colorsScheme = theme.appColorsScheme;
     final resolvedButtonColor = color ?? colorsScheme.colors.accent.accent1;
-    final resolvedTextColor = textColor ?? colorsScheme.other.white;
+    // final resolvedTextColor = textColor ?? colorsScheme.other.white;
 
     return Container(
       height: 52, // высота всего инпута
@@ -224,12 +242,12 @@ class _CustomElevatedButton extends StatelessWidget {
                 : Text(
                     text,
                     softWrap: false,
-                    style: theme.appTextTheme.b2_0.copyWith(
-                      color: resolvedTextColor,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic,
-                    ),
+                    style: AppStyles.input.andWeight(FontWeight.bold).copyWith(
+                          // color: AppColors.text[1],
+                          color: textColor,
+                          fontSize: fontSize,
+                          fontWeight: fontWeight,
+                        ),
                   ),
           ])),
     );

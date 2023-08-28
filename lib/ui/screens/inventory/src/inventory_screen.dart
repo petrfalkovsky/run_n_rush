@@ -7,6 +7,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
@@ -85,16 +86,13 @@ class AppBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Inventory',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    )
+                      style: AppStyles.headline
+                          .andWeight(FontWeight.bold)
+                          .andColor(AppColors.text.primary),
+                    ),
                   ],
                 ),
               ),
@@ -182,36 +180,45 @@ class ProductListWidget extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    15.h,
-                                    const Text(
-                                      "Jogger 4-10 km/h",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle: FontStyle.italic,
-                                          color: Colors.white),
+                                    10.h,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "Jogger",
+                                          style: AppStyles.plainText
+                                              .andWeight(FontWeight.bold)
+                                              .andColor(AppColors.text.primary),
+                                        ),
+                                        10.w,
+                                        Text(
+                                          "4-10 km/h",
+                                          style: AppStyles.plainText
+                                              .andWeight(FontWeight.normal)
+                                              .andColor(AppColors.text.primary),
+                                        ),
+                                      ],
                                     ),
-                                    15.h,
-                                    const Text(
+                                    10.h,
+                                    Text(
                                       "#145265874",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.white),
+                                      style: AppStyles.plainText
+                                          .andWeight(FontWeight.bold)
+                                          .andColor(AppColors.text.primary),
                                     ),
-                                    const SizedBox(height: 10),
+                                    10.h,
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset(AppIcons.coin),
-                                        const SizedBox(width: 5),
-                                        const Text(
-                                          '00.0000',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                          ),
+                                        5.w,
+                                        Text(
+                                          '00.0025',
+                                          style: AppStyles.plainText
+                                              .andWeight(FontWeight.bold)
+                                              .andColor(AppColors.text.primary),
                                         ),
                                       ],
                                     ),
@@ -229,6 +236,7 @@ class ProductListWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               StdButton(
+                                color: Colors.transparent,
                                 height: 36,
                                 width: 122,
                                 text: 'PUT ON',

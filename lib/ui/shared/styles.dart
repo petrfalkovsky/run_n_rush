@@ -2,62 +2,77 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AppStyles {
-  static const fontRegular = 'Proxima-Nova';
+  static const avenirBlackOblique = 'Avenir BlackOblique';
+  static const avenirBook = 'Avenir Book';
 
   static const largeTitle = TextStyle(
     fontSize: 72,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
   );
 
   static const title = TextStyle(
     fontSize: 32,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
   );
 
   static const title2 = TextStyle(
     fontSize: 28,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
     fontWeight: FontWeight.w600,
   );
 
   static const headline = TextStyle(
     fontSize: 20,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
     fontWeight: FontWeight.w600,
   );
 
   static const body = TextStyle(
     fontSize: 16,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
     fontWeight: FontWeight.w600,
   );
 
   static const plainText = TextStyle(
     fontSize: 16,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
+  );
+
+  static const plainTextMedium = TextStyle(
+    fontSize: 14,
+    fontFamily: avenirBlackOblique,
+  );
+
+  static const plainTextSmall = TextStyle(
+    fontSize: 12,
+    fontFamily: avenirBlackOblique,
   );
 
   static const caption = TextStyle(
     fontSize: 12,
-    fontFamily: fontRegular,
+    fontFamily: avenirBook,
   );
 
   static const text22 = TextStyle(
     fontSize: 22,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
   );
 
   static const text24 = TextStyle(
     fontSize: 24,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
   );
   static const text30 = TextStyle(
     fontSize: 30,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
   );
   static const input = TextStyle(
     fontSize: 16,
-    fontFamily: fontRegular,
+    fontFamily: avenirBlackOblique,
+  );
+  static const button = TextStyle(
+    fontSize: 16,
+    fontFamily: avenirBlackOblique,
   );
 }
 

@@ -34,7 +34,7 @@ final List<GetPage> routes = [
   ),
   GetPage(
     name: AppRoutes.authWelcome,
-    page: () => AuthWelcomeScreen(),
+    page: () => WelcomeScreen(),
     transition: Transition.fadeIn,
   ),
   GetPage(

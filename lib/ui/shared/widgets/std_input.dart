@@ -70,7 +70,7 @@ class StdInput extends StatelessWidget {
       ),
       padding: padding,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (label != null)
             Padding(
@@ -101,13 +101,13 @@ class StdInput extends StatelessWidget {
               filled: true, // заполнить фон
               // fillColor: AppColors.accent, // фон
               contentPadding: const EdgeInsets.only(
-                  left: 32.0, bottom: 16), // отступы внутри
-              hintStyle: AppStyles.input
-                  .andWeight(FontWeight.w600)
-                  .copyWith(color: AppColors.text[2]),
+                  left: 32.0, bottom: 14), // отступы внутри
+              // hintStyle: AppStyles.input
+              //     .andWeight(FontWeight.w100)
+              //     .copyWith(color: AppColors.text[2]),
               labelText: hintText,
               labelStyle: AppStyles.input
-                  .andWeight(FontWeight.w600)
+                  .andWeight(FontWeight.normal)
                   .copyWith(color: AppColors.text[2]),
               prefix: isPhone ? const Text('+7') : null,
               prefixStyle: AppTextStyles.b2Regular,

@@ -1,6 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/styles.dart';
 
 class FilterDropdown extends StatefulWidget {
   @override
@@ -39,11 +41,9 @@ class _FilterDropdownState extends State<FilterDropdown> {
               value: value,
               child: Text(
                 value,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic),
+                style: AppStyles.plainText
+                    .andWeight(FontWeight.bold)
+                    .andColor(AppColors.text.primary),
               ),
             );
           }).toList(),

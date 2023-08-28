@@ -47,7 +47,7 @@ class TextFieldCustom extends StatelessWidget {
               textAlignVertical: TextAlignVertical.top,
               style: AppStyles.headline,
               strutStyle: const StrutStyle(
-                  fontSize: 16, fontFamily: AppStyles.fontRegular),
+                  fontSize: 16, fontFamily: AppStyles.avenirBlackOblique),
               onChanged: onChanged,
               maxLength: 500,
               minLines: null,

@@ -1,6 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/styles.dart';
 
 class AnimatedSwitcherWidget extends StatefulWidget {
   final VoidCallback onTap;
@@ -63,10 +65,9 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
                     child: Center(
                       child: Text(
                         isEnabled ? widget.dressedText : widget.allText,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppStyles.plainText
+                            .andWeight(FontWeight.bold)
+                            .andColor(AppColors.text.primary),
                       ),
                     ),
                   ),
@@ -80,10 +81,9 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: Text(
                     isEnabled ? '      ${widget.allText}' : widget.dressedText,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: AppStyles.plainText
+                        .andWeight(FontWeight.bold)
+                        .andColor(AppColors.text.primary),
                   ),
                 ),
               ),

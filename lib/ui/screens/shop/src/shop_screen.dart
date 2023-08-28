@@ -107,16 +107,15 @@ class AppBarWidget extends StatelessWidget {
                         children: [
                           Image.asset(AppIcons.coin),
                           const SizedBox(width: 5),
-                          const Text(
+                          Text(
                             '00.0025',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
+                            style: AppStyles.headline
+                                .andWeight(FontWeight.bold)
+                                .andColor(AppColors.text.primary),
                           ),
                           8.w,
                           StdButton(
-                            height: 32,
+                            height: 36,
                             width: 65,
                             text: 'BUY',
                             isActive: true,

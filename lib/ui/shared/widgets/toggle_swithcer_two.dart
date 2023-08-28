@@ -1,6 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
+import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/styles.dart';
 
 /// todo обязательно переделать чтобы не повторять код
 class AnimatedSwitcherWidgetTwo extends StatefulWidget {
@@ -67,10 +69,9 @@ class _AnimatedSwitcherWidgetTwoState extends State<AnimatedSwitcherWidgetTwo> {
                     child: Center(
                       child: Text(
                         isEnabled ? widget.dressedText : widget.allText,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppStyles.plainText
+                            .andWeight(FontWeight.bold)
+                            .andColor(AppColors.text.primary),
                       ),
                     ),
                   ),
@@ -84,11 +85,10 @@ class _AnimatedSwitcherWidgetTwoState extends State<AnimatedSwitcherWidgetTwo> {
                   /// неактивный контейнер - настроить отступ внутри слова от кнопки
                   padding: const EdgeInsets.only(left: 6, right: 14),
                   child: Text(
-                    isEnabled ? '    ${widget.allText}' : widget.dressedText,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    isEnabled ? '  ${widget.allText}' : widget.dressedText,
+                    style: AppStyles.plainText
+                        .andWeight(FontWeight.bold)
+                        .andColor(AppColors.text.primary),
                   ),
                 ),
               ),

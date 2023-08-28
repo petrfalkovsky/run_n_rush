@@ -51,8 +51,8 @@ class Settings extends StatexWidget<ReferralsController> {
                         children: [
                           Text(
                             "Total Distance",
-                            style: AppStyles.caption
-                                .andWeight(FontWeight.w600)
+                            style: AppStyles.plainTextMedium
+                                .andWeight(FontWeight.normal)
                                 .andColor(AppColors.text.secondary),
                           ),
                           const Spacer(),
@@ -60,8 +60,8 @@ class Settings extends StatexWidget<ReferralsController> {
                             children: [
                               Text(
                                 "364 km",
-                                style: AppStyles.caption
-                                    .andWeight(FontWeight.w600)
+                                style: AppStyles.plainTextMedium
+                                    .andWeight(FontWeight.bold)
                                     .andColor(AppColors.text.primary),
                               ),
                               16.w,
@@ -81,9 +81,9 @@ class Settings extends StatexWidget<ReferralsController> {
                         children: [
                           Text(
                             "Sound",
-                            style: AppStyles.caption
-                                .andWeight(FontWeight.w600)
-                                .andColor(AppColors.text.secondary),
+                            style: AppStyles.plainTextMedium
+                                .andWeight(FontWeight.normal)
+                                .andColor(AppColors.text.primary),
                           ),
                           const Spacer(),
                           CupertinoSwitch(
@@ -102,9 +102,9 @@ class Settings extends StatexWidget<ReferralsController> {
                         children: [
                           Text(
                             "Terms of Use",
-                            style: AppStyles.caption
-                                .andWeight(FontWeight.w600)
-                                .andColor(AppColors.text.secondary),
+                            style: AppStyles.plainTextMedium
+                                .andWeight(FontWeight.normal)
+                                .andColor(AppColors.text.primary),
                           ),
                           const Spacer(),
                           Row(
@@ -126,9 +126,9 @@ class Settings extends StatexWidget<ReferralsController> {
                         children: [
                           Text(
                             "Privacy Policy",
-                            style: AppStyles.caption
-                                .andWeight(FontWeight.w600)
-                                .andColor(AppColors.text.secondary),
+                            style: AppStyles.plainTextMedium
+                                .andWeight(FontWeight.normal)
+                                .andColor(AppColors.text.primary),
                           ),
                           const Spacer(),
                           Row(
@@ -207,15 +207,10 @@ class AppBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Settings',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
+                      style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],
                 ),
@@ -260,9 +255,9 @@ class AboutUserWidget extends StatelessWidget {
               18.h,
               Text(
                 "somelongemail@outlook.com",
-                style: AppStyles.caption
-                    .andWeight(FontWeight.w600)
-                    .andColor(AppColors.text.secondary),
+                style: AppStyles.plainTextSmall
+                    .andWeight(FontWeight.normal)
+                    .andColor(AppColors.text.primary),
               ),
               12.h,
             ],

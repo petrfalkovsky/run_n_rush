@@ -39,10 +39,7 @@ class Main extends StatexWidget<MainController> {
             children: [
               Text(
                 'Hello, d.push91@gmail.com',
-                style: TextStyle(
-                    color: AppColors.accent,
-                    fontSize: 24,
-                    fontStyle: FontStyle.italic),
+                style: AppStyles.headline.andColor(AppColors.accent),
               ),
               5.h,
               const GreatingBalanceWidget(),
@@ -56,6 +53,7 @@ class Main extends StatexWidget<MainController> {
               const LightningDataWidget(),
               46.h,
               StdButton(
+                color: Colors.transparent,
                 height: 52,
                 text: 'Start',
                 isActive: true,
@@ -91,13 +89,9 @@ class LightningDataWidget extends StatelessWidget {
               child: AppIcons.svgWidget(AppIcons.lightning, width: 14),
             ),
             const Spacer(),
-            const Text(
+            Text(
               '0.0/0.0',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w600),
+              style: AppStyles.body.andColor(AppColors.accent),
             )
           ]),
         ),
@@ -127,13 +121,9 @@ class SneakerDataWidget extends StatelessWidget {
                 width: 28,
                 child: AppIcons.svgWidget(AppIcons.sneaker, height: 28)),
             const Spacer(),
-            const Text(
+            Text(
               '0.00K /50K',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w600),
+              style: AppStyles.body.andColor(AppColors.accent),
             )
           ]),
         ),
@@ -331,12 +321,9 @@ class GreatingBalanceWidget extends StatelessWidget {
       children: [
         Image.asset(AppIcons.coin),
         10.w,
-        const Text(
+        Text(
           '00.0000',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-          ),
+          style: AppStyles.body.andColor(AppColors.accent),
         ),
       ],
     );
