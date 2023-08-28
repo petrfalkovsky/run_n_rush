@@ -228,9 +228,22 @@ class AppBarWidget extends StatelessWidget {
     return Stack(
       children: [
         AppBar(
+          leading: Padding(
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 24,
+            ),
+            child: IconButton(
+              onPressed: () => Get.back(),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+              ),
+            ),
+          ),
           backgroundColor: const Color(0xFF8784D3),
           elevation: 0,
-          toolbarHeight: 0,
+          // toolbarHeight: 0,
           automaticallyImplyLeading: false,
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.end,

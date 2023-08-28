@@ -35,6 +35,7 @@ class AppIcons {
   static const sneaker = '$_basePathIcons/sneaker.svg';
   static const lightning = '$_basePathIcons/lightning.svg';
   static const arrowForward = '$_basePathIcons/arrow_forward.svg';
+  static const map = '$_basePathIcons/map.svg';
 
   static const logo = '$_basePathImg/logo.png';
   static const jogger_2 = '$_basePathImg/jogger_2.png';
@@ -48,6 +49,10 @@ class AppIcons {
   static const pair = '$_basePathImg/sneackers_pair.png';
   static const outIcon = '$_basePathImg/out.png';
   static const inIcon = '$_basePathImg/in.png';
+  static const logoFrame = '$_basePathImg/logo_frame.png';
+  static const speedwatch = '$_basePathImg/speedwatch.png';
+  static const steps = '$_basePathImg/steps_icon.png';
+  static const coinLarge = '$_basePathImg/coin_rm.png';
 
   static Widget svgWidget(String path,
       {double? width, double? height, Color? color}) {

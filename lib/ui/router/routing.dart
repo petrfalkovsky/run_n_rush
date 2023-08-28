@@ -9,6 +9,7 @@ import 'package:run_n_rush/ui/screens/referral/src/referral_screen.dart';
 import 'package:run_n_rush/ui/screens/settings/src/settings_screen.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';
+import 'package:run_n_rush/ui/screens/start/src/start_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String settings = '/settings';
   static const String account = '/account';
   static const String balance = '/balance';
+  static const String start = '/start';
 
   static navigator(RouteSettings settings) {
     debugPrint('RouteSettings  $settings');
@@ -70,6 +72,11 @@ final List<GetPage> routes = [
   GetPage(
     name: AppRoutes.balance,
     page: () => Balance(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.start,
+    page: () => Start(),
     transition: Transition.fadeIn,
   ),
 ];

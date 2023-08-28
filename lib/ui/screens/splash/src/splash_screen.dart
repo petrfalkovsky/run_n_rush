@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:run_n_rush/ui/screens/splash/splash.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';

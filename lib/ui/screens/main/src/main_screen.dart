@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, unnecessary_import
 
 import 'dart:ui';
 
@@ -57,7 +57,9 @@ class Main extends StatexWidget<MainController> {
                 height: 52,
                 text: 'Start',
                 isActive: true,
-                onPress: () {},
+                onPress: () {
+                  Get.toNamed(AppRoutes.start);
+                },
               )
             ],
           ),

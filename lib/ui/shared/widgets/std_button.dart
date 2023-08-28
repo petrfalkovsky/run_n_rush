@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
@@ -35,6 +37,7 @@ class StdButton extends StatelessWidget {
   final Color? color;
   final Color? textColor;
   final double? fontSize;
+  // ignore: prefer_typing_uninitialized_variables
   final fontWeight;
   final String? icon;
 
@@ -92,6 +95,7 @@ class _CustomOutlinaButton extends StatelessWidget {
   final EdgeInsets? padding;
   final Color? textColor;
   final double? fontSize;
+  // ignore: prefer_typing_uninitialized_variables
   final fontWeight;
   final String? icon;
 
@@ -180,6 +184,7 @@ class _CustomElevatedButton extends StatelessWidget {
   final Color? color;
   final Color? textColor;
   final double? fontSize;
+  // ignore: prefer_typing_uninitialized_variables
   final fontWeight;
   final String? icon;
 
