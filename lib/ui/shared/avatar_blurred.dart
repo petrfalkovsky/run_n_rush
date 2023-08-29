@@ -1,15 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:run_n_rush/ui/shared/all_shared.dart';
-
-/// пример использования
-/// BlurredAvatar(
-///   containerSize: 152,
-///   positionInsets: const EdgeInsets.all(7),
-///   innerContainer: 138,
-///   borderColor: Colors.white.withOpacity(0.3),
-///   avatarSize: 59,
-/// )
+import 'all_shared.dart';
 
 class BlurredAvatar extends StatelessWidget {
   final double containerSize;
@@ -17,6 +8,8 @@ class BlurredAvatar extends StatelessWidget {
   final double innerContainer;
   final double avatarSize;
   final Color borderColor;
+  final Color? containerColor;
+  final Widget? customWidget;
 
   const BlurredAvatar({
     Key? key,
@@ -25,6 +18,8 @@ class BlurredAvatar extends StatelessWidget {
     required this.innerContainer,
     required this.avatarSize,
     required this.borderColor,
+    this.containerColor,
+    this.customWidget,
   }) : super(key: key);
 
   @override
@@ -42,7 +37,6 @@ class BlurredAvatar extends StatelessWidget {
             ),
           ),
           child: ClipOval(
-            /// заблюренный круг
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
@@ -57,17 +51,20 @@ class BlurredAvatar extends StatelessWidget {
           child: Container(
             width: innerContainer,
             height: innerContainer,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xFF01B8FF),
+              color: containerColor ??
+                  Color(
+                      0xFF01B8FF), // Используем переданный цвет или значение по умолчанию
             ),
             child: Center(
-              child: Image.asset(
-                AppIcons.avatar,
-                width: avatarSize,
-                height: avatarSize,
-                fit: BoxFit.cover,
-              ),
+              child: customWidget ??
+                  Image.asset(
+                    AppIcons.avatar,
+                    width: avatarSize,
+                    height: avatarSize,
+                    fit: BoxFit.cover,
+                  ),
             ),
           ),
         ),

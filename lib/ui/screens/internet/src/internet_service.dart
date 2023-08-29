@@ -50,7 +50,7 @@ class InternetScreenService extends GetxService with StreamSubscriberMixin {
   @override
   void onInit() {
     super.onInit();
-    debugPrint('ONINIT INTERNET SERVICE');
+    debugPrint(' ONINIT INTERNET SERVICE');
     initConnectivity();
 
     _connectivity.onConnectivityChanged.listen(((event) {

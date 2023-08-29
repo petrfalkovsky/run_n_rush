@@ -9,6 +9,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/buttons/play.dart';
+import 'package:run_n_rush/ui/shared/widgets/speedometer.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 import 'package:run_n_rush/ui/screens/main/main.dart';
@@ -257,6 +258,8 @@ class AvatarWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BlurredAvatar(
+                containerColor: AppColors.background,
+                customWidget: const Speedometer(),
                 containerSize: 152,
                 positionInsets: const EdgeInsets.all(7),
                 innerContainer: 138,

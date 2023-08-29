@@ -86,7 +86,7 @@ class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   @override
   void onInit() {
     super.onInit();
-    debugPrint('ONINIT SCAFFOLD SIRIUS SERVICE');
+    debugPrint(' ONINIT SCAFFOLD SIRIUS SERVICE');
     _isNotToday(false);
   }
 }

@@ -36,6 +36,9 @@ class AppIcons {
   static const lightning = '$_basePathIcons/lightning.svg';
   static const arrowForward = '$_basePathIcons/arrow_forward.svg';
   static const map = '$_basePathIcons/map.svg';
+  static const ellipse = '$_basePathIcons/ellipse.svg';
+
+  // AppIcons.svgWidget(AppIcons.map, width: 26),
 
   static const logo = '$_basePathImg/logo.png';
   static const jogger_2 = '$_basePathImg/jogger_2.png';
@@ -53,6 +56,7 @@ class AppIcons {
   static const speedwatch = '$_basePathImg/speedwatch.png';
   static const steps = '$_basePathImg/steps_icon.png';
   static const coinLarge = '$_basePathImg/coin_rm.png';
+  static const speedArrow = '$_basePathImg/speed_arrow.png';
 
   static Widget svgWidget(String path,
       {double? width, double? height, Color? color}) {

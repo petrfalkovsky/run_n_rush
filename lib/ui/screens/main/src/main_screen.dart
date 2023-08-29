@@ -18,7 +18,7 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class Main extends StatexWidget<MainController> {
   Main({Key? key}) : super(() => MainController(), key: key) {
-    debugPrint('Главный экран');
+    debugPrint(' главный экран');
   }
 
   @override
