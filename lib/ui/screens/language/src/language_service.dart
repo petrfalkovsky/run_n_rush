@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:run_n_rush/data/repository/local/local_repository.dart';
 
-enum LanguageApp { ru, en }
+enum LanguageApp { en, ru }
 
 extension LanguageAppEx on LanguageApp {
   String get name => describeEnum(this);
@@ -17,13 +17,13 @@ class LanguageScreenService extends GetxService {
 
   final LocalRepository repoLocal;
 
+  /// язык по умолчанию
   final _language = LanguageApp.ru.obs;
   LanguageApp get language$ => _language();
 
-  //выбор языка
   final mapLang = {
-    'ru': Language(lang: 'Русский', path: ''),
     'en': Language(lang: 'English', path: ''),
+    'ru': Language(lang: 'Русский', path: ''),
   };
 
   bool selectedLang(String lang) => language$.name == lang;

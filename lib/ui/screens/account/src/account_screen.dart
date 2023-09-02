@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
@@ -113,7 +114,7 @@ class AppBarWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Account',
+                      'account'.tr(),
                       style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],

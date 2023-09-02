@@ -8,6 +8,9 @@ class AppIcons {
       AssetImage('$_basePathImg/splash_screen_bg.png');
   static const AssetImage appBarBackground =
       AssetImage('$_basePathImg/appbar_frame.png');
+
+  /// использовать свг иконки
+  /// AppIcons.svgWidget(AppIcons.map, width: 26),
   static const add = '$_basePathIcons/add_icon.svg';
   static const remove = '$_basePathIcons/remove_icon.svg';
   static const arrowDown = '$_basePathIcons/arrow_down.svg';
@@ -38,12 +41,11 @@ class AppIcons {
   static const map = '$_basePathIcons/map.svg';
   static const ellipse = '$_basePathIcons/ellipse.svg';
 
-  // AppIcons.svgWidget(AppIcons.map, width: 26),
-
+  /// использовать пнг изображения
+  /// Image.asset(AppIcons.monoJogger),
   static const logo = '$_basePathImg/logo.png';
   static const jogger_2 = '$_basePathImg/jogger_2.png';
   static const coin = '$_basePathImg/blue_coin.png';
-  static const laskinoPng = '$_basePathImg/laskino.png';
   static const welcomeScreenBg = '$_basePathImg/welcome_screen_bg.png';
   static const splashScreen = '$_basePathImg/splash_screen_bg.png';
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';

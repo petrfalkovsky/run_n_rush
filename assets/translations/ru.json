@@ -1,6 +1,9 @@
 {
     "@@locale": "ru",
-    "appName": "Ласкино Парк",
+    "account": "Аккаунт",
+    "appName": "Run n Rush",
+
+    
     "inputErrorGeneral": "Проверьте ввод",
     "inputErrorPassword": "Введите пароль",
     "inputErrorPasswordIsShort": "Не менее 6 символов",
@@ -58,7 +61,6 @@
     "monthDecember": "Декабрь",
     "quantity": "шт.",
     "loadingApp": "Загрузка приложения...",
-    "parkLaskino": "ЛАСКИНО • ПАРК",
     "onboardingSubtitle": "Кластер долголетия",
     "entryAccount": "Войти в уч. запись",
     "userRegisteredSuccessfully": "Пользователь успешно зарегистрирован",

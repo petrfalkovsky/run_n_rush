@@ -53,9 +53,7 @@ class BlurredAvatar extends StatelessWidget {
             height: innerContainer,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: containerColor ??
-                  Color(
-                      0xFF01B8FF), // Используем переданный цвет или значение по умолчанию
+              color: containerColor ?? const Color(0xFF01B8FF),
             ),
             child: Center(
               child: customWidget ??

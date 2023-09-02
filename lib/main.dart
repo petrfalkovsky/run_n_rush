@@ -53,7 +53,6 @@ Future main() async {
     },
   );
 }
-//
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
