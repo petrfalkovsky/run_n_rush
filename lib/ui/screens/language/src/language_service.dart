@@ -18,7 +18,7 @@ class LanguageScreenService extends GetxService {
   final LocalRepository repoLocal;
 
   /// язык по умолчанию
-  final _language = LanguageApp.ru.obs;
+  final _language = LanguageApp.en.obs;
   LanguageApp get language$ => _language();
 
   final mapLang = {
