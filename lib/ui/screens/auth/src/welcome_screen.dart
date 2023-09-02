@@ -11,6 +11,7 @@ import 'package:run_n_rush/ui/screens/auth/src/welcome_controller.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/constants/assets.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/counter_text_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
@@ -64,14 +65,10 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                               hintText: 'verification_code'.tr(),
                               suffixIcon: Padding(
                                 padding: const EdgeInsets.only(right: 12.0),
-                                child: TextButton(
+                                child: CountdownButton(
                                   onPressed: () {
-                                    // todo: добавить логику для таймера и подмену виджета
+                                    debugPrint('нажата Sendcode кнопка');
                                   },
-                                  child: Text(
-                                    'sendcode'.tr(),
-                                    style: const TextStyle(color: Colors.blue),
-                                  ),
                                 ),
                               ),
                             ),
