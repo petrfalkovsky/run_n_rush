@@ -13,7 +13,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Referral extends StatexWidget<ReferralsController> {
   Referral({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран реферальной программы');
+    debugPrint('ref_screen'.tr());
   }
 
   @override
@@ -35,27 +35,32 @@ class Referral extends StatexWidget<ReferralsController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Refer friends.',
+                  'refer_friends'.tr(),
                   style: AppStyles.title2
                       .andWeight(FontWeight.bold)
                       .andColor(AppColors.text.primary),
                 ),
                 Text(
-                  'Earn Money',
+                  'earn_money'.tr(),
                   style: AppStyles.title2
                       .andWeight(FontWeight.w600)
                       .andColor(AppColors.text.primary),
                 ),
                 16.h,
-                Text(
-                  "Invite friends to sign up using your link \n and you'll get 10% of their purchase",
-                  style: AppStyles.body
-                      .andWeight(FontWeight.normal)
-                      .andColor(AppColors.text.primary),
+                SizedBox(
+                  width: 300,
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    "invite_friends".tr(),
+                    style: AppStyles.body
+                        .andWeight(FontWeight.normal)
+                        .andColor(AppColors.text.primary),
+                  ),
                 ),
                 20.h,
                 Text(
-                  "Your referral ID",
+                  "your_ref_ID".tr(),
                   style: AppStyles.caption
                       .andWeight(FontWeight.normal)
                       .andColor(AppColors.text.secondary),
@@ -66,13 +71,13 @@ class Referral extends StatexWidget<ReferralsController> {
                   fontSize: 20,
                   textColor: Colors.black,
                   color: Colors.white,
-                  text: '345465',
+                  text: 'ref_ID_example'.tr(),
                   isActive: false,
                   onPress: () {},
                 ),
                 8.h,
                 Text(
-                  "Friends must use your ID when sign up!",
+                  "friends_must_use".tr(),
                   style: AppStyles.caption
                       .andWeight(FontWeight.normal)
                       .andColor(AppColors.text.secondary),
@@ -81,7 +86,7 @@ class Referral extends StatexWidget<ReferralsController> {
                 StdButton(
                   fontSize: 20,
                   color: Colors.transparent,
-                  text: 'Copy Link',
+                  text: 'copy_link'.tr(),
                   isActive: true,
                   onPress: () {},
                 ),
@@ -89,7 +94,7 @@ class Referral extends StatexWidget<ReferralsController> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Reward From Referrals",
+                    "reward_from_referrals".tr(),
                     style: AppStyles.body
                         .andWeight(FontWeight.w600)
                         .andColor(AppColors.text.primary),
@@ -158,7 +163,7 @@ class ReferalItemWidget extends StatelessWidget {
             children: [
               4.h,
               Text(
-                "11.12.2022, 18:43",
+                "time_date_example".tr(),
                 style: AppStyles.caption
                     .andWeight(FontWeight.normal)
                     .andColor(AppColors.text.secondary),
@@ -167,7 +172,7 @@ class ReferalItemWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "some@email.com",
+                    "email_example_two".tr(),
                     style: AppStyles.body
                         .andWeight(FontWeight.w600)
                         .andColor(AppColors.text.primary),
@@ -223,7 +228,7 @@ class BalanceWidget extends StatelessWidget {
                           .andColor(AppColors.text.primary),
                     ),
                     Text(
-                      'Referrals',
+                      'referrals',
                       style: AppStyles.body
                           .andWeight(FontWeight.normal)
                           .andColor(AppColors.text.secondaryTwo),
@@ -242,7 +247,7 @@ class BalanceWidget extends StatelessWidget {
                         Image.asset(AppIcons.coin),
                         9.w,
                         Text(
-                          '273.54',
+                          'amount_coins_example_two'.tr(),
                           style: AppStyles.title2
                               .andWeight(FontWeight.bold)
                               .andColor(AppColors.text.primary),
@@ -250,7 +255,7 @@ class BalanceWidget extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      'Earned (for all time)',
+                      'earned'.tr(),
                       style: AppStyles.body
                           .andWeight(FontWeight.normal)
                           .andColor(AppColors.text.secondaryTwo),
@@ -290,7 +295,7 @@ class AppBarWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Referal Program',
+                      'referal_program'.tr(),
                       style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],

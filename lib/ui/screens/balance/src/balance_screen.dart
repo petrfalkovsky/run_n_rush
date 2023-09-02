@@ -15,7 +15,7 @@ import '../balance.dart';
 
 class Balance extends StatexWidget<BalanceController> {
   Balance({Key? key}) : super(() => BalanceController(), key: key) {
-    debugPrint(' экран реферальной программы');
+    debugPrint('balance_screen'.tr());
   }
 
   @override
@@ -39,7 +39,7 @@ class Balance extends StatexWidget<BalanceController> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Transaction History",
+                    "Transaction History".tr(),
                     style: AppStyles.body
                         .andWeight(FontWeight.w600)
                         .andColor(AppColors.text.primary),
@@ -108,7 +108,7 @@ class ReferalItemWidget extends StatelessWidget {
             children: [
               4.h,
               Text(
-                "11.12.2022, 18:43",
+                "time_date_example".tr(),
                 style: AppStyles.caption
                     .andWeight(FontWeight.w600)
                     .andColor(AppColors.text.secondary),
@@ -117,7 +117,7 @@ class ReferalItemWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Withdraw",
+                    "withdraw".tr(),
                     style: AppStyles.body
                         .andWeight(FontWeight.w600)
                         .andColor(AppColors.text.primary),
@@ -139,7 +139,7 @@ class ReferalItemWidget extends StatelessWidget {
               Image.asset(AppIcons.coin),
               5.5.w,
               Text(
-                "74.32",
+                "amount_coins_example_one".tr(),
                 style: AppStyles.body
                     .andWeight(FontWeight.w600)
                     .andColor(AppColors.text.primary),
@@ -177,7 +177,7 @@ class BalanceWidget extends StatelessWidget {
                     Image.asset(AppIcons.coin),
                     9.w,
                     Text(
-                      '273.54',
+                      'amount_coins_example_two'.tr(),
                       style: AppStyles.title2
                           .andWeight(FontWeight.w600)
                           .andColor(AppColors.text.primary),
@@ -196,7 +196,7 @@ class BalanceWidget extends StatelessWidget {
                 height: 56,
                 color: Colors.transparent,
                 width: 176,
-                text: 'BUY',
+                text: 'buy'.tr().toUpperCase(),
                 isActive: true,
                 onPress: () {},
               ),
@@ -206,7 +206,7 @@ class BalanceWidget extends StatelessWidget {
                 height: 56,
                 color: Colors.transparent,
                 width: 176,
-                text: 'SELL',
+                text: 'sell'.tr().toUpperCase(),
                 isActive: true,
                 onPress: () {},
               ),
@@ -254,7 +254,7 @@ class AppBarWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Balance',
+                      'balance'.tr(),
                       style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],

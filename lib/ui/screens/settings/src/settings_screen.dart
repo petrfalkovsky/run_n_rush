@@ -17,7 +17,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Settings extends StatexWidget<ReferralsController> {
   Settings({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран настроек');
+    debugPrint('settings_screen'.tr());
   }
 
   @override
@@ -50,7 +50,7 @@ class Settings extends StatexWidget<ReferralsController> {
                       child: Row(
                         children: [
                           Text(
-                            "Total Distance",
+                            "total_distance".tr(),
                             style: AppStyles.plainTextMedium
                                 .andWeight(FontWeight.normal)
                                 .andColor(AppColors.text.secondary),
@@ -59,7 +59,14 @@ class Settings extends StatexWidget<ReferralsController> {
                           Row(
                             children: [
                               Text(
-                                "364 km",
+                                "364",
+                                style: AppStyles.plainTextMedium
+                                    .andWeight(FontWeight.bold)
+                                    .andColor(AppColors.text.primary),
+                              ),
+                              4.w,
+                              Text(
+                                "km".tr(),
                                 style: AppStyles.plainTextMedium
                                     .andWeight(FontWeight.bold)
                                     .andColor(AppColors.text.primary),
@@ -80,7 +87,7 @@ class Settings extends StatexWidget<ReferralsController> {
                       child: Row(
                         children: [
                           Text(
-                            "Sound",
+                            "sound".tr(),
                             style: AppStyles.plainTextMedium
                                 .andWeight(FontWeight.normal)
                                 .andColor(AppColors.text.primary),
@@ -101,7 +108,7 @@ class Settings extends StatexWidget<ReferralsController> {
                       child: Row(
                         children: [
                           Text(
-                            "Terms of Use",
+                            "terms".tr(),
                             style: AppStyles.plainTextMedium
                                 .andWeight(FontWeight.normal)
                                 .andColor(AppColors.text.primary),
@@ -125,7 +132,7 @@ class Settings extends StatexWidget<ReferralsController> {
                       child: Row(
                         children: [
                           Text(
-                            "Privacy Policy",
+                            "privacy_policy".tr(),
                             style: AppStyles.plainTextMedium
                                 .andWeight(FontWeight.normal)
                                 .andColor(AppColors.text.primary),
@@ -209,7 +216,7 @@ class AppBarWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Settings',
+                      'settings'.tr(),
                       style: AppStyles.headline.andColor(AppColors.accent),
                     )
                   ],
@@ -247,14 +254,14 @@ class AboutUserWidget extends StatelessWidget {
             children: [
               12.h,
               Text(
-                "Runner",
+                "runner".tr(),
                 style: AppStyles.headline
                     .andWeight(FontWeight.w600)
                     .andColor(AppColors.text.primary),
               ),
               18.h,
               Text(
-                "somelongemail@outlook.com",
+                "email_example_two".tr(),
                 style: AppStyles.plainTextSmall
                     .andWeight(FontWeight.normal)
                     .andColor(AppColors.text.primary),

@@ -18,7 +18,7 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class Main extends StatexWidget<MainController> {
   Main({Key? key}) : super(() => MainController(), key: key) {
-    debugPrint(' главный экран');
+    debugPrint('main_screen'.tr());
   }
 
   @override
@@ -38,7 +38,7 @@ class Main extends StatexWidget<MainController> {
           child: Column(
             children: [
               Text(
-                'Hello, d.push91@gmail.com',
+                'email_example'.tr(),
                 style: AppStyles.headline.andColor(AppColors.accent),
               ),
               5.h,
@@ -55,7 +55,7 @@ class Main extends StatexWidget<MainController> {
               StdButton(
                 color: Colors.transparent,
                 height: 52,
-                text: 'Start',
+                text: 'start'.tr(),
                 isActive: true,
                 onPress: () {
                   Get.toNamed(AppRoutes.start);
@@ -92,9 +92,18 @@ class LightningDataWidget extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              '0.0/0.0',
+              'result_example'.tr(),
               style: AppStyles.body.andColor(AppColors.accent),
-            )
+            ),
+            2.w,
+            Text(
+              'slash_sign'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            Text(
+              'result_example'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
           ]),
         ),
       ),
@@ -124,7 +133,24 @@ class SneakerDataWidget extends StatelessWidget {
                 child: AppIcons.svgWidget(AppIcons.sneaker, height: 28)),
             const Spacer(),
             Text(
-              '0.00K /50K',
+              'result_example'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            Text(
+              'thousand'.tr().toUpperCase(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            2.w,
+            Text(
+              'slash_sign'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            Text(
+              '50_steps_example'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            Text(
+              'thousand'.tr().toUpperCase(),
               style: AppStyles.body.andColor(AppColors.accent),
             )
           ]),
@@ -324,7 +350,7 @@ class GreatingBalanceWidget extends StatelessWidget {
         Image.asset(AppIcons.coin),
         10.w,
         Text(
-          '00.0000',
+          'coins_balance_example'.tr(),
           style: AppStyles.body.andColor(AppColors.accent),
         ),
       ],

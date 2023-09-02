@@ -22,13 +22,11 @@ import '../start.dart';
 
 class Start extends StatexWidget<StartController> {
   Start({Key? key}) : super(() => StartController(), key: key) {
-    debugPrint(' экран старт');
+    debugPrint('start_screen'.tr());
   }
 
   @override
   Widget buildWidget(BuildContext context) {
-    // todo убрать хардкод и переменные добавить
-
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: false,
@@ -72,7 +70,7 @@ class Start extends StatexWidget<StartController> {
                       Padding(
                         padding: const EdgeInsets.only(top: 16),
                         child: Text(
-                          '11,587',
+                          'amount_eleven_example'.tr(),
                           style: AppStyles.body
                               .andColor(AppColors.accent)
                               .andWeight(FontWeight.bold),
@@ -92,14 +90,14 @@ class Start extends StatexWidget<StartController> {
                   Column(
                     children: [
                       Text(
-                        '4.32',
+                        'amount_four_example'.tr(),
                         style: AppStyles.largeTitle
                             .andColor(AppColors.accent)
                             .andWeight(FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'Kilometers',
+                        'kilometers'.tr(),
                         style: AppStyles.body
                             .andColor(AppColors.text.secondary)
                             .andWeight(FontWeight.bold),
@@ -113,7 +111,7 @@ class Start extends StatexWidget<StartController> {
                       Padding(
                         padding: const EdgeInsets.only(top: 16),
                         child: Text(
-                          '32:41',
+                          'amount_thirty_two_example'.tr(),
                           style: AppStyles.body
                               .andColor(AppColors.accent)
                               .andWeight(FontWeight.bold),
@@ -138,7 +136,14 @@ class Start extends StatexWidget<StartController> {
                   ),
                   11.w,
                   Text(
-                    '+253.52',
+                    'plus_sign'.tr(),
+                    style: AppStyles.title
+                        .andColor(AppColors.accent)
+                        .andWeight(FontWeight.bold),
+                  ),
+                  2.w,
+                  Text(
+                    'amount_coins_example_two'.tr(),
                     style: AppStyles.title
                         .andColor(AppColors.accent)
                         .andWeight(FontWeight.bold),
@@ -188,9 +193,18 @@ class LightningDataWidget extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              '0.0/0.0',
+              'result_example'.tr(),
               style: AppStyles.body.andColor(AppColors.accent),
-            )
+            ),
+            2.w,
+            Text(
+              'slash_sign'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+            Text(
+              'result_example'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
           ]),
         ),
       ),

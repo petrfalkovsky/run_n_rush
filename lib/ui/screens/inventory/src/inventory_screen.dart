@@ -18,7 +18,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class InventoryScreen extends StatexWidget<InventoryController> {
   InventoryScreen({Key? key}) : super(() => InventoryController(), key: key) {
-    debugPrint(' экран склада');
+    debugPrint('inventory_screen'.tr());
   }
 
   @override
@@ -88,7 +88,7 @@ class AppBarWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Inventory',
+                      'inventory'.tr(),
                       style: AppStyles.headline
                           .andWeight(FontWeight.bold)
                           .andColor(AppColors.text.primary),
@@ -186,14 +186,21 @@ class ProductListWidget extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          "Jogger",
+                                          "jogger".tr(),
                                           style: AppStyles.plainText
                                               .andWeight(FontWeight.bold)
                                               .andColor(AppColors.text.primary),
                                         ),
                                         10.w,
                                         Text(
-                                          "4-10 km/h",
+                                          "4-10".tr(),
+                                          style: AppStyles.plainText
+                                              .andWeight(FontWeight.normal)
+                                              .andColor(AppColors.text.primary),
+                                        ),
+                                        4.w,
+                                        Text(
+                                          "km_h".tr(),
                                           style: AppStyles.plainText
                                               .andWeight(FontWeight.normal)
                                               .andColor(AppColors.text.primary),
@@ -202,7 +209,7 @@ class ProductListWidget extends StatelessWidget {
                                     ),
                                     10.h,
                                     Text(
-                                      "#145265874",
+                                      "amount_id_transaction_exapmple".tr(),
                                       style: AppStyles.plainText
                                           .andWeight(FontWeight.bold)
                                           .andColor(AppColors.text.primary),
@@ -215,7 +222,7 @@ class ProductListWidget extends StatelessWidget {
                                         Image.asset(AppIcons.coin),
                                         5.w,
                                         Text(
-                                          '00.0025',
+                                          'amount_coins_example_three'.tr(),
                                           style: AppStyles.plainText
                                               .andWeight(FontWeight.bold)
                                               .andColor(AppColors.text.primary),
@@ -239,7 +246,7 @@ class ProductListWidget extends StatelessWidget {
                                 color: Colors.transparent,
                                 height: 36,
                                 width: 122,
-                                text: 'PUT ON',
+                                text: 'put_on'.tr().toUpperCase(),
                                 isActive: true,
                                 onPress: () {
                                   CustomModal.show(

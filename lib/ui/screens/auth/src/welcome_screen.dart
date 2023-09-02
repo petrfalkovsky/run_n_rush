@@ -17,7 +17,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class WelcomeScreen extends StatexWidget<AuthController> {
   WelcomeScreen({Key? key}) : super(() => AuthController(), key: key) {
-    debugPrint(' AuthWelcomeScreen.AuthWelcomeScreen');
+    debugPrint('welcome_screen'.tr());
   }
 
   @override
@@ -57,27 +57,27 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                             26.h,
                             StdInput(
                               //  padding: EdgeInsets.only(top: 1),
-                              hintText: 'Your Email',
+                              hintText: 'your_email'.tr(),
                             ),
                             15.h,
                             StdInput(
-                              hintText: 'Verification Code',
+                              hintText: 'verification_code'.tr(),
                               suffixIcon: Padding(
                                 padding: const EdgeInsets.only(right: 12.0),
                                 child: TextButton(
                                   onPressed: () {
                                     // todo: добавить логику для таймера и подмену виджета
                                   },
-                                  child: const Text(
-                                    'Sendcode',
-                                    style: TextStyle(color: Colors.blue),
+                                  child: Text(
+                                    'sendcode'.tr(),
+                                    style: const TextStyle(color: Colors.blue),
                                   ),
                                 ),
                               ),
                             ),
                             15.h,
                             StdInput(
-                              hintText: 'Referral ID (Optional)',
+                              hintText: 'ref_ID'.tr(),
                             ),
                             2.h,
                             Row(
@@ -99,7 +99,7 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                                 SizedBox(
                                   width: 280,
                                   child: Text(
-                                    'I agree to RUN&RUSH Terms of Use & Privacy Policy',
+                                    'privacy_policy_agree'.tr(),
                                     style: AppStyles.caption
                                         .andWeight(FontWeight.normal)
                                         .andColor(AppColors.accent),
@@ -117,7 +117,7 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                               onPress: () {
                                 Get.toNamed(AppRoutes.main);
                               },
-                              text: 'Login / Sign Up',
+                              text: 'login_sing_up'.tr(),
                             ),
                           ],
                         ),
@@ -155,10 +155,14 @@ class _Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Welcome to best\nplay-to-earn project!',
-      style: AppStyles.headline.andColor(AppColors.accent),
-      textAlign: TextAlign.center,
+    return SizedBox(
+      width: 200,
+      child: Text(
+        maxLines: 2,
+        'welcome_to'.tr(),
+        style: AppStyles.headline.andColor(AppColors.accent),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 
 class Account extends StatexWidget<ReferralsController> {
   Account({Key? key}) : super(() => ReferralsController(), key: key) {
-    debugPrint(' экран реферальной программы');
+    debugPrint('account_screen'.tr());
   }
 
   @override
@@ -44,7 +44,7 @@ class Account extends StatexWidget<ReferralsController> {
                   ),
                   38.h,
                   StdInput(
-                      hintText: 'Email',
+                      hintText: 'email'.tr(),
                       // controller: controller.emailController,
                       onChanged: (v) {}
 
@@ -52,7 +52,7 @@ class Account extends StatexWidget<ReferralsController> {
                       ),
                   16.h,
                   StdInput(
-                      hintText: 'Login',
+                      hintText: 'login'.tr(),
                       // controller: controller.passwordController,
                       obscureText: true,
                       onChanged: (v) {}
@@ -63,7 +63,7 @@ class Account extends StatexWidget<ReferralsController> {
                   StdButton(
                     color: Colors.transparent,
                     height: 52,
-                    text: 'Save Changes',
+                    text: 'save_changes'.tr(),
                     onPress: () {},
                     isActive: true,
                   ),

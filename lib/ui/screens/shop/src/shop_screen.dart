@@ -17,7 +17,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class ShopScreen extends StatexWidget<InventoryController> {
   ShopScreen({Key? key}) : super(() => InventoryController(), key: key) {
-    debugPrint(' экран магазина');
+    debugPrint('shop_screen'.tr());
   }
 
   @override
@@ -43,8 +43,8 @@ class ShopScreen extends StatexWidget<InventoryController> {
 
                   /// переключатель предложений купить/продать
                   AnimatedSwitcherWidgetTwo(
-                    allText: 'Buy',
-                    dressedText: 'Sell',
+                    allText: 'buy'.tr().toUpperCase(),
+                    dressedText: 'sell'.tr().toUpperCase(),
                     animatedContainerWidth: 120,
                     smallContainerWidth: 60,
                     onTap: () {},
@@ -90,9 +90,9 @@ class AppBarWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 24, left: 24, right: 24),
                 child: Row(
                   children: [
-                    const Text(
-                      'Shop',
-                      style: TextStyle(
+                    Text(
+                      'shop'.tr(),
+                      style: const TextStyle(
                         fontStyle: FontStyle.italic,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -108,7 +108,7 @@ class AppBarWidget extends StatelessWidget {
                           Image.asset(AppIcons.coin),
                           const SizedBox(width: 5),
                           Text(
-                            '00.0025',
+                            'amount_coins_example_three'.tr(),
                             style: AppStyles.headline
                                 .andWeight(FontWeight.bold)
                                 .andColor(AppColors.text.primary),
@@ -117,7 +117,7 @@ class AppBarWidget extends StatelessWidget {
                           StdButton(
                             height: 36,
                             width: 65,
-                            text: 'BUY',
+                            text: 'buy'.tr().toUpperCase(),
                             isActive: true,
                             onPress: () => Get.toNamed(AppRoutes.balance),
                           )
@@ -209,18 +209,35 @@ class ProductListWidget extends StatelessWidget {
                                   ),
                                 ),
                                 15.h,
-                                const Text(
-                                  "Jogger 4-10 km/h",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FontStyle.italic,
-                                      color: Colors.white),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "jogger".tr(),
+                                      style: AppStyles.plainText
+                                          .andWeight(FontWeight.bold)
+                                          .andColor(AppColors.text.primary),
+                                    ),
+                                    10.w,
+                                    Text(
+                                      "4-10".tr(),
+                                      style: AppStyles.plainText
+                                          .andWeight(FontWeight.normal)
+                                          .andColor(AppColors.text.primary),
+                                    ),
+                                    4.w,
+                                    Text(
+                                      "km_h".tr(),
+                                      style: AppStyles.plainText
+                                          .andWeight(FontWeight.normal)
+                                          .andColor(AppColors.text.primary),
+                                    ),
+                                  ],
                                 ),
-                                15.h,
-                                const Text(
-                                  "#145265874",
-                                  style: TextStyle(
+                                13.h,
+                                Text(
+                                  "amount_id_transaction_exapmple".tr(),
+                                  style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white),
@@ -231,9 +248,9 @@ class ProductListWidget extends StatelessWidget {
                                   children: [
                                     Image.asset(AppIcons.coin),
                                     const SizedBox(width: 5),
-                                    const Text(
-                                      '00.0000',
-                                      style: TextStyle(
+                                    Text(
+                                      'coins_balance_example'.tr(),
+                                      style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 14,
                                       ),
@@ -256,7 +273,7 @@ class ProductListWidget extends StatelessWidget {
                           StdButton(
                             height: 36,
                             width: 97,
-                            text: 'BUY',
+                            text: 'buy'.tr().toUpperCase(),
                             isActive: true,
                             onPress: () {
                               CustomModal.show(
@@ -292,7 +309,7 @@ class BottomSheetChildWidget extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Great choice!',
+            'great_choice'.tr(),
             style: AppStyles.body
                 .andWeight(FontWeight.w600)
                 .andColor(AppColors.text.primary),
@@ -301,7 +318,7 @@ class BottomSheetChildWidget extends StatelessWidget {
           Image.asset(AppIcons.pair),
           12.h,
           Text(
-            '#145265874',
+            'amount_id_transaction_exapmple'.tr(),
             style: AppStyles.body
                 .andWeight(FontWeight.w600)
                 .andColor(AppColors.text.primary),
@@ -318,14 +335,14 @@ class BottomSheetChildWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Jogger',
+                  'jogger'.tr(),
                   style: AppStyles.body
                       .andWeight(FontWeight.w600)
                       .andColor(AppColors.text.primary),
                 ),
                 8.h,
                 Text(
-                  'Move at 4-10 km/h to earn token!',
+                  'move_at'.tr(),
                   style: AppStyles.plainText.andColor(AppColors.text.primary),
                 ),
               ],
@@ -343,14 +360,14 @@ class BottomSheetChildWidget extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          'Class',
+                          'class'.tr(),
                           style: AppStyles.caption
                               .andWeight(FontWeight.normal)
                               .andColor(AppColors.text.secondaryTwo),
                         ),
                         12.h,
                         Text(
-                          'Jogger',
+                          'jogger'.tr(),
                           style: AppStyles.body
                               .andWeight(FontWeight.w600)
                               .andColor(AppColors.text.primary),
@@ -364,17 +381,34 @@ class BottomSheetChildWidget extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          'Durability',
+                          'durability'.tr(),
                           style: AppStyles.caption
                               .andWeight(FontWeight.normal)
                               .andColor(AppColors.text.secondaryTwo),
                         ),
                         12.h,
-                        Text(
-                          '100/100',
-                          style: AppStyles.body
-                              .andWeight(FontWeight.w600)
-                              .andColor(AppColors.text.primary),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'amount_hundred_example'.tr(),
+                              style: AppStyles.body
+                                  .andWeight(FontWeight.w600)
+                                  .andColor(AppColors.text.primary),
+                            ),
+                            Text(
+                              '/',
+                              style: AppStyles.body
+                                  .andWeight(FontWeight.w600)
+                                  .andColor(AppColors.text.primary),
+                            ),
+                            Text(
+                              'amount_hundred_example'.tr(),
+                              style: AppStyles.body
+                                  .andWeight(FontWeight.w600)
+                                  .andColor(AppColors.text.primary),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -389,9 +423,19 @@ class BottomSheetChildWidget extends StatelessWidget {
             children: [
               Image.asset(AppIcons.coin),
               9.w,
-              Text(
-                '384 RAR Coin',
-                style: AppStyles.body.andColor(AppColors.text.primary),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'amount_three_hundred_example'.tr(),
+                    style: AppStyles.body.andColor(AppColors.text.primary),
+                  ),
+                  4.w,
+                  Text(
+                    'rar_coin'.tr(),
+                    style: AppStyles.body.andColor(AppColors.text.primary),
+                  ),
+                ],
               ),
             ],
           ),
@@ -399,14 +443,14 @@ class BottomSheetChildWidget extends StatelessWidget {
           StdButton(
             color: Colors.transparent,
             height: 52,
-            text: 'BUY',
+            text: 'buy'.tr().toUpperCase(),
             isActive: true,
             onPress: () {},
           ),
           20.h,
           StdButton(
             isOutlined: true,
-            text: 'Cancel',
+            text: 'cancel'.tr(),
             isActive: true,
             onPress: () {},
           ),

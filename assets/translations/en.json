@@ -1,5 +1,116 @@
 {
     "@@locale": "en",
-    "account": "Account"
-  
+
+
+    "///   ЭКРАН АККАУНТ   ":  "",
+    "account": "Account",
+    "save_changes": "Save Changes",
+    "email": "Email",
+    "login": "Login",
+    "your_email": "Your Email",
+    "verification_code": "Verification Code",
+    "sendcode": "Sendcode",
+    "ref_ID": "Referral ID (Optional)",
+    "privacy_policy_agree": "I agree to RUN&RUSH Terms of Use & Privacy Policy",
+    "login_sing_up": "Login / Sign Up",
+
+
+    "///   ВЕЛКАМ ЭКРАН   ":  "",
+    "welcome_to": "Welcome to best play-to-earn project!",
+    "transaction_history": "Transaction History",
+    "time_date_example": "11.12.2022, 18:43",
+    "withdraw": "Withdraw",
+    "buy": "buy",
+    "sell": "sell",
+
+    "///   ЭКРАН БАЛАНСА   ":  "",
+    "balance": "Balance",
+
+
+    "///   ЭКРАН ИНТЕРЕНТ СОЕДИНЕНИЯ   ":  "",
+    "no_internet_connection": "No internet connection",
+
+
+    "///   ЭКРАН ИНВЕНТОРИ (склад)   ":  "",
+    "inventory": "Inventory",
+    "jogger": "Jogger",
+    "km_h": "km/h",
+    "put_on": "put on",
+
+
+    "///   ЭКРАН СТАРТ   ":  "",
+    "start": "Start",
+    "thousand": "k",
+    
+
+    "///   ЭКРАН РЕФЕРАЛЬНОЙ ПРОГРАММЫ   ":  "",
+    "referrals": "Referrals",
+    "refer_friends": "Refer friends.",
+    "earn_money": "Earn Money",
+    "invite_friends": "Invite friends to sign up using your link and you'll get 10% of their purchase",
+    "your_ref_ID": "Your referral ID",
+    "friends_must_use": "Friends must use your ID when sign up!",
+    "copy_link": "Copy Link",
+    "reward_from_referrals": "Reward From Referrals",
+    "earned": "Earned (for all time)",
+    "referal_program": "Referal Program",
+
+
+    "///   ЭКРАН НАСТРОЕК   ":  "",
+    "settings": "Settings",
+    "total_distance": "Total Distance",
+    "km": "km",
+    "kilometers": "Kilometers",
+    "sound": "Sound",
+    "terms": "Terms of Use",
+    "privacy_policy": "Privacy Policy",
+    "runner": "Runner",
+
+
+    "///   ЭКРАН ВИТРИНЫ   ":  "",
+    "shop": "Shop",
+    "great_choice": "Great choice!",
+    "move_at": "Move at 4-10 km/h to earn token!",
+    "class": "Class", 
+    "durability": "Durability",
+    "rar_coin": "RAR Coin",
+    "cancel": "Cancel",
+
+
+    "///   СИМВОЛЫ В ТЕКСТЕ   ":  "",
+    "plus_sign": "+",
+    "slash_sign": "/",
+    
+    
+    "///   ВРЕМЕННЫЕ РЫБЫ   ":  "удалить",
+    "amount_coins_example_one": "74.32",
+    "amount_coins_example_two": "273.54",
+    "amount_speed_example": "4-10",
+    "amount_id_transaction_exapmple": "#145265874",
+    "amount_coins_example_three": "00.0025",
+    "email_example": "Hello, d.push91@gmail.com",
+    "email_example_two": "some@email.com",
+    "result_example": "0.0",
+    "coins_balance_example": "00.0000",
+    "50_steps_example": "50",   
+    "ref_ID_example": "345465",
+    "amount_hundred_example": "100",
+    "amount_three_hundred_example": "384",
+    "amount_eleven_example": "11,587",
+    "amount_four_example": "4.32",
+    "amount_thirty_two_example": "32:41",
+
+
+    "///   ЛОГИ   ":  "",
+    "ref_screen": "экран реферальной программы",
+    "balance_screen": "экран баланса",
+    "account_screen": "экран редактирования данных пользователя",
+    "welcome_screen": "экран приветствия",
+    "internet_screen": "экран контроля интернет соединения",
+    "inventory_screen": "экран склада",
+    "main_screen": "главный экран",
+    "settings_screen": "экран настроек",
+    "shop_screen": "экран магазина",
+    "start_screen": "экран старт"
+
 }
