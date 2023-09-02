@@ -7,7 +7,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
+import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
 import 'package:run_n_rush/ui/shared/widgets/buttons/play.dart';
 import 'package:run_n_rush/ui/shared/widgets/speedometer.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
@@ -250,7 +252,18 @@ class AppBarWidget extends StatelessWidget {
             children: const [],
           ),
         ),
-        const AvatarWidget(),
+        InkWell(
+          onTap: () {
+            CustomModal.show(
+              heightFactor: 0.5,
+              color: AppColors.background[5]!.withOpacity(0.9) ??
+                  AppColors.background,
+              context,
+              child: const BottomSheetConnectionWidget(),
+            );
+          },
+          child: const AvatarWidget(),
+        ),
       ],
     );
   }
@@ -284,6 +297,48 @@ class AvatarWidget extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class BottomSheetConnectionWidget extends StatelessWidget {
+  const BottomSheetConnectionWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 52),
+      child: Column(
+        children: [
+          const Spacer(),
+          Image.asset(AppIcons.connectionLost),
+          const Spacer(),
+          Text(
+            'connection_lost'.tr(),
+            style: AppStyles.title2
+                .andWeight(FontWeight.w600)
+                .andColor(AppColors.text.primary),
+          ),
+          28.h,
+          StdButton(
+            color: Colors.transparent,
+            height: 52,
+            text: 'retry'.tr().toUpperCase(),
+            isActive: true,
+            onPress: () {},
+          ),
+          20.h,
+          StdButton(
+            textColor: Colors.white,
+            isOutlined: true,
+            text: 'cancel'.tr(),
+            isActive: true,
+            onPress: () {},
+          ),
+        ],
+      ),
     );
   }
 }

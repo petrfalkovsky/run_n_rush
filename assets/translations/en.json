@@ -29,6 +29,7 @@
 
     "///   ЭКРАН ИНТЕРЕНТ СОЕДИНЕНИЯ   ":  "",
     "no_internet_connection": "No internet connection",
+    "connection_lost": "Connection lost!",
 
 
     "///   ЭКРАН ИНВЕНТОРИ (склад)   ":  "",
@@ -74,6 +75,7 @@
     "class": "Class", 
     "durability": "Durability",
     "rar_coin": "RAR Coin",
+    "retry": "Retry",
     "cancel": "Cancel",
 
 

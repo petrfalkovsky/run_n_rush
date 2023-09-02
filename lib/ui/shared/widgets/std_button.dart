@@ -150,9 +150,12 @@ class _CustomOutlinaButton extends StatelessWidget {
                   )
                 : Text(
                     text,
-                    style: AppTextTheme.fromPlatform.b2_0.copyWith(
-                      color: textColor,
-                    ),
+                    style: AppStyles.input.andWeight(FontWeight.bold).copyWith(
+                          // color: AppColors.text[1],
+                          color: textColor,
+                          fontSize: fontSize,
+                          fontWeight: fontWeight,
+                        ),
                   ),
           ],
         ),

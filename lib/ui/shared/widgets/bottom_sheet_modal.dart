@@ -7,6 +7,7 @@ class CustomModal {
     Color color = Colors.grey,
     double heightFactor = 0.8,
     double borderRadius = 30.0,
+    AlignmentGeometry alignment = Alignment.bottomCenter,
   }) {
     showModalBottomSheet(
       isScrollControlled: true,
@@ -23,10 +24,13 @@ class CustomModal {
             topRight: Radius.circular(borderRadius),
           ),
         ),
-        child: Center(
+        child: Align(
+          alignment: alignment,
           child: child ??
               const Text(
-                  "Вставь child в модальное окно контент вот так \n\nchild: Column(\nchildren: [\n Text('data'),\n Text('data'),\n  ],\n ),"),
+                "Вставь child в модальное окно контент вот так \n\nchild: Column(\nchildren: [\n Text('data'),\n Text('data'),\n  ],\n ),",
+                textAlign: TextAlign.center,
+              ),
         ),
       ),
     );

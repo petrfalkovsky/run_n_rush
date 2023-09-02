@@ -50,6 +50,7 @@ abstract class AppColors {
       3: Color(0xFF5A57AC),
       4: Color(0xFF101113),
       5: Colors.transparent,
+      6: Color(0xFF111217),
     },
   );
 }

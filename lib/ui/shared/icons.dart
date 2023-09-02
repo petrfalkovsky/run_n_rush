@@ -59,6 +59,7 @@ class AppIcons {
   static const steps = '$_basePathImg/steps_icon.png';
   static const coinLarge = '$_basePathImg/coin_rm.png';
   static const speedArrow = '$_basePathImg/speed_arrow.png';
+  static const connectionLost = '$_basePathImg/connection_lost.png';
 
   static Widget svgWidget(String path,
       {double? width, double? height, Color? color}) {
