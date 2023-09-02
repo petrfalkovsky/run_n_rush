@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
+import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 import 'package:run_n_rush/ui/screens/main/main.dart';
@@ -17,14 +18,16 @@ import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class Main extends StatexWidget<MainController> {
+  // todo убрать хардкод и переменные добавить
+  final double currentValueOne = 70;
+  final double currentValueTwo = 40;
+
   Main({Key? key}) : super(() => MainController(), key: key) {
     debugPrint('main_screen'.tr());
   }
 
   @override
   Widget buildWidget(BuildContext context) {
-    // todo убрать хардкод и переменные добавить
-
     return GeneralScaffold(
       backgroundColor: const AppColorsThemeLight().other.black,
       navBarEnable: true,
@@ -48,9 +51,71 @@ class Main extends StatexWidget<MainController> {
               20.h,
               const ListAddSneakersWidget(),
               40.h,
-              const SneakerDataWidget(),
+              AnimatedProgressBar(
+                text: Row(
+                  children: [
+                    Text(
+                      'result_example'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    Text(
+                      'thousand'.tr().toUpperCase(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    2.w,
+                    Text(
+                      'slash_sign'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    Text(
+                      '50_steps_example'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    Text(
+                      'thousand'.tr().toUpperCase(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    )
+                  ],
+                ),
+                size: 32,
+                icon: SizedBox(
+                  width: 28,
+                  child: AppIcons.svgWidget(AppIcons.sneaker),
+                ),
+                progressColor: AppColors.accent[1] ?? Colors.transparent,
+                backgroundColor: AppColors.background[1] ?? Colors.transparent,
+                borderRadius: BorderRadius.circular(50),
+                currentValue: currentValueOne,
+              ),
               16.h,
-              const LightningDataWidget(),
+              AnimatedProgressBar(
+                text: Row(
+                  children: [
+                    Text(
+                      'result_example'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    2.w,
+                    Text(
+                      'slash_sign'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                    Text(
+                      'result_example'.tr(),
+                      style: AppStyles.body.andColor(AppColors.accent),
+                    ),
+                  ],
+                ),
+                size: 32,
+                icon: SizedBox(
+                  width: 28,
+                  child: AppIcons.svgWidget(AppIcons.lightning, width: 14),
+                ),
+                progressColor: AppColors.accent[1] ?? Colors.transparent,
+                backgroundColor: AppColors.background[1] ?? Colors.transparent,
+                borderRadius: BorderRadius.circular(50),
+                currentValue: currentValueTwo,
+              ),
               46.h,
               StdButton(
                 color: Colors.transparent,
@@ -63,97 +128,6 @@ class Main extends StatexWidget<MainController> {
               )
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class LightningDataWidget extends StatelessWidget {
-  const LightningDataWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(30)),
-      child: Container(
-        color: Colors.black,
-        width: double.infinity,
-        height: 32,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
-          child: Row(children: [
-            Container(
-              alignment: Alignment.center,
-              width: 28,
-              child: AppIcons.svgWidget(AppIcons.lightning, width: 14),
-            ),
-            const Spacer(),
-            Text(
-              'result_example'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            2.w,
-            Text(
-              'slash_sign'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            Text(
-              'result_example'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-          ]),
-        ),
-      ),
-    );
-  }
-}
-
-class SneakerDataWidget extends StatelessWidget {
-  const SneakerDataWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(30)),
-      child: Container(
-        color: Colors.black,
-        width: double.infinity,
-        height: 32,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
-          child: Row(children: [
-            Container(
-                alignment: Alignment.center,
-                width: 28,
-                child: AppIcons.svgWidget(AppIcons.sneaker, height: 28)),
-            const Spacer(),
-            Text(
-              'result_example'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            Text(
-              'thousand'.tr().toUpperCase(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            2.w,
-            Text(
-              'slash_sign'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            Text(
-              '50_steps_example'.tr(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            ),
-            Text(
-              'thousand'.tr().toUpperCase(),
-              style: AppStyles.body.andColor(AppColors.accent),
-            )
-          ]),
         ),
       ),
     );
