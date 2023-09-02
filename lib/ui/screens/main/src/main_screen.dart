@@ -209,8 +209,8 @@ class AvatarWidget extends StatelessWidget {
             children: [
               BlurredAvatar(
                 containerSize: 152,
-                positionInsets: const EdgeInsets.all(7),
-                innerContainer: 138,
+                positionInsets: const EdgeInsets.all(8),
+                innerContainer: 136,
                 borderColor: Colors.white.withOpacity(0.3),
                 avatarSize: 59,
               )

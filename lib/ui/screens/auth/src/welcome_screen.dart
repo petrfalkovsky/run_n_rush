@@ -79,10 +79,13 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                             StdInput(
                               hintText: 'ref_ID'.tr(),
                             ),
-                            2.h,
+                            6.h,
                             Row(
                               children: [
                                 Checkbox(
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  splashRadius: 24,
                                   activeColor: Colors.white,
                                   focusColor: Colors.white,
                                   hoverColor: Colors.white,
@@ -109,7 +112,7 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                                 ),
                               ],
                             ),
-                            2.h,
+                            6.h,
                             StdButton(
                               color: Colors.transparent,
                               height: 52,
