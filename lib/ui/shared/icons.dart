@@ -45,11 +45,12 @@ class AppIcons {
   /// Image.asset(AppIcons.monoJogger),
   static const logo = '$_basePathImg/logo.png';
   static const jogger_2 = '$_basePathImg/jogger_2.png';
+  static const joggerColored = '$_basePathImg/jogger_colored.png';
   static const coin = '$_basePathImg/blue_coin.png';
   static const welcomeScreenBg = '$_basePathImg/welcome_screen_bg.png';
   static const splashScreen = '$_basePathImg/splash_screen_bg.png';
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';
-  static const monoJogger = '$_basePathImg/mono_jogger.png';
+  static const disabledJogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
   static const pair = '$_basePathImg/sneackers_pair.png';
   static const outIcon = '$_basePathImg/out.png';

@@ -270,39 +270,91 @@ class ListAddSneakersWidget extends StatelessWidget {
   }
 }
 
-class AddSneakerWidget extends StatelessWidget {
+class AddSneakerWidget extends StatefulWidget {
   const AddSneakerWidget({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  AddSneakerWidgetState createState() => AddSneakerWidgetState();
+}
+
+class AddSneakerWidgetState extends State<AddSneakerWidget> {
+  // изначально показываю пустой виджет
+  bool showImage = true;
+  final MainController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: DottedBorder(
-        dashPattern: const [12, 4],
-        color: const Color(0xFF1DB9DD),
-        borderType: BorderType.RRect,
-        radius: const Radius.circular(12),
-        padding: const EdgeInsets.all(6),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
-          child: SizedBox(
-            width: double.infinity,
-            height: 88,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Image.asset(AppIcons.monoJogger),
-                Container(
-                  color: Colors.black.withOpacity(0.05),
-                ),
-                const Icon(
-                  Icons.add,
-                  color: Color(0xFF1DB9DD),
-                  size: 36,
-                ),
-              ],
+    return InkWell(
+      onTap: () {
+        // если надо при нажатии на блок состояние поменять
+        // controller.toggleShowImage(false);
+
+        Get.toNamed(AppRoutes.inventory);
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: DottedBorder(
+          dashPattern: const [12, 4],
+          color: const Color(0xFF1DB9DD),
+          borderType: BorderType.RRect,
+          radius: const Radius.circular(12),
+          padding: const EdgeInsets.all(6),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(12)),
+            child: SizedBox(
+              width: double.infinity,
+              height: 88,
+              child: Obx(() {
+                // иcsпользую значение из контроллера чтобы понять,
+                // нужно ли отображать новый вид виджета
+                if (controller.showImage.value) {
+                  return Stack(alignment: Alignment.center, children: [
+                    Image.asset(AppIcons.disabledJogger),
+                    Container(
+                      color: Colors.black.withOpacity(0.05),
+                    ),
+                    const Icon(
+                      Icons.add,
+                      color: Color(0xFF1DB9DD),
+                      size: 36,
+                    ),
+                  ]);
+                } else {
+                  return Row(
+                    children: [
+                      32.w,
+                      const Spacer(),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'jogger_2023'.tr(),
+                            style:
+                                AppStyles.headline.andColor(AppColors.accent),
+                          ),
+                          17.h,
+                          Text(
+                            'amount_id_transaction_exapmple'.tr(),
+                            style: AppStyles.body.andColor(AppColors.accent),
+                          ),
+                        ],
+                      ),
+                      68.w,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(AppIcons.joggerColored),
+                        ],
+                      ),
+                      const Spacer(),
+                      32.w,
+                    ],
+                  );
+                }
+              }),
             ),
           ),
         ),
