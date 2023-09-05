@@ -5,7 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
-import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
+import 'package:run_n_rush/ui/screens/shop/shop.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
@@ -15,8 +15,10 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer_two.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class ShopScreen extends StatexWidget<InventoryController> {
-  ShopScreen({Key? key}) : super(() => InventoryController(), key: key) {
+class ShopScreen extends StatexWidget<ShopController> {
+  final ShopController shopController = Get.put(ShopController());
+
+  ShopScreen({Key? key}) : super(() => ShopController(), key: key) {
     debugPrint('shop_screen'.tr());
   }
 
@@ -29,40 +31,139 @@ class ShopScreen extends StatexWidget<InventoryController> {
         preferredSize: Size.fromHeight(64),
         child: AppBarWidget(),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 16),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  /// фильтр
-                  FilterDropdown(),
-                  const Spacer(),
+      child: FiltersWidgets(shopController: shopController),
+    );
+  }
+}
 
-                  /// переключатель предложений купить/продать
-                  AnimatedSwitcherWidgetTwo(
-                    allText: 'buy'.tr().toUpperCase(),
-                    dressedText: 'sell'.tr().toUpperCase(),
-                    animatedContainerWidth: 120,
-                    smallContainerWidth: 60,
-                    onTap: () {},
+class FiltersWidgets extends StatelessWidget {
+  const FiltersWidgets({
+    super.key,
+    required this.shopController,
+  });
+
+  final ShopController shopController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 16),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                /// фильтр
+
+                FilterDropdown(),
+                const Spacer(),
+
+                /// переключатель предложений купить/продать
+                AnimatedSwitcherWidgetTwo(
+                  allText: 'buy'.tr().toUpperCase(),
+                  dressedText: 'sell'.tr().toUpperCase(),
+                  animatedContainerWidth: 120,
+                  smallContainerWidth: 60,
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+          20.h,
+
+          /// таббар и содержимое
+          ShopTabBar(shopController: shopController),
+        ],
+      ),
+    );
+  }
+}
+
+class ShopTabBar extends StatelessWidget {
+  const ShopTabBar({
+    super.key,
+    required this.shopController,
+  });
+
+  final ShopController shopController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Stack(
+        children: [
+          Container(
+            height: 52,
+            color: AppColors.background[3],
+          ),
+          DefaultTabController(
+            length: 3,
+            initialIndex: shopController.selectedTabIndex.value,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: [
+                  3.h,
+                  PreferredSize(
+                    preferredSize: const Size.fromHeight(kToolbarHeight),
+                    child: TabBar(
+                      labelColor: Colors.white,
+                      indicatorColor: Colors.white,
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            'Shop',
+                            style: AppStyles.body.andWeight(FontWeight.bold),
+                          ),
+                        ),
+                        Tab(
+                          child: Text(
+                            'Gems',
+                            style: AppStyles.body.andWeight(FontWeight.bold),
+                          ),
+                        ),
+                        Tab(
+                          child: Text(
+                            'Other',
+                            style: AppStyles.body.andWeight(FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                      onTap: (index) {
+                        shopController.selectedTabIndex.value = index;
+                      },
+                    ),
+                  ),
+                  20.h,
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        const ProductListWidget(),
+                        Center(
+                          child: Text(
+                            'Gems will be coming soon',
+                            style: AppStyles.headline
+                                .andWeight(FontWeight.bold)
+                                .andColor(AppColors.text.primary),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            'Coming Soon',
+                            style: AppStyles.headline
+                                .andWeight(FontWeight.bold)
+                                .andColor(AppColors.text.primary),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-            20.h,
-            Expanded(
-              child: Stack(
-                children: const [
-                  /// товары
-                  ProductListWidget(),
-                ],
-              ),
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -92,12 +193,9 @@ class AppBarWidget extends StatelessWidget {
                   children: [
                     Text(
                       'shop'.tr(),
-                      style: const TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
+                      style: AppStyles.headline
+                          .andWeight(FontWeight.bold)
+                          .andColor(AppColors.text.primary),
                     ),
                     const Spacer(),
                     SizedBox(
@@ -356,7 +454,7 @@ class BottomSheetChildWidget extends StatelessWidget {
                 children: [
                   const Spacer(),
                   SizedBox(
-                    width: 176,
+                    width: 162,
                     child: Column(
                       children: [
                         Text(
@@ -377,7 +475,7 @@ class BottomSheetChildWidget extends StatelessWidget {
                   ),
                   26.h,
                   SizedBox(
-                    width: 176,
+                    width: 162,
                     child: Column(
                       children: [
                         Text(

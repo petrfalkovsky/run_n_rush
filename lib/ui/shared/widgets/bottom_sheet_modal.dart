@@ -5,7 +5,7 @@ class CustomModal {
     BuildContext context, {
     Widget? child,
     Color color = Colors.grey,
-    double heightFactor = 0.8,
+    double heightFactor = 0.85,
     double borderRadius = 30.0,
     AlignmentGeometry alignment = Alignment.bottomCenter,
   }) {

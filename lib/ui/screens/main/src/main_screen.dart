@@ -324,7 +324,7 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
                 } else {
                   return Row(
                     children: [
-                      32.w,
+                      // 32.w,
                       const Spacer(),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -350,7 +350,7 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
                         ],
                       ),
                       const Spacer(),
-                      32.w,
+                      // 32.w,
                     ],
                   );
                 }

@@ -96,15 +96,16 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                                     // controller.isChecked.value = value!;
                                   },
                                 ),
-                                SizedBox(
-                                  width: 280,
+                                Expanded(
                                   child: Text(
                                     'privacy_policy_agree'.tr(),
+                                    softWrap: true,
                                     style: AppStyles.caption
                                         .andWeight(FontWeight.normal)
                                         .andColor(AppColors.accent),
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 3,
+                                    textAlign: TextAlign.left,
                                   ),
                                 ),
                               ],
