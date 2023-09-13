@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'qr_code.dart';
 
@@ -27,38 +27,42 @@ mixin _$QRCode {
 /// @nodoc
 abstract class $QRCodeCopyWith<$Res> {
   factory $QRCodeCopyWith(QRCode value, $Res Function(QRCode) then) =
-      _$QRCodeCopyWithImpl<$Res>;
+      _$QRCodeCopyWithImpl<$Res, QRCode>;
+  @useResult
   $Res call({String lock1, String lock2, String lock3});
 }
 
 /// @nodoc
-class _$QRCodeCopyWithImpl<$Res> implements $QRCodeCopyWith<$Res> {
+class _$QRCodeCopyWithImpl<$Res, $Val extends QRCode>
+    implements $QRCodeCopyWith<$Res> {
   _$QRCodeCopyWithImpl(this._value, this._then);
 
-  final QRCode _value;
   // ignore: unused_field
-  final $Res Function(QRCode) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lock1 = freezed,
-    Object? lock2 = freezed,
-    Object? lock3 = freezed,
+    Object? lock1 = null,
+    Object? lock2 = null,
+    Object? lock3 = null,
   }) {
     return _then(_value.copyWith(
-      lock1: lock1 == freezed
+      lock1: null == lock1
           ? _value.lock1
           : lock1 // ignore: cast_nullable_to_non_nullable
               as String,
-      lock2: lock2 == freezed
+      lock2: null == lock2
           ? _value.lock2
           : lock2 // ignore: cast_nullable_to_non_nullable
               as String,
-      lock3: lock3 == freezed
+      lock3: null == lock3
           ? _value.lock3
           : lock3 // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -67,34 +71,34 @@ abstract class _$$_QRCodeCopyWith<$Res> implements $QRCodeCopyWith<$Res> {
   factory _$$_QRCodeCopyWith(_$_QRCode value, $Res Function(_$_QRCode) then) =
       __$$_QRCodeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String lock1, String lock2, String lock3});
 }
 
 /// @nodoc
-class __$$_QRCodeCopyWithImpl<$Res> extends _$QRCodeCopyWithImpl<$Res>
+class __$$_QRCodeCopyWithImpl<$Res>
+    extends _$QRCodeCopyWithImpl<$Res, _$_QRCode>
     implements _$$_QRCodeCopyWith<$Res> {
   __$$_QRCodeCopyWithImpl(_$_QRCode _value, $Res Function(_$_QRCode) _then)
-      : super(_value, (v) => _then(v as _$_QRCode));
+      : super(_value, _then);
 
-  @override
-  _$_QRCode get _value => super._value as _$_QRCode;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lock1 = freezed,
-    Object? lock2 = freezed,
-    Object? lock3 = freezed,
+    Object? lock1 = null,
+    Object? lock2 = null,
+    Object? lock3 = null,
   }) {
     return _then(_$_QRCode(
-      lock1: lock1 == freezed
+      lock1: null == lock1
           ? _value.lock1
           : lock1 // ignore: cast_nullable_to_non_nullable
               as String,
-      lock2: lock2 == freezed
+      lock2: null == lock2
           ? _value.lock2
           : lock2 // ignore: cast_nullable_to_non_nullable
               as String,
-      lock3: lock3 == freezed
+      lock3: null == lock3
           ? _value.lock3
           : lock3 // ignore: cast_nullable_to_non_nullable
               as String,
@@ -125,20 +129,17 @@ class _$_QRCode implements _QRCode {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QRCode &&
-            const DeepCollectionEquality().equals(other.lock1, lock1) &&
-            const DeepCollectionEquality().equals(other.lock2, lock2) &&
-            const DeepCollectionEquality().equals(other.lock3, lock3));
+            (identical(other.lock1, lock1) || other.lock1 == lock1) &&
+            (identical(other.lock2, lock2) || other.lock2 == lock2) &&
+            (identical(other.lock3, lock3) || other.lock3 == lock3));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(lock1),
-      const DeepCollectionEquality().hash(lock2),
-      const DeepCollectionEquality().hash(lock3));
+  int get hashCode => Object.hash(runtimeType, lock1, lock2, lock3);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QRCodeCopyWith<_$_QRCode> get copyWith =>
       __$$_QRCodeCopyWithImpl<_$_QRCode>(this, _$identity);
 }
@@ -150,11 +151,11 @@ abstract class _QRCode implements QRCode {
       required final String lock3}) = _$_QRCode;
 
   @override
-  String get lock1 => throw _privateConstructorUsedError;
+  String get lock1;
   @override
-  String get lock2 => throw _privateConstructorUsedError;
+  String get lock2;
   @override
-  String get lock3 => throw _privateConstructorUsedError;
+  String get lock3;
   @override
   @JsonKey(ignore: true)
   _$$_QRCodeCopyWith<_$_QRCode> get copyWith =>

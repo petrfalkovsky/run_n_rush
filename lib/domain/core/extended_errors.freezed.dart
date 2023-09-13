@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'extended_errors.dart';
 
@@ -35,7 +35,8 @@ mixin _$ExtendedErrors {
 abstract class $ExtendedErrorsCopyWith<$Res> {
   factory $ExtendedErrorsCopyWith(
           ExtendedErrors value, $Res Function(ExtendedErrors) then) =
-      _$ExtendedErrorsCopyWithImpl<$Res>;
+      _$ExtendedErrorsCopyWithImpl<$Res, ExtendedErrors>;
+  @useResult
   $Res call(
       {String error,
       Map<String, List> errors,
@@ -43,34 +44,36 @@ abstract class $ExtendedErrorsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExtendedErrorsCopyWithImpl<$Res>
+class _$ExtendedErrorsCopyWithImpl<$Res, $Val extends ExtendedErrors>
     implements $ExtendedErrorsCopyWith<$Res> {
   _$ExtendedErrorsCopyWithImpl(this._value, this._then);
 
-  final ExtendedErrors _value;
   // ignore: unused_field
-  final $Res Function(ExtendedErrors) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? errors = freezed,
-    Object? onlyUserFieldsErrors = freezed,
+    Object? error = null,
+    Object? errors = null,
+    Object? onlyUserFieldsErrors = null,
   }) {
     return _then(_value.copyWith(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      errors: errors == freezed
+      errors: null == errors
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
               as Map<String, List>,
-      onlyUserFieldsErrors: onlyUserFieldsErrors == freezed
+      onlyUserFieldsErrors: null == onlyUserFieldsErrors
           ? _value.onlyUserFieldsErrors
           : onlyUserFieldsErrors // ignore: cast_nullable_to_non_nullable
               as Map<String, List>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -81,6 +84,7 @@ abstract class _$$_ExtendedErrorsCopyWith<$Res>
           _$_ExtendedErrors value, $Res Function(_$_ExtendedErrors) then) =
       __$$_ExtendedErrorsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String error,
       Map<String, List> errors,
@@ -89,31 +93,29 @@ abstract class _$$_ExtendedErrorsCopyWith<$Res>
 
 /// @nodoc
 class __$$_ExtendedErrorsCopyWithImpl<$Res>
-    extends _$ExtendedErrorsCopyWithImpl<$Res>
+    extends _$ExtendedErrorsCopyWithImpl<$Res, _$_ExtendedErrors>
     implements _$$_ExtendedErrorsCopyWith<$Res> {
   __$$_ExtendedErrorsCopyWithImpl(
       _$_ExtendedErrors _value, $Res Function(_$_ExtendedErrors) _then)
-      : super(_value, (v) => _then(v as _$_ExtendedErrors));
+      : super(_value, _then);
 
-  @override
-  _$_ExtendedErrors get _value => super._value as _$_ExtendedErrors;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
-    Object? errors = freezed,
-    Object? onlyUserFieldsErrors = freezed,
+    Object? error = null,
+    Object? errors = null,
+    Object? onlyUserFieldsErrors = null,
   }) {
     return _then(_$_ExtendedErrors(
-      error: error == freezed
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
-      errors: errors == freezed
+      errors: null == errors
           ? _value._errors
           : errors // ignore: cast_nullable_to_non_nullable
               as Map<String, List>,
-      onlyUserFieldsErrors: onlyUserFieldsErrors == freezed
+      onlyUserFieldsErrors: null == onlyUserFieldsErrors
           ? _value._onlyUserFieldsErrors
           : onlyUserFieldsErrors // ignore: cast_nullable_to_non_nullable
               as Map<String, List>,
@@ -140,6 +142,7 @@ class _$_ExtendedErrors extends _ExtendedErrors {
   final Map<String, List> _errors;
   @override
   Map<String, List> get errors {
+    if (_errors is EqualUnmodifiableMapView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_errors);
   }
@@ -148,6 +151,8 @@ class _$_ExtendedErrors extends _ExtendedErrors {
   @override
   @JsonKey()
   Map<String, List> get onlyUserFieldsErrors {
+    if (_onlyUserFieldsErrors is EqualUnmodifiableMapView)
+      return _onlyUserFieldsErrors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_onlyUserFieldsErrors);
   }
@@ -162,7 +167,7 @@ class _$_ExtendedErrors extends _ExtendedErrors {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ExtendedErrors &&
-            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.error, error) || other.error == error) &&
             const DeepCollectionEquality().equals(other._errors, _errors) &&
             const DeepCollectionEquality()
                 .equals(other._onlyUserFieldsErrors, _onlyUserFieldsErrors));
@@ -172,18 +177,21 @@ class _$_ExtendedErrors extends _ExtendedErrors {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(error),
+      error,
       const DeepCollectionEquality().hash(_errors),
       const DeepCollectionEquality().hash(_onlyUserFieldsErrors));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ExtendedErrorsCopyWith<_$_ExtendedErrors> get copyWith =>
       __$$_ExtendedErrorsCopyWithImpl<_$_ExtendedErrors>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExtendedErrorsToJson(this);
+    return _$$_ExtendedErrorsToJson(
+      this,
+    );
   }
 }
 
@@ -198,12 +206,11 @@ abstract class _ExtendedErrors extends ExtendedErrors {
       _$_ExtendedErrors.fromJson;
 
   @override
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @override
-  Map<String, List> get errors => throw _privateConstructorUsedError;
+  Map<String, List> get errors;
   @override
-  Map<String, List> get onlyUserFieldsErrors =>
-      throw _privateConstructorUsedError;
+  Map<String, List> get onlyUserFieldsErrors;
   @override
   @JsonKey(ignore: true)
   _$$_ExtendedErrorsCopyWith<_$_ExtendedErrors> get copyWith =>

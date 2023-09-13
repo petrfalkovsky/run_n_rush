@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'failures.dart';
 
@@ -36,15 +36,16 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,14 +78,14 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,34 +111,37 @@ mixin _$ValueFailure<T> {
 abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
-      _$ValueFailureCopyWithImpl<T, $Res>;
+      _$ValueFailureCopyWithImpl<T, $Res, ValueFailure<T>>;
+  @useResult
   $Res call({T failedValue, String failureTag});
 }
 
 /// @nodoc
-class _$ValueFailureCopyWithImpl<T, $Res>
+class _$ValueFailureCopyWithImpl<T, $Res, $Val extends ValueFailure<T>>
     implements $ValueFailureCopyWith<T, $Res> {
   _$ValueFailureCopyWithImpl(this._value, this._then);
 
-  final ValueFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(ValueFailure<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
   }) {
     return _then(_value.copyWith(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -148,31 +152,30 @@ abstract class _$$ValueFailureEmptyCopyWith<T, $Res>
           $Res Function(_$ValueFailureEmpty<T>) then) =
       __$$ValueFailureEmptyCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag});
 }
 
 /// @nodoc
 class __$$ValueFailureEmptyCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureEmpty<T>>
     implements _$$ValueFailureEmptyCopyWith<T, $Res> {
   __$$ValueFailureEmptyCopyWithImpl(_$ValueFailureEmpty<T> _value,
       $Res Function(_$ValueFailureEmpty<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureEmpty<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureEmpty<T> get _value => super._value as _$ValueFailureEmpty<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
   }) {
     return _then(_$ValueFailureEmpty<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
@@ -214,18 +217,17 @@ class _$ValueFailureEmpty<T>
             other is _$ValueFailureEmpty<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureEmptyCopyWith<T, _$ValueFailureEmpty<T>> get copyWith =>
       __$$ValueFailureEmptyCopyWithImpl<T, _$ValueFailureEmpty<T>>(
           this, _$identity);
@@ -252,15 +254,16 @@ class _$ValueFailureEmpty<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return empty?.call(failedValue, failureTag);
   }
@@ -305,14 +308,14 @@ class _$ValueFailureEmpty<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return empty?.call(this);
   }
@@ -343,9 +346,9 @@ abstract class ValueFailureEmpty<T> implements ValueFailure<T> {
       required final String failureTag}) = _$ValueFailureEmpty<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
+  String get failureTag;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureEmptyCopyWith<T, _$ValueFailureEmpty<T>> get copyWith =>
@@ -360,32 +363,30 @@ abstract class _$$ValueFailureInvalidEmailCopyWith<T, $Res>
           $Res Function(_$ValueFailureInvalidEmail<T>) then) =
       __$$ValueFailureInvalidEmailCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag});
 }
 
 /// @nodoc
 class __$$ValueFailureInvalidEmailCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureInvalidEmail<T>>
     implements _$$ValueFailureInvalidEmailCopyWith<T, $Res> {
   __$$ValueFailureInvalidEmailCopyWithImpl(_$ValueFailureInvalidEmail<T> _value,
       $Res Function(_$ValueFailureInvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureInvalidEmail<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureInvalidEmail<T> get _value =>
-      super._value as _$ValueFailureInvalidEmail<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
   }) {
     return _then(_$ValueFailureInvalidEmail<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
@@ -427,18 +428,17 @@ class _$ValueFailureInvalidEmail<T>
             other is _$ValueFailureInvalidEmail<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureInvalidEmailCopyWith<T, _$ValueFailureInvalidEmail<T>>
       get copyWith => __$$ValueFailureInvalidEmailCopyWithImpl<T,
           _$ValueFailureInvalidEmail<T>>(this, _$identity);
@@ -465,15 +465,16 @@ class _$ValueFailureInvalidEmail<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return invalidEmail?.call(failedValue, failureTag);
   }
@@ -518,14 +519,14 @@ class _$ValueFailureInvalidEmail<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return invalidEmail?.call(this);
   }
@@ -556,9 +557,9 @@ abstract class ValueFailureInvalidEmail<T> implements ValueFailure<T> {
       required final String failureTag}) = _$ValueFailureInvalidEmail<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
+  String get failureTag;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureInvalidEmailCopyWith<T, _$ValueFailureInvalidEmail<T>>
@@ -572,32 +573,30 @@ abstract class _$$ValueFailureInvalidCodeCopyWith<T, $Res>
           $Res Function(_$ValueFailureInvalidCode<T>) then) =
       __$$ValueFailureInvalidCodeCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag});
 }
 
 /// @nodoc
 class __$$ValueFailureInvalidCodeCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureInvalidCode<T>>
     implements _$$ValueFailureInvalidCodeCopyWith<T, $Res> {
   __$$ValueFailureInvalidCodeCopyWithImpl(_$ValueFailureInvalidCode<T> _value,
       $Res Function(_$ValueFailureInvalidCode<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureInvalidCode<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureInvalidCode<T> get _value =>
-      super._value as _$ValueFailureInvalidCode<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
   }) {
     return _then(_$ValueFailureInvalidCode<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
@@ -639,18 +638,17 @@ class _$ValueFailureInvalidCode<T>
             other is _$ValueFailureInvalidCode<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureInvalidCodeCopyWith<T, _$ValueFailureInvalidCode<T>>
       get copyWith => __$$ValueFailureInvalidCodeCopyWithImpl<T,
           _$ValueFailureInvalidCode<T>>(this, _$identity);
@@ -677,15 +675,16 @@ class _$ValueFailureInvalidCode<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return invalidCode?.call(failedValue, failureTag);
   }
@@ -730,14 +729,14 @@ class _$ValueFailureInvalidCode<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return invalidCode?.call(this);
   }
@@ -768,9 +767,9 @@ abstract class ValueFailureInvalidCode<T> implements ValueFailure<T> {
       required final String failureTag}) = _$ValueFailureInvalidCode<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
+  String get failureTag;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureInvalidCodeCopyWith<T, _$ValueFailureInvalidCode<T>>
@@ -785,33 +784,32 @@ abstract class _$$ValueFailureInvalidPasswordCopyWith<T, $Res>
           $Res Function(_$ValueFailureInvalidPassword<T>) then) =
       __$$ValueFailureInvalidPasswordCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag});
 }
 
 /// @nodoc
 class __$$ValueFailureInvalidPasswordCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res,
+        _$ValueFailureInvalidPassword<T>>
     implements _$$ValueFailureInvalidPasswordCopyWith<T, $Res> {
   __$$ValueFailureInvalidPasswordCopyWithImpl(
       _$ValueFailureInvalidPassword<T> _value,
       $Res Function(_$ValueFailureInvalidPassword<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureInvalidPassword<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureInvalidPassword<T> get _value =>
-      super._value as _$ValueFailureInvalidPassword<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
   }) {
     return _then(_$ValueFailureInvalidPassword<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
@@ -853,18 +851,17 @@ class _$ValueFailureInvalidPassword<T>
             other is _$ValueFailureInvalidPassword<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureInvalidPasswordCopyWith<T, _$ValueFailureInvalidPassword<T>>
       get copyWith => __$$ValueFailureInvalidPasswordCopyWithImpl<T,
           _$ValueFailureInvalidPassword<T>>(this, _$identity);
@@ -891,15 +888,16 @@ class _$ValueFailureInvalidPassword<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return invalidPassword?.call(failedValue, failureTag);
   }
@@ -944,14 +942,14 @@ class _$ValueFailureInvalidPassword<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return invalidPassword?.call(this);
   }
@@ -982,9 +980,9 @@ abstract class ValueFailureInvalidPassword<T> implements ValueFailure<T> {
       required final String failureTag}) = _$ValueFailureInvalidPassword<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
+  String get failureTag;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureInvalidPasswordCopyWith<T, _$ValueFailureInvalidPassword<T>>
@@ -998,37 +996,35 @@ abstract class _$$ValueFailureTooShortCopyWith<T, $Res>
           $Res Function(_$ValueFailureTooShort<T>) then) =
       __$$ValueFailureTooShortCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag, int minLength});
 }
 
 /// @nodoc
 class __$$ValueFailureTooShortCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureTooShort<T>>
     implements _$$ValueFailureTooShortCopyWith<T, $Res> {
   __$$ValueFailureTooShortCopyWithImpl(_$ValueFailureTooShort<T> _value,
       $Res Function(_$ValueFailureTooShort<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureTooShort<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureTooShort<T> get _value =>
-      super._value as _$ValueFailureTooShort<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
-    Object? minLength = freezed,
+    Object? failureTag = null,
+    Object? minLength = null,
   }) {
     return _then(_$ValueFailureTooShort<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
-      minLength: minLength == freezed
+      minLength: null == minLength
           ? _value.minLength
           : minLength // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1075,20 +1071,19 @@ class _$ValueFailureTooShort<T>
             other is _$ValueFailureTooShort<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag) &&
-            const DeepCollectionEquality().equals(other.minLength, minLength));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag) &&
+            (identical(other.minLength, minLength) ||
+                other.minLength == minLength));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag),
-      const DeepCollectionEquality().hash(minLength));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag, minLength);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureTooShortCopyWith<T, _$ValueFailureTooShort<T>> get copyWith =>
       __$$ValueFailureTooShortCopyWithImpl<T, _$ValueFailureTooShort<T>>(
           this, _$identity);
@@ -1115,15 +1110,16 @@ class _$ValueFailureTooShort<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return tooShort?.call(failedValue, failureTag, minLength);
   }
@@ -1168,14 +1164,14 @@ class _$ValueFailureTooShort<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return tooShort?.call(this);
   }
@@ -1207,10 +1203,10 @@ abstract class ValueFailureTooShort<T> implements ValueFailure<T> {
       required final int minLength}) = _$ValueFailureTooShort<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
-  int get minLength => throw _privateConstructorUsedError;
+  String get failureTag;
+  int get minLength;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureTooShortCopyWith<T, _$ValueFailureTooShort<T>> get copyWith =>
@@ -1224,37 +1220,35 @@ abstract class _$$ValueFailureTooLongCopyWith<T, $Res>
           $Res Function(_$ValueFailureTooLong<T>) then) =
       __$$ValueFailureTooLongCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag, int maxLength});
 }
 
 /// @nodoc
 class __$$ValueFailureTooLongCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureTooLong<T>>
     implements _$$ValueFailureTooLongCopyWith<T, $Res> {
   __$$ValueFailureTooLongCopyWithImpl(_$ValueFailureTooLong<T> _value,
       $Res Function(_$ValueFailureTooLong<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureTooLong<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureTooLong<T> get _value =>
-      super._value as _$ValueFailureTooLong<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
-    Object? maxLength = freezed,
+    Object? failureTag = null,
+    Object? maxLength = null,
   }) {
     return _then(_$ValueFailureTooLong<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
-      maxLength: maxLength == freezed
+      maxLength: null == maxLength
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1301,20 +1295,19 @@ class _$ValueFailureTooLong<T>
             other is _$ValueFailureTooLong<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag) &&
-            const DeepCollectionEquality().equals(other.maxLength, maxLength));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag) &&
+            (identical(other.maxLength, maxLength) ||
+                other.maxLength == maxLength));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag),
-      const DeepCollectionEquality().hash(maxLength));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag, maxLength);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureTooLongCopyWith<T, _$ValueFailureTooLong<T>> get copyWith =>
       __$$ValueFailureTooLongCopyWithImpl<T, _$ValueFailureTooLong<T>>(
           this, _$identity);
@@ -1341,15 +1334,16 @@ class _$ValueFailureTooLong<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return tooLong?.call(failedValue, failureTag, maxLength);
   }
@@ -1394,14 +1388,14 @@ class _$ValueFailureTooLong<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return tooLong?.call(this);
   }
@@ -1433,10 +1427,10 @@ abstract class ValueFailureTooLong<T> implements ValueFailure<T> {
       required final int maxLength}) = _$ValueFailureTooLong<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
-  int get maxLength => throw _privateConstructorUsedError;
+  String get failureTag;
+  int get maxLength;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureTooLongCopyWith<T, _$ValueFailureTooLong<T>> get copyWith =>
@@ -1451,38 +1445,36 @@ abstract class _$$ValueFailureLengthNotEqualCopyWith<T, $Res>
           $Res Function(_$ValueFailureLengthNotEqual<T>) then) =
       __$$ValueFailureLengthNotEqualCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag, int length});
 }
 
 /// @nodoc
 class __$$ValueFailureLengthNotEqualCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureLengthNotEqual<T>>
     implements _$$ValueFailureLengthNotEqualCopyWith<T, $Res> {
   __$$ValueFailureLengthNotEqualCopyWithImpl(
       _$ValueFailureLengthNotEqual<T> _value,
       $Res Function(_$ValueFailureLengthNotEqual<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureLengthNotEqual<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureLengthNotEqual<T> get _value =>
-      super._value as _$ValueFailureLengthNotEqual<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
-    Object? length = freezed,
+    Object? failureTag = null,
+    Object? length = null,
   }) {
     return _then(_$ValueFailureLengthNotEqual<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
-      length: length == freezed
+      length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1529,20 +1521,18 @@ class _$ValueFailureLengthNotEqual<T>
             other is _$ValueFailureLengthNotEqual<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag) &&
-            const DeepCollectionEquality().equals(other.length, length));
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag) &&
+            (identical(other.length, length) || other.length == length));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag),
-      const DeepCollectionEquality().hash(length));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(failedValue), failureTag, length);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureLengthNotEqualCopyWith<T, _$ValueFailureLengthNotEqual<T>>
       get copyWith => __$$ValueFailureLengthNotEqualCopyWithImpl<T,
           _$ValueFailureLengthNotEqual<T>>(this, _$identity);
@@ -1569,15 +1559,16 @@ class _$ValueFailureLengthNotEqual<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return lengthNotEqual?.call(failedValue, failureTag, length);
   }
@@ -1622,14 +1613,14 @@ class _$ValueFailureLengthNotEqual<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return lengthNotEqual?.call(this);
   }
@@ -1661,10 +1652,10 @@ abstract class ValueFailureLengthNotEqual<T> implements ValueFailure<T> {
       required final int length}) = _$ValueFailureLengthNotEqual<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
-  int get length => throw _privateConstructorUsedError;
+  String get failureTag;
+  int get length;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureLengthNotEqualCopyWith<T, _$ValueFailureLengthNotEqual<T>>
@@ -1678,37 +1669,35 @@ abstract class _$$ValueFailureNotMatchCopyWith<T, $Res>
           $Res Function(_$ValueFailureNotMatch<T>) then) =
       __$$ValueFailureNotMatchCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue, String failureTag, T matcher});
 }
 
 /// @nodoc
 class __$$ValueFailureNotMatchCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$ValueFailureNotMatch<T>>
     implements _$$ValueFailureNotMatchCopyWith<T, $Res> {
   __$$ValueFailureNotMatchCopyWithImpl(_$ValueFailureNotMatch<T> _value,
       $Res Function(_$ValueFailureNotMatch<T>) _then)
-      : super(_value, (v) => _then(v as _$ValueFailureNotMatch<T>));
+      : super(_value, _then);
 
-  @override
-  _$ValueFailureNotMatch<T> get _value =>
-      super._value as _$ValueFailureNotMatch<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? failureTag = freezed,
+    Object? failureTag = null,
     Object? matcher = freezed,
   }) {
     return _then(_$ValueFailureNotMatch<T>(
-      failedValue: failedValue == freezed
+      failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-      failureTag: failureTag == freezed
+      failureTag: null == failureTag
           ? _value.failureTag
           : failureTag // ignore: cast_nullable_to_non_nullable
               as String,
-      matcher: matcher == freezed
+      matcher: freezed == matcher
           ? _value.matcher
           : matcher // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1755,8 +1744,8 @@ class _$ValueFailureNotMatch<T>
             other is _$ValueFailureNotMatch<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality()
-                .equals(other.failureTag, failureTag) &&
+            (identical(other.failureTag, failureTag) ||
+                other.failureTag == failureTag) &&
             const DeepCollectionEquality().equals(other.matcher, matcher));
   }
 
@@ -1764,11 +1753,12 @@ class _$ValueFailureNotMatch<T>
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(failureTag),
+      failureTag,
       const DeepCollectionEquality().hash(matcher));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ValueFailureNotMatchCopyWith<T, _$ValueFailureNotMatch<T>> get copyWith =>
       __$$ValueFailureNotMatchCopyWithImpl<T, _$ValueFailureNotMatch<T>>(
           this, _$identity);
@@ -1795,15 +1785,16 @@ class _$ValueFailureNotMatch<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue, String failureTag)? empty,
-    TResult Function(T failedValue, String failureTag)? invalidEmail,
-    TResult Function(T failedValue, String failureTag)? invalidCode,
-    TResult Function(T failedValue, String failureTag)? invalidPassword,
-    TResult Function(T failedValue, String failureTag, int minLength)? tooShort,
-    TResult Function(T failedValue, String failureTag, int maxLength)? tooLong,
-    TResult Function(T failedValue, String failureTag, int length)?
+    TResult? Function(T failedValue, String failureTag)? empty,
+    TResult? Function(T failedValue, String failureTag)? invalidEmail,
+    TResult? Function(T failedValue, String failureTag)? invalidCode,
+    TResult? Function(T failedValue, String failureTag)? invalidPassword,
+    TResult? Function(T failedValue, String failureTag, int minLength)?
+        tooShort,
+    TResult? Function(T failedValue, String failureTag, int maxLength)? tooLong,
+    TResult? Function(T failedValue, String failureTag, int length)?
         lengthNotEqual,
-    TResult Function(T failedValue, String failureTag, T matcher)? notMatch,
+    TResult? Function(T failedValue, String failureTag, T matcher)? notMatch,
   }) {
     return notMatch?.call(failedValue, failureTag, matcher);
   }
@@ -1848,14 +1839,14 @@ class _$ValueFailureNotMatch<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ValueFailureEmpty<T> value)? empty,
-    TResult Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
-    TResult Function(ValueFailureInvalidCode<T> value)? invalidCode,
-    TResult Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
-    TResult Function(ValueFailureTooShort<T> value)? tooShort,
-    TResult Function(ValueFailureTooLong<T> value)? tooLong,
-    TResult Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
-    TResult Function(ValueFailureNotMatch<T> value)? notMatch,
+    TResult? Function(ValueFailureEmpty<T> value)? empty,
+    TResult? Function(ValueFailureInvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValueFailureInvalidCode<T> value)? invalidCode,
+    TResult? Function(ValueFailureInvalidPassword<T> value)? invalidPassword,
+    TResult? Function(ValueFailureTooShort<T> value)? tooShort,
+    TResult? Function(ValueFailureTooLong<T> value)? tooLong,
+    TResult? Function(ValueFailureLengthNotEqual<T> value)? lengthNotEqual,
+    TResult? Function(ValueFailureNotMatch<T> value)? notMatch,
   }) {
     return notMatch?.call(this);
   }
@@ -1887,10 +1878,10 @@ abstract class ValueFailureNotMatch<T> implements ValueFailure<T> {
       required final T matcher}) = _$ValueFailureNotMatch<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
-  String get failureTag => throw _privateConstructorUsedError;
-  T get matcher => throw _privateConstructorUsedError;
+  String get failureTag;
+  T get matcher;
   @override
   @JsonKey(ignore: true)
   _$$ValueFailureNotMatchCopyWith<T, _$ValueFailureNotMatch<T>> get copyWith =>

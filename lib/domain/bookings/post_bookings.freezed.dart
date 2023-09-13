@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'post_bookings.dart';
 
@@ -32,7 +32,8 @@ mixin _$PostBookings {
 abstract class $PostBookingsCopyWith<$Res> {
   factory $PostBookingsCopyWith(
           PostBookings value, $Res Function(PostBookings) then) =
-      _$PostBookingsCopyWithImpl<$Res>;
+      _$PostBookingsCopyWithImpl<$Res, PostBookings>;
+  @useResult
   $Res call(
       {String id,
       DateTime resDate,
@@ -43,48 +44,51 @@ abstract class $PostBookingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostBookingsCopyWithImpl<$Res> implements $PostBookingsCopyWith<$Res> {
+class _$PostBookingsCopyWithImpl<$Res, $Val extends PostBookings>
+    implements $PostBookingsCopyWith<$Res> {
   _$PostBookingsCopyWithImpl(this._value, this._then);
 
-  final PostBookings _value;
   // ignore: unused_field
-  final $Res Function(PostBookings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? resDate = freezed,
-    Object? paymentStatus = freezed,
-    Object? statusName = freezed,
-    Object? paymentTime = freezed,
-    Object? payment = freezed,
+    Object? id = null,
+    Object? resDate = null,
+    Object? paymentStatus = null,
+    Object? statusName = null,
+    Object? paymentTime = null,
+    Object? payment = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      resDate: resDate == freezed
+      resDate: null == resDate
           ? _value.resDate
           : resDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: null == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as String,
-      statusName: statusName == freezed
+      statusName: null == statusName
           ? _value.statusName
           : statusName // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentTime: paymentTime == freezed
+      paymentTime: null == paymentTime
           ? _value.paymentTime
           : paymentTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      payment: payment == freezed
+      payment: null == payment
           ? _value.payment
           : payment // ignore: cast_nullable_to_non_nullable
               as List<Payment>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -95,6 +99,7 @@ abstract class _$$_PostBookingsCopyWith<$Res>
           _$_PostBookings value, $Res Function(_$_PostBookings) then) =
       __$$_PostBookingsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       DateTime resDate,
@@ -106,46 +111,44 @@ abstract class _$$_PostBookingsCopyWith<$Res>
 
 /// @nodoc
 class __$$_PostBookingsCopyWithImpl<$Res>
-    extends _$PostBookingsCopyWithImpl<$Res>
+    extends _$PostBookingsCopyWithImpl<$Res, _$_PostBookings>
     implements _$$_PostBookingsCopyWith<$Res> {
   __$$_PostBookingsCopyWithImpl(
       _$_PostBookings _value, $Res Function(_$_PostBookings) _then)
-      : super(_value, (v) => _then(v as _$_PostBookings));
+      : super(_value, _then);
 
-  @override
-  _$_PostBookings get _value => super._value as _$_PostBookings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? resDate = freezed,
-    Object? paymentStatus = freezed,
-    Object? statusName = freezed,
-    Object? paymentTime = freezed,
-    Object? payment = freezed,
+    Object? id = null,
+    Object? resDate = null,
+    Object? paymentStatus = null,
+    Object? statusName = null,
+    Object? paymentTime = null,
+    Object? payment = null,
   }) {
     return _then(_$_PostBookings(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      resDate: resDate == freezed
+      resDate: null == resDate
           ? _value.resDate
           : resDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      paymentStatus: paymentStatus == freezed
+      paymentStatus: null == paymentStatus
           ? _value.paymentStatus
           : paymentStatus // ignore: cast_nullable_to_non_nullable
               as String,
-      statusName: statusName == freezed
+      statusName: null == statusName
           ? _value.statusName
           : statusName // ignore: cast_nullable_to_non_nullable
               as String,
-      paymentTime: paymentTime == freezed
+      paymentTime: null == paymentTime
           ? _value.paymentTime
           : paymentTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      payment: payment == freezed
+      payment: null == payment
           ? _value._payment
           : payment // ignore: cast_nullable_to_non_nullable
               as List<Payment>,
@@ -178,6 +181,7 @@ class _$_PostBookings implements _PostBookings {
   final List<Payment> _payment;
   @override
   List<Payment> get payment {
+    if (_payment is EqualUnmodifiableListView) return _payment;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_payment);
   }
@@ -192,29 +196,24 @@ class _$_PostBookings implements _PostBookings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PostBookings &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.resDate, resDate) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentStatus, paymentStatus) &&
-            const DeepCollectionEquality()
-                .equals(other.statusName, statusName) &&
-            const DeepCollectionEquality()
-                .equals(other.paymentTime, paymentTime) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.resDate, resDate) || other.resDate == resDate) &&
+            (identical(other.paymentStatus, paymentStatus) ||
+                other.paymentStatus == paymentStatus) &&
+            (identical(other.statusName, statusName) ||
+                other.statusName == statusName) &&
+            (identical(other.paymentTime, paymentTime) ||
+                other.paymentTime == paymentTime) &&
             const DeepCollectionEquality().equals(other._payment, _payment));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(resDate),
-      const DeepCollectionEquality().hash(paymentStatus),
-      const DeepCollectionEquality().hash(statusName),
-      const DeepCollectionEquality().hash(paymentTime),
-      const DeepCollectionEquality().hash(_payment));
+  int get hashCode => Object.hash(runtimeType, id, resDate, paymentStatus,
+      statusName, paymentTime, const DeepCollectionEquality().hash(_payment));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PostBookingsCopyWith<_$_PostBookings> get copyWith =>
       __$$_PostBookingsCopyWithImpl<_$_PostBookings>(this, _$identity);
 }
@@ -229,17 +228,17 @@ abstract class _PostBookings implements PostBookings {
       required final List<Payment> payment}) = _$_PostBookings;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  DateTime get resDate => throw _privateConstructorUsedError;
+  DateTime get resDate;
   @override
-  String get paymentStatus => throw _privateConstructorUsedError;
+  String get paymentStatus;
   @override
-  String get statusName => throw _privateConstructorUsedError;
+  String get statusName;
   @override
-  DateTime get paymentTime => throw _privateConstructorUsedError;
+  DateTime get paymentTime;
   @override
-  List<Payment> get payment => throw _privateConstructorUsedError;
+  List<Payment> get payment;
   @override
   @JsonKey(ignore: true)
   _$$_PostBookingsCopyWith<_$_PostBookings> get copyWith =>
@@ -263,7 +262,8 @@ mixin _$Payment {
 /// @nodoc
 abstract class $PaymentCopyWith<$Res> {
   factory $PaymentCopyWith(Payment value, $Res Function(Payment) then) =
-      _$PaymentCopyWithImpl<$Res>;
+      _$PaymentCopyWithImpl<$Res, Payment>;
+  @useResult
   $Res call(
       {int id,
       Settings settings,
@@ -277,59 +277,63 @@ abstract class $PaymentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentCopyWithImpl<$Res> implements $PaymentCopyWith<$Res> {
+class _$PaymentCopyWithImpl<$Res, $Val extends Payment>
+    implements $PaymentCopyWith<$Res> {
   _$PaymentCopyWithImpl(this._value, this._then);
 
-  final Payment _value;
   // ignore: unused_field
-  final $Res Function(Payment) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? settings = freezed,
-    Object? paymentId = freezed,
-    Object? amount = freezed,
-    Object? orderId = freezed,
-    Object? description = freezed,
-    Object? token = freezed,
+    Object? id = null,
+    Object? settings = null,
+    Object? paymentId = null,
+    Object? amount = null,
+    Object? orderId = null,
+    Object? description = null,
+    Object? token = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      paymentId: paymentId == freezed
+      paymentId: null == paymentId
           ? _value.paymentId
           : paymentId // ignore: cast_nullable_to_non_nullable
               as int,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
-      orderId: orderId == freezed
+      orderId: null == orderId
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
-      return _then(_value.copyWith(settings: value));
+      return _then(_value.copyWith(settings: value) as $Val);
     });
   }
 }
@@ -340,6 +344,7 @@ abstract class _$$_PaymentCopyWith<$Res> implements $PaymentCopyWith<$Res> {
           _$_Payment value, $Res Function(_$_Payment) then) =
       __$$_PaymentCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       Settings settings,
@@ -354,50 +359,49 @@ abstract class _$$_PaymentCopyWith<$Res> implements $PaymentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PaymentCopyWithImpl<$Res> extends _$PaymentCopyWithImpl<$Res>
+class __$$_PaymentCopyWithImpl<$Res>
+    extends _$PaymentCopyWithImpl<$Res, _$_Payment>
     implements _$$_PaymentCopyWith<$Res> {
   __$$_PaymentCopyWithImpl(_$_Payment _value, $Res Function(_$_Payment) _then)
-      : super(_value, (v) => _then(v as _$_Payment));
+      : super(_value, _then);
 
-  @override
-  _$_Payment get _value => super._value as _$_Payment;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? settings = freezed,
-    Object? paymentId = freezed,
-    Object? amount = freezed,
-    Object? orderId = freezed,
-    Object? description = freezed,
-    Object? token = freezed,
+    Object? id = null,
+    Object? settings = null,
+    Object? paymentId = null,
+    Object? amount = null,
+    Object? orderId = null,
+    Object? description = null,
+    Object? token = null,
   }) {
     return _then(_$_Payment(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      paymentId: paymentId == freezed
+      paymentId: null == paymentId
           ? _value.paymentId
           : paymentId // ignore: cast_nullable_to_non_nullable
               as int,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
-      orderId: orderId == freezed
+      orderId: null == orderId
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
@@ -442,29 +446,25 @@ class _$_Payment implements _Payment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Payment &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.settings, settings) &&
-            const DeepCollectionEquality().equals(other.paymentId, paymentId) &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            const DeepCollectionEquality().equals(other.orderId, orderId) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.token, token));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.settings, settings) ||
+                other.settings == settings) &&
+            (identical(other.paymentId, paymentId) ||
+                other.paymentId == paymentId) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(settings),
-      const DeepCollectionEquality().hash(paymentId),
-      const DeepCollectionEquality().hash(amount),
-      const DeepCollectionEquality().hash(orderId),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(token));
+  int get hashCode => Object.hash(runtimeType, id, settings, paymentId, amount,
+      orderId, description, token);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PaymentCopyWith<_$_Payment> get copyWith =>
       __$$_PaymentCopyWithImpl<_$_Payment>(this, _$identity);
 }
@@ -480,19 +480,19 @@ abstract class _Payment implements Payment {
       required final String token}) = _$_Payment;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  int get paymentId => throw _privateConstructorUsedError;
+  int get paymentId;
   @override
-  int get amount => throw _privateConstructorUsedError;
+  int get amount;
   @override
-  String get orderId => throw _privateConstructorUsedError;
+  String get orderId;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get token => throw _privateConstructorUsedError;
+  String get token;
   @override
   @JsonKey(ignore: true)
   _$$_PaymentCopyWith<_$_Payment> get copyWith =>
@@ -513,38 +513,42 @@ mixin _$Settings {
 /// @nodoc
 abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
-      _$SettingsCopyWithImpl<$Res>;
+      _$SettingsCopyWithImpl<$Res, Settings>;
+  @useResult
   $Res call({String terminalKey, String password, String publicKey});
 }
 
 /// @nodoc
-class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
+class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
+    implements $SettingsCopyWith<$Res> {
   _$SettingsCopyWithImpl(this._value, this._then);
 
-  final Settings _value;
   // ignore: unused_field
-  final $Res Function(Settings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? terminalKey = freezed,
-    Object? password = freezed,
-    Object? publicKey = freezed,
+    Object? terminalKey = null,
+    Object? password = null,
+    Object? publicKey = null,
   }) {
     return _then(_value.copyWith(
-      terminalKey: terminalKey == freezed
+      terminalKey: null == terminalKey
           ? _value.terminalKey
           : terminalKey // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      publicKey: publicKey == freezed
+      publicKey: null == publicKey
           ? _value.publicKey
           : publicKey // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -554,35 +558,35 @@ abstract class _$$_SettingsCopyWith<$Res> implements $SettingsCopyWith<$Res> {
           _$_Settings value, $Res Function(_$_Settings) then) =
       __$$_SettingsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String terminalKey, String password, String publicKey});
 }
 
 /// @nodoc
-class __$$_SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
+class __$$_SettingsCopyWithImpl<$Res>
+    extends _$SettingsCopyWithImpl<$Res, _$_Settings>
     implements _$$_SettingsCopyWith<$Res> {
   __$$_SettingsCopyWithImpl(
       _$_Settings _value, $Res Function(_$_Settings) _then)
-      : super(_value, (v) => _then(v as _$_Settings));
+      : super(_value, _then);
 
-  @override
-  _$_Settings get _value => super._value as _$_Settings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? terminalKey = freezed,
-    Object? password = freezed,
-    Object? publicKey = freezed,
+    Object? terminalKey = null,
+    Object? password = null,
+    Object? publicKey = null,
   }) {
     return _then(_$_Settings(
-      terminalKey: terminalKey == freezed
+      terminalKey: null == terminalKey
           ? _value.terminalKey
           : terminalKey // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      publicKey: publicKey == freezed
+      publicKey: null == publicKey
           ? _value.publicKey
           : publicKey // ignore: cast_nullable_to_non_nullable
               as String,
@@ -615,21 +619,21 @@ class _$_Settings implements _Settings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Settings &&
-            const DeepCollectionEquality()
-                .equals(other.terminalKey, terminalKey) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other.publicKey, publicKey));
+            (identical(other.terminalKey, terminalKey) ||
+                other.terminalKey == terminalKey) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.publicKey, publicKey) ||
+                other.publicKey == publicKey));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(terminalKey),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(publicKey));
+  int get hashCode =>
+      Object.hash(runtimeType, terminalKey, password, publicKey);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>
       __$$_SettingsCopyWithImpl<_$_Settings>(this, _$identity);
 }
@@ -641,11 +645,11 @@ abstract class _Settings implements Settings {
       required final String publicKey}) = _$_Settings;
 
   @override
-  String get terminalKey => throw _privateConstructorUsedError;
+  String get terminalKey;
   @override
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @override
-  String get publicKey => throw _privateConstructorUsedError;
+  String get publicKey;
   @override
   @JsonKey(ignore: true)
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>

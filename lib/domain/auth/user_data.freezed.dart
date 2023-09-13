@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_data.dart';
 
@@ -27,7 +27,8 @@ mixin _$UserData {
 /// @nodoc
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
-      _$UserDataCopyWithImpl<$Res>;
+      _$UserDataCopyWithImpl<$Res, UserData>;
+  @useResult
   $Res call({Token token, ProfileInfo profileInfo});
 
   $TokenCopyWith<$Res> get token;
@@ -35,41 +36,46 @@ abstract class $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
+class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
+    implements $UserDataCopyWith<$Res> {
   _$UserDataCopyWithImpl(this._value, this._then);
 
-  final UserData _value;
   // ignore: unused_field
-  final $Res Function(UserData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? profileInfo = freezed,
+    Object? token = null,
+    Object? profileInfo = null,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token,
-      profileInfo: profileInfo == freezed
+      profileInfo: null == profileInfo
           ? _value.profileInfo
           : profileInfo // ignore: cast_nullable_to_non_nullable
               as ProfileInfo,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TokenCopyWith<$Res> get token {
     return $TokenCopyWith<$Res>(_value.token, (value) {
-      return _then(_value.copyWith(token: value));
+      return _then(_value.copyWith(token: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ProfileInfoCopyWith<$Res> get profileInfo {
     return $ProfileInfoCopyWith<$Res>(_value.profileInfo, (value) {
-      return _then(_value.copyWith(profileInfo: value));
+      return _then(_value.copyWith(profileInfo: value) as $Val);
     });
   }
 }
@@ -80,6 +86,7 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
           _$_UserData value, $Res Function(_$_UserData) then) =
       __$$_UserDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Token token, ProfileInfo profileInfo});
 
   @override
@@ -89,26 +96,25 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
+class __$$_UserDataCopyWithImpl<$Res>
+    extends _$UserDataCopyWithImpl<$Res, _$_UserData>
     implements _$$_UserDataCopyWith<$Res> {
   __$$_UserDataCopyWithImpl(
       _$_UserData _value, $Res Function(_$_UserData) _then)
-      : super(_value, (v) => _then(v as _$_UserData));
+      : super(_value, _then);
 
-  @override
-  _$_UserData get _value => super._value as _$_UserData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? profileInfo = freezed,
+    Object? token = null,
+    Object? profileInfo = null,
   }) {
     return _then(_$_UserData(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token,
-      profileInfo: profileInfo == freezed
+      profileInfo: null == profileInfo
           ? _value.profileInfo
           : profileInfo // ignore: cast_nullable_to_non_nullable
               as ProfileInfo,
@@ -136,19 +142,17 @@ class _$_UserData implements _UserData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserData &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality()
-                .equals(other.profileInfo, profileInfo));
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.profileInfo, profileInfo) ||
+                other.profileInfo == profileInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(profileInfo));
+  int get hashCode => Object.hash(runtimeType, token, profileInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UserDataCopyWith<_$_UserData> get copyWith =>
       __$$_UserDataCopyWithImpl<_$_UserData>(this, _$identity);
 }
@@ -159,9 +163,9 @@ abstract class _UserData implements UserData {
       required final ProfileInfo profileInfo}) = _$_UserData;
 
   @override
-  Token get token => throw _privateConstructorUsedError;
+  Token get token;
   @override
-  ProfileInfo get profileInfo => throw _privateConstructorUsedError;
+  ProfileInfo get profileInfo;
   @override
   @JsonKey(ignore: true)
   _$$_UserDataCopyWith<_$_UserData> get copyWith =>
@@ -180,33 +184,37 @@ mixin _$Token {
 /// @nodoc
 abstract class $TokenCopyWith<$Res> {
   factory $TokenCopyWith(Token value, $Res Function(Token) then) =
-      _$TokenCopyWithImpl<$Res>;
+      _$TokenCopyWithImpl<$Res, Token>;
+  @useResult
   $Res call({String refresh, String access});
 }
 
 /// @nodoc
-class _$TokenCopyWithImpl<$Res> implements $TokenCopyWith<$Res> {
+class _$TokenCopyWithImpl<$Res, $Val extends Token>
+    implements $TokenCopyWith<$Res> {
   _$TokenCopyWithImpl(this._value, this._then);
 
-  final Token _value;
   // ignore: unused_field
-  final $Res Function(Token) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? refresh = freezed,
-    Object? access = freezed,
+    Object? refresh = null,
+    Object? access = null,
   }) {
     return _then(_value.copyWith(
-      refresh: refresh == freezed
+      refresh: null == refresh
           ? _value.refresh
           : refresh // ignore: cast_nullable_to_non_nullable
               as String,
-      access: access == freezed
+      access: null == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -215,29 +223,28 @@ abstract class _$$_TokenCopyWith<$Res> implements $TokenCopyWith<$Res> {
   factory _$$_TokenCopyWith(_$_Token value, $Res Function(_$_Token) then) =
       __$$_TokenCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String refresh, String access});
 }
 
 /// @nodoc
-class __$$_TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res>
+class __$$_TokenCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res, _$_Token>
     implements _$$_TokenCopyWith<$Res> {
   __$$_TokenCopyWithImpl(_$_Token _value, $Res Function(_$_Token) _then)
-      : super(_value, (v) => _then(v as _$_Token));
+      : super(_value, _then);
 
-  @override
-  _$_Token get _value => super._value as _$_Token;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? refresh = freezed,
-    Object? access = freezed,
+    Object? refresh = null,
+    Object? access = null,
   }) {
     return _then(_$_Token(
-      refresh: refresh == freezed
+      refresh: null == refresh
           ? _value.refresh
           : refresh // ignore: cast_nullable_to_non_nullable
               as String,
-      access: access == freezed
+      access: null == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as String,
@@ -265,18 +272,16 @@ class _$_Token implements _Token {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Token &&
-            const DeepCollectionEquality().equals(other.refresh, refresh) &&
-            const DeepCollectionEquality().equals(other.access, access));
+            (identical(other.refresh, refresh) || other.refresh == refresh) &&
+            (identical(other.access, access) || other.access == access));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(refresh),
-      const DeepCollectionEquality().hash(access));
+  int get hashCode => Object.hash(runtimeType, refresh, access);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TokenCopyWith<_$_Token> get copyWith =>
       __$$_TokenCopyWithImpl<_$_Token>(this, _$identity);
 }
@@ -286,9 +291,9 @@ abstract class _Token implements Token {
       {required final String refresh, required final String access}) = _$_Token;
 
   @override
-  String get refresh => throw _privateConstructorUsedError;
+  String get refresh;
   @override
-  String get access => throw _privateConstructorUsedError;
+  String get access;
   @override
   @JsonKey(ignore: true)
   _$$_TokenCopyWith<_$_Token> get copyWith =>

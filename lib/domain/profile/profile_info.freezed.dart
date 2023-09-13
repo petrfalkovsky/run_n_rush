@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'profile_info.dart';
 
@@ -41,7 +41,8 @@ mixin _$ProfileInfo {
 abstract class $ProfileInfoCopyWith<$Res> {
   factory $ProfileInfoCopyWith(
           ProfileInfo value, $Res Function(ProfileInfo) then) =
-      _$ProfileInfoCopyWithImpl<$Res>;
+      _$ProfileInfoCopyWithImpl<$Res, ProfileInfo>;
+  @useResult
   $Res call(
       {String? id,
       String? email,
@@ -53,13 +54,16 @@ abstract class $ProfileInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileInfoCopyWithImpl<$Res> implements $ProfileInfoCopyWith<$Res> {
+class _$ProfileInfoCopyWithImpl<$Res, $Val extends ProfileInfo>
+    implements $ProfileInfoCopyWith<$Res> {
   _$ProfileInfoCopyWithImpl(this._value, this._then);
 
-  final ProfileInfo _value;
   // ignore: unused_field
-  final $Res Function(ProfileInfo) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -71,35 +75,35 @@ class _$ProfileInfoCopyWithImpl<$Res> implements $ProfileInfoCopyWith<$Res> {
     Object? dateReceiveToken = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: firstName == freezed
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: lastName == freezed
+      lastName: freezed == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      birthday: birthday == freezed
+      birthday: freezed == birthday
           ? _value.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
               as String?,
-      dateReceiveToken: dateReceiveToken == freezed
+      dateReceiveToken: freezed == dateReceiveToken
           ? _value.dateReceiveToken
           : dateReceiveToken // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -110,6 +114,7 @@ abstract class _$$_ProfileInfoCopyWith<$Res>
           _$_ProfileInfo value, $Res Function(_$_ProfileInfo) then) =
       __$$_ProfileInfoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? id,
       String? email,
@@ -121,15 +126,14 @@ abstract class _$$_ProfileInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProfileInfoCopyWithImpl<$Res> extends _$ProfileInfoCopyWithImpl<$Res>
+class __$$_ProfileInfoCopyWithImpl<$Res>
+    extends _$ProfileInfoCopyWithImpl<$Res, _$_ProfileInfo>
     implements _$$_ProfileInfoCopyWith<$Res> {
   __$$_ProfileInfoCopyWithImpl(
       _$_ProfileInfo _value, $Res Function(_$_ProfileInfo) _then)
-      : super(_value, (v) => _then(v as _$_ProfileInfo));
+      : super(_value, _then);
 
-  @override
-  _$_ProfileInfo get _value => super._value as _$_ProfileInfo;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -141,31 +145,31 @@ class __$$_ProfileInfoCopyWithImpl<$Res> extends _$ProfileInfoCopyWithImpl<$Res>
     Object? dateReceiveToken = freezed,
   }) {
     return _then(_$_ProfileInfo(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      firstName: firstName == freezed
+      firstName: freezed == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: lastName == freezed
+      lastName: freezed == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phoneNumber: phoneNumber == freezed
+      phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      birthday: birthday == freezed
+      birthday: freezed == birthday
           ? _value.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
               as String?,
-      dateReceiveToken: dateReceiveToken == freezed
+      dateReceiveToken: freezed == dateReceiveToken
           ? _value.dateReceiveToken
           : dateReceiveToken // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -217,37 +221,36 @@ class _$_ProfileInfo extends _ProfileInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProfileInfo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.firstName, firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName) &&
-            const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber) &&
-            const DeepCollectionEquality().equals(other.birthday, birthday) &&
-            const DeepCollectionEquality()
-                .equals(other.dateReceiveToken, dateReceiveToken));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.birthday, birthday) ||
+                other.birthday == birthday) &&
+            (identical(other.dateReceiveToken, dateReceiveToken) ||
+                other.dateReceiveToken == dateReceiveToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(firstName),
-      const DeepCollectionEquality().hash(lastName),
-      const DeepCollectionEquality().hash(phoneNumber),
-      const DeepCollectionEquality().hash(birthday),
-      const DeepCollectionEquality().hash(dateReceiveToken));
+  int get hashCode => Object.hash(runtimeType, id, email, firstName, lastName,
+      phoneNumber, birthday, dateReceiveToken);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProfileInfoCopyWith<_$_ProfileInfo> get copyWith =>
       __$$_ProfileInfoCopyWithImpl<_$_ProfileInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileInfoToJson(this);
+    return _$$_ProfileInfoToJson(
+      this,
+    );
   }
 }
 
@@ -266,22 +269,22 @@ abstract class _ProfileInfo extends ProfileInfo {
       _$_ProfileInfo.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
   @override
   @JsonKey(name: 'first_name')
-  String? get firstName => throw _privateConstructorUsedError;
+  String? get firstName;
   @override
   @JsonKey(name: 'last_name')
-  String? get lastName => throw _privateConstructorUsedError;
+  String? get lastName;
   @override
   @JsonKey(name: 'phone_number')
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber;
   @override
-  String? get birthday => throw _privateConstructorUsedError;
+  String? get birthday;
   @override
-  int? get dateReceiveToken => throw _privateConstructorUsedError;
+  int? get dateReceiveToken;
   @override
   @JsonKey(ignore: true)
   _$$_ProfileInfoCopyWith<_$_ProfileInfo> get copyWith =>
@@ -301,33 +304,37 @@ mixin _$NewEmail {
 /// @nodoc
 abstract class $NewEmailCopyWith<$Res> {
   factory $NewEmailCopyWith(NewEmail value, $Res Function(NewEmail) then) =
-      _$NewEmailCopyWithImpl<$Res>;
+      _$NewEmailCopyWithImpl<$Res, NewEmail>;
+  @useResult
   $Res call({String newEmail, String code});
 }
 
 /// @nodoc
-class _$NewEmailCopyWithImpl<$Res> implements $NewEmailCopyWith<$Res> {
+class _$NewEmailCopyWithImpl<$Res, $Val extends NewEmail>
+    implements $NewEmailCopyWith<$Res> {
   _$NewEmailCopyWithImpl(this._value, this._then);
 
-  final NewEmail _value;
   // ignore: unused_field
-  final $Res Function(NewEmail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newEmail = freezed,
-    Object? code = freezed,
+    Object? newEmail = null,
+    Object? code = null,
   }) {
     return _then(_value.copyWith(
-      newEmail: newEmail == freezed
+      newEmail: null == newEmail
           ? _value.newEmail
           : newEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -337,30 +344,30 @@ abstract class _$$_NewEmailCopyWith<$Res> implements $NewEmailCopyWith<$Res> {
           _$_NewEmail value, $Res Function(_$_NewEmail) then) =
       __$$_NewEmailCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String newEmail, String code});
 }
 
 /// @nodoc
-class __$$_NewEmailCopyWithImpl<$Res> extends _$NewEmailCopyWithImpl<$Res>
+class __$$_NewEmailCopyWithImpl<$Res>
+    extends _$NewEmailCopyWithImpl<$Res, _$_NewEmail>
     implements _$$_NewEmailCopyWith<$Res> {
   __$$_NewEmailCopyWithImpl(
       _$_NewEmail _value, $Res Function(_$_NewEmail) _then)
-      : super(_value, (v) => _then(v as _$_NewEmail));
+      : super(_value, _then);
 
-  @override
-  _$_NewEmail get _value => super._value as _$_NewEmail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newEmail = freezed,
-    Object? code = freezed,
+    Object? newEmail = null,
+    Object? code = null,
   }) {
     return _then(_$_NewEmail(
-      newEmail: newEmail == freezed
+      newEmail: null == newEmail
           ? _value.newEmail
           : newEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      code: code == freezed
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
@@ -388,18 +395,17 @@ class _$_NewEmail implements _NewEmail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NewEmail &&
-            const DeepCollectionEquality().equals(other.newEmail, newEmail) &&
-            const DeepCollectionEquality().equals(other.code, code));
+            (identical(other.newEmail, newEmail) ||
+                other.newEmail == newEmail) &&
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(newEmail),
-      const DeepCollectionEquality().hash(code));
+  int get hashCode => Object.hash(runtimeType, newEmail, code);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NewEmailCopyWith<_$_NewEmail> get copyWith =>
       __$$_NewEmailCopyWithImpl<_$_NewEmail>(this, _$identity);
 }
@@ -410,9 +416,9 @@ abstract class _NewEmail implements NewEmail {
       required final String code}) = _$_NewEmail;
 
   @override
-  String get newEmail => throw _privateConstructorUsedError;
+  String get newEmail;
   @override
-  String get code => throw _privateConstructorUsedError;
+  String get code;
   @override
   @JsonKey(ignore: true)
   _$$_NewEmailCopyWith<_$_NewEmail> get copyWith =>

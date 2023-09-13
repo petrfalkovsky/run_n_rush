@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'check_reserved.dart';
 
@@ -36,7 +36,8 @@ mixin _$CheckReserved {
 abstract class $CheckReservedCopyWith<$Res> {
   factory $CheckReservedCopyWith(
           CheckReserved value, $Res Function(CheckReserved) then) =
-      _$CheckReservedCopyWithImpl<$Res>;
+      _$CheckReservedCopyWithImpl<$Res, CheckReserved>;
+  @useResult
   $Res call(
       {String serviceName,
       int freeIndSeats,
@@ -51,69 +52,71 @@ abstract class $CheckReservedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CheckReservedCopyWithImpl<$Res>
+class _$CheckReservedCopyWithImpl<$Res, $Val extends CheckReserved>
     implements $CheckReservedCopyWith<$Res> {
   _$CheckReservedCopyWithImpl(this._value, this._then);
 
-  final CheckReserved _value;
   // ignore: unused_field
-  final $Res Function(CheckReserved) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serviceName = freezed,
-    Object? freeIndSeats = freezed,
-    Object? indSeatPrice = freezed,
-    Object? freeFamSeats = freezed,
-    Object? famSeatPrice = freezed,
-    Object? courtId = freezed,
-    Object? openHour = freezed,
-    Object? closeHour = freezed,
-    Object? hourPrice = freezed,
-    Object? reserved = freezed,
+    Object? serviceName = null,
+    Object? freeIndSeats = null,
+    Object? indSeatPrice = null,
+    Object? freeFamSeats = null,
+    Object? famSeatPrice = null,
+    Object? courtId = null,
+    Object? openHour = null,
+    Object? closeHour = null,
+    Object? hourPrice = null,
+    Object? reserved = null,
   }) {
     return _then(_value.copyWith(
-      serviceName: serviceName == freezed
+      serviceName: null == serviceName
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
-      freeIndSeats: freeIndSeats == freezed
+      freeIndSeats: null == freeIndSeats
           ? _value.freeIndSeats
           : freeIndSeats // ignore: cast_nullable_to_non_nullable
               as int,
-      indSeatPrice: indSeatPrice == freezed
+      indSeatPrice: null == indSeatPrice
           ? _value.indSeatPrice
           : indSeatPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      freeFamSeats: freeFamSeats == freezed
+      freeFamSeats: null == freeFamSeats
           ? _value.freeFamSeats
           : freeFamSeats // ignore: cast_nullable_to_non_nullable
               as int,
-      famSeatPrice: famSeatPrice == freezed
+      famSeatPrice: null == famSeatPrice
           ? _value.famSeatPrice
           : famSeatPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      courtId: courtId == freezed
+      courtId: null == courtId
           ? _value.courtId
           : courtId // ignore: cast_nullable_to_non_nullable
               as int,
-      openHour: openHour == freezed
+      openHour: null == openHour
           ? _value.openHour
           : openHour // ignore: cast_nullable_to_non_nullable
               as int,
-      closeHour: closeHour == freezed
+      closeHour: null == closeHour
           ? _value.closeHour
           : closeHour // ignore: cast_nullable_to_non_nullable
               as int,
-      hourPrice: hourPrice == freezed
+      hourPrice: null == hourPrice
           ? _value.hourPrice
           : hourPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      reserved: reserved == freezed
+      reserved: null == reserved
           ? _value.reserved
           : reserved // ignore: cast_nullable_to_non_nullable
               as List<int>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -124,6 +127,7 @@ abstract class _$$_CheckReservedCopyWith<$Res>
           _$_CheckReserved value, $Res Function(_$_CheckReserved) then) =
       __$$_CheckReservedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String serviceName,
       int freeIndSeats,
@@ -139,66 +143,64 @@ abstract class _$$_CheckReservedCopyWith<$Res>
 
 /// @nodoc
 class __$$_CheckReservedCopyWithImpl<$Res>
-    extends _$CheckReservedCopyWithImpl<$Res>
+    extends _$CheckReservedCopyWithImpl<$Res, _$_CheckReserved>
     implements _$$_CheckReservedCopyWith<$Res> {
   __$$_CheckReservedCopyWithImpl(
       _$_CheckReserved _value, $Res Function(_$_CheckReserved) _then)
-      : super(_value, (v) => _then(v as _$_CheckReserved));
+      : super(_value, _then);
 
-  @override
-  _$_CheckReserved get _value => super._value as _$_CheckReserved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serviceName = freezed,
-    Object? freeIndSeats = freezed,
-    Object? indSeatPrice = freezed,
-    Object? freeFamSeats = freezed,
-    Object? famSeatPrice = freezed,
-    Object? courtId = freezed,
-    Object? openHour = freezed,
-    Object? closeHour = freezed,
-    Object? hourPrice = freezed,
-    Object? reserved = freezed,
+    Object? serviceName = null,
+    Object? freeIndSeats = null,
+    Object? indSeatPrice = null,
+    Object? freeFamSeats = null,
+    Object? famSeatPrice = null,
+    Object? courtId = null,
+    Object? openHour = null,
+    Object? closeHour = null,
+    Object? hourPrice = null,
+    Object? reserved = null,
   }) {
     return _then(_$_CheckReserved(
-      serviceName: serviceName == freezed
+      serviceName: null == serviceName
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
-      freeIndSeats: freeIndSeats == freezed
+      freeIndSeats: null == freeIndSeats
           ? _value.freeIndSeats
           : freeIndSeats // ignore: cast_nullable_to_non_nullable
               as int,
-      indSeatPrice: indSeatPrice == freezed
+      indSeatPrice: null == indSeatPrice
           ? _value.indSeatPrice
           : indSeatPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      freeFamSeats: freeFamSeats == freezed
+      freeFamSeats: null == freeFamSeats
           ? _value.freeFamSeats
           : freeFamSeats // ignore: cast_nullable_to_non_nullable
               as int,
-      famSeatPrice: famSeatPrice == freezed
+      famSeatPrice: null == famSeatPrice
           ? _value.famSeatPrice
           : famSeatPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      courtId: courtId == freezed
+      courtId: null == courtId
           ? _value.courtId
           : courtId // ignore: cast_nullable_to_non_nullable
               as int,
-      openHour: openHour == freezed
+      openHour: null == openHour
           ? _value.openHour
           : openHour // ignore: cast_nullable_to_non_nullable
               as int,
-      closeHour: closeHour == freezed
+      closeHour: null == closeHour
           ? _value.closeHour
           : closeHour // ignore: cast_nullable_to_non_nullable
               as int,
-      hourPrice: hourPrice == freezed
+      hourPrice: null == hourPrice
           ? _value.hourPrice
           : hourPrice // ignore: cast_nullable_to_non_nullable
               as int,
-      reserved: reserved == freezed
+      reserved: null == reserved
           ? _value._reserved
           : reserved // ignore: cast_nullable_to_non_nullable
               as List<int>,
@@ -243,6 +245,7 @@ class _$_CheckReserved implements _CheckReserved {
   final List<int> _reserved;
   @override
   List<int> get reserved {
+    if (_reserved is EqualUnmodifiableListView) return _reserved;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_reserved);
   }
@@ -257,39 +260,43 @@ class _$_CheckReserved implements _CheckReserved {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CheckReserved &&
-            const DeepCollectionEquality()
-                .equals(other.serviceName, serviceName) &&
-            const DeepCollectionEquality()
-                .equals(other.freeIndSeats, freeIndSeats) &&
-            const DeepCollectionEquality()
-                .equals(other.indSeatPrice, indSeatPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.freeFamSeats, freeFamSeats) &&
-            const DeepCollectionEquality()
-                .equals(other.famSeatPrice, famSeatPrice) &&
-            const DeepCollectionEquality().equals(other.courtId, courtId) &&
-            const DeepCollectionEquality().equals(other.openHour, openHour) &&
-            const DeepCollectionEquality().equals(other.closeHour, closeHour) &&
-            const DeepCollectionEquality().equals(other.hourPrice, hourPrice) &&
+            (identical(other.serviceName, serviceName) ||
+                other.serviceName == serviceName) &&
+            (identical(other.freeIndSeats, freeIndSeats) ||
+                other.freeIndSeats == freeIndSeats) &&
+            (identical(other.indSeatPrice, indSeatPrice) ||
+                other.indSeatPrice == indSeatPrice) &&
+            (identical(other.freeFamSeats, freeFamSeats) ||
+                other.freeFamSeats == freeFamSeats) &&
+            (identical(other.famSeatPrice, famSeatPrice) ||
+                other.famSeatPrice == famSeatPrice) &&
+            (identical(other.courtId, courtId) || other.courtId == courtId) &&
+            (identical(other.openHour, openHour) ||
+                other.openHour == openHour) &&
+            (identical(other.closeHour, closeHour) ||
+                other.closeHour == closeHour) &&
+            (identical(other.hourPrice, hourPrice) ||
+                other.hourPrice == hourPrice) &&
             const DeepCollectionEquality().equals(other._reserved, _reserved));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(serviceName),
-      const DeepCollectionEquality().hash(freeIndSeats),
-      const DeepCollectionEquality().hash(indSeatPrice),
-      const DeepCollectionEquality().hash(freeFamSeats),
-      const DeepCollectionEquality().hash(famSeatPrice),
-      const DeepCollectionEquality().hash(courtId),
-      const DeepCollectionEquality().hash(openHour),
-      const DeepCollectionEquality().hash(closeHour),
-      const DeepCollectionEquality().hash(hourPrice),
+      serviceName,
+      freeIndSeats,
+      indSeatPrice,
+      freeFamSeats,
+      famSeatPrice,
+      courtId,
+      openHour,
+      closeHour,
+      hourPrice,
       const DeepCollectionEquality().hash(_reserved));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CheckReservedCopyWith<_$_CheckReserved> get copyWith =>
       __$$_CheckReservedCopyWithImpl<_$_CheckReserved>(this, _$identity);
 }
@@ -308,25 +315,25 @@ abstract class _CheckReserved implements CheckReserved {
       required final List<int> reserved}) = _$_CheckReserved;
 
   @override
-  String get serviceName => throw _privateConstructorUsedError;
+  String get serviceName;
   @override
-  int get freeIndSeats => throw _privateConstructorUsedError;
+  int get freeIndSeats;
   @override
-  int get indSeatPrice => throw _privateConstructorUsedError;
+  int get indSeatPrice;
   @override
-  int get freeFamSeats => throw _privateConstructorUsedError;
+  int get freeFamSeats;
   @override
-  int get famSeatPrice => throw _privateConstructorUsedError;
+  int get famSeatPrice;
   @override
-  int get courtId => throw _privateConstructorUsedError;
+  int get courtId;
   @override
-  int get openHour => throw _privateConstructorUsedError;
+  int get openHour;
   @override
-  int get closeHour => throw _privateConstructorUsedError;
+  int get closeHour;
   @override
-  int get hourPrice => throw _privateConstructorUsedError;
+  int get hourPrice;
   @override
-  List<int> get reserved => throw _privateConstructorUsedError;
+  List<int> get reserved;
   @override
   @JsonKey(ignore: true)
   _$$_CheckReservedCopyWith<_$_CheckReserved> get copyWith =>
