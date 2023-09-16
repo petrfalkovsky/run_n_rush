@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/internet/internet.dart';
 import 'package:run_n_rush/ui/screens/language/language.dart';
@@ -23,6 +25,7 @@ class GeneralService extends GetxService {
       ..lazyPut(() => GeneralScaffoldService())
       ..lazyPut(() => InventoryService())
       ..lazyPut(() => InventoryController())
-      ..lazyPut(() => ShopService());
+      ..lazyPut(() => ShopService())
+      ..lazyPut(() => Dio());
   }
 }

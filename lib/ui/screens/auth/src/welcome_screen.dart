@@ -3,9 +3,13 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:run_n_rush/data/dto/auth/src/auth.dart';
+import 'package:run_n_rush/data/dto/auth/src/send_code.dart';
+import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/auth/src/welcome_controller.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
@@ -16,13 +20,17 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_input.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class WelcomeScreen extends StatexWidget<AuthController> {
-  WelcomeScreen({Key? key}) : super(() => AuthController(), key: key) {
+class WelcomeScreen extends StatexWidget<WelcomeController> {
+  WelcomeScreen({Key? key}) : super(() => WelcomeController(), key: key) {
     debugPrint('welcome_screen'.tr());
   }
 
   @override
   Widget buildWidget(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final Dio dio = Dio();
+    final ApiService apiService = ApiService(dio);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -57,7 +65,7 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                             const _Title(),
                             26.h,
                             StdInput(
-                              //  padding: EdgeInsets.only(top: 1),
+                              controller: emailController,
                               hintText: 'your_email'.tr(),
                             ),
                             15.h,
@@ -66,8 +74,25 @@ class WelcomeScreen extends StatexWidget<AuthController> {
                               suffixIcon: Padding(
                                 padding: const EdgeInsets.only(right: 12.0),
                                 child: CountdownButton(
-                                  onPressed: () {
+                                  onPressed: () async {
                                     debugPrint('нажата Sendcode кнопка');
+                                    final email = emailController.text;
+                                    final sendCodeData =
+                                        SendCodeDto(email: email);
+
+                                    if (email.isEmpty) {
+                                      return debugPrint(
+                                          'Нужно заполнить поле имейл');
+                                    }
+                                    debugPrint('Email из инпута: $email');
+                                    try {
+                                      // отправка боди на сервер
+                                      await apiService
+                                          .sendCode(sendCodeData.toJson());
+                                    } catch (e) {
+                                      debugPrint(
+                                          'Ошибка при отправке кода: $e');
+                                    }
                                   },
                                 ),
                               ),

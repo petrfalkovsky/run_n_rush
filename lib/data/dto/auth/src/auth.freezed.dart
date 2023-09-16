@@ -27,6 +27,7 @@ mixin _$UserDataDto {
   String? get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: 'last_name')
   String? get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
   String? get refresh => throw _privateConstructorUsedError;
   String? get access => throw _privateConstructorUsedError;
@@ -48,7 +49,7 @@ abstract class $UserDataDtoCopyWith<$Res> {
       @JsonKey(name: 'avatar_url') String? avatarUrl,
       @JsonKey(name: 'first_name') String? firstName,
       @JsonKey(name: 'last_name') String? lastName,
-      String? email,
+      @JsonKey(name: 'email') String? email,
       String? refresh,
       String? access});
 }
@@ -120,7 +121,7 @@ abstract class _$$_UserDataDtoCopyWith<$Res>
       @JsonKey(name: 'avatar_url') String? avatarUrl,
       @JsonKey(name: 'first_name') String? firstName,
       @JsonKey(name: 'last_name') String? lastName,
-      String? email,
+      @JsonKey(name: 'email') String? email,
       String? refresh,
       String? access});
 }
@@ -185,7 +186,7 @@ class _$_UserDataDto implements _UserDataDto {
       @JsonKey(name: 'avatar_url') required this.avatarUrl,
       @JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName,
-      required this.email,
+      @JsonKey(name: 'email') required this.email,
       required this.refresh,
       required this.access});
 
@@ -204,6 +205,7 @@ class _$_UserDataDto implements _UserDataDto {
   @JsonKey(name: 'last_name')
   final String? lastName;
   @override
+  @JsonKey(name: 'email')
   final String? email;
   @override
   final String? refresh;
@@ -257,7 +259,7 @@ abstract class _UserDataDto implements UserDataDto {
       @JsonKey(name: 'avatar_url') required final String? avatarUrl,
       @JsonKey(name: 'first_name') required final String? firstName,
       @JsonKey(name: 'last_name') required final String? lastName,
-      required final String? email,
+      @JsonKey(name: 'email') required final String? email,
       required final String? refresh,
       required final String? access}) = _$_UserDataDto;
 
@@ -276,6 +278,7 @@ abstract class _UserDataDto implements UserDataDto {
   @JsonKey(name: 'last_name')
   String? get lastName;
   @override
+  @JsonKey(name: 'email')
   String? get email;
   @override
   String? get refresh;
