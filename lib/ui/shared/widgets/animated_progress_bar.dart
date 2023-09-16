@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_const
+// ignore_for_file: unnecessary_const, unnecessary_import, library_private_types_in_public_api, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';

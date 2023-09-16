@@ -7,7 +7,8 @@ import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:run_n_rush/data/dto/auth/src/auth.dart';
+import 'package:run_n_rush/data/dto/auth/src/user_data_token.dart';
+import 'package:run_n_rush/data/dto/auth/src/login_or_signup.dart';
 import 'package:run_n_rush/data/dto/auth/src/send_code.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
@@ -28,6 +29,8 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
   @override
   Widget buildWidget(BuildContext context) {
     final TextEditingController emailController = TextEditingController();
+    final TextEditingController codeController = TextEditingController();
+    final TextEditingController referralController = TextEditingController();
     final Dio dio = Dio();
     final ApiService apiService = ApiService(dio);
 
@@ -70,6 +73,7 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                             ),
                             15.h,
                             StdInput(
+                              controller: codeController,
                               hintText: 'verification_code'.tr(),
                               suffixIcon: Padding(
                                 padding: const EdgeInsets.only(right: 12.0),
@@ -86,7 +90,7 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                                     }
                                     debugPrint('Email из инпута: $email');
                                     try {
-                                      // отправка боди на сервер
+                                      // отправка боди на сервер, чтобы получить код на имейл
                                       await apiService
                                           .sendCode(sendCodeData.toJson());
                                     } catch (e) {
@@ -99,6 +103,7 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                             ),
                             15.h,
                             StdInput(
+                              controller: referralController,
                               hintText: 'ref_ID'.tr(),
                             ),
                             6.h,
@@ -140,8 +145,51 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                               color: Colors.transparent,
                               height: 52,
                               isActive: true,
-                              onPress: () {
-                                Get.toNamed(AppRoutes.main);
+                              onPress: () async {
+                                debugPrint('нажата Логин/сайнАп кнопка');
+                                final email = emailController.text;
+                                final code = codeController.text;
+                                final referalCode = referralController.text;
+
+                                if (email.isEmpty) {
+                                  return debugPrint(
+                                      'Нужно заполнить поле имейл');
+                                }
+
+                                final loginData = LoginOrSignupDto(
+                                  email: email,
+                                  code: code,
+                                  referalCode: referalCode,
+                                );
+                                debugPrint('Email из инпута: $loginData');
+                                try {
+                                  // отправка боди на сервер, чтобы получить залогиниться
+                                  final response = await apiService
+                                      .loginOrSignup(loginData.toJson());
+
+// В userData теперь имею ответ и дальше эти данные могу юзать
+                                  // final userDataToken =
+                                  //     UserDataToken.fromJson(response.data);
+
+                                  final access = response.access;
+                                  final refresh = response.refresh;
+                                  final userData = response.user;
+
+                                  final userId = userData.id;
+                                  final userFirstName = userData.firstName;
+                                  final userLastName = userData.lastName;
+                                  final userEmail = userData.email;
+                                  final userAvatarUrl = userData.avatarUrl;
+
+                                  debugPrint(
+                                      'что получил после входа: $userId, $userFirstName, $userLastName, $userEmail, $userAvatarUrl');
+
+                                  debugPrint(
+                                      'аксесс и рефреш: $access, $refresh');
+                                } catch (e) {
+                                  debugPrint('Ошибка при отправке кода: $e');
+                                }
+                                // Get.toNamed(AppRoutes.main);
                               },
                               text: 'login_sing_up'.tr(),
                             ),

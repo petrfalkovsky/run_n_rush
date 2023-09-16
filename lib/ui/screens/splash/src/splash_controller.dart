@@ -12,11 +12,6 @@ class SplashScreenController extends StatexController
   final SplashScreenService _service;
 
   @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
   void onReady() {
     super.onReady();
     _service.start();

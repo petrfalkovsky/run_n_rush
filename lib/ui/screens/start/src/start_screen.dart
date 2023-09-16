@@ -320,8 +320,7 @@ class AvatarWidget extends StatelessWidget {
                 onTap: () {
                   CustomModal.show(
                     heightFactor: 0.5,
-                    color: AppColors.background[5]!.withOpacity(0.9) ??
-                        AppColors.background,
+                    color: AppColors.background[5]!.withOpacity(0.9),
                     context,
                     child: const BottomSheetConnectionWidget(),
                   );
