@@ -146,50 +146,12 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                               height: 52,
                               isActive: true,
                               onPress: () async {
-                                debugPrint('нажата Логин/сайнАп кнопка');
                                 final email = emailController.text;
                                 final code = codeController.text;
                                 final referalCode = referralController.text;
 
-                                if (email.isEmpty) {
-                                  return debugPrint(
-                                      'Нужно заполнить поле имейл');
-                                }
-
-                                final loginData = LoginOrSignupDto(
-                                  email: email,
-                                  code: code,
-                                  referalCode: referalCode,
-                                );
-                                debugPrint('Email из инпута: $loginData');
-                                try {
-                                  // отправка боди на сервер, чтобы получить залогиниться
-                                  final response = await apiService
-                                      .loginOrSignup(loginData.toJson());
-
-// В userData теперь имею ответ и дальше эти данные могу юзать
-                                  // final userDataToken =
-                                  //     UserDataToken.fromJson(response.data);
-
-                                  final access = response.access;
-                                  final refresh = response.refresh;
-                                  final userData = response.user;
-
-                                  final userId = userData.id;
-                                  final userFirstName = userData.firstName;
-                                  final userLastName = userData.lastName;
-                                  final userEmail = userData.email;
-                                  final userAvatarUrl = userData.avatarUrl;
-
-                                  debugPrint(
-                                      'что получил после входа: $userId, $userFirstName, $userLastName, $userEmail, $userAvatarUrl');
-
-                                  debugPrint(
-                                      'аксесс и рефреш: $access, $refresh');
-                                } catch (e) {
-                                  debugPrint('Ошибка при отправке кода: $e');
-                                }
-                                // Get.toNamed(AppRoutes.main);
+                                controller.onLoginOrSignUpPressed(
+                                    email, code, referalCode);
                               },
                               text: 'login_sing_up'.tr(),
                             ),
