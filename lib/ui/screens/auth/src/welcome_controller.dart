@@ -4,8 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:hive/hive.dart';
 import 'package:run_n_rush/data/dto/auth/src/login_or_signup.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
+import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
@@ -59,6 +61,20 @@ class WelcomeController extends StatexController {
       // если запрос завершился успешно (без ошибок - код 422)
       // и не вернул ошибку от сервера, переходим на другой экран
       Get.toNamed(AppRoutes.main);
+
+      ///   саздаю экземпляр User и сохраняю его в Hive
+      final user = User(
+        id: userData.id ?? '',
+        firstName: userFirstName ?? '',
+        lastName: userLastName ?? '',
+        email: userEmail ?? '',
+        avatarUrl: userAvatarUrl ?? '',
+      );
+
+      final userBox = await Hive.openBox<User>('userBox');
+      await userBox.put('user', user);
+
+      /// пробрасываю ошибку, если что-то пошло не так
     } catch (e) {
       debugPrint('Ошибка при отправке кода: $e');
       // если произошла ошибка, отображаем снекбар с сообщением об ошибке
