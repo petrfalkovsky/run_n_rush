@@ -85,6 +85,7 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                                         SendCodeDto(email: email);
 
                                     if (email.isEmpty) {
+                                      await controller.snackEmptyInput();
                                       return debugPrint(
                                           'Нужно заполнить поле имейл');
                                     }
@@ -93,6 +94,8 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                                       // отправка боди на сервер, чтобы получить код на имейл
                                       await apiService
                                           .sendCode(sendCodeData.toJson());
+                                      // показываем снек, если отправили код на почту
+                                      await controller.snackSendCode();
                                     } catch (e) {
                                       debugPrint(
                                           'Ошибка при отправке кода: $e');

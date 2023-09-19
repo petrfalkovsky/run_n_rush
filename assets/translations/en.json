@@ -107,9 +107,16 @@
     "amount_thirty_two_example": "32:41",
 
 
+   
     "///   ВАРНИНГИ И ОШИБКИ   ":  "",
     "error": "Error",
-    "something_went_wrong": "Что-то пошло не так, попробуйте ввести данные еще раз",
+    "something_went_wrong": "Something went wrong, try entering the data again",
+    "hooray": "Hooray!",
+    "got_it": "It turned out to log in!",
+    "oops": "Oops!",
+    "specify_email": "Specify the email address so that we send the verification code",
+    "we_ve_sent":"We have sent the verification code to the specified email address",
+    "copy_it": "Copy it from the email and paste it into the field to log in",
 
 
     "///   ЛОГИ   ":  "",

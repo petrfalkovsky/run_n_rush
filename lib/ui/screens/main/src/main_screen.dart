@@ -282,7 +282,7 @@ class AddSneakerWidget extends StatefulWidget {
 class AddSneakerWidgetState extends State<AddSneakerWidget> {
   // изначально показываю пустой виджет
   bool showImage = true;
-  final MainController controller = Get.find();
+  final MainController controller = Get.find<MainController>();
 
   @override
   Widget build(BuildContext context) {

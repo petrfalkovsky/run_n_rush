@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:run_n_rush/app_config.dart';
@@ -20,8 +19,8 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-  await Hive.initFlutter();
-  Hive.registerAdapter(UserAdapter());
+  /// инициализация и регистрация адаптеров хранилища Hive
+  registerHiveAdapters();
 
   await AppConfig().load();
 

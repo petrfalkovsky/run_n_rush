@@ -55,6 +55,8 @@ dependencies:
       ref: "torexo"
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  # кастомная либа для глобальных переменных
+  my_app: ^1.0.0
  
 
 

@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 
 @HiveType(typeId: 0)
-class User {
+class UserStorage {
   @HiveField(0)
   final String id;
 
@@ -17,7 +17,7 @@ class User {
   @HiveField(4)
   final String avatarUrl;
 
-  User({
+  UserStorage({
     required this.id,
     required this.firstName,
     required this.lastName,
@@ -26,12 +26,13 @@ class User {
   });
 }
 
-class UserAdapter extends TypeAdapter<User> {
+class UserStorageAdapter extends TypeAdapter<UserStorage> {
+  // идентификатор типа (может быть любым уникальным числом)
   @override
-  final typeId = 0; // идентификатор типа (может быть любым уникальным числом)
+  final typeId = 0;
 
   @override
-  User read(BinaryReader reader) {
+  UserStorage read(BinaryReader reader) {
     // десериализация данных из Hive
     final id = reader.readString();
     final firstName = reader.readString();
@@ -39,7 +40,7 @@ class UserAdapter extends TypeAdapter<User> {
     final email = reader.readString();
     final avatarUrl = reader.readString();
 
-    return User(
+    return UserStorage(
       id: id,
       firstName: firstName,
       lastName: lastName,
@@ -49,8 +50,8 @@ class UserAdapter extends TypeAdapter<User> {
   }
 
   @override
-  void write(BinaryWriter writer, User obj) {
-    // Метод для сериализации данных в Hive
+  void write(BinaryWriter writer, UserStorage obj) {
+    // сериализация данных в Hive
     writer.writeString(obj.id);
     writer.writeString(obj.firstName);
     writer.writeString(obj.lastName);
