@@ -1,9 +1,118 @@
 {
     "@@locale": "ru",
-    "account": "Аккаунт",
     "appName": "Run n Rush",
 
+
+    "///   ЭКРАН АККАУНТ   ":  "",
+    "account": "Аккаунт",
+    "save_changes": "Сохранить изменения",
+    "email": "Электронная почта",
+    "login": "Логин",
+    "your_email": "Ваша электронная почта",
+    "verification_code": "Код подтверждения",
+    "sendcode": "Отправить код",
+    "ref_ID": "Реферальный ID (Опционально)",
+    "privacy_policy_agree": "Я соглашаюсь с Условиями использования и Политикой конфиденциальности RUN&RUSH",
+    "login_sing_up": "Вход / Регистрация",
+
+
+    "///   ВЕЛКАМ ЭКРАН   ":  "",
+    "welcome_to": "Добро пожаловать в лучший проект play-to-earn!",
+    "transaction_history": "История транзакций",
+    "time_date_example": "11.12.2022, 18:43",
+    "withdraw": "Вывести",
+    "buy": "Купить",
+    "sell": "Продать",
+
+    "///   ЭКРАН БАЛАНСА   ":  "",
+    "balance": "Баланс",
+
+
+    "///   ЭКРАН ИНТЕРНЕТ СОЕДИНЕНИЯ   ":  "",
+    "no_internet_connection": "Отсутствует интернет-соединение",
+    "connection_lost": "Потеря соединения!",
+
+
+    "///   ЭКРАН ИНВЕНТАРИ (Склад)   ":  "",
+    "inventory": "Инвентарь",
+    "jogger": "Бегун",
+    "km_h": "км/ч",
+    "put_on": "Надеть",
+
+
+    "///   ЭКРАН СТАРТ   ":  "",
+    "start": "Начать",
+    "thousand": "тыс.",
     
+
+    "///   ЭКРАН РЕФЕРАЛЬНОЙ ПРОГРАММЫ   ":  "",
+    "referrals": "Рефералы",
+    "refer_friends": "Пригласить друзей",
+    "earn_money": "Заработать деньги",
+    "invite_friends": "Пригласите друзей зарегистрироваться по вашей ссылке, и вы получите 10% от их покупок",
+    "your_ref_ID": "Ваш реферальный ID",
+    "friends_must_use": "Друзья должны использовать ваш ID при регистрации!",
+    "copy_link": "Скопировать ссылку",
+    "reward_from_referrals": "Награда от рефералов",
+    "earned": "Заработано (за все время)",
+    "referal_program": "Реферальная программа",
+
+
+    "///   ЭКРАН НАСТРОЕК   ":  "",
+    "settings": "Настройки",
+    "total_distance": "Общее расстояние",
+    "km": "км",
+    "kilometers": "Километры",
+    "sound": "Звук",
+    "terms": "Условия использования",
+    "privacy_policy": "Политика конфиденциальности",
+    "runner": "Бегун",
+
+
+    "///   ЭКРАН ГЛАВНЫЙ (Основной)   ":  "",
+    "jogger_2023": "Бегун 2023",
+
+
+    "///   ЭКРАН ВИТРИНЫ   ":  "",
+    "shop": "Магазин",
+    "great_choice": "Отличный выбор!",
+    "move_at": "Двигайтесь со скоростью 4-10 км/ч, чтобы зарабатывать токены!",
+    "class": "Класс", 
+    "durability": "Прочность",
+    "rar_coin": "Монеты RAR",
+    "retry": "Повторить",
+    "cancel": "Отменить",
+
+
+    "///   СИМВОЛЫ В ТЕКСТЕ   ":  "",
+    "plus_sign": "+",
+    "slash_sign": "/",
+    
+    
+    "///   ВРЕМЕННЫЕ РЫБЫ   ":  "удалить",
+    "amount_coins_example_one": "74.32",
+    "amount_coins_example_two": "273.54",
+    "amount_speed_example": "4-10",
+    "amount_id_transaction_exapmple": "#145265874",
+    "amount_coins_example_three": "00.0025",
+    "email_example": "Привет, d.push91@gmail.com",
+    "email_example_two": "some@email.com",
+    "result_example": "0.0",
+    "coins_balance_example": "00.0000",
+    "50_steps_example": "50",   
+    "ref_ID_example": "345465",
+    "amount_hundred_example": "100",
+    "amount_three_hundred_example": "384",
+    "amount_eleven_example": "11,587",
+    "amount_four_example": "4.32",
+    "amount_thirty_two_example": "32:41",
+
+
+    "///   ВАРНИНГИ И ОШИБКИ   ":  "",
+    "error": "Ошибка",
+    "something_went_wrong": "Что-то пошло не так, попробуйте ввести данные еще раз",
+    
+
     "inputErrorGeneral": "Проверьте ввод",
     "inputErrorPassword": "Введите пароль",
     "inputErrorPasswordIsShort": "Не менее 6 символов",
@@ -11,10 +120,8 @@
     "inventPassword": "Придумайте пароль",
     "entryEmail": "Введите ваш E-mail",
     "password": "Пароль",
-    "email": "E-mail",
     "registration": "Зарегистрироваться",
     "alreadySignedUp": "Уже зарегистрированы?",
-    "login": "Войти",
     "wrongEmailOrPassword": "Неверная почта или пароль",
     "entry": "Вход",
     "forgotPassword": "Забыли пароль?",
@@ -96,12 +203,10 @@
     "@costForSinglePiece": {
         "loungeSinglePrice": {}
     },
-
     "costForFamPiece": " 3000 руб. за шт.",
     "@costForFamPiece": {
         "lgeFamPrice": {}
     },
-
     "tennisCourtAccess": "Доступен:",
     "time": "Время:",
     "tennisCourtNumber": "Номер корта:",
@@ -154,9 +259,7 @@
         "price": {}
       }
     },
-
     "number": "Номер(а):",
-    "settings": "Настройки",
     "downloadMyData": "Скачать мои данные",
     "logoutAccount": "Выйти из учетной записи",
     "deleteAccount": "Удалить учетную запись",

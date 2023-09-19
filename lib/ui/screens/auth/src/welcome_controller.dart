@@ -1,8 +1,9 @@
 // ignore_for_file: unused_import
 
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/auth/src/login_or_signup.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
@@ -55,15 +56,15 @@ class WelcomeController extends StatexController {
 
       debugPrint('аксесс и рефреш: $access, $refresh');
 
-      // если запрос завершился успешно (без ошибок) и не вернул ошибку от сервера
-      // (например, статус код 422), переходим на другой экран
+      // если запрос завершился успешно (без ошибок - код 422)
+      // и не вернул ошибку от сервера, переходим на другой экран
       Get.toNamed(AppRoutes.main);
     } catch (e) {
       debugPrint('Ошибка при отправке кода: $e');
       // если произошла ошибка, отображаем снекбар с сообщением об ошибке
       Get.snackbar(
-        'Ошибка',
-        'Что-то пошло не так, попробуйте ввести данные еще раз',
+        'error'.tr(),
+        'something_went_wrong'.tr(),
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
