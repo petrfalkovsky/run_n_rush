@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 
+// идентификатор типа адаптера (может быть ТОЛЬКО любым уникальным числом)
 @HiveType(typeId: 2)
 class TokenStorage {
   @HiveField(0)
@@ -15,7 +16,7 @@ class TokenStorage {
 }
 
 class TokenStorageAdapter extends TypeAdapter<TokenStorage> {
-  // идентификатор типа (может быть любым уникальным числом)
+  // идентификатор типа адаптера (может быть ТОЛЬКО любым уникальным числом)
   @override
   final typeId = 2;
 

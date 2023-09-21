@@ -8,6 +8,6 @@ registerHiveAdapters() async {
   /// все новые боксы надо регистрировать тут
   Hive
     ..registerAdapter(UserStorageAdapter())
-    ..registerAdapter(AuthStatusAdapter())
+    ..registerAdapter(AuthStatusStorageAdapter())
     ..registerAdapter(TokenStorageAdapter());
 }

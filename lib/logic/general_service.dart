@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:run_n_rush/ui/screens/auth/welcome.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/internet/internet.dart';
 import 'package:run_n_rush/ui/screens/language/language.dart';
@@ -20,10 +21,11 @@ class GeneralService extends GetxService {
       ..put(LanguageScreenService())
       ..put(InternetScreenService())
 
-      /// fenix: true помогает быстро избежать ошибки, когда Get.find()
+      /// fenix: true помогает избежать ошибки, когда Get.find()
       /// вызывается перед Get.put(контроллером).
       /// то есть когда вызов функции Get.find() перед инициализацией Get.put() выдает ошибку
       ..lazyPut(() => MainController(), fenix: true)
+      ..lazyPut(() => WelcomeController())
       ..lazyPut(() => MainService())
       ..lazyPut(() => Dio())
       ..lazyPut(() => SplashScreenService())

@@ -1,11 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+import 'package:run_n_rush/core/global_instans.dart/app_globals.dart';
 import 'package:run_n_rush/data/dto/auth/src/user_data_token.dart';
+import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: 'https://runrushapi.pp.ua')
 abstract class ApiService {
-  factory ApiService(Dio dio, {String? baseUrl}) = _ApiService;
+  factory ApiService(Dio dio, {String? baseUrl}) {
+    // открываю и получаем токен из хранилища
+
+    dio.options.headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $accessToken',
+    };
+    return _ApiService(dio, baseUrl: baseUrl);
+  }
 
   @POST('/api/auth/send_code')
   Future<void> sendCode(@Body() Map<String, dynamic> data);
@@ -13,5 +23,10 @@ abstract class ApiService {
   @POST('/api/auth/login_or_signup')
   Future<UserDataToken> loginOrSignup(@Body() Map<String, dynamic> data);
 
-  // другие методы
+  @GET('/api/sneaker/inventories')
+  Future<List<SneakerInventory>> getSneakerInventories(
+    @Query('dress_status') String dressStatus,
+    @Query('earned_amount_ordering') String earnedAmountOrdering,
+    @Query('offset') int offset,
+  );
 }

@@ -11,9 +11,11 @@ import 'package:run_n_rush/data/repository/local/local_repository.dart';
 
 class InternetScreenService extends GetxService with StreamSubscriberMixin {
   InternetScreenService({
+    /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
     LocalRepository? repo,
   }) : repoLocal = repo ?? GetIt.I.get();
 
+  /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
   final LocalRepository repoLocal;
 
   final _mounted = false.obs;

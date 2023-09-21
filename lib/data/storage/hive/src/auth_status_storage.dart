@@ -1,6 +1,6 @@
-
 import 'package:hive/hive.dart';
 
+// идентификатор типа адаптера (может быть ТОЛЬКО любым уникальным числом)
 @HiveType(typeId: 1)
 class AuthStatus {
   @HiveField(0)
@@ -11,7 +11,8 @@ class AuthStatus {
   });
 }
 
-class AuthStatusAdapter extends TypeAdapter<AuthStatus> {
+class AuthStatusStorageAdapter extends TypeAdapter<AuthStatus> {
+  // идентификатор типа адаптера (может быть ТОЛЬКО любым уникальным числом)
   @override
   final typeId = 1;
 

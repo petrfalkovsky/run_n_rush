@@ -1,3 +1,5 @@
+// ignore_for_file: override_on_non_overriding_member
+
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
@@ -5,11 +7,21 @@ import 'package:run_n_rush/data/repository/local/local_repository.dart';
 import 'package:run_n_rush/domain/profile/profile_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+///// ЭТОТ ФАЙЛ БОЛЬШЕНЕ НУЖен потому что реализовал через hive
+
 /// Имплементация локального репозитория
 /// как адаптера к Preference
 @prod
-@LazySingleton(as: LocalRepository)
-class SharedPreferenceRepositoryImpl implements LocalRepository {
+@LazySingleton(
+    as:
+
+        /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
+        LocalRepository)
+class SharedPreferenceRepositoryImpl
+    implements
+
+        /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
+        LocalRepository {
   SharedPreferences? _pref;
 
   static const _userDataKey = 'UserData';

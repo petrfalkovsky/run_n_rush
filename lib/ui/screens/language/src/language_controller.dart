@@ -7,10 +7,14 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class LanguageScreenController extends StatexController {
   LanguageScreenController(
-      {LocalRepository? repo, LanguageScreenService? service})
+      {
+      /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
+      LocalRepository? repo,
+      LanguageScreenService? service})
       : repoLocal = repo ?? GetIt.I.get(),
         _service = service ?? Get.find();
 
+  /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
   final LocalRepository repoLocal;
   final LanguageScreenService _service;
 

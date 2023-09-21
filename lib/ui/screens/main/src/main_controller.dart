@@ -11,6 +11,9 @@ class MainController extends StatexController {
   /// управляет показом изображения
   final RxBool showImage = true.obs;
 
+  /// переменная для хранения токена глобально в приложении
+  late String accessToken = '';
+
   /// обновляет виджет после выбора инвенторя
   void toggleShowImage(bool value) {
     showImage.value = value;
@@ -23,7 +26,7 @@ class MainController extends StatexController {
     /// метод для принта вызываю при загрузке экрана мэйн
     await printUserId();
     await printAccessToken();
-    await printRefreshToken();
+    // await printRefreshToken();
   }
 
   /// метод для принта в консоль ид пользователя
@@ -46,6 +49,9 @@ class MainController extends StatexController {
 
     if (token != null) {
       final access = token.access;
+
+      /// сохраняем аксесс токен в переменной
+      accessToken = access;
       debugPrint('Token access: $access');
     } else {
       debugPrint('Token access not found.');

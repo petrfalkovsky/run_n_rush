@@ -10,9 +10,11 @@ import 'package:run_n_rush/ui/router/routing.dart';
 
 class SplashScreenService extends GetxService with StreamSubscriberMixin {
   SplashScreenService({
+    /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
     LocalRepository? repoLocal,
   }) : _repoLocal = repoLocal ?? GetIt.I.get();
 
+  /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
   // ignore: unused_field
   final LocalRepository _repoLocal;
 

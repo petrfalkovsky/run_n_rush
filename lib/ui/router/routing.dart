@@ -15,7 +15,7 @@ class AppRoutes {
   static const String splash = '/';
   static const String authWelcome = '/authWelcome';
   static const String main = '/main';
-  static const String inventory = '/bookings';
+  static const String inventory = '/inventory';
   static const String referral = '/referral';
   static const String shop = '/shop';
   static const String settings = '/settings';

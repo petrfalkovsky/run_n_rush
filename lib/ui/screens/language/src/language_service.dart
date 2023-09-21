@@ -12,9 +12,13 @@ extension LanguageAppEx on LanguageApp {
 }
 
 class LanguageScreenService extends GetxService {
-  LanguageScreenService({LocalRepository? repo})
+  LanguageScreenService(
+      {
+      /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
+      LocalRepository? repo})
       : repoLocal = repo ?? GetIt.I.get();
 
+  /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе
   final LocalRepository repoLocal;
 
   /// язык по умолчанию
