@@ -8,28 +8,28 @@ part of 'inventory.dart';
 
 _$_SneakerInventory _$$_SneakerInventoryFromJson(Map<String, dynamic> json) =>
     _$_SneakerInventory(
-      id: json['id'] as String,
-      createdAt: json['createdAt'] as String,
-      updatedAt: json['updatedAt'] as String,
-      title: json['title'] as String,
-      imageUrl: json['imageUrl'] as String,
-      ownerId: json['ownerId'] as String,
-      sneakerId: json['sneakerId'] as String,
-      earnedAmount: json['earnedAmount'] as String,
-      stepsAmount: json['stepsAmount'] as int,
-      isDressed: json['isDressed'] as bool,
+      id: json['id'] as String?,
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
+      title: json['title'] as String?,
+      imageUrl: json['image_url'] as String?,
+      ownerId: json['owner_id'] as String?,
+      sneakerId: json['sneaker_id'] as String?,
+      earnedAmount: json['earned_amount'] as String?,
+      stepsAmount: json['steps_amount'] as int?,
+      isDressed: json['is_dressed'] as bool?,
     );
 
 Map<String, dynamic> _$$_SneakerInventoryToJson(_$_SneakerInventory instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'title': instance.title,
-      'imageUrl': instance.imageUrl,
-      'ownerId': instance.ownerId,
-      'sneakerId': instance.sneakerId,
-      'earnedAmount': instance.earnedAmount,
-      'stepsAmount': instance.stepsAmount,
-      'isDressed': instance.isDressed,
+      'image_url': instance.imageUrl,
+      'owner_id': instance.ownerId,
+      'sneaker_id': instance.sneakerId,
+      'earned_amount': instance.earnedAmount,
+      'steps_amount': instance.stepsAmount,
+      'is_dressed': instance.isDressed,
     };

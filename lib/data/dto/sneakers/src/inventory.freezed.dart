@@ -20,16 +20,26 @@ SneakerInventory _$SneakerInventoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SneakerInventory {
-  String get id => throw _privateConstructorUsedError;
-  String get createdAt => throw _privateConstructorUsedError;
-  String get updatedAt => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  String get ownerId => throw _privateConstructorUsedError;
-  String get sneakerId => throw _privateConstructorUsedError;
-  String get earnedAmount => throw _privateConstructorUsedError;
-  int get stepsAmount => throw _privateConstructorUsedError;
-  bool get isDressed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'id')
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'created_at')
+  String? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'updated_at')
+  String? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title')
+  String? get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_url')
+  String? get imageUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'owner_id')
+  String? get ownerId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sneaker_id')
+  String? get sneakerId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'earned_amount')
+  String? get earnedAmount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'steps_amount')
+  int? get stepsAmount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_dressed')
+  bool? get isDressed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,16 +54,16 @@ abstract class $SneakerInventoryCopyWith<$Res> {
       _$SneakerInventoryCopyWithImpl<$Res, SneakerInventory>;
   @useResult
   $Res call(
-      {String id,
-      String createdAt,
-      String updatedAt,
-      String title,
-      String imageUrl,
-      String ownerId,
-      String sneakerId,
-      String earnedAmount,
-      int stepsAmount,
-      bool isDressed});
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'created_at') String? createdAt,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'image_url') String? imageUrl,
+      @JsonKey(name: 'owner_id') String? ownerId,
+      @JsonKey(name: 'sneaker_id') String? sneakerId,
+      @JsonKey(name: 'earned_amount') String? earnedAmount,
+      @JsonKey(name: 'steps_amount') int? stepsAmount,
+      @JsonKey(name: 'is_dressed') bool? isDressed});
 }
 
 /// @nodoc
@@ -69,58 +79,58 @@ class _$SneakerInventoryCopyWithImpl<$Res, $Val extends SneakerInventory>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? title = null,
-    Object? imageUrl = null,
-    Object? ownerId = null,
-    Object? sneakerId = null,
-    Object? earnedAmount = null,
-    Object? stepsAmount = null,
-    Object? isDressed = null,
+    Object? id = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? title = freezed,
+    Object? imageUrl = freezed,
+    Object? ownerId = freezed,
+    Object? sneakerId = freezed,
+    Object? earnedAmount = freezed,
+    Object? stepsAmount = freezed,
+    Object? isDressed = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
+              as String?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      ownerId: null == ownerId
+              as String?,
+      ownerId: freezed == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      sneakerId: null == sneakerId
+              as String?,
+      sneakerId: freezed == sneakerId
           ? _value.sneakerId
           : sneakerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      earnedAmount: null == earnedAmount
+              as String?,
+      earnedAmount: freezed == earnedAmount
           ? _value.earnedAmount
           : earnedAmount // ignore: cast_nullable_to_non_nullable
-              as String,
-      stepsAmount: null == stepsAmount
+              as String?,
+      stepsAmount: freezed == stepsAmount
           ? _value.stepsAmount
           : stepsAmount // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDressed: null == isDressed
+              as int?,
+      isDressed: freezed == isDressed
           ? _value.isDressed
           : isDressed // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ) as $Val);
   }
 }
@@ -134,16 +144,16 @@ abstract class _$$_SneakerInventoryCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String createdAt,
-      String updatedAt,
-      String title,
-      String imageUrl,
-      String ownerId,
-      String sneakerId,
-      String earnedAmount,
-      int stepsAmount,
-      bool isDressed});
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'created_at') String? createdAt,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'image_url') String? imageUrl,
+      @JsonKey(name: 'owner_id') String? ownerId,
+      @JsonKey(name: 'sneaker_id') String? sneakerId,
+      @JsonKey(name: 'earned_amount') String? earnedAmount,
+      @JsonKey(name: 'steps_amount') int? stepsAmount,
+      @JsonKey(name: 'is_dressed') bool? isDressed});
 }
 
 /// @nodoc
@@ -157,58 +167,58 @@ class __$$_SneakerInventoryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? title = null,
-    Object? imageUrl = null,
-    Object? ownerId = null,
-    Object? sneakerId = null,
-    Object? earnedAmount = null,
-    Object? stepsAmount = null,
-    Object? isDressed = null,
+    Object? id = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? title = freezed,
+    Object? imageUrl = freezed,
+    Object? ownerId = freezed,
+    Object? sneakerId = freezed,
+    Object? earnedAmount = freezed,
+    Object? stepsAmount = freezed,
+    Object? isDressed = freezed,
   }) {
     return _then(_$_SneakerInventory(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
+              as String?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      ownerId: null == ownerId
+              as String?,
+      ownerId: freezed == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      sneakerId: null == sneakerId
+              as String?,
+      sneakerId: freezed == sneakerId
           ? _value.sneakerId
           : sneakerId // ignore: cast_nullable_to_non_nullable
-              as String,
-      earnedAmount: null == earnedAmount
+              as String?,
+      earnedAmount: freezed == earnedAmount
           ? _value.earnedAmount
           : earnedAmount // ignore: cast_nullable_to_non_nullable
-              as String,
-      stepsAmount: null == stepsAmount
+              as String?,
+      stepsAmount: freezed == stepsAmount
           ? _value.stepsAmount
           : stepsAmount // ignore: cast_nullable_to_non_nullable
-              as int,
-      isDressed: null == isDressed
+              as int?,
+      isDressed: freezed == isDressed
           ? _value.isDressed
           : isDressed // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -217,40 +227,50 @@ class __$$_SneakerInventoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SneakerInventory implements _SneakerInventory {
   _$_SneakerInventory(
-      {required this.id,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.title,
-      required this.imageUrl,
-      required this.ownerId,
-      required this.sneakerId,
-      required this.earnedAmount,
-      required this.stepsAmount,
-      required this.isDressed});
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'created_at') required this.createdAt,
+      @JsonKey(name: 'updated_at') required this.updatedAt,
+      @JsonKey(name: 'title') required this.title,
+      @JsonKey(name: 'image_url') required this.imageUrl,
+      @JsonKey(name: 'owner_id') required this.ownerId,
+      @JsonKey(name: 'sneaker_id') required this.sneakerId,
+      @JsonKey(name: 'earned_amount') required this.earnedAmount,
+      @JsonKey(name: 'steps_amount') required this.stepsAmount,
+      @JsonKey(name: 'is_dressed') required this.isDressed});
 
   factory _$_SneakerInventory.fromJson(Map<String, dynamic> json) =>
       _$$_SneakerInventoryFromJson(json);
 
   @override
-  final String id;
+  @JsonKey(name: 'id')
+  final String? id;
   @override
-  final String createdAt;
+  @JsonKey(name: 'created_at')
+  final String? createdAt;
   @override
-  final String updatedAt;
+  @JsonKey(name: 'updated_at')
+  final String? updatedAt;
   @override
-  final String title;
+  @JsonKey(name: 'title')
+  final String? title;
   @override
-  final String imageUrl;
+  @JsonKey(name: 'image_url')
+  final String? imageUrl;
   @override
-  final String ownerId;
+  @JsonKey(name: 'owner_id')
+  final String? ownerId;
   @override
-  final String sneakerId;
+  @JsonKey(name: 'sneaker_id')
+  final String? sneakerId;
   @override
-  final String earnedAmount;
+  @JsonKey(name: 'earned_amount')
+  final String? earnedAmount;
   @override
-  final int stepsAmount;
+  @JsonKey(name: 'steps_amount')
+  final int? stepsAmount;
   @override
-  final bool isDressed;
+  @JsonKey(name: 'is_dressed')
+  final bool? isDressed;
 
   @override
   String toString() {
@@ -302,40 +322,51 @@ class _$_SneakerInventory implements _SneakerInventory {
 
 abstract class _SneakerInventory implements SneakerInventory {
   factory _SneakerInventory(
-      {required final String id,
-      required final String createdAt,
-      required final String updatedAt,
-      required final String title,
-      required final String imageUrl,
-      required final String ownerId,
-      required final String sneakerId,
-      required final String earnedAmount,
-      required final int stepsAmount,
-      required final bool isDressed}) = _$_SneakerInventory;
+          {@JsonKey(name: 'id') required final String? id,
+          @JsonKey(name: 'created_at') required final String? createdAt,
+          @JsonKey(name: 'updated_at') required final String? updatedAt,
+          @JsonKey(name: 'title') required final String? title,
+          @JsonKey(name: 'image_url') required final String? imageUrl,
+          @JsonKey(name: 'owner_id') required final String? ownerId,
+          @JsonKey(name: 'sneaker_id') required final String? sneakerId,
+          @JsonKey(name: 'earned_amount') required final String? earnedAmount,
+          @JsonKey(name: 'steps_amount') required final int? stepsAmount,
+          @JsonKey(name: 'is_dressed') required final bool? isDressed}) =
+      _$_SneakerInventory;
 
   factory _SneakerInventory.fromJson(Map<String, dynamic> json) =
       _$_SneakerInventory.fromJson;
 
   @override
-  String get id;
+  @JsonKey(name: 'id')
+  String? get id;
   @override
-  String get createdAt;
+  @JsonKey(name: 'created_at')
+  String? get createdAt;
   @override
-  String get updatedAt;
+  @JsonKey(name: 'updated_at')
+  String? get updatedAt;
   @override
-  String get title;
+  @JsonKey(name: 'title')
+  String? get title;
   @override
-  String get imageUrl;
+  @JsonKey(name: 'image_url')
+  String? get imageUrl;
   @override
-  String get ownerId;
+  @JsonKey(name: 'owner_id')
+  String? get ownerId;
   @override
-  String get sneakerId;
+  @JsonKey(name: 'sneaker_id')
+  String? get sneakerId;
   @override
-  String get earnedAmount;
+  @JsonKey(name: 'earned_amount')
+  String? get earnedAmount;
   @override
-  int get stepsAmount;
+  @JsonKey(name: 'steps_amount')
+  int? get stepsAmount;
   @override
-  bool get isDressed;
+  @JsonKey(name: 'is_dressed')
+  bool? get isDressed;
   @override
   @JsonKey(ignore: true)
   _$$_SneakerInventoryCopyWith<_$_SneakerInventory> get copyWith =>

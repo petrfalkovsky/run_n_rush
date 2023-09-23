@@ -8,16 +8,16 @@ part 'inventory.g.dart';
 @freezed
 class SneakerInventory with _$SneakerInventory {
   factory SneakerInventory({
-    required String id,
-    required String createdAt,
-    required String updatedAt,
-    required String title,
-    required String imageUrl,
-    required String ownerId,
-    required String sneakerId,
-    required String earnedAmount,
-    required int stepsAmount,
-    required bool isDressed,
+    @JsonKey(name: 'id') required String? id,
+    @JsonKey(name: 'created_at') required String? createdAt,
+    @JsonKey(name: 'updated_at') required String? updatedAt,
+    @JsonKey(name: 'title') required String? title,
+    @JsonKey(name: 'image_url') required String? imageUrl,
+    @JsonKey(name: 'owner_id') required String? ownerId,
+    @JsonKey(name: 'sneaker_id') required String? sneakerId,
+    @JsonKey(name: 'earned_amount') required String? earnedAmount,
+    @JsonKey(name: 'steps_amount') required int? stepsAmount,
+    @JsonKey(name: 'is_dressed') required bool? isDressed,
   }) = _SneakerInventory;
 
   factory SneakerInventory.fromJson(Map<String, dynamic> json) =>
