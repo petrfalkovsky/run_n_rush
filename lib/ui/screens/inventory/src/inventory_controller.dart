@@ -19,7 +19,7 @@ class InventoryController extends StatexController {
       );
 
       inventoryList.assignAll(response);
-      debugPrint('Inventory data loaded successfully: $response');
+      // debugPrint('Inventory data loaded successfully: $response');
     } catch (e) {
       if (e is DioException) {
         debugPrint('DioException: ${e.message}');

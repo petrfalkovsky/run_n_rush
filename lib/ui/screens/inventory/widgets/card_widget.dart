@@ -1,14 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
-import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
-
-import '../../main/main.dart';
 
 class CardItemShop extends StatelessWidget {
   final SneakerInventory inventory;
@@ -61,13 +58,18 @@ class CardItemShop extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Container(
-                              width: 122,
-                              height: 118,
-                              color: Colors.black.withOpacity(0.05),
-                              child: isImageUrlEmpty
-                                  ? Image.asset(AppIcons.jogger_2)
-                                  : Image.network(imageUrl),
-                            ),
+                                width: 122,
+                                height: 118,
+                                color: Colors.black.withOpacity(0.05),
+                                child: isImageUrlEmpty
+                                    ? Image.asset(AppIcons.jogger_2)
+                                    : CachedNetworkImage(
+                                        imageUrl: imageUrl,
+                                        placeholder: (context, url) =>
+                                            const CircularProgressIndicator(),
+                                        errorWidget: (context, url, error) =>
+                                            const Icon(Icons.error),
+                                      )),
                           ),
                         ),
                       ),
