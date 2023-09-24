@@ -7,7 +7,7 @@ import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/drop_down.dart';
-import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer.dart';
+import 'package:run_n_rush/ui/shared/widgets/toggle_animated_swithcer.dart';
 
 class InventoryScreen extends StatexWidget<InventoryController> {
   InventoryScreen({Key? key}) : super(() => InventoryController(), key: key) {
@@ -33,7 +33,12 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                 children: [
                   FilterDropdown(),
                   const Spacer(),
-                  AnimatedSwitcherWidget(onTap: () {}),
+                  ToggleAnimatedSwitcher(
+                    onTap: () {
+                      controller.fetchData();
+                    },
+                    inventoryController: controller,
+                  ),
                 ],
               ),
             ),

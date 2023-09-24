@@ -9,11 +9,13 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class InventoryController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   final RxList<SneakerInventory> inventoryList = RxList<SneakerInventory>();
+  final RxString selectedFilter = RxString('DRESSED');
 
+  /// метод для получения данных с сервера
   Future<void> fetchData() async {
     try {
       final response = await _apiService.getSneakerInventories(
-        'ALL',
+        selectedFilter.value,
         'LOWER',
         0,
       );
@@ -30,5 +32,10 @@ class InventoryController extends StatexController {
         debugPrint('Error fetching data: $e');
       }
     }
+  }
+
+  /// метод для фильтра
+  void setFilter(String filter) {
+    selectedFilter.value = filter;
   }
 }
