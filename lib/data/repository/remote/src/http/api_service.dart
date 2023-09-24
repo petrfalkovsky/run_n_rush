@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:run_n_rush/core/global_instans.dart/app_globals.dart';
-import 'package:run_n_rush/data/dto/auth/src/user_data_token.dart';
+import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 part 'api_service.g.dart';
 
@@ -22,6 +22,12 @@ abstract class ApiService {
 
   @POST('/api/auth/login_or_signup')
   Future<UserDataToken> loginOrSignup(@Body() Map<String, dynamic> data);
+
+  @POST('/api/auth/jwt/verify')
+  Future<void> verifyToken(@Body() Map<String, dynamic> data);
+
+  @POST('/api/auth/jwt/refresh')
+  Future<void> refreshToken(@Body() Map<String, dynamic> data);
 
   @GET('/api/sneaker/inventories')
   Future<List<SneakerInventory>> getSneakerInventories(

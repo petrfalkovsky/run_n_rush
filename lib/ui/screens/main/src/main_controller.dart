@@ -13,6 +13,7 @@ class MainController extends StatexController {
 
   /// переменная для хранения токена глобально в приложении
   late String accessToken = '';
+  late String refreshToken = '';
 
   /// обновляет виджет после выбора инвенторя
   void toggleShowImage(bool value) {
@@ -26,7 +27,7 @@ class MainController extends StatexController {
     /// метод для принта вызываю при загрузке экрана мэйн
     await printUserId();
     await printAccessToken();
-    // await printRefreshToken();
+    await printRefreshToken();
   }
 
   /// метод для принта в консоль ид пользователя
@@ -65,6 +66,9 @@ class MainController extends StatexController {
 
     if (token != null) {
       final refresh = token.refresh;
+
+      /// сохраняем аксесс токен в переменной
+      refreshToken = refresh;
       debugPrint('Token refresh: $refresh');
     } else {
       debugPrint('Token refresh not found.');

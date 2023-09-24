@@ -3,7 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:hive/hive.dart';
-import 'package:run_n_rush/data/dto/auth/src/login_or_signup.dart';
+import 'package:run_n_rush/data/dto/auth/src/login/login_or_signup.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
