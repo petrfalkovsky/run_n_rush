@@ -27,7 +27,7 @@ class MainController extends StatexController {
     /// метод для принта вызываю при загрузке экрана мэйн
     await printUserId();
     await printAccessToken();
-    await printRefreshToken();
+    // await printRefreshToken();
   }
 
   /// метод для принта в консоль ид пользователя

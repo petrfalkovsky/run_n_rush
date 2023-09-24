@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:vfx_flutter_common/getx_helpers.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
@@ -31,7 +32,9 @@ class InventoryScreen extends StatexWidget<InventoryController> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  FilterDropdown(),
+                  FilterDropdown(
+                    controller: controller,
+                  ),
                   const Spacer(),
                   ToggleAnimatedSwitcher(
                     onTap: () {
@@ -44,18 +47,15 @@ class InventoryScreen extends StatexWidget<InventoryController> {
             ),
             const SizedBox(height: 20),
             Expanded(
-              child: Stack(
-                children: [
-                  FutureBuilder<void>(
-                    future: controller.fetchData(),
-                    builder: (context, snapshot) {
-                      return ProductListWidget(
-                        controller: controller,
-                        inventoryList: controller.inventoryList.toList(),
-                      );
-                    },
-                  ),
-                ],
+              child: Obx(
+                () => Stack(
+                  children: [
+                    ProductListWidget(
+                      controller: controller,
+                      inventoryList: controller.inventoryList.toList(),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

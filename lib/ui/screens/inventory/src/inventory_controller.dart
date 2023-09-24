@@ -9,14 +9,20 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class InventoryController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   final RxList<SneakerInventory> inventoryList = RxList<SneakerInventory>();
-  final RxString selectedFilter = RxString('DRESSED');
+  final RxString selectedDressedFilter = RxString('ALL');
+  final RxString selectedPriceFilter = RxString('LOWER');
+
+  InventoryController() {
+    /// чтобы при загрузке экрана начали грузится данные
+    fetchData();
+  }
 
   /// метод для получения данных с сервера
   Future<void> fetchData() async {
     try {
       final response = await _apiService.getSneakerInventories(
-        selectedFilter.value,
-        'LOWER',
+        selectedDressedFilter.value,
+        selectedPriceFilter.value,
         0,
       );
 
@@ -34,8 +40,16 @@ class InventoryController extends StatexController {
     }
   }
 
-  /// метод для фильтра
+  /// метод для фильтра по надетости
   void setFilter(String filter) {
-    selectedFilter.value = filter;
+    selectedDressedFilter.value = filter;
+  }
+
+  /// метод для фильтра по цене
+  void setPriceFilter(String filter) {
+    selectedPriceFilter.value = filter;
+
+    /// todo возможно лишнее - удалить и проверить
+    fetchData();
   }
 }

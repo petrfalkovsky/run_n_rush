@@ -56,7 +56,7 @@ class FiltersWidgets extends StatelessWidget {
               children: [
                 /// фильтр
 
-                FilterDropdown(),
+                // FilterDropdown(),
                 const Spacer(),
 
                 /// переключатель предложений купить/продать

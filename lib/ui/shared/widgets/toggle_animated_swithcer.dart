@@ -32,17 +32,20 @@ class _ToggleAnimatedSwitcherState extends State<ToggleAnimatedSwitcher> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: () async {
         setState(() {
           isEnabled = !isEnabled;
         });
-        widget.onTap();
 
         if (isEnabled) {
+          await Future.delayed(animationDuration); // ожидаю завершения анимации
           widget.inventoryController.setFilter('DRESSED');
         } else {
+          await Future.delayed(animationDuration); // ожидаю завершения анимации
           widget.inventoryController.setFilter('ALL');
         }
+        // вызываю onTap после завершения анимации
+        widget.onTap();
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
