@@ -2,10 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
+
+import '../src/inventory_controller.dart';
 
 class CardItemShop extends StatelessWidget {
   final SneakerInventory inventory;
@@ -16,6 +19,7 @@ class CardItemShop extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageUrl = inventory.imageUrl;
     final isImageUrlEmpty = imageUrl == null || imageUrl.isEmpty;
+    bool isDressedFilterActive = false;
 
     return Stack(
       children: [
@@ -123,12 +127,23 @@ class CardItemShop extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                StdButton(
-                  height: 36,
-                  width: 97,
-                  text: 'put'.tr().toUpperCase(),
-                  isActive: true,
-                  onPress: () {},
+                Obx(
+                  () => StdButton(
+                    color: Get.find<InventoryController>()
+                            .isDressedFilterActive
+                            .value
+                        ? AppColors.accent[2]
+                        : AppColors.accent[1],
+                    height: 36,
+                    width: 97,
+                    text: Get.find<InventoryController>()
+                            .isDressedFilterActive
+                            .value
+                        ? 'dressed'.tr().toUpperCase()
+                        : 'put'.tr().toUpperCase(),
+                    isActive: false,
+                    onPress: () {},
+                  ),
                 ),
               ],
             ),

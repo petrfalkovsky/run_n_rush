@@ -11,6 +11,7 @@ class InventoryController extends StatexController {
   final RxList<SneakerInventory> inventoryList = RxList<SneakerInventory>();
   final RxString selectedDressedFilter = RxString('ALL');
   final RxString selectedPriceFilter = RxString('LOWER');
+  final RxBool isDressedFilterActive = RxBool(false);
 
   InventoryController() {
     /// чтобы при загрузке экрана начали грузится данные
@@ -41,8 +42,10 @@ class InventoryController extends StatexController {
   }
 
   /// метод для фильтра по надетости
-  void setFilter(String filter) {
+  void setFilter(String filter) async {
     selectedDressedFilter.value = filter;
+    await Future.delayed(const Duration(milliseconds: 200));
+    isDressedFilterActive.value = filter == 'DRESSED';
   }
 
   /// метод для фильтра по цене

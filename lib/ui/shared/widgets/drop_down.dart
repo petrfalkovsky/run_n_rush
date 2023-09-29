@@ -3,24 +3,22 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/styles.dart';
-import 'package:get/get.dart' hide Trans;
 
 import 'package:flutter/material.dart';
 
 class FilterDropdown extends StatefulWidget {
   final InventoryController controller;
 
-  FilterDropdown({required this.controller});
+  const FilterDropdown({super.key, required this.controller});
 
   @override
-  _FilterDropdownState createState() => _FilterDropdownState();
+  State<FilterDropdown> createState() => _FilterDropdownState();
 }
 
+@override
 class _FilterDropdownState extends State<FilterDropdown> {
-  // Определите переменные для значений элементов
   final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
 
-  // Определите переменные для отображаемого текста элементов
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];
 
   @override
