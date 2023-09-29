@@ -10,6 +10,7 @@ abstract class AppColors {
     <int, Color>{
       1: Color(0xFF1DB9DD),
       2: Color(0xFF8784D3),
+      3: Color(0xFF083039)
     },
   );
 
@@ -28,8 +29,8 @@ abstract class AppColors {
       1: Color(0xFFFFFFFF),
       // secondary
       2: Color(0xFFA0A0A1),
-      // пока не нужен
-      3: Colors.black,
+      // не активный текст
+      3: Color(0xFF526E74),
       // secondaryTwo
       4: Color(0xFFBDBCDE),
     },
