@@ -3,6 +3,7 @@ import 'package:retrofit/http.dart';
 import 'package:run_n_rush/core/global_instans.dart/app_globals.dart';
 import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
+import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: 'https://runrushapi.pp.ua')
@@ -35,4 +36,13 @@ abstract class ApiService {
     @Query('earned_amount_ordering') String earnedAmountOrdering,
     @Query('offset') int offset,
   );
+
+  @GET('api/sneaker/selling_orders')
+  Future<List<SneakerShop>> getSneakerShop(
+    @Query('price_ordering') String priceOrdering,
+    @Query('offset') int offset,
+  );
+
+  @POST('/api/sneaker/buy_sneaker')
+  Future<void> buySneaker(@Body() Map<String, dynamic> data);
 }
