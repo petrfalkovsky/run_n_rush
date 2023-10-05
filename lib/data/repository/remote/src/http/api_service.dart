@@ -3,6 +3,8 @@ import 'package:retrofit/http.dart';
 import 'package:run_n_rush/core/global_instans.dart/app_globals.dart';
 import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
+
+import '../../../../dto/referral/referral.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: 'https://runrushapi.pp.ua')
@@ -35,4 +37,10 @@ abstract class ApiService {
     @Query('earned_amount_ordering') String earnedAmountOrdering,
     @Query('offset') int offset,
   );
+
+  @GET('/api/referral/rewards')
+  Future<List<ReferralRewardsDto>> referallRewards();
+
+  @GET('/api/referral/profile')
+  Future<ReferralProfileDto> getReferralProfile();
 }
