@@ -21,7 +21,7 @@ class ShopController extends StatexController with StreamSubscriberMixin {
     fetchData();
   }
 
-  /// метод для получения данных с сервера
+  /// метод для получения данных с сервера, чтобы получить товары на экран
   Future<void> fetchData() async {
     try {
       final response = await _apiService.getSneakerShop(
@@ -40,6 +40,21 @@ class ShopController extends StatexController with StreamSubscriberMixin {
       } else {
         debugPrint('Error fetching data: $e');
       }
+    }
+  }
+
+  // метод, чтобы купить кроссовок
+  Future<void> buySneaker(String sneakerId) async {
+    try {
+      final Map<String, dynamic> requestBody = {
+        'id': sneakerId,
+      };
+
+      final response = await _apiService.buySneaker(requestBody);
+
+      return response;
+    } catch (e) {
+      rethrow;
     }
   }
 }

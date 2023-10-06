@@ -81,6 +81,31 @@ class FiltersWidgets extends StatelessWidget {
   }
 }
 
+// class ShopTabBar extends StatelessWidget {
+//   const ShopTabBar({
+//     super.key,
+//     required this.shopController,
+//   });
+
+//   final ShopController shopController;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Expanded(
+//       child: Obx(
+//         () => Stack(
+//           children: [
+//             ProductListWidget(
+//               shopController: shopController,
+//               sneakerList: shopController.sneakerList.toList(),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class ShopTabBar extends StatelessWidget {
   const ShopTabBar({
     super.key,
@@ -95,10 +120,79 @@ class ShopTabBar extends StatelessWidget {
       child: Obx(
         () => Stack(
           children: [
-            ProductListWidget(
-              shopController: shopController,
-              sneakerList: shopController.sneakerList.toList(),
+            Container(
+              height: 52,
+              color: AppColors.background[3],
             ),
+            DefaultTabController(
+              length: 3,
+              initialIndex: shopController.selectedTabIndex.value,
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  children: [
+                    3.h,
+                    PreferredSize(
+                      preferredSize: const Size.fromHeight(kToolbarHeight),
+                      child: TabBar(
+                        labelColor: Colors.white,
+                        indicatorColor: Colors.white,
+                        tabs: [
+                          Tab(
+                            child: Text(
+                              'Shop',
+                              style: AppStyles.body.andWeight(FontWeight.bold),
+                            ),
+                          ),
+                          Tab(
+                            child: Text(
+                              'Gems',
+                              style: AppStyles.body.andWeight(FontWeight.bold),
+                            ),
+                          ),
+                          Tab(
+                            child: Text(
+                              'Other',
+                              style: AppStyles.body.andWeight(FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                        onTap: (index) {
+                          shopController.selectedTabIndex.value = index;
+                        },
+                      ),
+                    ),
+                    20.h,
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          ProductListWidget(
+                            shopController: shopController,
+                            sneakerList: shopController.sneakerList.toList(),
+                          ),
+                          Center(
+                            child: Text(
+                              'Gems will be coming soon',
+                              style: AppStyles.headline
+                                  .andWeight(FontWeight.bold)
+                                  .andColor(AppColors.text.primary),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              'Coming Soon',
+                              style: AppStyles.headline
+                                  .andWeight(FontWeight.bold)
+                                  .andColor(AppColors.text.primary),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -171,8 +265,11 @@ class AppBarWidget extends StatelessWidget {
 }
 
 class BottomSheetChildWidget extends StatelessWidget {
+  final SneakerShop sneakerShop;
+
   const BottomSheetChildWidget({
     super.key,
+    required this.sneakerShop,
   });
 
   @override
@@ -318,7 +415,15 @@ class BottomSheetChildWidget extends StatelessWidget {
             height: 52,
             text: 'buy'.tr().toUpperCase(),
             isActive: true,
-            onPress: () {},
+            onPress: () {
+              final sneakerId = sneakerShop.id;
+              if (sneakerId != null) {
+                Get.find<ShopController>().buySneaker(sneakerId);
+              } else {
+                debugPrint('ой чот кнопка не сработала');
+                // Обработка случая, когда sneaker.id равно null.
+              }
+            },
           ),
           20.h,
           StdButton(

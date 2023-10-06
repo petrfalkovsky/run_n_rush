@@ -4,8 +4,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
+import 'package:run_n_rush/ui/screens/shop/shop.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class CardItemShop extends StatelessWidget {
@@ -131,7 +133,22 @@ class CardItemShop extends StatelessWidget {
                   width: 97,
                   text: 'buy'.tr().toUpperCase(),
                   isActive: true,
-                  onPress: () {},
+                  onPress: () {
+                    CustomModal.show(
+                      color: Colors.black,
+                      context,
+                      child: BottomSheetChildWidget(
+                        sneakerShop: sneakerShop,
+                      ),
+                    );
+
+                    // final sneakerId = sneakerShop.id;
+                    // if (sneakerId != null) {
+                    //   Get.find<ShopController>().buySneaker(sneakerId);
+                    // } else {
+                    //   // Обработка случая, когда sneaker.id равно null.
+                    // }
+                  },
                 ),
               ],
             ),
