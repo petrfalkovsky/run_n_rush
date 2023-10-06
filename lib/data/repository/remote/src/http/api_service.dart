@@ -43,7 +43,7 @@ abstract class ApiService {
   @GET('/api/referral/profile')
   Future<ReferralProfileDto> getReferralProfile();
 
-  @GET('api/sneaker/selling_orders')
+  @GET('/api/sneaker/selling_orders')
   Future<List<SneakerShop>> getSneakerShop(
     @Query('price_ordering') String priceOrdering,
     @Query('offset') int offset,

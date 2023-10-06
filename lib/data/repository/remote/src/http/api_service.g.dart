@@ -238,7 +238,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'api/sneaker/selling_orders',
+              '/api/sneaker/selling_orders',
               queryParameters: queryParameters,
               data: _data,
             )
