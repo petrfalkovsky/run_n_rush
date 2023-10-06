@@ -19,7 +19,6 @@ class CardItemShop extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageUrl = inventory.imageUrl;
     final isImageUrlEmpty = imageUrl == null || imageUrl.isEmpty;
-    bool isDressedFilterActive = false;
 
     return Stack(
       children: [
@@ -129,19 +128,18 @@ class CardItemShop extends StatelessWidget {
               children: [
                 Obx(
                   () => StdButton(
-                    color: Get.find<InventoryController>()
-                            .isDressedFilterActive
-                            .value
-                        ? AppColors.accent[2]
-                        : AppColors.accent[1],
                     height: 36,
                     width: 97,
                     text: Get.find<InventoryController>()
                             .isDressedFilterActive
                             .value
                         ? 'dressed'.tr().toUpperCase()
-                        : 'put'.tr().toUpperCase(),
-                    isActive: false,
+                        : 'put_on'.tr().toUpperCase(),
+                    isActive: Get.find<InventoryController>()
+                            .isDressedFilterActive
+                            .value
+                        ? false
+                        : true,
                     onPress: () {},
                   ),
                 ),

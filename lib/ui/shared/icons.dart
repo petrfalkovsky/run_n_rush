@@ -52,7 +52,7 @@ class AppIcons {
   static const tennisCourtCard = '$_basePathImg/tennis_court_bg.png';
   static const disabledJogger = '$_basePathImg/mono_jogger.png';
   static const avatar = '$_basePathImg/avatar.png';
-  static const pair = '$_basePathImg/sneackers_pair.png';
+  static const pair = '$_basePathImg/sneakers_pair.png';
   static const outIcon = '$_basePathImg/out.png';
   static const inIcon = '$_basePathImg/in.png';
   static const logoFrame = '$_basePathImg/logo_frame.png';

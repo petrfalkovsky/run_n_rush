@@ -193,9 +193,9 @@ class _CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorsScheme = theme.appColorsScheme;
-    final resolvedButtonColor = color ?? colorsScheme.colors.accent.accent1;
+    // final theme = Theme.of(context);
+    // final colorsScheme = theme.appColorsScheme;
+    // final resolvedButtonColor = color ?? colorsScheme.colors.accent.accent1;
     // final resolvedTextColor = textColor ?? colorsScheme.other.white;
 
     return Container(
@@ -227,7 +227,9 @@ class _CustomElevatedButton extends StatelessWidget {
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
             ),
-            backgroundColor: MaterialStateProperty.all(resolvedButtonColor),
+            backgroundColor: MaterialStateProperty.all(
+              isActive ? AppColors.accent[1] : AppColors.accent[3],
+            ),
           ),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             if (icon != null)
@@ -247,15 +249,20 @@ class _CustomElevatedButton extends StatelessWidget {
                       ),
                     ),
                   )
-                : Text(
-                    text,
-                    softWrap: false,
-                    style: AppStyles.input.andWeight(FontWeight.bold).copyWith(
-                          // color: AppColors.text[1],
-                          color: textColor,
-                          fontSize: fontSize,
-                          fontWeight: fontWeight,
-                        ),
+                : Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text(
+                      text,
+                      softWrap: false,
+                      style:
+                          AppStyles.input.andWeight(FontWeight.bold).copyWith(
+                                color: isActive
+                                    ? AppColors.text[1]
+                                    : AppColors.text[3],
+                                fontSize: fontSize,
+                                fontWeight: fontWeight,
+                              ),
+                    ),
                   ),
           ])),
     );

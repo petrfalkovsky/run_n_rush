@@ -5,13 +5,12 @@ import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 
 import '../../../../dto/referral/referral.dart';
+import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: 'https://runrushapi.pp.ua')
 abstract class ApiService {
   factory ApiService(Dio dio, {String? baseUrl}) {
-    // открываю и получаем токен из хранилища
-
     dio.options.headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $accessToken',
@@ -43,4 +42,13 @@ abstract class ApiService {
 
   @GET('/api/referral/profile')
   Future<ReferralProfileDto> getReferralProfile();
+
+  @GET('api/sneaker/selling_orders')
+  Future<List<SneakerShop>> getSneakerShop(
+    @Query('price_ordering') String priceOrdering,
+    @Query('offset') int offset,
+  );
+
+  @POST('/api/sneaker/buy_sneaker')
+  Future<void> buySneaker(@Body() Map<String, dynamic> data);
 }
