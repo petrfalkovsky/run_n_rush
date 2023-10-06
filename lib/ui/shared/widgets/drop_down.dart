@@ -15,11 +15,10 @@ class FilterDropdown extends StatefulWidget {
   State<FilterDropdown> createState() => _FilterDropdownState();
 }
 
+@override
 class _FilterDropdownState extends State<FilterDropdown> {
-  // Определите переменные для значений элементов
   final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
 
-  // Определите переменные для отображаемого текста элементов
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];
 
   @override
