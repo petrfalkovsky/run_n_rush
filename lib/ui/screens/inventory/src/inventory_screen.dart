@@ -7,7 +7,7 @@ import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
-import 'package:run_n_rush/ui/shared/widgets/drop_down.dart';
+import 'package:run_n_rush/ui/shared/widgets/inventory_price_filter.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_animated_swithcer.dart';
 
 class InventoryScreen extends StatexWidget<InventoryController> {
@@ -32,7 +32,7 @@ class InventoryScreen extends StatexWidget<InventoryController> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  FilterDropdown(
+                  InventoryPriceFilter(
                     controller: controller,
                   ),
                   const Spacer(),

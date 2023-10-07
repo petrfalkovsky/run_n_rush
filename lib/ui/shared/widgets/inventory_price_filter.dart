@@ -6,17 +6,17 @@ import 'package:run_n_rush/ui/shared/styles.dart';
 
 import 'package:flutter/material.dart';
 
-class FilterDropdown extends StatefulWidget {
+class InventoryPriceFilter extends StatefulWidget {
   final InventoryController controller;
 
-  const FilterDropdown({super.key, required this.controller});
+  const InventoryPriceFilter({super.key, required this.controller});
 
   @override
-  State<FilterDropdown> createState() => _FilterDropdownState();
+  State<InventoryPriceFilter> createState() => _InventoryPriceFilterState();
 }
 
 @override
-class _FilterDropdownState extends State<FilterDropdown> {
+class _InventoryPriceFilterState extends State<InventoryPriceFilter> {
   final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
 
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];
