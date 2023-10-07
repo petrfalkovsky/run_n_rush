@@ -8,11 +8,12 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/shop/shop.dart';
+import 'package:run_n_rush/ui/screens/shop/widgets/shop_price_filter.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
-import 'package:run_n_rush/ui/shared/widgets/inventory_price_filter.dart';
+import 'package:run_n_rush/ui/screens/inventory/widgets/inventory_price_filter.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import 'package:run_n_rush/ui/shared/widgets/toggle_swithcer_two.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
@@ -58,7 +59,9 @@ class FiltersWidgets extends StatelessWidget {
               children: [
                 /// фильтр
 
-                // FilterDropdown(),
+                ShopPriceFilter(
+                  controller: shopController,
+                ),
                 const Spacer(),
 
                 /// переключатель предложений купить/продать
