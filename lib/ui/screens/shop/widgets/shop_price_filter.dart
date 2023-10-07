@@ -1,22 +1,23 @@
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
+import 'package:run_n_rush/ui/screens/shop/shop.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/styles.dart';
 
 import 'package:flutter/material.dart';
 
-class InventoryPriceFilter extends StatefulWidget {
-  final InventoryController controller;
+class ShopPriceFilter extends StatefulWidget {
+  final ShopController controller;
 
-  const InventoryPriceFilter({super.key, required this.controller});
+  const ShopPriceFilter({super.key, required this.controller});
 
   @override
-  State<InventoryPriceFilter> createState() => _InventoryPriceFilterState();
+  State<ShopPriceFilter> createState() => _ShopPriceFilterState();
 }
 
 @override
-class _InventoryPriceFilterState extends State<InventoryPriceFilter> {
+class _ShopPriceFilterState extends State<ShopPriceFilter> {
   final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
 
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];

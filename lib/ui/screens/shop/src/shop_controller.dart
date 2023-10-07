@@ -71,4 +71,12 @@ class ShopController extends StatexController with StreamSubscriberMixin {
       colorText: Colors.white,
     );
   }
+
+  /// метод для фильтра по цене
+  void setPriceFilter(String filter) {
+    selectedPriceFilter.value = filter;
+
+    /// todo возможно лишнее - удалить и проверить
+    fetchData();
+  }
 }
