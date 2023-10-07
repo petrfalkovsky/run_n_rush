@@ -1,7 +1,5 @@
 // ignore_for_file: unused_import
 
-import 'package:run_n_rush/domain/profile/profile_info.dart';
-
 export 'src/shared_pref_repo_impl.dart';
 
 /// ///// ЭТОТ  БОЛЬШЕ НЕ НУЖНО потому что локальный репозиторий реализован иначе

@@ -1,10 +1,7 @@
 // ignore_for_file: override_on_non_overriding_member
 
-import 'dart:convert';
-
 import 'package:injectable/injectable.dart';
 import 'package:run_n_rush/data/repository/local/local_repository.dart';
-import 'package:run_n_rush/domain/profile/profile_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///// ЭТОТ ФАЙЛ БОЛЬШЕНЕ НУЖен потому что реализовал через hive
@@ -24,27 +21,8 @@ class SharedPreferenceRepositoryImpl
         LocalRepository {
   SharedPreferences? _pref;
 
-  static const _userDataKey = 'UserData';
   static const _accessToken = 'accessToken';
   static const _refreshToken = 'refreshToken';
-
-  @override
-  Future<ProfileInfo> readUserData() async {
-    final s = await _getString(_userDataKey);
-    if (s == '') {
-      return Future.value(ProfileInfo.empty());
-    }
-    final json = jsonDecode(s);
-    final userData = ProfileInfo.fromJson(json);
-    return Future.value(userData);
-  }
-
-  @override
-  Future writeUserData(ProfileInfo userData) async {
-    final u = userData.toJson();
-    final s = jsonEncode(u);
-    _saveString(_userDataKey, s);
-  }
 
   @override
   Future<String> writeAccessToken(String s) async {
