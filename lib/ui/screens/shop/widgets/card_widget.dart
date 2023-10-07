@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 import 'package:run_n_rush/ui/screens/shop/shop.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
@@ -139,15 +138,9 @@ class CardItemShop extends StatelessWidget {
                       context,
                       child: BottomSheetChildWidget(
                         sneakerShop: sneakerShop,
+                        sneaker: sneaker,
                       ),
                     );
-
-                    // final sneakerId = sneakerShop.id;
-                    // if (sneakerId != null) {
-                    //   Get.find<ShopController>().buySneaker(sneakerId);
-                    // } else {
-                    //   // Обработка случая, когда sneaker.id равно null.
-                    // }
                   },
                 ),
               ],

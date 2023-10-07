@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -266,14 +267,19 @@ class AppBarWidget extends StatelessWidget {
 
 class BottomSheetChildWidget extends StatelessWidget {
   final SneakerShop sneakerShop;
+  final Sneaker sneaker;
 
   const BottomSheetChildWidget({
     super.key,
     required this.sneakerShop,
+    required this.sneaker,
   });
 
   @override
   Widget build(BuildContext context) {
+    final imageUrl = sneaker.imageUrl;
+    final isImageUrlEmpty = imageUrl == null || imageUrl.isEmpty;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
       child: Column(
@@ -285,13 +291,49 @@ class BottomSheetChildWidget extends StatelessWidget {
                 .andColor(AppColors.text.primary),
           ),
           26.h,
-          Image.asset(AppIcons.pair),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              width: 188,
+              height: 178,
+              color: Colors.black.withOpacity(0.05),
+              child: isImageUrlEmpty
+                  ? Image.asset(AppIcons.jogger_2)
+                  : CachedNetworkImage(
+                      imageUrl: imageUrl,
+                      placeholder: (context, url) =>
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
+            ),
+          ),
           12.h,
           Text(
-            'amount_id_transaction_exapmple'.tr(),
+            sneakerShop.price?.substring(0, 6) ??
+                'amount_three_hundred_example'.tr(),
             style: AppStyles.body
                 .andWeight(FontWeight.w600)
                 .andColor(AppColors.text.primary),
+          ),
+          12.h,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Coins for hundred steps ',
+                style: AppStyles.body
+                    .andWeight(FontWeight.w600)
+                    .andColor(AppColors.text.primary),
+              ),
+              Text(
+                sneaker.coinsFor1000Steps?.substring(0, 6) ??
+                    'amount_three_hundred_example'.tr(),
+                style: AppStyles.body
+                    .andWeight(FontWeight.w600)
+                    .andColor(AppColors.text.primary),
+              ),
+            ],
           ),
           28.h,
           Container(
@@ -305,7 +347,7 @@ class BottomSheetChildWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'jogger'.tr(),
+                  sneaker.title ?? 'jogger'.tr(),
                   style: AppStyles.body
                       .andWeight(FontWeight.w600)
                       .andColor(AppColors.text.primary),
@@ -320,11 +362,10 @@ class BottomSheetChildWidget extends StatelessWidget {
           ),
           26.h,
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Spacer(),
                   SizedBox(
                     width: 162,
                     child: Column(
@@ -337,7 +378,9 @@ class BottomSheetChildWidget extends StatelessWidget {
                         ),
                         12.h,
                         Text(
-                          'jogger'.tr(),
+                          sneaker.sneakerClassId?.substring(
+                                  '${sneaker.sneakerClassId}'.length - 4) ??
+                              'jogger'.tr(),
                           style: AppStyles.body
                               .andWeight(FontWeight.w600)
                               .andColor(AppColors.text.primary),
@@ -397,6 +440,11 @@ class BottomSheetChildWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
+                    sneaker.coinsFor1000Steps?.substring(0, 6) ??
+                        'amount_three_hundred_example'.tr(),
+                    style: AppStyles.body.andColor(AppColors.text.primary),
+                  ),
+                  Text(
                     'amount_three_hundred_example'.tr(),
                     style: AppStyles.body.andColor(AppColors.text.primary),
                   ),
@@ -430,7 +478,7 @@ class BottomSheetChildWidget extends StatelessWidget {
             isOutlined: true,
             text: 'cancel'.tr(),
             isActive: true,
-            onPress: () {},
+            onPress: () => Get.back(),
           ),
         ],
       ),
