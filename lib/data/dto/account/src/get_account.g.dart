@@ -11,7 +11,7 @@ _$_GetAccountDto _$$_GetAccountDtoFromJson(Map<String, dynamic> json) =>
       userID: json['user_id'] as String?,
       balance: json['balance'] as String?,
       createdAt: json['created_at'] as String?,
-      updatedAt: (json['updated_at'] as num?)?.toDouble(),
+      updatedAt: json['updated_at'] as String?,
     );
 
 Map<String, dynamic> _$$_GetAccountDtoToJson(_$_GetAccountDto instance) =>

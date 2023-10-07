@@ -12,19 +12,41 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class BalanceController extends StatexController with StreamSubscriberMixin {
   final ApiService _apiService = ApiService(Dio());
   final RxList<GetTransactionDto> transactionList = RxList<GetTransactionDto>();
+  final Rxn<GetAccountDto> balance = Rxn<GetAccountDto>();
 
   BalanceController() {
     /// чтобы при загрузке экрана начали грузится данные
-    fetchData();
+    fetchTransactionData();
+    fetchBalanceData();
   }
 
-  /// метод для получения данных с сервера
-  Future<void> fetchData() async {
+  /// метод для получения транзакций
+  Future<void> fetchTransactionData() async {
     try {
       final response = await _apiService.getTransactions();
 
       transactionList.assignAll(response);
       // debugPrint('TransacionList data loaded successfully: $response');
+    } catch (e) {
+      if (e is DioException) {
+        debugPrint('DioException: ${e.message}');
+        if (e.response != null) {
+          debugPrint('Response data: ${e.response!.data}');
+        }
+      } else {
+        debugPrint('Error fetching data: $e');
+      }
+    }
+  }
+
+  /// метод для получения баланса
+  Future<void> fetchBalanceData() async {
+    try {
+      final response = await _apiService.getAccount();
+
+      balance.value = response;
+
+      debugPrint('Account data loaded successfully: $response');
     } catch (e) {
       if (e is DioException) {
         debugPrint('DioException: ${e.message}');

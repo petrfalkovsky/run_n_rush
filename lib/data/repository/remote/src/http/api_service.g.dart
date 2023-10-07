@@ -306,27 +306,30 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<void> updateAccount(Map<String, dynamic> data) async {
+  Future<UpdateAccountDto> updateAccount(Map<String, dynamic> data) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UpdateAccountDto>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/api/account/update',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
+            .compose(
+              _dio.options,
+              '/api/account/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UpdateAccountDto.fromJson(_result.data!);
+    return value;
   }
 
   @override

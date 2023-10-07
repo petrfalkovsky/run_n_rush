@@ -62,7 +62,7 @@ abstract class ApiService {
   Future<GetAccountDto> getAccount();
 
   @POST('/api/account/update')
-  Future<void> updateAccount(Map<String, dynamic> data);
+  Future<UpdateAccountDto> updateAccount(Map<String, dynamic> data);
 
   @GET('/api/account/transactions')
   Future<List<GetTransactionDto>> getTransactions();

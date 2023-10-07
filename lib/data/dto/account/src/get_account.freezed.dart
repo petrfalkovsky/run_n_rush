@@ -27,7 +27,7 @@ mixin _$GetAccountDto {
   @JsonKey(name: 'created_at')
   String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  double? get updatedAt => throw _privateConstructorUsedError;
+  String? get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +45,7 @@ abstract class $GetAccountDtoCopyWith<$Res> {
       {@JsonKey(name: 'user_id') String? userID,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'created_at') String? createdAt,
-      @JsonKey(name: 'updated_at') double? updatedAt});
+      @JsonKey(name: 'updated_at') String? updatedAt});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class _$GetAccountDtoCopyWithImpl<$Res, $Val extends GetAccountDto>
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as String?,
     ) as $Val);
   }
 }
@@ -99,7 +99,7 @@ abstract class _$$_GetAccountDtoCopyWith<$Res>
       {@JsonKey(name: 'user_id') String? userID,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'created_at') String? createdAt,
-      @JsonKey(name: 'updated_at') double? updatedAt});
+      @JsonKey(name: 'updated_at') String? updatedAt});
 }
 
 /// @nodoc
@@ -134,7 +134,7 @@ class __$$_GetAccountDtoCopyWithImpl<$Res>
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as String?,
     ));
   }
 }
@@ -162,7 +162,7 @@ class _$_GetAccountDto implements _GetAccountDto {
   final String? createdAt;
   @override
   @JsonKey(name: 'updated_at')
-  final double? updatedAt;
+  final String? updatedAt;
 
   @override
   String toString() {
@@ -206,7 +206,7 @@ abstract class _GetAccountDto implements GetAccountDto {
           {@JsonKey(name: 'user_id') required final String? userID,
           @JsonKey(name: 'balance') required final String? balance,
           @JsonKey(name: 'created_at') required final String? createdAt,
-          @JsonKey(name: 'updated_at') required final double? updatedAt}) =
+          @JsonKey(name: 'updated_at') required final String? updatedAt}) =
       _$_GetAccountDto;
 
   factory _GetAccountDto.fromJson(Map<String, dynamic> json) =
@@ -223,7 +223,7 @@ abstract class _GetAccountDto implements GetAccountDto {
   String? get createdAt;
   @override
   @JsonKey(name: 'updated_at')
-  double? get updatedAt;
+  String? get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$_GetAccountDtoCopyWith<_$_GetAccountDto> get copyWith =>

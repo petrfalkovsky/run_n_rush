@@ -11,7 +11,7 @@ class GetAccountDto with _$GetAccountDto {
     @JsonKey(name: 'user_id') required String? userID,
     @JsonKey(name: 'balance') required String? balance,
     @JsonKey(name: 'created_at') required String? createdAt,
-    @JsonKey(name: 'updated_at') required double? updatedAt,
+    @JsonKey(name: 'updated_at') required String? updatedAt,
   }) = _GetAccountDto;
 
   factory GetAccountDto.fromJson(Map<String, dynamic> json) =>

@@ -31,7 +31,9 @@ class Balance extends StatexWidget<BalanceController> {
         ),
         child: ListView(
           children: [
-            const BalanceWidget(),
+            BalanceWidget(
+              controller: controller,
+            ),
             26.h,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -84,8 +86,10 @@ class Balance extends StatexWidget<BalanceController> {
 }
 
 class BalanceWidget extends StatelessWidget {
+  final BalanceController controller;
   const BalanceWidget({
     super.key,
+    required this.controller,
   });
 
   @override
@@ -97,7 +101,6 @@ class BalanceWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            width: 176,
             child: Column(
               children: [
                 10.h,
@@ -106,12 +109,18 @@ class BalanceWidget extends StatelessWidget {
                   children: [
                     Image.asset(AppIcons.coin),
                     9.w,
-                    Text(
-                      'amount_coins_example_two'.tr(),
-                      style: AppStyles.title2
-                          .andWeight(FontWeight.w600)
-                          .andColor(AppColors.text.primary),
-                    ),
+                    Obx(() {
+                      final balance = controller.balance.value?.balance ?? '0';
+                      final doubleBalance = double.tryParse(balance) ?? 0.0;
+                      final preparedBalance = doubleBalance.toStringAsFixed(2);
+
+                      return Text(
+                        preparedBalance,
+                        style: AppStyles.title2
+                            .andWeight(FontWeight.w600)
+                            .andColor(AppColors.text.primary),
+                      );
+                    }),
                   ],
                 ),
               ],
