@@ -268,11 +268,13 @@ class AppBarWidget extends StatelessWidget {
 class BottomSheetChildWidget extends StatelessWidget {
   final SneakerShop sneakerShop;
   final Sneaker sneaker;
+  final ShopController shopController;
 
   const BottomSheetChildWidget({
     super.key,
     required this.sneakerShop,
     required this.sneaker,
+    required this.shopController,
   });
 
   @override
@@ -467,9 +469,10 @@ class BottomSheetChildWidget extends StatelessWidget {
               final sneakerId = sneakerShop.id;
               if (sneakerId != null) {
                 Get.find<ShopController>().buySneaker(sneakerId);
+                Get.back();
               } else {
                 debugPrint('ой чот кнопка не сработала');
-                // Обработка случая, когда sneaker.id равно null.
+                // todo Обработка случая, когда sneaker.id равно null.
               }
             },
           ),
@@ -478,7 +481,10 @@ class BottomSheetChildWidget extends StatelessWidget {
             isOutlined: true,
             text: 'cancel'.tr(),
             isActive: true,
-            onPress: () => Get.back(),
+            onPress: () {
+              Get.back();
+              Get.find<ShopController>().snackThanks();
+            },
           ),
         ],
       ),
@@ -514,7 +520,10 @@ class ProductListWidget extends StatelessWidget {
         itemBuilder: (context, index) {
           final sneakerShop = sneakerList[index];
           return CardItemShop(
-              sneakerShop: sneakerShop, sneaker: sneakerShop.sneaker);
+            sneakerShop: sneakerShop,
+            sneaker: sneakerShop.sneaker,
+            shopController: shopController,
+          );
         },
       );
     }
