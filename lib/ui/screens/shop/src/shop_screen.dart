@@ -486,7 +486,6 @@ class BottomSheetChildWidget extends StatelessWidget {
             isActive: true,
             onPress: () {
               Get.back();
-              Get.find<ShopController>().snackThanks();
             },
           ),
         ],

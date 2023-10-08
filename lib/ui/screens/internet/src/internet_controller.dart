@@ -6,5 +6,4 @@ class InternetScreenController extends StatexController {
 //       : _service = service ?? Get.find();
 
 //   final InternetScreenService _service;
-
 }

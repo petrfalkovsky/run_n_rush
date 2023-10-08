@@ -38,7 +38,7 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                   const Spacer(),
                   ToggleAnimatedSwitcher(
                     onTap: () {
-                      controller.fetchData();
+                      controller.fetchDataIfChanged();
                     },
                     inventoryController: controller,
                   ),

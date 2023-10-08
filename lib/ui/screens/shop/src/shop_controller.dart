@@ -53,7 +53,8 @@ class ShopController extends StatexController with StreamSubscriberMixin {
       };
 
       final response = await _apiService.buySneaker(requestBody);
-
+      // благодарочка после покупки
+      snackThanks();
       // обновляю экран, чтобы остатки изменились после покупки
       fetchData();
       return response;

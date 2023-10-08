@@ -1,9 +1,12 @@
 import 'dart:async';
+import 'dart:convert';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class InventoryController extends StatexController {
@@ -14,31 +17,9 @@ class InventoryController extends StatexController {
   final RxBool isDressedFilterActive = RxBool(false);
 
   InventoryController() {
+    /// todo удалить, так как другой метод написал
     /// чтобы при загрузке экрана начали грузится данные
-    fetchData();
-  }
-
-  /// метод для получения данных с сервера
-  Future<void> fetchData() async {
-    try {
-      final response = await _apiService.getSneakerInventories(
-        selectedDressedFilter.value,
-        selectedPriceFilter.value,
-        0,
-      );
-
-      inventoryList.assignAll(response);
-      // debugPrint('Inventory data loaded successfully: $response');
-    } catch (e) {
-      if (e is DioException) {
-        debugPrint('DioException: ${e.message}');
-        if (e.response != null) {
-          debugPrint('Response data: ${e.response!.data}');
-        }
-      } else {
-        debugPrint('Error fetching data: $e');
-      }
-    }
+    fetchDataIfChanged();
   }
 
   /// метод для фильтра по надетости
@@ -53,6 +34,61 @@ class InventoryController extends StatexController {
     selectedPriceFilter.value = filter;
 
     /// todo возможно лишнее - удалить и проверить
-    fetchData();
+    fetchDataIfChanged();
+// если нет возможности загрузиь данные, то достаем их из хранилища
+    loadLocalData();
+  }
+
+// Метод для загрузки данных из локального хранилища
+  void loadLocalData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final storedData = prefs.getString('inventory_data');
+
+    if (storedData != null) {
+      final List<SneakerInventory> savedInventory =
+          (jsonDecode(storedData) as List)
+              .map((item) => SneakerInventory.fromJson(item))
+              .toList();
+      inventoryList.assignAll(savedInventory);
+    }
+  }
+
+  // метод для управления состоянием, если есть изменения
+  Future<void> fetchDataIfChanged() async {
+    final connectivityResult = await Connectivity().checkConnectivity();
+
+    if (connectivityResult == ConnectivityResult.none ||
+        connectivityResult == ConnectivityResult.other) {
+      // Нет интернет-соединения, не загружаем данные
+      debugPrint('No internet connection, using local data.');
+      return;
+    }
+
+    try {
+      final response = await _apiService.getSneakerInventories(
+        selectedDressedFilter.value,
+        selectedPriceFilter.value,
+        0,
+      );
+
+      // Проверьте, есть ли изменения в данных
+      if (!listEquals(inventoryList, response)) {
+        inventoryList.assignAll(response);
+
+        // сохраняю данные в локальном хранилище
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('inventory_data', jsonEncode(response));
+      }
+      // debugPrint('Inventory data loaded successfully: $response');
+    } catch (e) {
+      if (e is DioException) {
+        debugPrint('DioException: ${e.message}');
+        if (e.response != null) {
+          debugPrint('Response data: ${e.response!.data}');
+        }
+      } else {
+        debugPrint('Error fetching data: $e');
+      }
+    }
   }
 }

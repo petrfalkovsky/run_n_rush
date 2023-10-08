@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/screens/internet/src/internet_controller.dart';
@@ -11,7 +10,7 @@ import 'package:vfx_flutter_common/utils.dart';
 class InternetScreen extends StatexWidget<InternetScreenController> {
   InternetScreen({Key? key})
       : super(() => InternetScreenController(), key: key) {
-    debugPrint('${'internet_screen'.tr()} $now:');
+    debugPrint('$now: InternetScreen.InternetScreen');
   }
 
   @override
@@ -36,8 +35,8 @@ class _InternetScreen extends GetView<InternetScreenController> {
                   // Center(child: AppIcons.svgWidget(AppIcons.noInternet)),
                   40.h,
                   Text(
-                    'no_internet_connection'.tr(),
-                    style: AppStyles.body
+                    'No internet connection',
+                    style: AppStyles.title2
                         .andWeight(FontWeight.bold)
                         .andColor(AppColors.text.secondary),
                   ),

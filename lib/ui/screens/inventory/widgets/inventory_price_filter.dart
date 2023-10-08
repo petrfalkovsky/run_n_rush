@@ -1,4 +1,3 @@
-
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
@@ -18,7 +17,7 @@ class InventoryPriceFilter extends StatefulWidget {
 
 @override
 class _InventoryPriceFilterState extends State<InventoryPriceFilter> {
-  final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
+  final List<String> priceFilterValues = ['HIGHER', 'LOWER'];
 
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];
 
