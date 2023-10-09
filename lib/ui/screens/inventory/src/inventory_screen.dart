@@ -17,38 +17,38 @@ class InventoryScreen extends StatexWidget<InventoryController> {
 
   @override
   Widget buildWidget(BuildContext context) {
-    return GeneralScaffold(
-      backgroundColor: const AppColorsThemeLight().other.black,
-      navBarEnable: true,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(64),
-        child: AppBarWidget(),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 16),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  InventoryPriceFilter(
-                    controller: controller,
-                  ),
-                  const Spacer(),
-                  ToggleAnimatedSwitcher(
-                    onTap: () {
-                      controller.fetchDataIfChanged();
-                    },
-                    inventoryController: controller,
-                  ),
-                ],
+    return Obx(
+      () => GeneralScaffold(
+        backgroundColor: const AppColorsThemeLight().other.black,
+        navBarEnable: true,
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(64),
+          child: AppBarWidget(),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: [
+                    InventoryPriceFilter(
+                      controller: controller,
+                    ),
+                    const Spacer(),
+                    ToggleAnimatedSwitcher(
+                      onTap: () {
+                        controller.fetchDataIfChanged();
+                      },
+                      inventoryController: controller,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: Obx(
-                () => Stack(
+              const SizedBox(height: 20),
+              Expanded(
+                child: Stack(
                   children: [
                     ProductListWidget(
                       controller: controller,
@@ -57,8 +57,8 @@ class InventoryScreen extends StatexWidget<InventoryController> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -102,7 +102,7 @@ class AppBarWidget extends StatelessWidget {
   }
 }
 
-class ProductListWidget extends StatelessWidget {
+class ProductListWidget extends StatefulWidget {
   final List<SneakerInventory> inventoryList;
   final InventoryController controller;
 
@@ -113,11 +113,39 @@ class ProductListWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ProductListWidget> createState() => _ProductListWidgetState();
+}
+
+class _ProductListWidgetState extends State<ProductListWidget> {
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    // Запускаем таймер для отображения загрузки в течение 1 секунды
+    Future.delayed(const Duration(seconds: 1), () {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (inventoryList.isEmpty) {
+    if (_isLoading) {
       return const Center(
         child: CircularProgressIndicator(),
       );
+    } else if (widget.controller.selectedDressedFilter.value == 'DRESSED' &&
+        !widget.inventoryList.any((inventory) => inventory.isDressed == true)) {
+      // если фильтр "DRESSED" и нет надетых кроссовок, показываем месседж
+      return Center(
+          child: Text(
+        'sneakers_not_founded'.tr(),
+        style: AppStyles.headline.andColor(AppColors.accent),
+      ));
     } else {
       return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -126,10 +154,13 @@ class ProductListWidget extends StatelessWidget {
           mainAxisSpacing: 16,
           crossAxisSpacing: 0,
         ),
-        itemCount: inventoryList.length,
+        itemCount: widget.inventoryList.length,
         itemBuilder: (context, index) {
-          final inventory = inventoryList[index];
-          return CardItemInventory(inventory: inventory);
+          final inventory = widget.inventoryList[index];
+          return CardItemInventory(
+            inventory: inventory,
+            isButtonActive: widget.controller.buttonActive,
+          );
         },
       );
     }

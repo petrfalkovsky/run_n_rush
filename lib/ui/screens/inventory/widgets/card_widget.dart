@@ -12,9 +12,10 @@ import '../src/inventory_controller.dart';
 
 class CardItemInventory extends StatelessWidget {
   final SneakerInventory inventory;
-  final RxBool isButtonActive = RxBool(true);
+  final bool isButtonActive;
 
-  CardItemInventory({super.key, required this.inventory});
+  const CardItemInventory(
+      {super.key, required this.inventory, required this.isButtonActive});
 
   @override
   Widget build(BuildContext context) {
@@ -127,43 +128,38 @@ class CardItemInventory extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Obx(
-                  () => StdButton(
-                    height: 36,
-                    width: 97,
-                    text: Get.find<InventoryController>()
-                            .isDressedFilterActive
-                            .value
-                        ? 'dressed'.tr().toUpperCase()
-                        : Get.find<InventoryController>()
-                                    .dressedSneakers[inventory.id] ==
-                                true
-                            ? 'dressed'.tr().toUpperCase()
-                            : isButtonActive.value
-                                ? 'put_on'.tr().toUpperCase()
-                                : 'dressed'.tr().toUpperCase(),
-                    isActive: Get.find<InventoryController>()
-                            .isDressedFilterActive
-                            .value
-                        ? false
-                        : Get.find<InventoryController>()
-                                    .dressedSneakers[inventory.id] !=
-                                true &&
-                            isButtonActive.value,
-                    onPress: () {
-                      final sneakerId = inventory.id;
-                      if (sneakerId != null && isButtonActive.value) {
+                StdButton(
+                  backgroundColor: inventory.isDressed == false
+                      ? AppColors.accent[1]
+                      : AppColors.accent[3],
+                  textColor: inventory.isDressed == false
+                      ? AppColors.accent[0]
+                      : AppColors.text[3],
+                  height: 36,
+                  width: 97,
+                  text: inventory.isDressed == false
+                      ? 'put_on'.tr().toUpperCase()
+                      : 'dressed'.tr().toUpperCase(),
+                  onPress: () {
+                    final sneakerId = inventory.id;
+                    if (sneakerId != null && isButtonActive) {
+                      if (inventory.isDressed == false) {
+                        // Если isDressed равен false, вызываем метод putOn
                         Get.find<InventoryController>().putOn(sneakerId);
-                        Get.back();
-                        isButtonActive.value =
-                            false; // Сделать кнопку неактивной после нажатия
                       } else {
-                        debugPrint('ой чот кнопка не сработала');
-                        // todo Обработка случая, когда sneaker.id равно null.
+                        // Если isDressed равен true, вызываем метод takeOff
+                        Get.find<InventoryController>().takeOff(sneakerId);
                       }
-                    },
-                  ),
-                ),
+
+                      // Обновляем экран после нажатия кнопки
+                      Get.find<InventoryController>().fetchDataIfChanged();
+                    } else {
+                      debugPrint('ой чот кнопка не сработала');
+                      // Обработка случая, когда sneaker.id равно null.
+                    }
+                  },
+                  isActive: true,
+                )
               ],
             ),
           ],

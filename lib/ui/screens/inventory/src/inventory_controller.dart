@@ -16,6 +16,10 @@ class InventoryController extends StatexController {
   final RxString selectedPriceFilter = RxString('LOWER');
   final RxBool isDressedFilterActive = RxBool(false);
   final RxMap<String, bool> dressedSneakers = RxMap();
+  final RxBool isButtonActive = true.obs;
+
+  bool get buttonActive => isButtonActive.value;
+  set buttonActive(bool value) => isButtonActive.value = value;
 
   InventoryController() {
     // todo удалить, так как другой метод написал
@@ -23,6 +27,24 @@ class InventoryController extends StatexController {
     fetchDataIfChanged();
     // если нет возможности загрузиь данные, то достаем их из хранилища
     loadLocalData();
+  }
+
+  // метод, чтобы снять кроссовок
+  Future<void> takeOff(String sneakerId) async {
+    try {
+      final Map<String, dynamic> requestBody = {
+        'id': sneakerId,
+      };
+
+      final response = await _apiService.takeOff(requestBody);
+      // todo благодарочка после снятия
+
+      // todo обновить состояние
+
+      return response;
+    } catch (e) {
+      rethrow;
+    }
   }
 
   /// метод, чтобы надеть кроссовок
@@ -109,24 +131,6 @@ class InventoryController extends StatexController {
       } else {
         debugPrint('Error fetching data: $e');
       }
-    }
-  }
-
-  // метод, чтобы снять кроссовок
-  Future<void> takeOff(String sneakerId) async {
-    try {
-      final Map<String, dynamic> requestBody = {
-        'id': sneakerId,
-      };
-
-      final response = await _apiService.takeOff(requestBody);
-      // todo благодарочка после снятия
-
-      // todo обновить состояние
-
-      return response;
-    } catch (e) {
-      rethrow;
     }
   }
 }

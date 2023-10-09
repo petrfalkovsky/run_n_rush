@@ -13,6 +13,7 @@ class StdButton extends StatelessWidget {
     required this.text,
     required this.isActive,
     this.color,
+    this.backgroundColor,
     this.textColor,
     this.fontWeight,
     this.fontSize,
@@ -35,6 +36,7 @@ class StdButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? color;
+  final Color? backgroundColor;
   final Color? textColor;
   final double? fontSize;
   // ignore: prefer_typing_uninitialized_variables
@@ -65,6 +67,7 @@ class StdButton extends StatelessWidget {
               isLoading: isLoading,
               onPress: onPress,
               color: color,
+              backgroundColor: backgroundColor,
               textColor: textColor,
               fontSize: fontSize,
               fontWeight: fontWeight,
@@ -172,6 +175,7 @@ class _CustomElevatedButton extends StatelessWidget {
     required this.isLoading,
     required this.onPress,
     required this.color,
+    required this.backgroundColor,
     this.padding,
     this.textColor,
     this.fontSize,
@@ -185,6 +189,7 @@ class _CustomElevatedButton extends StatelessWidget {
   final Function() onPress;
   final EdgeInsets? padding;
   final Color? color;
+  final Color? backgroundColor;
   final Color? textColor;
   final double? fontSize;
   // ignore: prefer_typing_uninitialized_variables
@@ -197,6 +202,10 @@ class _CustomElevatedButton extends StatelessWidget {
     // final colorsScheme = theme.appColorsScheme;
     // final resolvedButtonColor = color ?? colorsScheme.colors.accent.accent1;
     // final resolvedTextColor = textColor ?? colorsScheme.other.white;
+    final buttonColor = backgroundColor ??
+        (isActive ? AppColors.accent[1] : AppColors.accent[3]);
+    final resolvedtextColor =
+        textColor ?? (isActive ? AppColors.accent : Colors.grey);
 
     return Container(
       height: 52, // высота всего инпута
@@ -227,9 +236,7 @@ class _CustomElevatedButton extends StatelessWidget {
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
             ),
-            backgroundColor: MaterialStateProperty.all(
-              isActive ? AppColors.accent[1] : AppColors.accent[3],
-            ),
+            backgroundColor: MaterialStateProperty.all(buttonColor),
           ),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             if (icon != null)
@@ -256,9 +263,7 @@ class _CustomElevatedButton extends StatelessWidget {
                       softWrap: false,
                       style:
                           AppStyles.input.andWeight(FontWeight.bold).copyWith(
-                                color: isActive
-                                    ? AppColors.text[1]
-                                    : AppColors.text[3],
+                                color: resolvedtextColor,
                                 fontSize: fontSize,
                                 fontWeight: fontWeight,
                               ),
