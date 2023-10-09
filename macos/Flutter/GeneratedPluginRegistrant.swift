@@ -5,7 +5,7 @@
 import FlutterMacOS
 import Foundation
 
-import connectivity_plus_macos
+import connectivity_plus
 import device_info_plus_macos
 import file_selector_macos
 import mobile_scanner
