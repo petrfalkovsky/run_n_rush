@@ -10,10 +10,11 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 import '../src/inventory_controller.dart';
 
-class CardItemShop extends StatelessWidget {
+class CardItemInventory extends StatelessWidget {
   final SneakerInventory inventory;
+  final RxBool isButtonActive = RxBool(true);
 
-  const CardItemShop({super.key, required this.inventory});
+  CardItemInventory({super.key, required this.inventory});
 
   @override
   Widget build(BuildContext context) {
@@ -134,13 +135,33 @@ class CardItemShop extends StatelessWidget {
                             .isDressedFilterActive
                             .value
                         ? 'dressed'.tr().toUpperCase()
-                        : 'put_on'.tr().toUpperCase(),
+                        : Get.find<InventoryController>()
+                                    .dressedSneakers[inventory.id] ==
+                                true
+                            ? 'dressed'.tr().toUpperCase()
+                            : isButtonActive.value
+                                ? 'put_on'.tr().toUpperCase()
+                                : 'dressed'.tr().toUpperCase(),
                     isActive: Get.find<InventoryController>()
                             .isDressedFilterActive
                             .value
                         ? false
-                        : true,
-                    onPress: () {},
+                        : Get.find<InventoryController>()
+                                    .dressedSneakers[inventory.id] !=
+                                true &&
+                            isButtonActive.value,
+                    onPress: () {
+                      final sneakerId = inventory.id;
+                      if (sneakerId != null && isButtonActive.value) {
+                        Get.find<InventoryController>().putOn(sneakerId);
+                        Get.back();
+                        isButtonActive.value =
+                            false; // Сделать кнопку неактивной после нажатия
+                      } else {
+                        debugPrint('ой чот кнопка не сработала');
+                        // todo Обработка случая, когда sneaker.id равно null.
+                      }
+                    },
                   ),
                 ),
               ],

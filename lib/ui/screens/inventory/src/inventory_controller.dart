@@ -15,11 +15,33 @@ class InventoryController extends StatexController {
   final RxString selectedDressedFilter = RxString('ALL');
   final RxString selectedPriceFilter = RxString('LOWER');
   final RxBool isDressedFilterActive = RxBool(false);
+  final RxMap<String, bool> dressedSneakers = RxMap();
 
   InventoryController() {
-    /// todo удалить, так как другой метод написал
-    /// чтобы при загрузке экрана начали грузится данные
+    // todo удалить, так как другой метод написал
+    // чтобы при загрузке экрана начали грузится данные
     fetchDataIfChanged();
+    // если нет возможности загрузиь данные, то достаем их из хранилища
+    loadLocalData();
+  }
+
+  /// метод, чтобы надеть кроссовок
+  Future<void> putOn(String sneakerId) async {
+    try {
+      final Map<String, dynamic> requestBody = {
+        'id': sneakerId,
+      };
+
+      final response = await _apiService.putOn(requestBody);
+
+      // обновления состояния кнопки после успешного нажатия
+      dressedSneakers[sneakerId] = true;
+
+      return response;
+    } catch (e) {
+      // исключение
+      rethrow;
+    }
   }
 
   /// метод для фильтра по надетости
@@ -35,11 +57,9 @@ class InventoryController extends StatexController {
 
     /// todo возможно лишнее - удалить и проверить
     fetchDataIfChanged();
-// если нет возможности загрузиь данные, то достаем их из хранилища
-    loadLocalData();
   }
 
-// Метод для загрузки данных из локального хранилища
+  /// Метод для загрузки данных из локального хранилища
   void loadLocalData() async {
     final prefs = await SharedPreferences.getInstance();
     final storedData = prefs.getString('inventory_data');
@@ -53,7 +73,7 @@ class InventoryController extends StatexController {
     }
   }
 
-  // метод для управления состоянием, если есть изменения
+  /// метод для управления состоянием, если есть изменения
   Future<void> fetchDataIfChanged() async {
     final connectivityResult = await Connectivity().checkConnectivity();
 
@@ -89,6 +109,24 @@ class InventoryController extends StatexController {
       } else {
         debugPrint('Error fetching data: $e');
       }
+    }
+  }
+
+  // метод, чтобы снять кроссовок
+  Future<void> takeOff(String sneakerId) async {
+    try {
+      final Map<String, dynamic> requestBody = {
+        'id': sneakerId,
+      };
+
+      final response = await _apiService.takeOff(requestBody);
+      // todo благодарочка после снятия
+
+      // todo обновить состояние
+
+      return response;
+    } catch (e) {
+      rethrow;
     }
   }
 }

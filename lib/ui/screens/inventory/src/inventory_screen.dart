@@ -129,7 +129,7 @@ class ProductListWidget extends StatelessWidget {
         itemCount: inventoryList.length,
         itemBuilder: (context, index) {
           final inventory = inventoryList[index];
-          return CardItemShop(inventory: inventory);
+          return CardItemInventory(inventory: inventory);
         },
       );
     }

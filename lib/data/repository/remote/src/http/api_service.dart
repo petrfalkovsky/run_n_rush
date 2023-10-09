@@ -40,15 +40,25 @@ abstract class ApiService {
     @Query('offset') int offset,
   );
 
+  // использую модели SneakerPostRequest и SneakerPostResponse
+  @POST('/api/sneaker/inventories/put_on')
+  Future<void> putOn(@Body() Map<String, dynamic> data);
+
+  // использую модели SneakerPostRequest и SneakerPostResponse
+  @POST('/api/sneaker/inventories/take_off')
+  Future<void> takeOff(@Body() Map<String, dynamic> data);
+
   /// sneakers: shop
+
+  // использую модели SneakerPostRequest и SneakerPostResponse
+  @POST('/api/sneaker/buy_sneaker')
+  Future<void> buySneaker(@Body() Map<String, dynamic> data);
+
   @GET('/api/sneaker/selling_orders')
   Future<List<SneakerShop>> getSneakerShop(
     @Query('price_ordering') String priceOrdering,
     @Query('offset') int offset,
   );
-
-  @POST('/api/sneaker/buy_sneaker')
-  Future<void> buySneaker(@Body() Map<String, dynamic> data);
 
   /// referral system
   @GET('/api/referral/rewards')

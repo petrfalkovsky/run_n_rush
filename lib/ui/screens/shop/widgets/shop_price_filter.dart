@@ -16,7 +16,7 @@ class ShopPriceFilter extends StatefulWidget {
 
 @override
 class _ShopPriceFilterState extends State<ShopPriceFilter> {
-  final List<String> priceFilterValues = ['LOWER', 'HIGHER'];
+  final List<String> priceFilterValues = ['HIGHER', 'LOWER'];
 
   final List<String> priceFilterTexts = ['LOWER'.tr(), 'HIGHER'.tr()];
 
