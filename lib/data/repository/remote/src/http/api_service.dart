@@ -20,6 +20,7 @@ abstract class ApiService {
   }
 
   /// authentication
+
   @POST('/api/auth/send_code')
   Future<void> sendCode(@Body() Map<String, dynamic> data);
 
@@ -33,6 +34,7 @@ abstract class ApiService {
   Future<void> refreshToken(@Body() Map<String, dynamic> data);
 
   /// sneakers: inventories
+
   @GET('/api/sneaker/inventories')
   Future<List<SneakerInventory>> getSneakerInventories(
     @Query('dress_status') String dressStatus,
@@ -60,7 +62,9 @@ abstract class ApiService {
     @Query('offset') int offset,
   );
 
-  /// referral system
+  /// sneakers: walking
+
+  /// referral program
   @GET('/api/referral/rewards')
   Future<List<ReferralRewardsDto>> referallRewards();
 
