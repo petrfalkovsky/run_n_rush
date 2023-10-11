@@ -11,18 +11,18 @@ import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/walking/walking.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
-class Main extends StatexWidget<MainController> {
+class Walking extends StatexWidget<WalkingController> {
   // todo убрать хардкод и переменные добавить
   final double currentValueOne = 70;
   final double currentValueTwo = 40;
 
-  Main({Key? key}) : super(() => MainController(), key: key) {
+  Walking({Key? key}) : super(() => WalkingController(), key: key) {
     debugPrint('main_screen'.tr());
   }
 
@@ -282,7 +282,7 @@ class AddSneakerWidget extends StatefulWidget {
 class AddSneakerWidgetState extends State<AddSneakerWidget> {
   // изначально показываю пустой виджет
   bool showImage = true;
-  final MainController controller = Get.find<MainController>();
+  final WalkingController controller = Get.find<WalkingController>();
 
   @override
   Widget build(BuildContext context) {

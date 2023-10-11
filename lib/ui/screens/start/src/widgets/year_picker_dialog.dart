@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:run_n_rush/ui/screens/main/src/widgets/circular_switcher.dart';
+import 'package:run_n_rush/ui/screens/walking/src/widgets/circular_switcher.dart';
 import 'package:run_n_rush/ui/shared/themes/app_text_theme.dart';
 
 Future<int?> showYearPicker(

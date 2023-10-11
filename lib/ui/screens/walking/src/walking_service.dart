@@ -8,4 +8,4 @@ import 'package:get/get.dart' hide Trans;
 import 'package:get_it/get_it.dart';
 import 'package:run_n_rush/core/utils/stream_subscriber.dart';
 
-class MainService extends GetxService with StreamSubscriberMixin {}
+class WalkingService extends GetxService with StreamSubscriberMixin {}

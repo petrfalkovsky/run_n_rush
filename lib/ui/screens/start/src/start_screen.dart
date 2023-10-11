@@ -15,7 +15,7 @@ import 'package:run_n_rush/ui/shared/widgets/buttons/play.dart';
 import 'package:run_n_rush/ui/shared/widgets/speedometer.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/walking/walking.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';

@@ -7,7 +7,7 @@ import 'package:hive/hive.dart';
 import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class MainController extends StatexController {
+class WalkingController extends StatexController {
   /// управляет показом изображения
   final RxBool showImage = true.obs;
 

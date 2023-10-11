@@ -3,7 +3,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/screens/account/src/account_screen.dart';
 import 'package:run_n_rush/ui/screens/auth/src/welcome_screen.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
-import 'package:run_n_rush/ui/screens/main/main.dart';
+import 'package:run_n_rush/ui/screens/walking/walking.dart';
 import 'package:run_n_rush/ui/screens/balance/balance.dart';
 import 'package:run_n_rush/ui/screens/referral/src/referral_screen.dart';
 import 'package:run_n_rush/ui/screens/settings/src/settings_screen.dart';
@@ -41,7 +41,7 @@ final List<GetPage> routes = [
   ),
   GetPage(
     name: AppRoutes.main,
-    page: () => Main(),
+    page: () => Walking(),
     transition: Transition.fadeIn,
   ),
   GetPage(

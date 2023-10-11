@@ -6,7 +6,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/core/utils/stream_subscriber.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/internet/src/internet_service.dart';
-import 'package:run_n_rush/ui/screens/main/src/main_service.dart';
+import 'package:run_n_rush/ui/screens/walking/src/walking_service.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/bottom_bar.dart';
@@ -14,7 +14,7 @@ import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/bottom_bar.dar
 class GeneralScaffoldService extends GetxService with StreamSubscriberMixin {
   GeneralScaffoldService({
     InternetScreenService? internetScreenService,
-    MainService? myBookingService,
+    WalkingService? myBookingService,
   }) : _internetScreenService = internetScreenService ?? Get.find();
 
   final InternetScreenService _internetScreenService;
