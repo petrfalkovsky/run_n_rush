@@ -133,7 +133,7 @@
     "welcome_screen": "экран приветствия",
     "internet_screen": "экран контроля интернет соединения",
     "inventory_screen": "экран склада",
-    "main_screen": "главный экран",
+    "walking_screen": "гулящий экран",
     "settings_screen": "экран настроек",
     "shop_screen": "экран магазина",
     "start_screen": "экран старт"

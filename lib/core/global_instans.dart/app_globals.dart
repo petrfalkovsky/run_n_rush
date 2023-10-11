@@ -1,5 +1,8 @@
 library my_app.globals;
 
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:hive/hive.dart';
@@ -13,4 +16,14 @@ library my_app.globals;
 // final accessToken = mainController.accessToken;
 // final refreshToken = mainController.refreshToken;
 
-
+// метод для обработки ошибок
+void handleApiError(dynamic e) {
+  if (e is DioException) {
+    debugPrint('DioException: ${e.message}');
+    if (e.response != null) {
+      debugPrint('Response data: ${e.response!.data}');
+    }
+  } else {
+    debugPrint('Error fetching data: $e');
+  }
+}
