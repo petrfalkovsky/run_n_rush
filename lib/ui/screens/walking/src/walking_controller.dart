@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:hive/hive.dart';
 import 'package:run_n_rush/data/dto/walking/src/walking.dart';
 import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
@@ -12,6 +13,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class WalkingController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
+  final Rxn firstName = Rxn();
 
   WalkingData? walkingData;
 
@@ -40,8 +42,29 @@ class WalkingController extends StatexController {
   }
 
   // метод для получения first_name
-  String? getFirstName() {
-    return walkingData?.user.firstName;
+  // String? getFirstName() {
+  //   return walkingData?.user.firstName;
+  // }
+  // void getFirstName() {
+  //   firstName.value = walkingData?.user.id;
+  // }
+  Future<void> getFirstName() async {
+    try {
+      final response = await _apiService.getWalkingData();
+
+      firstName.value = response;
+
+      debugPrint('Account data loaded successfully: $response');
+    } catch (e) {
+      if (e is DioException) {
+        debugPrint('DioException: ${e.message}');
+        if (e.response != null) {
+          debugPrint('Response data: ${e.response!.data}');
+        }
+      } else {
+        debugPrint('Error fetching data: $e');
+      }
+    }
   }
 
   // метод для получения balance

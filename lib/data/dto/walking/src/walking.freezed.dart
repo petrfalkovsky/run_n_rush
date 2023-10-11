@@ -20,10 +20,15 @@ WalkingUser _$WalkingUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WalkingUser {
+  @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'avatar_url')
   String? get avatarUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'first_name')
   String? get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_name')
   String? get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,11 +44,11 @@ abstract class $WalkingUserCopyWith<$Res> {
       _$WalkingUserCopyWithImpl<$Res, WalkingUser>;
   @useResult
   $Res call(
-      {String? id,
-      String? avatarUrl,
-      String? firstName,
-      String? lastName,
-      String? email});
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'avatar_url') String? avatarUrl,
+      @JsonKey(name: 'first_name') String? firstName,
+      @JsonKey(name: 'last_name') String? lastName,
+      @JsonKey(name: 'email') String? email});
 }
 
 /// @nodoc
@@ -99,11 +104,11 @@ abstract class _$$_WalkingUserCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
-      String? avatarUrl,
-      String? firstName,
-      String? lastName,
-      String? email});
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'avatar_url') String? avatarUrl,
+      @JsonKey(name: 'first_name') String? firstName,
+      @JsonKey(name: 'last_name') String? lastName,
+      @JsonKey(name: 'email') String? email});
 }
 
 /// @nodoc
@@ -152,24 +157,29 @@ class __$$_WalkingUserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WalkingUser implements _WalkingUser {
   _$_WalkingUser(
-      {required this.id,
-      required this.avatarUrl,
-      required this.firstName,
-      required this.lastName,
-      required this.email});
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'avatar_url') required this.avatarUrl,
+      @JsonKey(name: 'first_name') required this.firstName,
+      @JsonKey(name: 'last_name') required this.lastName,
+      @JsonKey(name: 'email') required this.email});
 
   factory _$_WalkingUser.fromJson(Map<String, dynamic> json) =>
       _$$_WalkingUserFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final String? id;
   @override
+  @JsonKey(name: 'avatar_url')
   final String? avatarUrl;
   @override
+  @JsonKey(name: 'first_name')
   final String? firstName;
   @override
+  @JsonKey(name: 'last_name')
   final String? lastName;
   @override
+  @JsonKey(name: 'email')
   final String? email;
 
   @override
@@ -213,24 +223,29 @@ class _$_WalkingUser implements _WalkingUser {
 
 abstract class _WalkingUser implements WalkingUser {
   factory _WalkingUser(
-      {required final String? id,
-      required final String? avatarUrl,
-      required final String? firstName,
-      required final String? lastName,
-      required final String? email}) = _$_WalkingUser;
+      {@JsonKey(name: 'id') required final String? id,
+      @JsonKey(name: 'avatar_url') required final String? avatarUrl,
+      @JsonKey(name: 'first_name') required final String? firstName,
+      @JsonKey(name: 'last_name') required final String? lastName,
+      @JsonKey(name: 'email') required final String? email}) = _$_WalkingUser;
 
   factory _WalkingUser.fromJson(Map<String, dynamic> json) =
       _$_WalkingUser.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   String? get id;
   @override
+  @JsonKey(name: 'avatar_url')
   String? get avatarUrl;
   @override
+  @JsonKey(name: 'first_name')
   String? get firstName;
   @override
+  @JsonKey(name: 'last_name')
   String? get lastName;
   @override
+  @JsonKey(name: 'email')
   String? get email;
   @override
   @JsonKey(ignore: true)
@@ -244,8 +259,11 @@ WalkingSneaker _$WalkingSneakerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WalkingSneaker {
+  @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'title')
   String? get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_url')
   String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -260,7 +278,10 @@ abstract class $WalkingSneakerCopyWith<$Res> {
           WalkingSneaker value, $Res Function(WalkingSneaker) then) =
       _$WalkingSneakerCopyWithImpl<$Res, WalkingSneaker>;
   @useResult
-  $Res call({String? id, String? title, String? imageUrl});
+  $Res call(
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'image_url') String? imageUrl});
 }
 
 /// @nodoc
@@ -305,7 +326,10 @@ abstract class _$$_WalkingSneakerCopyWith<$Res>
       __$$_WalkingSneakerCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? title, String? imageUrl});
+  $Res call(
+      {@JsonKey(name: 'id') String? id,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'image_url') String? imageUrl});
 }
 
 /// @nodoc
@@ -344,16 +368,21 @@ class __$$_WalkingSneakerCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WalkingSneaker implements _WalkingSneaker {
   _$_WalkingSneaker(
-      {required this.id, required this.title, required this.imageUrl});
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'title') required this.title,
+      @JsonKey(name: 'image_url') required this.imageUrl});
 
   factory _$_WalkingSneaker.fromJson(Map<String, dynamic> json) =>
       _$$_WalkingSneakerFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final String? id;
   @override
+  @JsonKey(name: 'title')
   final String? title;
   @override
+  @JsonKey(name: 'image_url')
   final String? imageUrl;
 
   @override
@@ -392,18 +421,22 @@ class _$_WalkingSneaker implements _WalkingSneaker {
 
 abstract class _WalkingSneaker implements WalkingSneaker {
   factory _WalkingSneaker(
-      {required final String? id,
-      required final String? title,
-      required final String? imageUrl}) = _$_WalkingSneaker;
+          {@JsonKey(name: 'id') required final String? id,
+          @JsonKey(name: 'title') required final String? title,
+          @JsonKey(name: 'image_url') required final String? imageUrl}) =
+      _$_WalkingSneaker;
 
   factory _WalkingSneaker.fromJson(Map<String, dynamic> json) =
       _$_WalkingSneaker.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   String? get id;
   @override
+  @JsonKey(name: 'title')
   String? get title;
   @override
+  @JsonKey(name: 'image_url')
   String? get imageUrl;
   @override
   @JsonKey(ignore: true)
@@ -417,12 +450,19 @@ WalkingData _$WalkingDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WalkingData {
+  @JsonKey(name: 'user')
   WalkingUser get user => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sneakers')
   List<WalkingSneaker> get sneakers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'balance')
   String? get balance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'energy')
   String? get energy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
   int? get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'energy_max')
   String? get energyMax => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance_max')
   int? get distanceMax => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -438,13 +478,13 @@ abstract class $WalkingDataCopyWith<$Res> {
       _$WalkingDataCopyWithImpl<$Res, WalkingData>;
   @useResult
   $Res call(
-      {WalkingUser user,
-      List<WalkingSneaker> sneakers,
-      String? balance,
-      String? energy,
-      int? distance,
-      String? energyMax,
-      int? distanceMax});
+      {@JsonKey(name: 'user') WalkingUser user,
+      @JsonKey(name: 'sneakers') List<WalkingSneaker> sneakers,
+      @JsonKey(name: 'balance') String? balance,
+      @JsonKey(name: 'energy') String? energy,
+      @JsonKey(name: 'distance') int? distance,
+      @JsonKey(name: 'energy_max') String? energyMax,
+      @JsonKey(name: 'distance_max') int? distanceMax});
 
   $WalkingUserCopyWith<$Res> get user;
 }
@@ -520,13 +560,13 @@ abstract class _$$_WalkingDataCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {WalkingUser user,
-      List<WalkingSneaker> sneakers,
-      String? balance,
-      String? energy,
-      int? distance,
-      String? energyMax,
-      int? distanceMax});
+      {@JsonKey(name: 'user') WalkingUser user,
+      @JsonKey(name: 'sneakers') List<WalkingSneaker> sneakers,
+      @JsonKey(name: 'balance') String? balance,
+      @JsonKey(name: 'energy') String? energy,
+      @JsonKey(name: 'distance') int? distance,
+      @JsonKey(name: 'energy_max') String? energyMax,
+      @JsonKey(name: 'distance_max') int? distanceMax});
 
   @override
   $WalkingUserCopyWith<$Res> get user;
@@ -588,22 +628,24 @@ class __$$_WalkingDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WalkingData implements _WalkingData {
   _$_WalkingData(
-      {required this.user,
-      required final List<WalkingSneaker> sneakers,
-      required this.balance,
-      required this.energy,
-      required this.distance,
-      required this.energyMax,
-      required this.distanceMax})
+      {@JsonKey(name: 'user') required this.user,
+      @JsonKey(name: 'sneakers') required final List<WalkingSneaker> sneakers,
+      @JsonKey(name: 'balance') required this.balance,
+      @JsonKey(name: 'energy') required this.energy,
+      @JsonKey(name: 'distance') required this.distance,
+      @JsonKey(name: 'energy_max') required this.energyMax,
+      @JsonKey(name: 'distance_max') required this.distanceMax})
       : _sneakers = sneakers;
 
   factory _$_WalkingData.fromJson(Map<String, dynamic> json) =>
       _$$_WalkingDataFromJson(json);
 
   @override
+  @JsonKey(name: 'user')
   final WalkingUser user;
   final List<WalkingSneaker> _sneakers;
   @override
+  @JsonKey(name: 'sneakers')
   List<WalkingSneaker> get sneakers {
     if (_sneakers is EqualUnmodifiableListView) return _sneakers;
     // ignore: implicit_dynamic_type
@@ -611,14 +653,19 @@ class _$_WalkingData implements _WalkingData {
   }
 
   @override
+  @JsonKey(name: 'balance')
   final String? balance;
   @override
+  @JsonKey(name: 'energy')
   final String? energy;
   @override
+  @JsonKey(name: 'distance')
   final int? distance;
   @override
+  @JsonKey(name: 'energy_max')
   final String? energyMax;
   @override
+  @JsonKey(name: 'distance_max')
   final int? distanceMax;
 
   @override
@@ -671,30 +718,38 @@ class _$_WalkingData implements _WalkingData {
 
 abstract class _WalkingData implements WalkingData {
   factory _WalkingData(
-      {required final WalkingUser user,
-      required final List<WalkingSneaker> sneakers,
-      required final String? balance,
-      required final String? energy,
-      required final int? distance,
-      required final String? energyMax,
+      {@JsonKey(name: 'user') required final WalkingUser user,
+      @JsonKey(name: 'sneakers') required final List<WalkingSneaker> sneakers,
+      @JsonKey(name: 'balance') required final String? balance,
+      @JsonKey(name: 'energy') required final String? energy,
+      @JsonKey(name: 'distance') required final int? distance,
+      @JsonKey(name: 'energy_max') required final String? energyMax,
+      @JsonKey(name: 'distance_max')
       required final int? distanceMax}) = _$_WalkingData;
 
   factory _WalkingData.fromJson(Map<String, dynamic> json) =
       _$_WalkingData.fromJson;
 
   @override
+  @JsonKey(name: 'user')
   WalkingUser get user;
   @override
+  @JsonKey(name: 'sneakers')
   List<WalkingSneaker> get sneakers;
   @override
+  @JsonKey(name: 'balance')
   String? get balance;
   @override
+  @JsonKey(name: 'energy')
   String? get energy;
   @override
+  @JsonKey(name: 'distance')
   int? get distance;
   @override
+  @JsonKey(name: 'energy_max')
   String? get energyMax;
   @override
+  @JsonKey(name: 'distance_max')
   int? get distanceMax;
   @override
   @JsonKey(ignore: true)

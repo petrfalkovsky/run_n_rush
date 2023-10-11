@@ -40,9 +40,11 @@ class Walking extends StatexWidget<WalkingController> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Text(
-                'email_example'.tr(),
-                style: AppStyles.headline.andColor(AppColors.accent),
+              Obx(
+                () => Text(
+                  'Hello, ${controller.firstName ?? 'email_example'.tr()}',
+                  style: AppStyles.headline.andColor(AppColors.accent),
+                ),
               ),
               5.h,
               const GreatingBalanceWidget(),
@@ -282,14 +284,14 @@ class AddSneakerWidget extends StatefulWidget {
 class AddSneakerWidgetState extends State<AddSneakerWidget> {
   // изначально показываю пустой виджет
   bool showImage = true;
-  final WalkingController controller = Get.find<WalkingController>();
+  // final WalkingController controller = Get.find<WalkingController>();
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         // если надо при нажатии на блок состояние поменять
-        controller.toggleShowImage(false);
+        // controller.toggleShowImage(false);
 
         Get.toNamed(AppRoutes.inventory);
       },
@@ -304,61 +306,66 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
           child: ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(12)),
             child: SizedBox(
-              width: double.infinity,
-              height: 88,
-              child: Obx(() {
-                // иcsпользую значение из контроллера чтобы понять,
-                // нужно ли отображать новый вид виджета
-                if (controller.showImage.value) {
-                  return Stack(alignment: Alignment.center, children: [
-                    Image.asset(AppIcons.disabledJogger),
-                    Container(
-                      color: Colors.black.withOpacity(0.05),
-                    ),
-                    const Icon(
-                      Icons.add,
-                      color: Color(0xFF1DB9DD),
-                      size: 36,
-                    ),
-                  ]);
-                } else {
-                  return Row(
-                    children: [
-                      // 32.w,
-                      const Spacer(),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'jogger_2023'.tr(),
-                            style:
-                                AppStyles.headline.andColor(AppColors.accent),
-                          ),
-                          17.h,
-                          Text(
-                            'amount_id_transaction_exapmple'.tr(),
-                            style: AppStyles.body.andColor(AppColors.accent),
-                          ),
-                        ],
-                      ),
-                      68.w,
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(AppIcons.joggerColored),
-                        ],
-                      ),
-                      const Spacer(),
-                      // 32.w,
-                    ],
-                  );
-                }
-              }),
-            ),
+                width: double.infinity,
+                height: 88,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 88,
+                    // child: controller.showImage.value
+                    //     ? _buildImageWidget()
+                    //     : _buildTextWidget(),
+                  ),
+                )),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildImageWidget() {
+    return Stack(alignment: Alignment.center, children: [
+      Image.asset(AppIcons.disabledJogger),
+      Container(
+        color: Colors.black.withOpacity(0.05),
+      ),
+      const Icon(
+        Icons.add,
+        color: Color(0xFF1DB9DD),
+        size: 36,
+      ),
+    ]);
+  }
+
+  Widget _buildTextWidget() {
+    return Row(
+      children: [
+        const Spacer(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'jogger_2023'.tr(),
+              style: AppStyles.headline.andColor(AppColors.accent),
+            ),
+            17.h,
+            Text(
+              'amount_id_transaction_exapmple'.tr(),
+              style: AppStyles.body.andColor(AppColors.accent),
+            ),
+          ],
+        ),
+        68.w,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(AppIcons.joggerColored),
+          ],
+        ),
+        const Spacer(),
+      ],
     );
   }
 }
