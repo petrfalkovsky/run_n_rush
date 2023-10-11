@@ -1,15 +1,80 @@
 // ignore_for_file: unused_import
 
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:run_n_rush/data/dto/walking/src/walking.dart';
+import 'package:run_n_rush/data/repository/remote/src/http/api_service.dart';
 import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class WalkingController extends StatexController {
+  final ApiService _apiService = ApiService(Dio());
+
+  WalkingData? walkingData;
+
   /// управляет показом изображения
   final RxBool showImage = true.obs;
+
+  WalkingController() {
+    getFirstName();
+  }
+
+  /// === методы апишки === ///
+
+  // метод для загрузки данных "walking"
+  Future<void> fetchWalkingData() async {
+    try {
+      walkingData = await _apiService.getWalkingData();
+    } catch (e) {
+      // обработка ошибок при запросе данных
+      debugPrint('Ошибка при загрузке данных: $e');
+    }
+  }
+
+  // метод для получения avatar_url
+  String? getAvatarUrl() {
+    return walkingData?.user.avatarUrl;
+  }
+
+  // метод для получения first_name
+  String? getFirstName() {
+    return walkingData?.user.firstName;
+  }
+
+  // метод для получения balance
+  String? getBalance() {
+    return walkingData?.balance;
+  }
+
+  // метод для получения всех полей sneakers
+  List<WalkingSneaker>? getSneakers() {
+    return walkingData?.sneakers;
+  }
+
+  // метод для получения значения energy
+  String? getEnergy() {
+    return walkingData?.energy;
+  }
+
+  // метод для получения значения distance
+  int? getDistance() {
+    return walkingData?.distance;
+  }
+
+  // метод для получения значения energy_max
+  String? getEnergyMax() {
+    return walkingData?.energyMax;
+  }
+
+  // метод для получения значения distance_max
+  int? getDistanceMax() {
+    return walkingData?.distanceMax;
+  }
+
+  /// === методы перед написанием апишки === ///
 
   /// переменная для хранения токена глобально в приложении
   late String accessToken = '';
@@ -20,15 +85,15 @@ class WalkingController extends StatexController {
     showImage.value = value;
   }
 
-  @override
-  void onInit() async {
-    super.onInit();
+  // @override
+  // void onInit() async {
+  //   super.onInit();
 
-    /// метод для принта вызываю при загрузке экрана мэйн
-    await printUserId();
-    await printAccessToken();
-    // await printRefreshToken();
-  }
+  /// метод для принта вызываю при загрузке экрана мэйн
+  // await printUserId();
+  // await printAccessToken();
+  // await printRefreshToken();
+  // }
 
   /// метод для принта в консоль ид пользователя
   Future<void> printUserId() async {
@@ -40,22 +105,6 @@ class WalkingController extends StatexController {
       debugPrint('User ID: $userId');
     } else {
       debugPrint('User data not found.');
-    }
-  }
-
-  /// метод для принта в консоль аксесс токена
-  Future<void> printAccessToken() async {
-    final tokenBox = await Hive.openBox<TokenStorage>('tokenBox');
-    final token = tokenBox.get('token');
-
-    if (token != null) {
-      final access = token.access;
-
-      /// сохраняем аксесс токен в переменной
-      accessToken = access;
-      debugPrint('Token access: $access');
-    } else {
-      debugPrint('Token access not found.');
     }
   }
 

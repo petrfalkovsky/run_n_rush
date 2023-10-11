@@ -289,7 +289,7 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
     return InkWell(
       onTap: () {
         // если надо при нажатии на блок состояние поменять
-        // controller.toggleShowImage(false);
+        controller.toggleShowImage(false);
 
         Get.toNamed(AppRoutes.inventory);
       },

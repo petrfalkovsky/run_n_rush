@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-import 'package:run_n_rush/core/global_instans.dart/app_globals.dart';
 import 'package:run_n_rush/data/dto/account/account.dart';
 import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/referral/referral.dart';
@@ -8,15 +7,14 @@ import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 import 'package:run_n_rush/data/dto/walking/src/walking.dart';
 
+import 'token_interceptor.dart';
+
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: 'https://runrushapi.pp.ua')
 abstract class ApiService {
   factory ApiService(Dio dio, {String? baseUrl}) {
-    dio.options.headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $accessToken',
-    };
+    dio.interceptors.add(TokenInterceptor()); // Add the interceptor here
     return _ApiService(dio, baseUrl: baseUrl);
   }
 
