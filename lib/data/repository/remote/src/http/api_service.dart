@@ -6,6 +6,7 @@ import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/referral/referral.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
+import 'package:run_n_rush/data/dto/walking/src/walking.dart';
 
 part 'api_service.g.dart';
 
@@ -63,6 +64,8 @@ abstract class ApiService {
   );
 
   /// sneakers: walking
+  @GET('/api/sneaker/walking')
+  Future<WalkingData> getWalkingData();
 
   /// referral program
   @GET('/api/referral/rewards')
