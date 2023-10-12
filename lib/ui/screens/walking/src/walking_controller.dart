@@ -24,11 +24,19 @@ class WalkingController extends StatexController {
   final Rxn avatarUrl = Rxn();
   final Rxn firstName = Rxn();
   final Rxn balance = Rxn();
+  final RxInt distance = RxInt(0);
+  final RxInt distanceMax = RxInt(0);
+  final Rxn energy = Rxn();
+  final Rxn energyMax = Rxn();
 
   WalkingController() {
     getFirstName();
     getBalance();
     getSneakers();
+    getDistance();
+    getmaxDistance();
+    getEnergy();
+    getEnergyMax();
   }
 
   /// === методы апишки === ///
@@ -77,24 +85,40 @@ class WalkingController extends StatexController {
     sneakersUptateData.assignAll(newData);
   }
 
-  // метод для получения значения energy
-  String? getEnergy() {
-    return walkingData?.energy;
-  }
-
   // метод для получения значения distance
-  int? getDistance() {
-    return walkingData?.distance;
-  }
-
-  // метод для получения значения energy_max
-  String? getEnergyMax() {
-    return walkingData?.energyMax;
+  Future<void> getDistance() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.getWalkingData());
+    if (response != null) {
+      distanceMax.value = response.distanceMax!;
+    }
   }
 
   // метод для получения значения distance_max
-  int? getDistanceMax() {
-    return walkingData?.distanceMax;
+  Future<void> getmaxDistance() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.getWalkingData());
+    if (response != null) {
+      distance.value = response.distance!;
+    }
+  }
+
+  // метод для получения значения energy
+  Future<void> getEnergy() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.getWalkingData());
+    if (response != null) {
+      energy.value = response.energy;
+    }
+  }
+
+  // метод для получения значения energy_max
+  Future<void> getEnergyMax() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.getWalkingData());
+    if (response != null) {
+      energyMax.value = response.energyMax!;
+    }
   }
 
   /// === методы перед написанием апишки === ///

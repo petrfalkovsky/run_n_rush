@@ -80,7 +80,7 @@ class Walking extends StatexWidget<WalkingController> {
                   text: Row(
                     children: [
                       Text(
-                        'result_example'.tr(),
+                        '${(controller.distance / 1000).toInt()}',
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                       Text(
@@ -93,7 +93,7 @@ class Walking extends StatexWidget<WalkingController> {
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                       Text(
-                        '50_steps_example'.tr(),
+                        '${(controller.distanceMax / 1000).toInt()}',
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                       Text(
@@ -118,7 +118,7 @@ class Walking extends StatexWidget<WalkingController> {
                   text: Row(
                     children: [
                       Text(
-                        'result_example'.tr(),
+                        '${controller.energy}',
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                       2.w,
@@ -127,7 +127,7 @@ class Walking extends StatexWidget<WalkingController> {
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                       Text(
-                        'result_example'.tr(),
+                        '${controller.energyMax}',
                         style: AppStyles.body.andColor(AppColors.accent),
                       ),
                     ],
