@@ -10,6 +10,7 @@ import 'package:run_n_rush/data/dto/walking/src/walking.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
+import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 import 'package:run_n_rush/ui/screens/walking/walking.dart';
@@ -66,8 +67,12 @@ class Walking extends StatexWidget<WalkingController> {
                 // ignore: prefer_const_constructors
                 AddSneakerWidget(),
                 20.h,
-                // ignore: prefer_const_constructors
-                OtherSneakersWidget(),
+                InkWell(
+                  onTap: () => Get.find<GeneralScaffoldService>().goToPage(1),
+                  // ignore: prefer_const_constructors
+                  child: OtherSneakersWidget(),
+                ),
+
                 40.h,
                 AnimatedProgressBar(
                   text: Row(
@@ -375,7 +380,7 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.toNamed(AppRoutes.inventory),
+      onTap: () => Get.find<GeneralScaffoldService>().goToPage(1),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: DottedBorder(
