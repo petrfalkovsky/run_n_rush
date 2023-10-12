@@ -29,6 +29,10 @@ class WalkingController extends StatexController {
   final Rxn energy = Rxn();
   final Rxn energyMax = Rxn();
 
+  // переменные для расчета показателя прогресс бара
+  final RxDouble currentValueOne = RxDouble(0.0);
+  final RxDouble currentValueTwo = RxDouble(0.0);
+
   WalkingController() {
     getFirstName();
     getBalance();
@@ -37,6 +41,36 @@ class WalkingController extends StatexController {
     getmaxDistance();
     getEnergy();
     getEnergyMax();
+    calculateCurrentValueOne();
+    calculateCurrentValueTwo();
+  }
+
+// Метод для расчета currentValueOne
+  void calculateCurrentValueOne() {
+    if (distanceMax.value.toDouble() != 0) {
+      currentValueOne.value =
+          (distance.value.toDouble() / distanceMax.value.toDouble()) * 100;
+    } else {
+      currentValueOne.value = 0;
+    }
+    currentValueOne.value = currentValueOne.value.clamp(0, 100);
+  }
+
+// Метод для расчета currentValueTwo
+  void calculateCurrentValueTwo() {
+    final double energyMaxValue = energyMax.value != null
+        ? double.tryParse(energyMax.value.toString()) ?? 0.0
+        : 0.0;
+    final double energyValue = energy.value != null
+        ? double.tryParse(energy.value.toString()) ?? 0.0
+        : 0.0;
+
+    if (energyMaxValue != 0) {
+      currentValueTwo.value = (energyValue / energyMaxValue) * 100;
+    } else {
+      currentValueTwo.value = 0;
+    }
+    currentValueTwo.value = currentValueTwo.value.clamp(0, 100);
   }
 
   /// === методы апишки === ///
@@ -91,6 +125,7 @@ class WalkingController extends StatexController {
         await getDataAndHandleError(() => _apiService.getWalkingData());
     if (response != null) {
       distanceMax.value = response.distanceMax!;
+      calculateCurrentValueOne();
     }
   }
 
@@ -100,6 +135,7 @@ class WalkingController extends StatexController {
         await getDataAndHandleError(() => _apiService.getWalkingData());
     if (response != null) {
       distance.value = response.distance!;
+      calculateCurrentValueOne();
     }
   }
 
@@ -109,6 +145,7 @@ class WalkingController extends StatexController {
         await getDataAndHandleError(() => _apiService.getWalkingData());
     if (response != null) {
       energy.value = response.energy;
+      calculateCurrentValueTwo();
     }
   }
 
@@ -118,6 +155,7 @@ class WalkingController extends StatexController {
         await getDataAndHandleError(() => _apiService.getWalkingData());
     if (response != null) {
       energyMax.value = response.energyMax!;
+      calculateCurrentValueTwo();
     }
   }
 

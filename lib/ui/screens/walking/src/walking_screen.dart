@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import, unnecessary_import
-
 import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart';
@@ -22,17 +20,43 @@ import 'widgets/appbar.dart';
 import 'widgets/other_sneakers.dart';
 
 class Walking extends StatexWidget<WalkingController> {
-  // это переменные прогресс-бара показывают наплнение
-  // todo убрать хардкод и переменные добавить
-  final double currentValueOne = 70;
-  final double currentValueTwo = 40;
-
   Walking({Key? key}) : super(() => WalkingController(), key: key) {
     debugPrint('walking_screen'.tr());
   }
 
   @override
   Widget buildWidget(BuildContext context) {
+    final double distance = controller.distance.toDouble();
+    final double distanceMax = controller.distanceMax.toDouble();
+    double currentValueOne;
+
+    if (distanceMax != 0) {
+      currentValueOne = (distance / distanceMax) * 100;
+    } else {
+      currentValueOne = 0;
+    }
+
+    // ограничиваю значение currentValueOne между 0 и 100,
+    // чтобы удостовериться, что оно находится в правильном диапазоне
+    currentValueOne = currentValueOne.clamp(0, 100);
+    final double energy = controller.energy.value != null
+        ? double.parse(controller.energy.value.toString())
+        : 0.0;
+    final double energyMax = controller.energyMax.value != null
+        ? double.parse(controller.energyMax.value.toString())
+        : 0.0;
+    double currentValueTwo;
+
+    if (energyMax != 0) {
+      currentValueTwo = (energy / energyMax) * 100;
+    } else {
+      currentValueTwo = 0;
+    }
+
+    // ограничиваю значение currentValueTwo между 0 и 100,
+    // чтобы удостовериться, что оно находится в правильном диапазоне
+    currentValueTwo = currentValueTwo.clamp(0, 100);
+
     return Obx(
       () => GeneralScaffold(
         backgroundColor: const AppColorsThemeLight().other.black,
@@ -46,14 +70,11 @@ class Walking extends StatexWidget<WalkingController> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                /// имя
                 Text(
                   'Hello, ${controller.firstName}',
                   style: AppStyles.headline.andColor(AppColors.accent),
                 ),
                 5.h,
-
-                /// баланс
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -66,15 +87,12 @@ class Walking extends StatexWidget<WalkingController> {
                   ],
                 ),
                 40.h,
-                // ignore: prefer_const_constructors
                 AddSneakerWidget(),
                 20.h,
                 InkWell(
                   onTap: () => Get.find<GeneralScaffoldService>().goToPage(1),
-                  // ignore: prefer_const_constructors
                   child: OtherSneakersWidget(),
                 ),
-
                 40.h,
                 AnimatedProgressBar(
                   text: Row(
@@ -111,7 +129,7 @@ class Walking extends StatexWidget<WalkingController> {
                   backgroundColor:
                       AppColors.background[1] ?? Colors.transparent,
                   borderRadius: BorderRadius.circular(50),
-                  currentValue: currentValueOne,
+                  currentValue: controller.currentValueOne.value,
                 ),
                 16.h,
                 AnimatedProgressBar(
@@ -141,7 +159,7 @@ class Walking extends StatexWidget<WalkingController> {
                   backgroundColor:
                       AppColors.background[1] ?? Colors.transparent,
                   borderRadius: BorderRadius.circular(50),
-                  currentValue: currentValueTwo,
+                  currentValue: controller.currentValueTwo.value,
                 ),
                 46.h,
                 StdButton(
