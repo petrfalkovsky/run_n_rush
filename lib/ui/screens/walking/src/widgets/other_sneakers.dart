@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:run_n_rush/ui/screens/walking/src/walking_controller.dart';
 
 class OtherSneakersWidget extends StatelessWidget {
-  const OtherSneakersWidget({
+  OtherSneakersWidget({
     Key? key,
   }) : super(key: key);
 
