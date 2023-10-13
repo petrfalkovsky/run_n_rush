@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,7 @@ import '../../../../shared/all_shared.dart';
 import '../../walking.dart';
 
 class AddSneakerWidget extends StatefulWidget {
-  const AddSneakerWidget({
+  AddSneakerWidget({
     Key? key,
   }) : super(key: key);
 
