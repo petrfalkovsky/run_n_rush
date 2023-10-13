@@ -1,10 +1,9 @@
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
-import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
@@ -26,37 +25,6 @@ class Walking extends StatexWidget<WalkingController> {
 
   @override
   Widget buildWidget(BuildContext context) {
-    final double distance = controller.distance.toDouble();
-    final double distanceMax = controller.distanceMax.toDouble();
-    double currentValueOne;
-
-    if (distanceMax != 0) {
-      currentValueOne = (distance / distanceMax) * 100;
-    } else {
-      currentValueOne = 0;
-    }
-
-    // ограничиваю значение currentValueOne между 0 и 100,
-    // чтобы удостовериться, что оно находится в правильном диапазоне
-    currentValueOne = currentValueOne.clamp(0, 100);
-    final double energy = controller.energy.value != null
-        ? double.parse(controller.energy.value.toString())
-        : 0.0;
-    final double energyMax = controller.energyMax.value != null
-        ? double.parse(controller.energyMax.value.toString())
-        : 0.0;
-    double currentValueTwo;
-
-    if (energyMax != 0) {
-      currentValueTwo = (energy / energyMax) * 100;
-    } else {
-      currentValueTwo = 0;
-    }
-
-    // ограничиваю значение currentValueTwo между 0 и 100,
-    // чтобы удостовериться, что оно находится в правильном диапазоне
-    currentValueTwo = currentValueTwo.clamp(0, 100);
-
     return Obx(
       () => GeneralScaffold(
         backgroundColor: const AppColorsThemeLight().other.black,
@@ -87,11 +55,11 @@ class Walking extends StatexWidget<WalkingController> {
                   ],
                 ),
                 40.h,
-                AddSneakerWidget(),
+                const AddSneakerWidget(),
                 20.h,
                 InkWell(
                   onTap: () => Get.find<GeneralScaffoldService>().goToPage(1),
-                  child: OtherSneakersWidget(),
+                  child: const OtherSneakersWidget(),
                 ),
                 40.h,
                 AnimatedProgressBar(
