@@ -13,12 +13,12 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class StartController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   RxBool isPlaying = false.obs;
-
   // переменная для хранения ID прогулки
   String? walkingId;
-
   // для отслеживания начала прогулки, чтобы включать/отклбчать запросы на апдейт
   bool isWalkingStarted = false;
+  double distance = 0.0; // Дистанция
+  int stepsCount = 0; // Количество шагов
 
   // ignore: empty_constructor_bodies
   StartController() {}
@@ -43,8 +43,8 @@ class StartController extends StatexController {
     final response = await getDataAndHandleError(
         () => _apiService.walkingUpdate(requestBody));
     if (response != null) {
-      debugPrint(
-          'Walking updated: stepsCount ${response.stepsCount} and distans ${response.distance}');
+      // debugPrint(
+      //     'Walking updated: stepsCount ${response.stepsCount} and distans ${response.distance}');
       // debugPrint('Walking updated: ${response.id}');
     }
   }
@@ -57,6 +57,14 @@ class StartController extends StatexController {
     Future<void> updateLoop() async {
       while (isWalkingStarted) {
         await Future.delayed(updateInterval);
+
+        // добавляем 1 метра и 1 шаг при каждой итерации
+        distance += 1;
+        stepsCount += 2;
+
+        // Принт данных перед обновлением
+        debugPrint(
+            'Before Update - Distance: $distance, Steps Count: $stepsCount');
         await walkingUpdate();
       }
     }
@@ -75,9 +83,6 @@ class StartController extends StatexController {
     // останавливаем таймер, если запущен
     isWalkingStarted = false;
 
-    const int stepsCount = 0;
-    const double distance = 0.0;
-
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
       'steps_count': stepsCount,
@@ -88,7 +93,8 @@ class StartController extends StatexController {
         () => _apiService.walkingFinish(requestBody));
     if (response != null) {
       debugPrint('Walking finished: ${response.finished}');
-      debugPrint('Walking finished: ${response.id}');
+      debugPrint(
+          'Walking finished: с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \n столко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
     }
   }
 
