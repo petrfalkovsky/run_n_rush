@@ -41,7 +41,6 @@ class WalkingController extends StatexController {
     getEnergyMax();
     calculateCurrentValueOne();
     calculateCurrentValueTwo();
-    walkingStart();
   }
 
 // Метод для расчета currentValueOne
@@ -73,15 +72,6 @@ class WalkingController extends StatexController {
   }
 
   /// === методы апишки === ///
-  Future<void> walkingStart() async {
-    final response =
-        await getDataAndHandleError(() => _apiService.walkingStart());
-
-    if (response != null) {
-      debugPrint('Walking started: ${response.started}');
-      // debugPrint('Walking finished: ${response.finished}');
-    }
-  }
 
   // метод для получения avatar_url
   Future<void> getAvatarUrl() async {
@@ -201,14 +191,4 @@ class WalkingController extends StatexController {
   //     debugPrint('Token refresh not found.');
   //   }
   // }
-
-  // общий метод данных и обработки ошибок
-  Future<T?> getDataAndHandleError<T>(Future<T> Function() getData) async {
-    try {
-      return await getData();
-    } catch (e) {
-      handleApiError(e);
-      return null;
-    }
-  }
 }

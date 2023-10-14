@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
+import 'package:run_n_rush/ui/screens/start/widgets/play.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
