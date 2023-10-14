@@ -17,15 +17,63 @@ class StartController extends StatexController {
   // переменная для хранения ID прогулки
   String? walkingId;
 
+  // для отслеживания начала прогулки, чтобы включать/отклбчать запросы на апдейт
+  bool isWalkingStarted = false;
+
   // ignore: empty_constructor_bodies
   StartController() {}
 
+  // метод для обновления актуальных данных во время прогулки
+  Future<void> walkingUpdate() async {
+    // использую сохраненный ID прогулки
+    if (walkingId == null) {
+      debugPrint('ID прогулки не задан');
+      return;
+    }
+
+    const int stepsCount = 0;
+    const double distance = 0.0;
+
+    final Map<String, dynamic> requestBody = {
+      'id': walkingId,
+      'steps_count': stepsCount,
+      'distance': distance,
+    };
+
+    final response = await getDataAndHandleError(
+        () => _apiService.walkingUpdate(requestBody));
+    if (response != null) {
+      debugPrint(
+          'Walking updated: stepsCount ${response.stepsCount} and distans ${response.distance}');
+      // debugPrint('Walking updated: ${response.id}');
+    }
+  }
+
+  // типа таймер для автоматических запросов на обновление каждый период
+  // todo позже можно переделать под шаги, когда будет готов шагомер
+  void _startAutoUpdate() {
+    const Duration updateInterval = Duration(seconds: 3);
+
+    Future<void> updateLoop() async {
+      while (isWalkingStarted) {
+        await Future.delayed(updateInterval);
+        await walkingUpdate();
+      }
+    }
+
+    updateLoop();
+  }
+
+  // метод для остановки прогулки
   Future<void> walkingFinish() async {
     // использую сохраненный ID прогулки
     if (walkingId == null) {
       debugPrint('ID прогулки не задан');
       return;
     }
+
+    // останавливаем таймер, если запущен
+    isWalkingStarted = false;
 
     const int stepsCount = 0;
     const double distance = 0.0;
@@ -44,6 +92,7 @@ class StartController extends StatexController {
     }
   }
 
+  // метод для начала прогулки
   Future<void> walkingStart() async {
     final response =
         await getDataAndHandleError(() => _apiService.walkingStart());
@@ -54,6 +103,10 @@ class StartController extends StatexController {
 
       // сохраняю ID прогулки
       walkingId = response.id;
+
+      // запускаем таймер для отправки запросов каждые 3 секунды
+      isWalkingStarted = true;
+      _startAutoUpdate();
     }
   }
 
