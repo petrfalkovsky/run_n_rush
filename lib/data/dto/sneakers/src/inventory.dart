@@ -6,8 +6,8 @@ part 'inventory.freezed.dart';
 part 'inventory.g.dart';
 
 @freezed
-class SneakerInventory with _$SneakerInventory {
-  factory SneakerInventory({
+class SneakerInventoryDto with _$SneakerInventoryDto {
+  factory SneakerInventoryDto({
     @JsonKey(name: 'id') required String? id,
     @JsonKey(name: 'created_at') required String? createdAt,
     @JsonKey(name: 'updated_at') required String? updatedAt,
@@ -18,8 +18,8 @@ class SneakerInventory with _$SneakerInventory {
     @JsonKey(name: 'earned_amount') required String? earnedAmount,
     @JsonKey(name: 'steps_amount') required int? stepsAmount,
     @JsonKey(name: 'is_dressed') required bool? isDressed,
-  }) = _SneakerInventory;
+  }) = _SneakerDtoInventoryDto;
 
-  factory SneakerInventory.fromJson(Map<String, dynamic> json) =>
-      _$SneakerInventoryFromJson(json);
+  factory SneakerInventoryDto.fromJson(Map<String, dynamic> json) =>
+      _$SneakerInventoryDtoFromJson(json);
 }

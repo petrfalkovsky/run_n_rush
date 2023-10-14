@@ -4,21 +4,21 @@ part 'shop.freezed.dart';
 part 'shop.g.dart';
 
 @freezed
-class SneakerShop with _$SneakerShop {
-  factory SneakerShop({
+class SneakerShopDto with _$SneakerShopDto {
+  factory SneakerShopDto({
     @JsonKey(name: 'id') required String? id,
-    required Sneaker sneaker,
+    required SneakerDto sneaker,
     @JsonKey(name: 'price') required String? price,
     @JsonKey(name: 'is_closed') required bool? isClosed,
-  }) = _SneakerShop;
+  }) = _SneakerShopDto;
 
-  factory SneakerShop.fromJson(Map<String, dynamic> json) =>
-      _$SneakerShopFromJson(json);
+  factory SneakerShopDto.fromJson(Map<String, dynamic> json) =>
+      _$SneakerShopDtoFromJson(json);
 }
 
 @freezed
-class Sneaker with _$Sneaker {
-  factory Sneaker({
+class SneakerDto with _$SneakerDto {
+  factory SneakerDto({
     @JsonKey(name: 'id') required String? id,
     @JsonKey(name: 'created_at') required String? createdAt,
     @JsonKey(name: 'updated_at') required String? updatedAt,
@@ -27,8 +27,8 @@ class Sneaker with _$Sneaker {
     @JsonKey(name: 'image_url') required String? imageUrl,
     @JsonKey(name: 'sneaker_class_id') required String? sneakerClassId,
     @JsonKey(name: 'coins_for_1000_steps') required String? coinsFor1000Steps,
-  }) = _Sneaker;
+  }) = _SneakerDto;
 
-  factory Sneaker.fromJson(Map<String, dynamic> json) =>
-      _$SneakerFromJson(json);
+  factory SneakerDto.fromJson(Map<String, dynamic> json) =>
+      _$SneakerDtoFromJson(json);
 }

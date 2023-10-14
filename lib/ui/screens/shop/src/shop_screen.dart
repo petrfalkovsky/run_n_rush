@@ -269,8 +269,8 @@ class AppBarWidget extends StatelessWidget {
 }
 
 class BottomSheetChildWidget extends StatelessWidget {
-  final SneakerShop sneakerShop;
-  final Sneaker sneaker;
+  final SneakerShopDto sneakerShop;
+  final SneakerDto sneaker;
   final ShopController shopController;
 
   const BottomSheetChildWidget({
@@ -495,7 +495,7 @@ class BottomSheetChildWidget extends StatelessWidget {
 }
 
 class ProductListWidget extends StatelessWidget {
-  final List<SneakerShop> sneakerList;
+  final List<SneakerShopDto> sneakerList;
   final ShopController shopController;
 
   const ProductListWidget({

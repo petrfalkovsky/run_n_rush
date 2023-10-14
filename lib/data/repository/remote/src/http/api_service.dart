@@ -5,7 +5,7 @@ import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/referral/referral.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
-import 'package:run_n_rush/data/dto/walking/src/walking.dart';
+import 'package:run_n_rush/data/dto/walking/walking.dart';
 
 import 'token_interceptor.dart';
 
@@ -24,7 +24,7 @@ abstract class ApiService {
   Future<void> sendCode(@Body() Map<String, dynamic> data);
 
   @POST('/api/auth/login_or_signup')
-  Future<UserDataToken> loginOrSignup(@Body() Map<String, dynamic> data);
+  Future<UserDataTokenDto> loginOrSignup(@Body() Map<String, dynamic> data);
 
   @POST('/api/auth/jwt/verify')
   Future<void> verifyToken(@Body() Map<String, dynamic> data);
@@ -35,7 +35,7 @@ abstract class ApiService {
   /// sneakers: inventories
 
   @GET('/api/sneaker/inventories')
-  Future<List<SneakerInventory>> getSneakerInventories(
+  Future<List<SneakerInventoryDto>> getSneakerInventories(
     @Query('dress_status') String dressStatus,
     @Query('earned_amount_ordering') String earnedAmountOrdering,
     @Query('offset') int offset,
@@ -56,16 +56,27 @@ abstract class ApiService {
   Future<void> buySneaker(@Body() Map<String, dynamic> data);
 
   @GET('/api/sneaker/selling_orders')
-  Future<List<SneakerShop>> getSneakerShop(
+  Future<List<SneakerShopDto>> getSneakerShop(
     @Query('price_ordering') String priceOrdering,
     @Query('offset') int offset,
   );
 
   /// sneakers: walking
+
   @GET('/api/sneaker/walking')
-  Future<WalkingData> getWalkingData();
+  Future<WalkingDataDto> getWalkingData();
+
+  @POST('/api/sneaker/walking/start')
+  Future<WalkingStartDto> walkingStart(Map<String, dynamic> data);
+
+  @POST('/api/sneaker/walking/update')
+  Future<WalkingUpdateDto> walkingUpdate(@Body() Map<String, dynamic> data);
+
+  @POST('/api/sneaker/walking/finish')
+  Future<WalkingFinishDto> walkingFinish(@Body() Map<String, dynamic> data);
 
   /// referral program
+
   @GET('/api/referral/rewards')
   Future<List<ReferralRewardsDto>> referallRewards();
 
@@ -73,6 +84,7 @@ abstract class ApiService {
   Future<ReferralProfileDto> getReferralProfile();
 
   /// account
+
   @GET('/api/account')
   Future<GetAccountDto> getAccount();
 

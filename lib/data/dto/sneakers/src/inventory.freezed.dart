@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SneakerInventory _$SneakerInventoryFromJson(Map<String, dynamic> json) {
-  return _SneakerInventory.fromJson(json);
+SneakerInventoryDto _$SneakerInventoryDtoFromJson(Map<String, dynamic> json) {
+  return _SneakerDtoInventoryDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SneakerInventory {
+mixin _$SneakerInventoryDto {
   @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
@@ -43,15 +43,15 @@ mixin _$SneakerInventory {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SneakerInventoryCopyWith<SneakerInventory> get copyWith =>
+  $SneakerInventoryDtoCopyWith<SneakerInventoryDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SneakerInventoryCopyWith<$Res> {
-  factory $SneakerInventoryCopyWith(
-          SneakerInventory value, $Res Function(SneakerInventory) then) =
-      _$SneakerInventoryCopyWithImpl<$Res, SneakerInventory>;
+abstract class $SneakerInventoryDtoCopyWith<$Res> {
+  factory $SneakerInventoryDtoCopyWith(
+          SneakerInventoryDto value, $Res Function(SneakerInventoryDto) then) =
+      _$SneakerInventoryDtoCopyWithImpl<$Res, SneakerInventoryDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') String? id,
@@ -67,9 +67,9 @@ abstract class $SneakerInventoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SneakerInventoryCopyWithImpl<$Res, $Val extends SneakerInventory>
-    implements $SneakerInventoryCopyWith<$Res> {
-  _$SneakerInventoryCopyWithImpl(this._value, this._then);
+class _$SneakerInventoryDtoCopyWithImpl<$Res, $Val extends SneakerInventoryDto>
+    implements $SneakerInventoryDtoCopyWith<$Res> {
+  _$SneakerInventoryDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -136,11 +136,11 @@ class _$SneakerInventoryCopyWithImpl<$Res, $Val extends SneakerInventory>
 }
 
 /// @nodoc
-abstract class _$$_SneakerInventoryCopyWith<$Res>
-    implements $SneakerInventoryCopyWith<$Res> {
-  factory _$$_SneakerInventoryCopyWith(
-          _$_SneakerInventory value, $Res Function(_$_SneakerInventory) then) =
-      __$$_SneakerInventoryCopyWithImpl<$Res>;
+abstract class _$$_SneakerDtoInventoryDtoCopyWith<$Res>
+    implements $SneakerInventoryDtoCopyWith<$Res> {
+  factory _$$_SneakerDtoInventoryDtoCopyWith(_$_SneakerDtoInventoryDto value,
+          $Res Function(_$_SneakerDtoInventoryDto) then) =
+      __$$_SneakerDtoInventoryDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,11 +157,11 @@ abstract class _$$_SneakerInventoryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SneakerInventoryCopyWithImpl<$Res>
-    extends _$SneakerInventoryCopyWithImpl<$Res, _$_SneakerInventory>
-    implements _$$_SneakerInventoryCopyWith<$Res> {
-  __$$_SneakerInventoryCopyWithImpl(
-      _$_SneakerInventory _value, $Res Function(_$_SneakerInventory) _then)
+class __$$_SneakerDtoInventoryDtoCopyWithImpl<$Res>
+    extends _$SneakerInventoryDtoCopyWithImpl<$Res, _$_SneakerDtoInventoryDto>
+    implements _$$_SneakerDtoInventoryDtoCopyWith<$Res> {
+  __$$_SneakerDtoInventoryDtoCopyWithImpl(_$_SneakerDtoInventoryDto _value,
+      $Res Function(_$_SneakerDtoInventoryDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -178,7 +178,7 @@ class __$$_SneakerInventoryCopyWithImpl<$Res>
     Object? stepsAmount = freezed,
     Object? isDressed = freezed,
   }) {
-    return _then(_$_SneakerInventory(
+    return _then(_$_SneakerDtoInventoryDto(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -225,8 +225,8 @@ class __$$_SneakerInventoryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SneakerInventory implements _SneakerInventory {
-  _$_SneakerInventory(
+class _$_SneakerDtoInventoryDto implements _SneakerDtoInventoryDto {
+  _$_SneakerDtoInventoryDto(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt,
@@ -238,8 +238,8 @@ class _$_SneakerInventory implements _SneakerInventory {
       @JsonKey(name: 'steps_amount') required this.stepsAmount,
       @JsonKey(name: 'is_dressed') required this.isDressed});
 
-  factory _$_SneakerInventory.fromJson(Map<String, dynamic> json) =>
-      _$$_SneakerInventoryFromJson(json);
+  factory _$_SneakerDtoInventoryDto.fromJson(Map<String, dynamic> json) =>
+      _$$_SneakerDtoInventoryDtoFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -274,14 +274,14 @@ class _$_SneakerInventory implements _SneakerInventory {
 
   @override
   String toString() {
-    return 'SneakerInventory(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, title: $title, imageUrl: $imageUrl, ownerId: $ownerId, sneakerId: $sneakerId, earnedAmount: $earnedAmount, stepsAmount: $stepsAmount, isDressed: $isDressed)';
+    return 'SneakerInventoryDto(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, title: $title, imageUrl: $imageUrl, ownerId: $ownerId, sneakerId: $sneakerId, earnedAmount: $earnedAmount, stepsAmount: $stepsAmount, isDressed: $isDressed)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SneakerInventory &&
+            other is _$_SneakerDtoInventoryDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -309,19 +309,20 @@ class _$_SneakerInventory implements _SneakerInventory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SneakerInventoryCopyWith<_$_SneakerInventory> get copyWith =>
-      __$$_SneakerInventoryCopyWithImpl<_$_SneakerInventory>(this, _$identity);
+  _$$_SneakerDtoInventoryDtoCopyWith<_$_SneakerDtoInventoryDto> get copyWith =>
+      __$$_SneakerDtoInventoryDtoCopyWithImpl<_$_SneakerDtoInventoryDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SneakerInventoryToJson(
+    return _$$_SneakerDtoInventoryDtoToJson(
       this,
     );
   }
 }
 
-abstract class _SneakerInventory implements SneakerInventory {
-  factory _SneakerInventory(
+abstract class _SneakerDtoInventoryDto implements SneakerInventoryDto {
+  factory _SneakerDtoInventoryDto(
           {@JsonKey(name: 'id') required final String? id,
           @JsonKey(name: 'created_at') required final String? createdAt,
           @JsonKey(name: 'updated_at') required final String? updatedAt,
@@ -332,10 +333,10 @@ abstract class _SneakerInventory implements SneakerInventory {
           @JsonKey(name: 'earned_amount') required final String? earnedAmount,
           @JsonKey(name: 'steps_amount') required final int? stepsAmount,
           @JsonKey(name: 'is_dressed') required final bool? isDressed}) =
-      _$_SneakerInventory;
+      _$_SneakerDtoInventoryDto;
 
-  factory _SneakerInventory.fromJson(Map<String, dynamic> json) =
-      _$_SneakerInventory.fromJson;
+  factory _SneakerDtoInventoryDto.fromJson(Map<String, dynamic> json) =
+      _$_SneakerDtoInventoryDto.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -369,6 +370,6 @@ abstract class _SneakerInventory implements SneakerInventory {
   bool? get isDressed;
   @override
   @JsonKey(ignore: true)
-  _$$_SneakerInventoryCopyWith<_$_SneakerInventory> get copyWith =>
+  _$$_SneakerDtoInventoryDtoCopyWith<_$_SneakerDtoInventoryDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

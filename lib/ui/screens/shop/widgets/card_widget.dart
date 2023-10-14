@@ -10,8 +10,8 @@ import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class CardItemShop extends StatelessWidget {
-  final SneakerShop sneakerShop;
-  final Sneaker sneaker;
+  final SneakerShopDto sneakerShop;
+  final SneakerDto sneaker;
   final ShopController shopController;
 
   const CardItemShop(

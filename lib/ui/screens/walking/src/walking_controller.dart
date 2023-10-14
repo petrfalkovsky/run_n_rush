@@ -18,9 +18,10 @@ class WalkingController extends StatexController {
 
   /// апи инстансы
   final ApiService _apiService = ApiService(Dio());
-  WalkingData? walkingData;
-  final List<WalkingSneaker> sneakerList = RxList<WalkingSneaker>();
-  final RxList<WalkingSneaker> sneakersUptateData = RxList<WalkingSneaker>();
+  WalkingDataDto? walkingData;
+  final List<WalkingSneakerDto> sneakerList = RxList<WalkingSneakerDto>();
+  final RxList<WalkingSneakerDto> sneakersUptateData =
+      RxList<WalkingSneakerDto>();
   final Rxn avatarUrl = Rxn();
   final Rxn firstName = Rxn();
   final Rxn balance = Rxn();
@@ -115,7 +116,7 @@ class WalkingController extends StatexController {
   }
 
   // метод для обновления данных SneakersWidget
-  void updateSneakersData(List<WalkingSneaker> newData) {
+  void updateSneakersData(List<WalkingSneakerDto> newData) {
     sneakersUptateData.assignAll(newData);
   }
 

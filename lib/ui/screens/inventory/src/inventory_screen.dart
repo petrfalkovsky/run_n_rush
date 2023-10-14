@@ -103,7 +103,7 @@ class AppBarWidget extends StatelessWidget {
 }
 
 class ProductListWidget extends StatefulWidget {
-  final List<SneakerInventory> inventoryList;
+  final List<SneakerInventoryDto> inventoryList;
   final InventoryController controller;
 
   const ProductListWidget({

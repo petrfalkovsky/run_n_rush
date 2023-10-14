@@ -11,7 +11,8 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class InventoryController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
-  final RxList<SneakerInventory> inventoryList = RxList<SneakerInventory>();
+  final RxList<SneakerInventoryDto> inventoryList =
+      RxList<SneakerInventoryDto>();
   final RxString selectedDressedFilter = RxString('ALL');
   final RxString selectedPriceFilter = RxString('LOWER');
   final RxBool isDressedFilterActive = RxBool(false);
@@ -87,9 +88,9 @@ class InventoryController extends StatexController {
     final storedData = prefs.getString('inventory_data');
 
     if (storedData != null) {
-      final List<SneakerInventory> savedInventory =
+      final List<SneakerInventoryDto> savedInventory =
           (jsonDecode(storedData) as List)
-              .map((item) => SneakerInventory.fromJson(item))
+              .map((item) => SneakerInventoryDto.fromJson(item))
               .toList();
       inventoryList.assignAll(savedInventory);
     }
