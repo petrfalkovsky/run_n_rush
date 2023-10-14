@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SneakerPostRequest _$SneakerPostRequestFromJson(Map<String, dynamic> json) {
-  return _SneakerPostRequest.fromJson(json);
+  return _SneakerDtoPostRequest.fromJson(json);
 }
 
 /// @nodoc
@@ -63,22 +63,22 @@ class _$SneakerPostRequestCopyWithImpl<$Res, $Val extends SneakerPostRequest>
 }
 
 /// @nodoc
-abstract class _$$_SneakerPostRequestCopyWith<$Res>
+abstract class _$$_SneakerDtoPostRequestCopyWith<$Res>
     implements $SneakerPostRequestCopyWith<$Res> {
-  factory _$$_SneakerPostRequestCopyWith(_$_SneakerPostRequest value,
-          $Res Function(_$_SneakerPostRequest) then) =
-      __$$_SneakerPostRequestCopyWithImpl<$Res>;
+  factory _$$_SneakerDtoPostRequestCopyWith(_$_SneakerDtoPostRequest value,
+          $Res Function(_$_SneakerDtoPostRequest) then) =
+      __$$_SneakerDtoPostRequestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'id') String? id});
 }
 
 /// @nodoc
-class __$$_SneakerPostRequestCopyWithImpl<$Res>
-    extends _$SneakerPostRequestCopyWithImpl<$Res, _$_SneakerPostRequest>
-    implements _$$_SneakerPostRequestCopyWith<$Res> {
-  __$$_SneakerPostRequestCopyWithImpl(
-      _$_SneakerPostRequest _value, $Res Function(_$_SneakerPostRequest) _then)
+class __$$_SneakerDtoPostRequestCopyWithImpl<$Res>
+    extends _$SneakerPostRequestCopyWithImpl<$Res, _$_SneakerDtoPostRequest>
+    implements _$$_SneakerDtoPostRequestCopyWith<$Res> {
+  __$$_SneakerDtoPostRequestCopyWithImpl(_$_SneakerDtoPostRequest _value,
+      $Res Function(_$_SneakerDtoPostRequest) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +86,7 @@ class __$$_SneakerPostRequestCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(_$_SneakerPostRequest(
+    return _then(_$_SneakerDtoPostRequest(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -97,11 +97,11 @@ class __$$_SneakerPostRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SneakerPostRequest implements _SneakerPostRequest {
-  _$_SneakerPostRequest({@JsonKey(name: 'id') required this.id});
+class _$_SneakerDtoPostRequest implements _SneakerDtoPostRequest {
+  _$_SneakerDtoPostRequest({@JsonKey(name: 'id') required this.id});
 
-  factory _$_SneakerPostRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_SneakerPostRequestFromJson(json);
+  factory _$_SneakerDtoPostRequest.fromJson(Map<String, dynamic> json) =>
+      _$$_SneakerDtoPostRequestFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -116,7 +116,7 @@ class _$_SneakerPostRequest implements _SneakerPostRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SneakerPostRequest &&
+            other is _$_SneakerDtoPostRequest &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -127,36 +127,37 @@ class _$_SneakerPostRequest implements _SneakerPostRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SneakerPostRequestCopyWith<_$_SneakerPostRequest> get copyWith =>
-      __$$_SneakerPostRequestCopyWithImpl<_$_SneakerPostRequest>(
+  _$$_SneakerDtoPostRequestCopyWith<_$_SneakerDtoPostRequest> get copyWith =>
+      __$$_SneakerDtoPostRequestCopyWithImpl<_$_SneakerDtoPostRequest>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SneakerPostRequestToJson(
+    return _$$_SneakerDtoPostRequestToJson(
       this,
     );
   }
 }
 
-abstract class _SneakerPostRequest implements SneakerPostRequest {
-  factory _SneakerPostRequest(
-      {@JsonKey(name: 'id') required final String? id}) = _$_SneakerPostRequest;
+abstract class _SneakerDtoPostRequest implements SneakerPostRequest {
+  factory _SneakerDtoPostRequest(
+          {@JsonKey(name: 'id') required final String? id}) =
+      _$_SneakerDtoPostRequest;
 
-  factory _SneakerPostRequest.fromJson(Map<String, dynamic> json) =
-      _$_SneakerPostRequest.fromJson;
+  factory _SneakerDtoPostRequest.fromJson(Map<String, dynamic> json) =
+      _$_SneakerDtoPostRequest.fromJson;
 
   @override
   @JsonKey(name: 'id')
   String? get id;
   @override
   @JsonKey(ignore: true)
-  _$$_SneakerPostRequestCopyWith<_$_SneakerPostRequest> get copyWith =>
+  _$$_SneakerDtoPostRequestCopyWith<_$_SneakerDtoPostRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 SneakerPostResponse _$SneakerPostResponseFromJson(Map<String, dynamic> json) {
-  return _SneakerPostResponse.fromJson(json);
+  return _SneakerDtoPostResponse.fromJson(json);
 }
 
 /// @nodoc
@@ -277,11 +278,11 @@ class _$SneakerPostResponseCopyWithImpl<$Res, $Val extends SneakerPostResponse>
 }
 
 /// @nodoc
-abstract class _$$_SneakerPostResponseCopyWith<$Res>
+abstract class _$$_SneakerDtoPostResponseCopyWith<$Res>
     implements $SneakerPostResponseCopyWith<$Res> {
-  factory _$$_SneakerPostResponseCopyWith(_$_SneakerPostResponse value,
-          $Res Function(_$_SneakerPostResponse) then) =
-      __$$_SneakerPostResponseCopyWithImpl<$Res>;
+  factory _$$_SneakerDtoPostResponseCopyWith(_$_SneakerDtoPostResponse value,
+          $Res Function(_$_SneakerDtoPostResponse) then) =
+      __$$_SneakerDtoPostResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -298,11 +299,11 @@ abstract class _$$_SneakerPostResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SneakerPostResponseCopyWithImpl<$Res>
-    extends _$SneakerPostResponseCopyWithImpl<$Res, _$_SneakerPostResponse>
-    implements _$$_SneakerPostResponseCopyWith<$Res> {
-  __$$_SneakerPostResponseCopyWithImpl(_$_SneakerPostResponse _value,
-      $Res Function(_$_SneakerPostResponse) _then)
+class __$$_SneakerDtoPostResponseCopyWithImpl<$Res>
+    extends _$SneakerPostResponseCopyWithImpl<$Res, _$_SneakerDtoPostResponse>
+    implements _$$_SneakerDtoPostResponseCopyWith<$Res> {
+  __$$_SneakerDtoPostResponseCopyWithImpl(_$_SneakerDtoPostResponse _value,
+      $Res Function(_$_SneakerDtoPostResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -319,7 +320,7 @@ class __$$_SneakerPostResponseCopyWithImpl<$Res>
     Object? stepsAmount = freezed,
     Object? isDressed = freezed,
   }) {
-    return _then(_$_SneakerPostResponse(
+    return _then(_$_SneakerDtoPostResponse(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -366,8 +367,8 @@ class __$$_SneakerPostResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SneakerPostResponse implements _SneakerPostResponse {
-  _$_SneakerPostResponse(
+class _$_SneakerDtoPostResponse implements _SneakerDtoPostResponse {
+  _$_SneakerDtoPostResponse(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt,
@@ -379,8 +380,8 @@ class _$_SneakerPostResponse implements _SneakerPostResponse {
       @JsonKey(name: 'steps_amount') required this.stepsAmount,
       @JsonKey(name: 'is_dressed') required this.isDressed});
 
-  factory _$_SneakerPostResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_SneakerPostResponseFromJson(json);
+  factory _$_SneakerDtoPostResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_SneakerDtoPostResponseFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -422,7 +423,7 @@ class _$_SneakerPostResponse implements _SneakerPostResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SneakerPostResponse &&
+            other is _$_SneakerDtoPostResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -450,20 +451,20 @@ class _$_SneakerPostResponse implements _SneakerPostResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SneakerPostResponseCopyWith<_$_SneakerPostResponse> get copyWith =>
-      __$$_SneakerPostResponseCopyWithImpl<_$_SneakerPostResponse>(
+  _$$_SneakerDtoPostResponseCopyWith<_$_SneakerDtoPostResponse> get copyWith =>
+      __$$_SneakerDtoPostResponseCopyWithImpl<_$_SneakerDtoPostResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SneakerPostResponseToJson(
+    return _$$_SneakerDtoPostResponseToJson(
       this,
     );
   }
 }
 
-abstract class _SneakerPostResponse implements SneakerPostResponse {
-  factory _SneakerPostResponse(
+abstract class _SneakerDtoPostResponse implements SneakerPostResponse {
+  factory _SneakerDtoPostResponse(
           {@JsonKey(name: 'id') required final String? id,
           @JsonKey(name: 'created_at') required final String? createdAt,
           @JsonKey(name: 'updated_at') required final String? updatedAt,
@@ -474,10 +475,10 @@ abstract class _SneakerPostResponse implements SneakerPostResponse {
           @JsonKey(name: 'earned_amount') required final String? earnedAmount,
           @JsonKey(name: 'steps_amount') required final int? stepsAmount,
           @JsonKey(name: 'is_dressed') required final bool? isDressed}) =
-      _$_SneakerPostResponse;
+      _$_SneakerDtoPostResponse;
 
-  factory _SneakerPostResponse.fromJson(Map<String, dynamic> json) =
-      _$_SneakerPostResponse.fromJson;
+  factory _SneakerDtoPostResponse.fromJson(Map<String, dynamic> json) =
+      _$_SneakerDtoPostResponse.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -511,6 +512,6 @@ abstract class _SneakerPostResponse implements SneakerPostResponse {
   bool? get isDressed;
   @override
   @JsonKey(ignore: true)
-  _$$_SneakerPostResponseCopyWith<_$_SneakerPostResponse> get copyWith =>
+  _$$_SneakerDtoPostResponseCopyWith<_$_SneakerDtoPostResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

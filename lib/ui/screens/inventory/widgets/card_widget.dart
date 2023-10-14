@@ -11,7 +11,7 @@ import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 import '../src/inventory_controller.dart';
 
 class CardItemInventory extends StatelessWidget {
-  final SneakerInventory inventory;
+  final SneakerInventoryDto inventory;
   final bool isButtonActive;
 
   const CardItemInventory(

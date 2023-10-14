@@ -13,14 +13,12 @@ import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class WalkingController extends StatexController {
-  /// управляет показом изображения
-  // final RxBool showImage = true.obs;
-
   /// апи инстансы
   final ApiService _apiService = ApiService(Dio());
-  WalkingData? walkingData;
-  final List<WalkingSneaker> sneakerList = RxList<WalkingSneaker>();
-  final RxList<WalkingSneaker> sneakersUptateData = RxList<WalkingSneaker>();
+  WalkingDataDto? walkingData;
+  final List<WalkingSneakerDto> sneakerList = RxList<WalkingSneakerDto>();
+  final RxList<WalkingSneakerDto> sneakersUptateData =
+      RxList<WalkingSneakerDto>();
   final Rxn avatarUrl = Rxn();
   final Rxn firstName = Rxn();
   final Rxn balance = Rxn();
@@ -43,6 +41,7 @@ class WalkingController extends StatexController {
     getEnergyMax();
     calculateCurrentValueOne();
     calculateCurrentValueTwo();
+    walkingStart();
   }
 
 // Метод для расчета currentValueOne
@@ -74,6 +73,15 @@ class WalkingController extends StatexController {
   }
 
   /// === методы апишки === ///
+  Future<void> walkingStart() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.walkingStart());
+
+    if (response != null) {
+      debugPrint('Walking started: ${response.started}');
+      // debugPrint('Walking finished: ${response.finished}');
+    }
+  }
 
   // метод для получения avatar_url
   Future<void> getAvatarUrl() async {
@@ -115,7 +123,7 @@ class WalkingController extends StatexController {
   }
 
   // метод для обновления данных SneakersWidget
-  void updateSneakersData(List<WalkingSneaker> newData) {
+  void updateSneakersData(List<WalkingSneakerDto> newData) {
     sneakersUptateData.assignAll(newData);
   }
 

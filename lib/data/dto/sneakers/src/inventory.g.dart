@@ -6,8 +6,9 @@ part of 'inventory.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SneakerInventory _$$_SneakerInventoryFromJson(Map<String, dynamic> json) =>
-    _$_SneakerInventory(
+_$_SneakerDtoInventoryDto _$$_SneakerDtoInventoryDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_SneakerDtoInventoryDto(
       id: json['id'] as String?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,
@@ -20,7 +21,8 @@ _$_SneakerInventory _$$_SneakerInventoryFromJson(Map<String, dynamic> json) =>
       isDressed: json['is_dressed'] as bool?,
     );
 
-Map<String, dynamic> _$$_SneakerInventoryToJson(_$_SneakerInventory instance) =>
+Map<String, dynamic> _$$_SneakerDtoInventoryDtoToJson(
+        _$_SneakerDtoInventoryDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt,

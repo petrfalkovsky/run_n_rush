@@ -136,6 +136,7 @@ class Walking extends StatexWidget<WalkingController> {
                   text: 'start'.tr(),
                   isActive: true,
                   onPress: () {
+                    controller.walkingStart();
                     Get.toNamed(AppRoutes.start);
                   },
                 )

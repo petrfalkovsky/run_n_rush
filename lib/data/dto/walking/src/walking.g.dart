@@ -6,8 +6,8 @@ part of 'walking.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WalkingUser _$$_WalkingUserFromJson(Map<String, dynamic> json) =>
-    _$_WalkingUser(
+_$_WalkingUserDto _$$_WalkingUserDtoFromJson(Map<String, dynamic> json) =>
+    _$_WalkingUserDto(
       id: json['id'] as String?,
       avatarUrl: json['avatar_url'] as String?,
       firstName: json['first_name'] as String?,
@@ -15,7 +15,7 @@ _$_WalkingUser _$$_WalkingUserFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String?,
     );
 
-Map<String, dynamic> _$$_WalkingUserToJson(_$_WalkingUser instance) =>
+Map<String, dynamic> _$$_WalkingUserDtoToJson(_$_WalkingUserDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'avatar_url': instance.avatarUrl,
@@ -24,25 +24,26 @@ Map<String, dynamic> _$$_WalkingUserToJson(_$_WalkingUser instance) =>
       'email': instance.email,
     };
 
-_$_WalkingSneaker _$$_WalkingSneakerFromJson(Map<String, dynamic> json) =>
-    _$_WalkingSneaker(
+_$_WalkingSneakerDto _$$_WalkingSneakerDtoFromJson(Map<String, dynamic> json) =>
+    _$_WalkingSneakerDto(
       id: json['id'] as String?,
       title: json['title'] as String?,
       imageUrl: json['image_url'] as String?,
     );
 
-Map<String, dynamic> _$$_WalkingSneakerToJson(_$_WalkingSneaker instance) =>
+Map<String, dynamic> _$$_WalkingSneakerDtoToJson(
+        _$_WalkingSneakerDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'image_url': instance.imageUrl,
     };
 
-_$_WalkingData _$$_WalkingDataFromJson(Map<String, dynamic> json) =>
-    _$_WalkingData(
-      user: WalkingUser.fromJson(json['user'] as Map<String, dynamic>),
+_$_WalkingDataDto _$$_WalkingDataDtoFromJson(Map<String, dynamic> json) =>
+    _$_WalkingDataDto(
+      user: WalkingUserDto.fromJson(json['user'] as Map<String, dynamic>),
       sneakers: (json['sneakers'] as List<dynamic>)
-          .map((e) => WalkingSneaker.fromJson(e as Map<String, dynamic>))
+          .map((e) => WalkingSneakerDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       balance: json['balance'] as String?,
       energy: json['energy'] as String?,
@@ -51,7 +52,7 @@ _$_WalkingData _$$_WalkingDataFromJson(Map<String, dynamic> json) =>
       distanceMax: json['distance_max'] as int?,
     );
 
-Map<String, dynamic> _$$_WalkingDataToJson(_$_WalkingData instance) =>
+Map<String, dynamic> _$$_WalkingDataDtoToJson(_$_WalkingDataDto instance) =>
     <String, dynamic>{
       'user': instance.user,
       'sneakers': instance.sneakers,

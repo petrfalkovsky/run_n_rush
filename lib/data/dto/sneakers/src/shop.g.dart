@@ -6,15 +6,15 @@ part of 'shop.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SneakerShop _$$_SneakerShopFromJson(Map<String, dynamic> json) =>
-    _$_SneakerShop(
+_$_SneakerShopDto _$$_SneakerShopDtoFromJson(Map<String, dynamic> json) =>
+    _$_SneakerShopDto(
       id: json['id'] as String?,
-      sneaker: Sneaker.fromJson(json['sneaker'] as Map<String, dynamic>),
+      sneaker: SneakerDto.fromJson(json['sneaker'] as Map<String, dynamic>),
       price: json['price'] as String?,
       isClosed: json['is_closed'] as bool?,
     );
 
-Map<String, dynamic> _$$_SneakerShopToJson(_$_SneakerShop instance) =>
+Map<String, dynamic> _$$_SneakerShopDtoToJson(_$_SneakerShopDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'sneaker': instance.sneaker,
@@ -22,7 +22,8 @@ Map<String, dynamic> _$$_SneakerShopToJson(_$_SneakerShop instance) =>
       'is_closed': instance.isClosed,
     };
 
-_$_Sneaker _$$_SneakerFromJson(Map<String, dynamic> json) => _$_Sneaker(
+_$_SneakerDto _$$_SneakerDtoFromJson(Map<String, dynamic> json) =>
+    _$_SneakerDto(
       id: json['id'] as String?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,
@@ -33,7 +34,7 @@ _$_Sneaker _$$_SneakerFromJson(Map<String, dynamic> json) => _$_Sneaker(
       coinsFor1000Steps: json['coins_for_1000_steps'] as String?,
     );
 
-Map<String, dynamic> _$$_SneakerToJson(_$_Sneaker instance) =>
+Map<String, dynamic> _$$_SneakerDtoToJson(_$_SneakerDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt,
