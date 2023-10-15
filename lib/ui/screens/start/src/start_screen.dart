@@ -67,7 +67,6 @@ class Start extends StatexWidget<StartController> {
             child: Column(
               children: [
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Spacer(),
@@ -187,6 +186,7 @@ class Start extends StatexWidget<StartController> {
                     ),
                     2.w,
                     Text(
+                      // '${controller.earnedCoins}',
                       'amount_coins_example_two'.tr(),
                       style: AppStyles.title
                           .andColor(AppColors.accent)

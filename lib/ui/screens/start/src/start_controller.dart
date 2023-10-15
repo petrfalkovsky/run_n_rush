@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,17 +15,44 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class StartController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   RxBool isPlaying = false.obs;
+  // реактивные переменные для передачи данных на экран
+
+  final RxString earnedCoins = ''.obs;
+
   // переменная для хранения ID прогулки
   String? walkingId;
   // для отслеживания начала прогулки, чтобы включать/отклбчать запросы на апдейт
   bool isWalkingStarted = false;
-  double distance = 0.0; // Дистанция
-  int stepsCount = 0; // Количество шагов
+  double distanceCalc = 0.0; // Дистанция
+  int stepsCountCalc = 0; // Количество шагов
 
   // ignore: empty_constructor_bodies
   StartController() {}
 
-  // метод для обновления актуальных данных во время прогулки
+  // типа таймер для автоматических запросов на обновление каждый период
+  // todo позже можно переделать под шаги, когда будет готов шагомер
+  Timer? autoUpdateTimer;
+
+  void _startAutoUpdate() {
+    const updateInterval = Duration(seconds: 3);
+
+    autoUpdateTimer = Timer.periodic(updateInterval, (timer) {
+      if (!isWalkingStarted) {
+        timer.cancel();
+        return;
+      }
+
+      // Добавляем 1 метр и 1 шаг при каждой итерации
+      distanceCalc += 1;
+      stepsCountCalc += 2;
+
+      // Принт данных перед обновлением
+      // debugPrint('Before Update - Distance: $distanceCalc, Steps Count: $stepsCountCalc');
+      walkingUpdate();
+    });
+  }
+
+  // метод для остановки прогулки
   Future<void> walkingUpdate() async {
     // использую сохраненный ID прогулки
     if (walkingId == null) {
@@ -31,45 +60,22 @@ class StartController extends StatexController {
       return;
     }
 
-    const int stepsCount = 0;
-    const double distance = 0.0;
+    // останавливаем таймер, если запущен
+    isWalkingStarted = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
-      'steps_count': stepsCount,
-      'distance': distance,
+      'steps_count': 2,
+      'distance': 1,
     };
 
     final response = await getDataAndHandleError(
         () => _apiService.walkingUpdate(requestBody));
     if (response != null) {
-      // debugPrint(
-      //     'Walking updated: stepsCount ${response.stepsCount} and distans ${response.distance}');
-      // debugPrint('Walking updated: ${response.id}');
+      debugPrint('Walking finished: ${response.finished}');
+      debugPrint(
+          'Walking update: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолько потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
     }
-  }
-
-  // типа таймер для автоматических запросов на обновление каждый период
-  // todo позже можно переделать под шаги, когда будет готов шагомер
-  void _startAutoUpdate() {
-    const Duration updateInterval = Duration(seconds: 3);
-
-    Future<void> updateLoop() async {
-      while (isWalkingStarted) {
-        await Future.delayed(updateInterval);
-
-        // добавляем 1 метра и 1 шаг при каждой итерации
-        distance += 1;
-        stepsCount += 2;
-
-        // Принт данных перед обновлением
-        debugPrint(
-            'Before Update - Distance: $distance, Steps Count: $stepsCount');
-        await walkingUpdate();
-      }
-    }
-
-    updateLoop();
   }
 
   // метод для остановки прогулки
@@ -85,8 +91,8 @@ class StartController extends StatexController {
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
-      'steps_count': stepsCount,
-      'distance': distance,
+      'steps_count': stepsCountCalc,
+      'distance': distanceCalc,
     };
 
     final response = await getDataAndHandleError(
@@ -94,7 +100,7 @@ class StartController extends StatexController {
     if (response != null) {
       debugPrint('Walking finished: ${response.finished}');
       debugPrint(
-          'Walking finished: с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \n столко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
+          'Walking finished: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
     }
   }
 
@@ -106,6 +112,8 @@ class StartController extends StatexController {
     if (response != null) {
       debugPrint('Walking started: ${response.started}');
       debugPrint('Walking started: ${response.id}');
+      debugPrint(
+          'Walking started: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
 
       // сохраняю ID прогулки
       walkingId = response.id;
