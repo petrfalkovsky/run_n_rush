@@ -138,11 +138,7 @@ class Start extends StatexWidget<StartController> {
                     text: Row(
                       children: [
                         Text(
-                          'result_example'.tr(),
-                          style: AppStyles.body.andColor(AppColors.accent),
-                        ),
-                        Text(
-                          'thousand'.tr().toUpperCase(),
+                          controller.getEnergy(controller).toStringAsFixed(1),
                           style: AppStyles.body.andColor(AppColors.accent),
                         ),
                         2.w,
@@ -151,13 +147,9 @@ class Start extends StatexWidget<StartController> {
                           style: AppStyles.body.andColor(AppColors.accent),
                         ),
                         Text(
-                          '50_steps_example'.tr(),
+                          'amount_hundred_example'.tr(),
                           style: AppStyles.body.andColor(AppColors.accent),
                         ),
-                        Text(
-                          'thousand'.tr().toUpperCase(),
-                          style: AppStyles.body.andColor(AppColors.accent),
-                        )
                       ],
                     ),
                     size: 32,
@@ -169,7 +161,8 @@ class Start extends StatexWidget<StartController> {
                     backgroundColor:
                         AppColors.background[1] ?? Colors.transparent,
                     borderRadius: BorderRadius.circular(50),
-                    currentValue: 60,
+                    // залитый синий цвет прогрессбара, сколько энергии осталось
+                    currentValue: controller.getEnergy(controller),
                   ),
                   30.h,
                   Row(

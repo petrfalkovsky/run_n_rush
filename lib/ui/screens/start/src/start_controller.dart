@@ -14,7 +14,13 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class StartController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
+  // переменная для смены вида кнопки плей/пауза
   RxBool isPlaying = false.obs;
+
+  // переменные управления состояним
+  RxBool isStarted = false.obs;
+  RxBool isFinished = false.obs;
+  RxBool isUpdated = false.obs;
 
   // переменная для хранения ID прогулки
   String? walkingId;
@@ -25,11 +31,10 @@ class StartController extends StatexController {
   Rxn earnedCoinsUpdate = Rxn();
   Rxn earnedCoinsFinish = Rxn();
 
-  RxBool isEarnedWhenStarted = false.obs;
-  RxBool isEarnedWhenFinished = false.obs;
-  RxBool isEarnedWhenUpdated = false.obs;
-
   //  прогрессбар
+  Rxn energyStart = Rxn();
+  Rxn energyUpdate = Rxn();
+  Rxn energyFinish = Rxn();
 
   double distanceCalc = 0.0; // дистанция
   int stepsCountCalc = 0; // количество шагов
@@ -45,7 +50,7 @@ class StartController extends StatexController {
     const updateInterval = Duration(seconds: 3);
 
     autoUpdateTimer = Timer.periodic(updateInterval, (timer) {
-      if (!isEarnedWhenStarted.value) {
+      if (!isStarted.value) {
         timer.cancel();
         return;
       }
@@ -73,11 +78,15 @@ class StartController extends StatexController {
 
       // сохраняю ID прогулки для принта
       walkingId = response.id;
-      // сохраняю заработанные монеты для передачи на экран
-      earnedCoinsStart.value = response.earnedCoins;
 
       // запускаем таймер для отправки запросов каждые 3 секунды
-      isEarnedWhenStarted.value = true;
+      isStarted.value = true;
+
+      // сохраняю заработанные монеты для передачи на экран
+      earnedCoinsStart.value = response.earnedCoins;
+      double parsedValue = double.tryParse(response.energy!) ?? 0.0;
+      energyStart.value = parsedValue * 10;
+
       _startAutoUpdate();
     }
   }
@@ -91,7 +100,8 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isEarnedWhenStarted.value = false;
+    // todo убрать конечно когда фейковые данные не нужны будут
+    isStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
@@ -105,10 +115,12 @@ class StartController extends StatexController {
       debugPrint(
           'Walking update: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолько потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
 
-      isEarnedWhenUpdated.value = true;
+      isUpdated.value = true;
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsUpdate.value = response.earnedCoins;
+      double parsedValue = double.tryParse(response.energy!) ?? 0.0;
+      energyUpdate.value = parsedValue * 10;
     }
   }
 
@@ -121,7 +133,7 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isEarnedWhenStarted.value = false;
+    isStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
@@ -137,20 +149,36 @@ class StartController extends StatexController {
           'Walking finished: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
 
       // устанавливаю состояние завершения прогулки
-      isEarnedWhenFinished.value = true;
+      isFinished.value = true;
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsFinish.value = response.earnedCoins;
+
+      double parsedValue = double.tryParse(response.energy!) ?? 0.0;
+      energyFinish.value = parsedValue * 10;
+    }
+  }
+
+  // метод для показа сколько энергии в прогрессбаре
+  double getEnergy(StartController controller) {
+    if (controller.isStarted.value) {
+      return double.tryParse('${controller.energyStart.value}') ?? 0;
+    } else if (controller.isFinished.value) {
+      return double.tryParse('${controller.energyFinish.value}') ?? 0;
+    } else if (controller.isUpdated.value) {
+      return double.tryParse('${controller.energyUpdate.value}') ?? 0;
+    } else {
+      return 0;
     }
   }
 
   // метод для показа сколько заработано
   String getCoinsText(StartController controller) {
-    if (controller.isEarnedWhenStarted.value) {
+    if (controller.isStarted.value) {
       return '${controller.earnedCoinsStart}';
-    } else if (controller.isEarnedWhenFinished.value) {
+    } else if (controller.isFinished.value) {
       return '${controller.earnedCoinsFinish}';
-    } else if (controller.isEarnedWhenUpdated.value) {
+    } else if (controller.isUpdated.value) {
       return '${controller.earnedCoinsUpdate}';
     } else {
       return 'waiting..';
