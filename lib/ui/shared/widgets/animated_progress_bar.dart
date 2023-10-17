@@ -152,13 +152,6 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
                       100 - (_animation.value / widget.maxValue * 100).toInt(),
                   child: Container(),
                 ),
-                // Align(
-                //   alignment: Alignment.centerRight,
-                //   child: Padding(
-                //     padding: const EdgeInsets.only(right: 24),
-                //     child: widget.text,
-                //   ),
-                // ),
               ],
             ),
             Positioned(

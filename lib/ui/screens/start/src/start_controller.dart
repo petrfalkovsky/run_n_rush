@@ -15,20 +15,24 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class StartController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   RxBool isPlaying = false.obs;
-  // реактивные переменные для передачи данных на экран
+
+  // переменная для хранения ID прогулки
+  String? walkingId;
+
+  /// для отслеживания и реактивного изменения данных
+  //  заработано
   Rxn earnedCoinsStart = Rxn();
   Rxn earnedCoinsUpdate = Rxn();
   Rxn earnedCoinsFinish = Rxn();
 
-  // переменная для хранения ID прогулки
-  String? walkingId;
-  // для отслеживания начала прогулки, чтобы включать/отклбчать запросы на апдейт
-  RxBool isWalkingStarted = false.obs;
-  RxBool isWalkingFinished = false.obs;
-  RxBool isWalkingUpdated = false.obs;
+  RxBool isEarnedWhenStarted = false.obs;
+  RxBool isEarnedWhenFinished = false.obs;
+  RxBool isEarnedWhenUpdated = false.obs;
 
-  double distanceCalc = 0.0; // Дистанция
-  int stepsCountCalc = 0; // Количество шагов
+  //  прогрессбар
+
+  double distanceCalc = 0.0; // дистанция
+  int stepsCountCalc = 0; // количество шагов
 
   // ignore: empty_constructor_bodies
   StartController() {}
@@ -41,7 +45,7 @@ class StartController extends StatexController {
     const updateInterval = Duration(seconds: 3);
 
     autoUpdateTimer = Timer.periodic(updateInterval, (timer) {
-      if (!isWalkingStarted.value) {
+      if (!isEarnedWhenStarted.value) {
         timer.cancel();
         return;
       }
@@ -73,7 +77,7 @@ class StartController extends StatexController {
       earnedCoinsStart.value = response.earnedCoins;
 
       // запускаем таймер для отправки запросов каждые 3 секунды
-      isWalkingStarted.value = true;
+      isEarnedWhenStarted.value = true;
       _startAutoUpdate();
     }
   }
@@ -87,7 +91,7 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isWalkingStarted.value = false;
+    isEarnedWhenStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
@@ -101,7 +105,7 @@ class StartController extends StatexController {
       debugPrint(
           'Walking update: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолько потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
 
-      isWalkingUpdated.value = true;
+      isEarnedWhenUpdated.value = true;
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsUpdate.value = response.earnedCoins;
@@ -117,7 +121,7 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isWalkingStarted.value = false;
+    isEarnedWhenStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
@@ -133,10 +137,23 @@ class StartController extends StatexController {
           'Walking finished: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
 
       // устанавливаю состояние завершения прогулки
-      isWalkingFinished.value = true;
+      isEarnedWhenFinished.value = true;
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsFinish.value = response.earnedCoins;
+    }
+  }
+
+  // метод для показа сколько заработано
+  String getCoinsText(StartController controller) {
+    if (controller.isEarnedWhenStarted.value) {
+      return '${controller.earnedCoinsStart}';
+    } else if (controller.isEarnedWhenFinished.value) {
+      return '${controller.earnedCoinsFinish}';
+    } else if (controller.isEarnedWhenUpdated.value) {
+      return '${controller.earnedCoinsUpdate}';
+    } else {
+      return 'waiting..';
     }
   }
 
