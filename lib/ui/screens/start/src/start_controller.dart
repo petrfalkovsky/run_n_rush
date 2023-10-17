@@ -41,6 +41,11 @@ class StartController extends StatexController {
   Rxn stepsUpdate = Rxn();
   Rxn stepsFinish = Rxn();
 
+  //  километры
+  Rxn kmStart = Rxn();
+  Rxn kmUpdate = Rxn();
+  Rxn kmFinish = Rxn();
+
   double distanceCalc = 0.0; // дистанция
   int stepsCountCalc = 0; // количество шагов
 
@@ -91,6 +96,8 @@ class StartController extends StatexController {
       earnedCoinsStart.value = response.earnedCoins;
       // сохраняю шаги для передачи на экран
       stepsStart.value = response.stepsCount;
+      // сохраняю km для передачи на экран
+      kmStart.value = response.distance;
       // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyStart.value = parsedValue * 10;
@@ -129,6 +136,8 @@ class StartController extends StatexController {
       earnedCoinsUpdate.value = response.earnedCoins;
       // сохраняю шаги для передачи на экран
       stepsUpdate.value = response.stepsCount;
+      // сохраняю km для передачи на экран
+      kmUpdate.value = response.distance;
       // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyUpdate.value = parsedValue * 10;
@@ -166,9 +175,24 @@ class StartController extends StatexController {
       earnedCoinsFinish.value = response.earnedCoins;
       // сохраняю шаги для передачи на экран
       stepsFinish.value = response.stepsCount;
+      // сохраняю km для передачи на экран
+      kmFinish.value = response.distance;
       // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyFinish.value = parsedValue * 10;
+    }
+  }
+
+  // метод для показа сколько km
+  String getKMText(StartController controller) {
+    if (controller.isStarted.value) {
+      return '${controller.kmStart}';
+    } else if (controller.isFinished.value) {
+      return '${controller.kmFinish}';
+    } else if (controller.isUpdated.value) {
+      return '${controller.kmUpdate}';
+    } else {
+      return '0';
     }
   }
 

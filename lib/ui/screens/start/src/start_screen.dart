@@ -97,14 +97,14 @@ class Start extends StatexWidget<StartController> {
                       Column(
                         children: [
                           Text(
-                            'amount_four_example'.tr(),
+                            controller.getKMText(controller),
                             style: AppStyles.largeTitle
                                 .andColor(AppColors.accent)
                                 .andWeight(FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
                           Text(
-                            'kilometers'.tr(),
+                            'meters'.tr(),
                             style: AppStyles.body
                                 .andColor(AppColors.text.secondary)
                                 .andWeight(FontWeight.bold),
