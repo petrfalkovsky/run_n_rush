@@ -118,7 +118,7 @@ class Start extends StatexWidget<StartController> {
                           Padding(
                             padding: const EdgeInsets.only(top: 16),
                             child: Text(
-                              'amount_thirty_two_example'.tr(),
+                              controller.getStepsText(controller),
                               style: AppStyles.body
                                   .andColor(AppColors.accent)
                                   .andWeight(FontWeight.bold),

@@ -36,6 +36,11 @@ class StartController extends StatexController {
   Rxn energyUpdate = Rxn();
   Rxn energyFinish = Rxn();
 
+  //  шаги
+  Rxn stepsStart = Rxn();
+  Rxn stepsUpdate = Rxn();
+  Rxn stepsFinish = Rxn();
+
   double distanceCalc = 0.0; // дистанция
   int stepsCountCalc = 0; // количество шагов
 
@@ -84,6 +89,9 @@ class StartController extends StatexController {
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsStart.value = response.earnedCoins;
+      // сохраняю шаги для передачи на экран
+      stepsStart.value = response.stepsCount;
+      // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyStart.value = parsedValue * 10;
 
@@ -105,7 +113,7 @@ class StartController extends StatexController {
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
-      'steps_count': 3,
+      'steps_count': 4,
       'distance': 2,
     };
 
@@ -119,6 +127,9 @@ class StartController extends StatexController {
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsUpdate.value = response.earnedCoins;
+      // сохраняю шаги для передачи на экран
+      stepsUpdate.value = response.stepsCount;
+      // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyUpdate.value = parsedValue * 10;
     }
@@ -153,9 +164,24 @@ class StartController extends StatexController {
 
       // сохраняю заработанные монеты для передачи на экран
       earnedCoinsFinish.value = response.earnedCoins;
-
+      // сохраняю шаги для передачи на экран
+      stepsFinish.value = response.stepsCount;
+      // сохраняю остаток энергии для передачи на экран
       double parsedValue = double.tryParse(response.energy!) ?? 0.0;
       energyFinish.value = parsedValue * 10;
+    }
+  }
+
+  // метод для показа сколько шагов
+  String getStepsText(StartController controller) {
+    if (controller.isStarted.value) {
+      return '${controller.stepsStart}';
+    } else if (controller.isFinished.value) {
+      return '${controller.stepsFinish}';
+    } else if (controller.isUpdated.value) {
+      return '${controller.stepsUpdate}';
+    } else {
+      return '0';
     }
   }
 
