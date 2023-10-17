@@ -185,12 +185,40 @@ class Start extends StatexWidget<StartController> {
                           .andWeight(FontWeight.bold),
                     ),
                     2.w,
-                    Text(
-                      // '${controller.earnedCoins}',
-                      'amount_coins_example_two'.tr(),
-                      style: AppStyles.title
-                          .andColor(AppColors.accent)
-                          .andWeight(FontWeight.bold),
+                    Obx(
+                      () {
+                        // в зависимости от текущего состояния прогулки,
+                        // отображаем соответствующую переменную с заработанными монетами
+                        if (controller.isWalkingStarted.value) {
+                          return Text(
+                            '${controller.earnedCoinsStart}',
+                            style: AppStyles.title
+                                .andColor(AppColors.accent)
+                                .andWeight(FontWeight.bold),
+                          );
+                        } else if (controller.isWalkingFinished.value) {
+                          return Text(
+                            '${controller.earnedCoinsFinish}',
+                            style: AppStyles.title
+                                .andColor(AppColors.accent)
+                                .andWeight(FontWeight.bold),
+                          );
+                        } else if (controller.isWalkingUpdated.value) {
+                          return Text(
+                            '${controller.earnedCoinsUpdate}',
+                            style: AppStyles.title
+                                .andColor(AppColors.accent)
+                                .andWeight(FontWeight.bold),
+                          );
+                        } else {
+                          return Text(
+                            'waiting',
+                            style: AppStyles.title
+                                .andColor(AppColors.accent)
+                                .andWeight(FontWeight.bold),
+                          );
+                        }
+                      },
                     ),
                   ],
                 ),

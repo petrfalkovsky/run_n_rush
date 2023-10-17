@@ -16,13 +16,17 @@ class StartController extends StatexController {
   final ApiService _apiService = ApiService(Dio());
   RxBool isPlaying = false.obs;
   // реактивные переменные для передачи данных на экран
-
-  final RxString earnedCoins = ''.obs;
+  Rxn earnedCoinsStart = Rxn();
+  Rxn earnedCoinsUpdate = Rxn();
+  Rxn earnedCoinsFinish = Rxn();
 
   // переменная для хранения ID прогулки
   String? walkingId;
   // для отслеживания начала прогулки, чтобы включать/отклбчать запросы на апдейт
-  bool isWalkingStarted = false;
+  RxBool isWalkingStarted = false.obs;
+  RxBool isWalkingFinished = false.obs;
+  RxBool isWalkingUpdated = false.obs;
+
   double distanceCalc = 0.0; // Дистанция
   int stepsCountCalc = 0; // Количество шагов
 
@@ -37,7 +41,7 @@ class StartController extends StatexController {
     const updateInterval = Duration(seconds: 3);
 
     autoUpdateTimer = Timer.periodic(updateInterval, (timer) {
-      if (!isWalkingStarted) {
+      if (!isWalkingStarted.value) {
         timer.cancel();
         return;
       }
@@ -52,6 +56,28 @@ class StartController extends StatexController {
     });
   }
 
+  // метод для начала прогулки
+  Future<void> walkingStart() async {
+    final response =
+        await getDataAndHandleError(() => _apiService.walkingStart());
+
+    if (response != null) {
+      debugPrint('Walking started: ${response.started}');
+      debugPrint('Walking started: ${response.id}');
+      debugPrint(
+          'Walking started: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
+
+      // сохраняю ID прогулки для принта
+      walkingId = response.id;
+      // сохраняю заработанные монеты для передачи на экран
+      earnedCoinsStart.value = response.earnedCoins;
+
+      // запускаем таймер для отправки запросов каждые 3 секунды
+      isWalkingStarted.value = true;
+      _startAutoUpdate();
+    }
+  }
+
   // метод для остановки прогулки
   Future<void> walkingUpdate() async {
     // использую сохраненный ID прогулки
@@ -61,20 +87,24 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isWalkingStarted = false;
+    isWalkingStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
-      'steps_count': 2,
-      'distance': 1,
+      'steps_count': 3,
+      'distance': 2,
     };
 
     final response = await getDataAndHandleError(
         () => _apiService.walkingUpdate(requestBody));
     if (response != null) {
-      debugPrint('Walking finished: ${response.finished}');
       debugPrint(
           'Walking update: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолько потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
+
+      isWalkingUpdated.value = true;
+
+      // сохраняю заработанные монеты для передачи на экран
+      earnedCoinsUpdate.value = response.earnedCoins;
     }
   }
 
@@ -87,7 +117,7 @@ class StartController extends StatexController {
     }
 
     // останавливаем таймер, если запущен
-    isWalkingStarted = false;
+    isWalkingStarted.value = false;
 
     final Map<String, dynamic> requestBody = {
       'id': walkingId,
@@ -101,26 +131,12 @@ class StartController extends StatexController {
       debugPrint('Walking finished: ${response.finished}');
       debugPrint(
           'Walking finished: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
-    }
-  }
 
-  // метод для начала прогулки
-  Future<void> walkingStart() async {
-    final response =
-        await getDataAndHandleError(() => _apiService.walkingStart());
+      // устанавливаю состояние завершения прогулки
+      isWalkingFinished.value = true;
 
-    if (response != null) {
-      debugPrint('Walking started: ${response.started}');
-      debugPrint('Walking started: ${response.id}');
-      debugPrint(
-          'Walking started: \nЗаработано ${response.earnedCoins}\n с такой дистанцей: ${response.distance} и таким кол-вом шагов ${response.stepsCount} \nстолко потрачено энергии ${response.spendEnergy} и столько энергии осталось ${response.energy}');
-
-      // сохраняю ID прогулки
-      walkingId = response.id;
-
-      // запускаем таймер для отправки запросов каждые 3 секунды
-      isWalkingStarted = true;
-      _startAutoUpdate();
+      // сохраняю заработанные монеты для передачи на экран
+      earnedCoinsFinish.value = response.earnedCoins;
     }
   }
 

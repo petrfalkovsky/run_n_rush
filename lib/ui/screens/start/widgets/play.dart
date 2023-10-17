@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:run_n_rush/ui/screens/start/src/start_controller.dart';
-import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class PlayPauseWidget extends StatelessWidget {
   const PlayPauseWidget({Key? key}) : super(key: key);
