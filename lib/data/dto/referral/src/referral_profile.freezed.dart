@@ -33,7 +33,7 @@ mixin _$ReferralProfileDto {
   @JsonKey(name: 'balance_currency')
   String? get balanceCurrency => throw _privateConstructorUsedError;
   @JsonKey(name: 'referrals_count')
-  double? get referralsCount => throw _privateConstructorUsedError;
+  int? get referralsCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'commission')
   String? get commission => throw _privateConstructorUsedError;
 
@@ -56,7 +56,7 @@ abstract class $ReferralProfileDtoCopyWith<$Res> {
       @JsonKey(name: 'referrer_id') String? referrerID,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'balance_currency') String? balanceCurrency,
-      @JsonKey(name: 'referrals_count') double? referralsCount,
+      @JsonKey(name: 'referrals_count') int? referralsCount,
       @JsonKey(name: 'commission') String? commission});
 }
 
@@ -110,7 +110,7 @@ class _$ReferralProfileDtoCopyWithImpl<$Res, $Val extends ReferralProfileDto>
       referralsCount: freezed == referralsCount
           ? _value.referralsCount
           : referralsCount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       commission: freezed == commission
           ? _value.commission
           : commission // ignore: cast_nullable_to_non_nullable
@@ -134,7 +134,7 @@ abstract class _$$_ReferralProfileDtoCopyWith<$Res>
       @JsonKey(name: 'referrer_id') String? referrerID,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'balance_currency') String? balanceCurrency,
-      @JsonKey(name: 'referrals_count') double? referralsCount,
+      @JsonKey(name: 'referrals_count') int? referralsCount,
       @JsonKey(name: 'commission') String? commission});
 }
 
@@ -186,7 +186,7 @@ class __$$_ReferralProfileDtoCopyWithImpl<$Res>
       referralsCount: freezed == referralsCount
           ? _value.referralsCount
           : referralsCount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       commission: freezed == commission
           ? _value.commission
           : commission // ignore: cast_nullable_to_non_nullable
@@ -231,7 +231,7 @@ class _$_ReferralProfileDto implements _ReferralProfileDto {
   final String? balanceCurrency;
   @override
   @JsonKey(name: 'referrals_count')
-  final double? referralsCount;
+  final int? referralsCount;
   @override
   @JsonKey(name: 'commission')
   final String? commission;
@@ -289,7 +289,7 @@ abstract class _ReferralProfileDto implements ReferralProfileDto {
       @JsonKey(name: 'referrer_id') required final String? referrerID,
       @JsonKey(name: 'balance') required final String? balance,
       @JsonKey(name: 'balance_currency') required final String? balanceCurrency,
-      @JsonKey(name: 'referrals_count') required final double? referralsCount,
+      @JsonKey(name: 'referrals_count') required final int? referralsCount,
       @JsonKey(name: 'commission')
       required final String? commission}) = _$_ReferralProfileDto;
 
@@ -316,7 +316,7 @@ abstract class _ReferralProfileDto implements ReferralProfileDto {
   String? get balanceCurrency;
   @override
   @JsonKey(name: 'referrals_count')
-  double? get referralsCount;
+  int? get referralsCount;
   @override
   @JsonKey(name: 'commission')
   String? get commission;

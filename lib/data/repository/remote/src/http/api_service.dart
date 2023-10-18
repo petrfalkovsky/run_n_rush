@@ -78,11 +78,11 @@ abstract class ApiService {
 
   /// referral program
 
-  @GET('/api/referral/rewards')
-  Future<List<ReferralRewardsDto>> referallRewards();
-
   @GET('/api/referral/profile')
   Future<ReferralProfileDto> getReferralProfile();
+
+  @GET('/api/referral/rewards')
+  Future<List<ReferralRewardsDto>> referallRewards();
 
   /// account
 

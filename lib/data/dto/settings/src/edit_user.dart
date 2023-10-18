@@ -11,6 +11,7 @@ class EditUserDto with _$EditUserDto {
     @JsonKey(name: 'first_name') required String? firstName,
     @JsonKey(name: 'last_name') required String? lastName,
     @JsonKey(name: 'email') required String? email,
+    @JsonKey(name: 'updated_user_id') required String? updatedUserID,
   }) = _EditUserDto;
 
   factory EditUserDto.fromJson(Map<String, dynamic> json) =>

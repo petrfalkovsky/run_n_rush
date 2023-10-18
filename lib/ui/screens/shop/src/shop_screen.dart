@@ -58,7 +58,6 @@ class FiltersWidgets extends StatelessWidget {
             child: Row(
               children: [
                 /// фильтр
-
                 ShopPriceFilter(
                   controller: shopController,
                 ),
@@ -84,31 +83,6 @@ class FiltersWidgets extends StatelessWidget {
     );
   }
 }
-
-// class ShopTabBar extends StatelessWidget {
-//   const ShopTabBar({
-//     super.key,
-//     required this.shopController,
-//   });
-
-//   final ShopController shopController;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Expanded(
-//       child: Obx(
-//         () => Stack(
-//           children: [
-//             ProductListWidget(
-//               shopController: shopController,
-//               sneakerList: shopController.sneakerList.toList(),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class ShopTabBar extends StatelessWidget {
   const ShopTabBar({
@@ -287,13 +261,14 @@ class BottomSheetChildWidget extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
-      child: Column(
+      child: ListView(
         children: [
           Text(
             'great_choice'.tr(),
             style: AppStyles.body
                 .andWeight(FontWeight.w600)
                 .andColor(AppColors.text.primary),
+            textAlign: TextAlign.center,
           ),
           26.h,
           ClipRRect(
@@ -320,6 +295,7 @@ class BottomSheetChildWidget extends StatelessWidget {
             style: AppStyles.body
                 .andWeight(FontWeight.w600)
                 .andColor(AppColors.text.primary),
+            textAlign: TextAlign.center,
           ),
           12.h,
           Row(

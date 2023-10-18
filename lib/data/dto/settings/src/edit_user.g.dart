@@ -11,6 +11,7 @@ _$_EditUserDto _$$_EditUserDtoFromJson(Map<String, dynamic> json) =>
       firstName: json['first_name'] as String?,
       lastName: json['last_name'] as String?,
       email: json['email'] as String?,
+      updatedUserID: json['updated_user_id'] as String?,
     );
 
 Map<String, dynamic> _$$_EditUserDtoToJson(_$_EditUserDto instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_EditUserDtoToJson(_$_EditUserDto instance) =>
       'first_name': instance.firstName,
       'last_name': instance.lastName,
       'email': instance.email,
+      'updated_user_id': instance.updatedUserID,
     };
