@@ -46,14 +46,14 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<UserDataToken> loginOrSignup(Map<String, dynamic> data) async {
+  Future<UserDataTokenDto> loginOrSignup(Map<String, dynamic> data) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UserDataToken>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<UserDataTokenDto>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -69,7 +69,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = UserDataToken.fromJson(_result.data!);
+    final value = UserDataTokenDto.fromJson(_result.data!);
     return value;
   }
 
@@ -124,7 +124,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<SneakerInventory>> getSneakerInventories(
+  Future<List<SneakerInventoryDto>> getSneakerInventories(
     String dressStatus,
     String earnedAmountOrdering,
     int offset,
@@ -138,7 +138,7 @@ class _ApiService implements ApiService {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<SneakerInventory>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<SneakerInventoryDto>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -155,8 +155,8 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map(
-            (dynamic i) => SneakerInventory.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) =>
+            SneakerInventoryDto.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
@@ -237,7 +237,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<SneakerShop>> getSneakerShop(
+  Future<List<SneakerShopDto>> getSneakerShop(
     String priceOrdering,
     int offset,
   ) async {
@@ -249,7 +249,7 @@ class _ApiService implements ApiService {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<SneakerShop>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<SneakerShopDto>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -266,19 +266,19 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => SneakerShop.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => SneakerShopDto.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<WalkingData> getWalkingData() async {
+  Future<WalkingDataDto> getWalkingData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<WalkingData>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<WalkingDataDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -294,7 +294,90 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = WalkingData.fromJson(_result.data!);
+    final value = WalkingDataDto.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<WalkingStartDto> walkingStart() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<WalkingStartDto>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/sneaker/walking/start',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = WalkingStartDto.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<WalkingUpdateDto> walkingUpdate(Map<String, dynamic> data) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(data);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<WalkingUpdateDto>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/sneaker/walking/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = WalkingUpdateDto.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<WalkingFinishDto> walkingFinish(Map<String, dynamic> data) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(data);
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<WalkingFinishDto>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/sneaker/walking/finish',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = WalkingFinishDto.fromJson(_result.data!);
     return value;
   }
 

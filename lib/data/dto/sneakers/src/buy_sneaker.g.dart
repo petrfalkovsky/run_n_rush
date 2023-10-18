@@ -6,21 +6,21 @@ part of 'buy_sneaker.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SneakerPostRequest _$$_SneakerPostRequestFromJson(
+_$_SneakerDtoPostRequest _$$_SneakerDtoPostRequestFromJson(
         Map<String, dynamic> json) =>
-    _$_SneakerPostRequest(
+    _$_SneakerDtoPostRequest(
       id: json['id'] as String?,
     );
 
-Map<String, dynamic> _$$_SneakerPostRequestToJson(
-        _$_SneakerPostRequest instance) =>
+Map<String, dynamic> _$$_SneakerDtoPostRequestToJson(
+        _$_SneakerDtoPostRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
 
-_$_SneakerPostResponse _$$_SneakerPostResponseFromJson(
+_$_SneakerDtoPostResponse _$$_SneakerDtoPostResponseFromJson(
         Map<String, dynamic> json) =>
-    _$_SneakerPostResponse(
+    _$_SneakerDtoPostResponse(
       id: json['id'] as String?,
       createdAt: json['created_at'] as String?,
       updatedAt: json['updated_at'] as String?,
@@ -33,8 +33,8 @@ _$_SneakerPostResponse _$$_SneakerPostResponseFromJson(
       isDressed: json['is_dressed'] as bool?,
     );
 
-Map<String, dynamic> _$$_SneakerPostResponseToJson(
-        _$_SneakerPostResponse instance) =>
+Map<String, dynamic> _$$_SneakerDtoPostResponseToJson(
+        _$_SneakerDtoPostResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt,

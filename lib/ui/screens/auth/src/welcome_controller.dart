@@ -75,7 +75,7 @@ class WelcomeController extends StatexController {
       // debugPrint(
       //     'что получил после входа: $userId, $userFirstName, $userLastName, $userEmail, $userAvatarUrl');
 
-      // debugPrint('аксесс и рефреш: $access, $refresh');
+      debugPrint('аксесс и рефреш: $access, $refresh');
 
       // устанавливаю значение - авторизован
       final authStatusBox = await Hive.openBox<AuthStatus>('authStatusBox');

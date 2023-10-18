@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-WalkingUser _$WalkingUserFromJson(Map<String, dynamic> json) {
-  return _WalkingUser.fromJson(json);
+WalkingUserDto _$WalkingUserDtoFromJson(Map<String, dynamic> json) {
+  return _WalkingUserDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$WalkingUser {
+mixin _$WalkingUserDto {
   @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'avatar_url')
@@ -33,15 +33,15 @@ mixin _$WalkingUser {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WalkingUserCopyWith<WalkingUser> get copyWith =>
+  $WalkingUserDtoCopyWith<WalkingUserDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WalkingUserCopyWith<$Res> {
-  factory $WalkingUserCopyWith(
-          WalkingUser value, $Res Function(WalkingUser) then) =
-      _$WalkingUserCopyWithImpl<$Res, WalkingUser>;
+abstract class $WalkingUserDtoCopyWith<$Res> {
+  factory $WalkingUserDtoCopyWith(
+          WalkingUserDto value, $Res Function(WalkingUserDto) then) =
+      _$WalkingUserDtoCopyWithImpl<$Res, WalkingUserDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') String? id,
@@ -52,9 +52,9 @@ abstract class $WalkingUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WalkingUserCopyWithImpl<$Res, $Val extends WalkingUser>
-    implements $WalkingUserCopyWith<$Res> {
-  _$WalkingUserCopyWithImpl(this._value, this._then);
+class _$WalkingUserDtoCopyWithImpl<$Res, $Val extends WalkingUserDto>
+    implements $WalkingUserDtoCopyWith<$Res> {
+  _$WalkingUserDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,11 +96,11 @@ class _$WalkingUserCopyWithImpl<$Res, $Val extends WalkingUser>
 }
 
 /// @nodoc
-abstract class _$$_WalkingUserCopyWith<$Res>
-    implements $WalkingUserCopyWith<$Res> {
-  factory _$$_WalkingUserCopyWith(
-          _$_WalkingUser value, $Res Function(_$_WalkingUser) then) =
-      __$$_WalkingUserCopyWithImpl<$Res>;
+abstract class _$$_WalkingUserDtoCopyWith<$Res>
+    implements $WalkingUserDtoCopyWith<$Res> {
+  factory _$$_WalkingUserDtoCopyWith(
+          _$_WalkingUserDto value, $Res Function(_$_WalkingUserDto) then) =
+      __$$_WalkingUserDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_WalkingUserCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WalkingUserCopyWithImpl<$Res>
-    extends _$WalkingUserCopyWithImpl<$Res, _$_WalkingUser>
-    implements _$$_WalkingUserCopyWith<$Res> {
-  __$$_WalkingUserCopyWithImpl(
-      _$_WalkingUser _value, $Res Function(_$_WalkingUser) _then)
+class __$$_WalkingUserDtoCopyWithImpl<$Res>
+    extends _$WalkingUserDtoCopyWithImpl<$Res, _$_WalkingUserDto>
+    implements _$$_WalkingUserDtoCopyWith<$Res> {
+  __$$_WalkingUserDtoCopyWithImpl(
+      _$_WalkingUserDto _value, $Res Function(_$_WalkingUserDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_WalkingUserCopyWithImpl<$Res>
     Object? lastName = freezed,
     Object? email = freezed,
   }) {
-    return _then(_$_WalkingUser(
+    return _then(_$_WalkingUserDto(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -155,16 +155,16 @@ class __$$_WalkingUserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WalkingUser implements _WalkingUser {
-  _$_WalkingUser(
+class _$_WalkingUserDto implements _WalkingUserDto {
+  _$_WalkingUserDto(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'avatar_url') required this.avatarUrl,
       @JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName,
       @JsonKey(name: 'email') required this.email});
 
-  factory _$_WalkingUser.fromJson(Map<String, dynamic> json) =>
-      _$$_WalkingUserFromJson(json);
+  factory _$_WalkingUserDto.fromJson(Map<String, dynamic> json) =>
+      _$$_WalkingUserDtoFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -184,14 +184,14 @@ class _$_WalkingUser implements _WalkingUser {
 
   @override
   String toString() {
-    return 'WalkingUser(id: $id, avatarUrl: $avatarUrl, firstName: $firstName, lastName: $lastName, email: $email)';
+    return 'WalkingUserDto(id: $id, avatarUrl: $avatarUrl, firstName: $firstName, lastName: $lastName, email: $email)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WalkingUser &&
+            other is _$_WalkingUserDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
@@ -210,27 +210,28 @@ class _$_WalkingUser implements _WalkingUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WalkingUserCopyWith<_$_WalkingUser> get copyWith =>
-      __$$_WalkingUserCopyWithImpl<_$_WalkingUser>(this, _$identity);
+  _$$_WalkingUserDtoCopyWith<_$_WalkingUserDto> get copyWith =>
+      __$$_WalkingUserDtoCopyWithImpl<_$_WalkingUserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalkingUserToJson(
+    return _$$_WalkingUserDtoToJson(
       this,
     );
   }
 }
 
-abstract class _WalkingUser implements WalkingUser {
-  factory _WalkingUser(
-      {@JsonKey(name: 'id') required final String? id,
-      @JsonKey(name: 'avatar_url') required final String? avatarUrl,
-      @JsonKey(name: 'first_name') required final String? firstName,
-      @JsonKey(name: 'last_name') required final String? lastName,
-      @JsonKey(name: 'email') required final String? email}) = _$_WalkingUser;
+abstract class _WalkingUserDto implements WalkingUserDto {
+  factory _WalkingUserDto(
+          {@JsonKey(name: 'id') required final String? id,
+          @JsonKey(name: 'avatar_url') required final String? avatarUrl,
+          @JsonKey(name: 'first_name') required final String? firstName,
+          @JsonKey(name: 'last_name') required final String? lastName,
+          @JsonKey(name: 'email') required final String? email}) =
+      _$_WalkingUserDto;
 
-  factory _WalkingUser.fromJson(Map<String, dynamic> json) =
-      _$_WalkingUser.fromJson;
+  factory _WalkingUserDto.fromJson(Map<String, dynamic> json) =
+      _$_WalkingUserDto.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -249,16 +250,16 @@ abstract class _WalkingUser implements WalkingUser {
   String? get email;
   @override
   @JsonKey(ignore: true)
-  _$$_WalkingUserCopyWith<_$_WalkingUser> get copyWith =>
+  _$$_WalkingUserDtoCopyWith<_$_WalkingUserDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-WalkingSneaker _$WalkingSneakerFromJson(Map<String, dynamic> json) {
-  return _WalkingSneaker.fromJson(json);
+WalkingSneakerDto _$WalkingSneakerDtoFromJson(Map<String, dynamic> json) {
+  return _WalkingSneakerDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$WalkingSneaker {
+mixin _$WalkingSneakerDto {
   @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'title')
@@ -268,15 +269,15 @@ mixin _$WalkingSneaker {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WalkingSneakerCopyWith<WalkingSneaker> get copyWith =>
+  $WalkingSneakerDtoCopyWith<WalkingSneakerDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WalkingSneakerCopyWith<$Res> {
-  factory $WalkingSneakerCopyWith(
-          WalkingSneaker value, $Res Function(WalkingSneaker) then) =
-      _$WalkingSneakerCopyWithImpl<$Res, WalkingSneaker>;
+abstract class $WalkingSneakerDtoCopyWith<$Res> {
+  factory $WalkingSneakerDtoCopyWith(
+          WalkingSneakerDto value, $Res Function(WalkingSneakerDto) then) =
+      _$WalkingSneakerDtoCopyWithImpl<$Res, WalkingSneakerDto>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') String? id,
@@ -285,9 +286,9 @@ abstract class $WalkingSneakerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WalkingSneakerCopyWithImpl<$Res, $Val extends WalkingSneaker>
-    implements $WalkingSneakerCopyWith<$Res> {
-  _$WalkingSneakerCopyWithImpl(this._value, this._then);
+class _$WalkingSneakerDtoCopyWithImpl<$Res, $Val extends WalkingSneakerDto>
+    implements $WalkingSneakerDtoCopyWith<$Res> {
+  _$WalkingSneakerDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -319,11 +320,11 @@ class _$WalkingSneakerCopyWithImpl<$Res, $Val extends WalkingSneaker>
 }
 
 /// @nodoc
-abstract class _$$_WalkingSneakerCopyWith<$Res>
-    implements $WalkingSneakerCopyWith<$Res> {
-  factory _$$_WalkingSneakerCopyWith(
-          _$_WalkingSneaker value, $Res Function(_$_WalkingSneaker) then) =
-      __$$_WalkingSneakerCopyWithImpl<$Res>;
+abstract class _$$_WalkingSneakerDtoCopyWith<$Res>
+    implements $WalkingSneakerDtoCopyWith<$Res> {
+  factory _$$_WalkingSneakerDtoCopyWith(_$_WalkingSneakerDto value,
+          $Res Function(_$_WalkingSneakerDto) then) =
+      __$$_WalkingSneakerDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -333,11 +334,11 @@ abstract class _$$_WalkingSneakerCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WalkingSneakerCopyWithImpl<$Res>
-    extends _$WalkingSneakerCopyWithImpl<$Res, _$_WalkingSneaker>
-    implements _$$_WalkingSneakerCopyWith<$Res> {
-  __$$_WalkingSneakerCopyWithImpl(
-      _$_WalkingSneaker _value, $Res Function(_$_WalkingSneaker) _then)
+class __$$_WalkingSneakerDtoCopyWithImpl<$Res>
+    extends _$WalkingSneakerDtoCopyWithImpl<$Res, _$_WalkingSneakerDto>
+    implements _$$_WalkingSneakerDtoCopyWith<$Res> {
+  __$$_WalkingSneakerDtoCopyWithImpl(
+      _$_WalkingSneakerDto _value, $Res Function(_$_WalkingSneakerDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -347,7 +348,7 @@ class __$$_WalkingSneakerCopyWithImpl<$Res>
     Object? title = freezed,
     Object? imageUrl = freezed,
   }) {
-    return _then(_$_WalkingSneaker(
+    return _then(_$_WalkingSneakerDto(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -366,14 +367,14 @@ class __$$_WalkingSneakerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WalkingSneaker implements _WalkingSneaker {
-  _$_WalkingSneaker(
+class _$_WalkingSneakerDto implements _WalkingSneakerDto {
+  _$_WalkingSneakerDto(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'title') required this.title,
       @JsonKey(name: 'image_url') required this.imageUrl});
 
-  factory _$_WalkingSneaker.fromJson(Map<String, dynamic> json) =>
-      _$$_WalkingSneakerFromJson(json);
+  factory _$_WalkingSneakerDto.fromJson(Map<String, dynamic> json) =>
+      _$$_WalkingSneakerDtoFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -387,14 +388,14 @@ class _$_WalkingSneaker implements _WalkingSneaker {
 
   @override
   String toString() {
-    return 'WalkingSneaker(id: $id, title: $title, imageUrl: $imageUrl)';
+    return 'WalkingSneakerDto(id: $id, title: $title, imageUrl: $imageUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WalkingSneaker &&
+            other is _$_WalkingSneakerDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.imageUrl, imageUrl) ||
@@ -408,26 +409,27 @@ class _$_WalkingSneaker implements _WalkingSneaker {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WalkingSneakerCopyWith<_$_WalkingSneaker> get copyWith =>
-      __$$_WalkingSneakerCopyWithImpl<_$_WalkingSneaker>(this, _$identity);
+  _$$_WalkingSneakerDtoCopyWith<_$_WalkingSneakerDto> get copyWith =>
+      __$$_WalkingSneakerDtoCopyWithImpl<_$_WalkingSneakerDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalkingSneakerToJson(
+    return _$$_WalkingSneakerDtoToJson(
       this,
     );
   }
 }
 
-abstract class _WalkingSneaker implements WalkingSneaker {
-  factory _WalkingSneaker(
+abstract class _WalkingSneakerDto implements WalkingSneakerDto {
+  factory _WalkingSneakerDto(
           {@JsonKey(name: 'id') required final String? id,
           @JsonKey(name: 'title') required final String? title,
           @JsonKey(name: 'image_url') required final String? imageUrl}) =
-      _$_WalkingSneaker;
+      _$_WalkingSneakerDto;
 
-  factory _WalkingSneaker.fromJson(Map<String, dynamic> json) =
-      _$_WalkingSneaker.fromJson;
+  factory _WalkingSneakerDto.fromJson(Map<String, dynamic> json) =
+      _$_WalkingSneakerDto.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -440,20 +442,20 @@ abstract class _WalkingSneaker implements WalkingSneaker {
   String? get imageUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_WalkingSneakerCopyWith<_$_WalkingSneaker> get copyWith =>
+  _$$_WalkingSneakerDtoCopyWith<_$_WalkingSneakerDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-WalkingData _$WalkingDataFromJson(Map<String, dynamic> json) {
-  return _WalkingData.fromJson(json);
+WalkingDataDto _$WalkingDataDtoFromJson(Map<String, dynamic> json) {
+  return _WalkingDataDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$WalkingData {
+mixin _$WalkingDataDto {
   @JsonKey(name: 'user')
-  WalkingUser get user => throw _privateConstructorUsedError;
+  WalkingUserDto get user => throw _privateConstructorUsedError;
   @JsonKey(name: 'sneakers')
-  List<WalkingSneaker> get sneakers => throw _privateConstructorUsedError;
+  List<WalkingSneakerDto> get sneakers => throw _privateConstructorUsedError;
   @JsonKey(name: 'balance')
   String? get balance => throw _privateConstructorUsedError;
   @JsonKey(name: 'energy')
@@ -467,32 +469,32 @@ mixin _$WalkingData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WalkingDataCopyWith<WalkingData> get copyWith =>
+  $WalkingDataDtoCopyWith<WalkingDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WalkingDataCopyWith<$Res> {
-  factory $WalkingDataCopyWith(
-          WalkingData value, $Res Function(WalkingData) then) =
-      _$WalkingDataCopyWithImpl<$Res, WalkingData>;
+abstract class $WalkingDataDtoCopyWith<$Res> {
+  factory $WalkingDataDtoCopyWith(
+          WalkingDataDto value, $Res Function(WalkingDataDto) then) =
+      _$WalkingDataDtoCopyWithImpl<$Res, WalkingDataDto>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user') WalkingUser user,
-      @JsonKey(name: 'sneakers') List<WalkingSneaker> sneakers,
+      {@JsonKey(name: 'user') WalkingUserDto user,
+      @JsonKey(name: 'sneakers') List<WalkingSneakerDto> sneakers,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'energy') String? energy,
       @JsonKey(name: 'distance') int? distance,
       @JsonKey(name: 'energy_max') String? energyMax,
       @JsonKey(name: 'distance_max') int? distanceMax});
 
-  $WalkingUserCopyWith<$Res> get user;
+  $WalkingUserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$WalkingDataCopyWithImpl<$Res, $Val extends WalkingData>
-    implements $WalkingDataCopyWith<$Res> {
-  _$WalkingDataCopyWithImpl(this._value, this._then);
+class _$WalkingDataDtoCopyWithImpl<$Res, $Val extends WalkingDataDto>
+    implements $WalkingDataDtoCopyWith<$Res> {
+  _$WalkingDataDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -514,11 +516,11 @@ class _$WalkingDataCopyWithImpl<$Res, $Val extends WalkingData>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as WalkingUser,
+              as WalkingUserDto,
       sneakers: null == sneakers
           ? _value.sneakers
           : sneakers // ignore: cast_nullable_to_non_nullable
-              as List<WalkingSneaker>,
+              as List<WalkingSneakerDto>,
       balance: freezed == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
@@ -544,24 +546,24 @@ class _$WalkingDataCopyWithImpl<$Res, $Val extends WalkingData>
 
   @override
   @pragma('vm:prefer-inline')
-  $WalkingUserCopyWith<$Res> get user {
-    return $WalkingUserCopyWith<$Res>(_value.user, (value) {
+  $WalkingUserDtoCopyWith<$Res> get user {
+    return $WalkingUserDtoCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_WalkingDataCopyWith<$Res>
-    implements $WalkingDataCopyWith<$Res> {
-  factory _$$_WalkingDataCopyWith(
-          _$_WalkingData value, $Res Function(_$_WalkingData) then) =
-      __$$_WalkingDataCopyWithImpl<$Res>;
+abstract class _$$_WalkingDataDtoCopyWith<$Res>
+    implements $WalkingDataDtoCopyWith<$Res> {
+  factory _$$_WalkingDataDtoCopyWith(
+          _$_WalkingDataDto value, $Res Function(_$_WalkingDataDto) then) =
+      __$$_WalkingDataDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user') WalkingUser user,
-      @JsonKey(name: 'sneakers') List<WalkingSneaker> sneakers,
+      {@JsonKey(name: 'user') WalkingUserDto user,
+      @JsonKey(name: 'sneakers') List<WalkingSneakerDto> sneakers,
       @JsonKey(name: 'balance') String? balance,
       @JsonKey(name: 'energy') String? energy,
       @JsonKey(name: 'distance') int? distance,
@@ -569,15 +571,15 @@ abstract class _$$_WalkingDataCopyWith<$Res>
       @JsonKey(name: 'distance_max') int? distanceMax});
 
   @override
-  $WalkingUserCopyWith<$Res> get user;
+  $WalkingUserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$_WalkingDataCopyWithImpl<$Res>
-    extends _$WalkingDataCopyWithImpl<$Res, _$_WalkingData>
-    implements _$$_WalkingDataCopyWith<$Res> {
-  __$$_WalkingDataCopyWithImpl(
-      _$_WalkingData _value, $Res Function(_$_WalkingData) _then)
+class __$$_WalkingDataDtoCopyWithImpl<$Res>
+    extends _$WalkingDataDtoCopyWithImpl<$Res, _$_WalkingDataDto>
+    implements _$$_WalkingDataDtoCopyWith<$Res> {
+  __$$_WalkingDataDtoCopyWithImpl(
+      _$_WalkingDataDto _value, $Res Function(_$_WalkingDataDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -591,15 +593,15 @@ class __$$_WalkingDataCopyWithImpl<$Res>
     Object? energyMax = freezed,
     Object? distanceMax = freezed,
   }) {
-    return _then(_$_WalkingData(
+    return _then(_$_WalkingDataDto(
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as WalkingUser,
+              as WalkingUserDto,
       sneakers: null == sneakers
           ? _value._sneakers
           : sneakers // ignore: cast_nullable_to_non_nullable
-              as List<WalkingSneaker>,
+              as List<WalkingSneakerDto>,
       balance: freezed == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
@@ -626,10 +628,11 @@ class __$$_WalkingDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WalkingData implements _WalkingData {
-  _$_WalkingData(
+class _$_WalkingDataDto implements _WalkingDataDto {
+  _$_WalkingDataDto(
       {@JsonKey(name: 'user') required this.user,
-      @JsonKey(name: 'sneakers') required final List<WalkingSneaker> sneakers,
+      @JsonKey(name: 'sneakers')
+      required final List<WalkingSneakerDto> sneakers,
       @JsonKey(name: 'balance') required this.balance,
       @JsonKey(name: 'energy') required this.energy,
       @JsonKey(name: 'distance') required this.distance,
@@ -637,16 +640,16 @@ class _$_WalkingData implements _WalkingData {
       @JsonKey(name: 'distance_max') required this.distanceMax})
       : _sneakers = sneakers;
 
-  factory _$_WalkingData.fromJson(Map<String, dynamic> json) =>
-      _$$_WalkingDataFromJson(json);
+  factory _$_WalkingDataDto.fromJson(Map<String, dynamic> json) =>
+      _$$_WalkingDataDtoFromJson(json);
 
   @override
   @JsonKey(name: 'user')
-  final WalkingUser user;
-  final List<WalkingSneaker> _sneakers;
+  final WalkingUserDto user;
+  final List<WalkingSneakerDto> _sneakers;
   @override
   @JsonKey(name: 'sneakers')
-  List<WalkingSneaker> get sneakers {
+  List<WalkingSneakerDto> get sneakers {
     if (_sneakers is EqualUnmodifiableListView) return _sneakers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_sneakers);
@@ -670,14 +673,14 @@ class _$_WalkingData implements _WalkingData {
 
   @override
   String toString() {
-    return 'WalkingData(user: $user, sneakers: $sneakers, balance: $balance, energy: $energy, distance: $distance, energyMax: $energyMax, distanceMax: $distanceMax)';
+    return 'WalkingDataDto(user: $user, sneakers: $sneakers, balance: $balance, energy: $energy, distance: $distance, energyMax: $energyMax, distanceMax: $distanceMax)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WalkingData &&
+            other is _$_WalkingDataDto &&
             (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other._sneakers, _sneakers) &&
             (identical(other.balance, balance) || other.balance == balance) &&
@@ -705,37 +708,38 @@ class _$_WalkingData implements _WalkingData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WalkingDataCopyWith<_$_WalkingData> get copyWith =>
-      __$$_WalkingDataCopyWithImpl<_$_WalkingData>(this, _$identity);
+  _$$_WalkingDataDtoCopyWith<_$_WalkingDataDto> get copyWith =>
+      __$$_WalkingDataDtoCopyWithImpl<_$_WalkingDataDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalkingDataToJson(
+    return _$$_WalkingDataDtoToJson(
       this,
     );
   }
 }
 
-abstract class _WalkingData implements WalkingData {
-  factory _WalkingData(
-      {@JsonKey(name: 'user') required final WalkingUser user,
-      @JsonKey(name: 'sneakers') required final List<WalkingSneaker> sneakers,
-      @JsonKey(name: 'balance') required final String? balance,
-      @JsonKey(name: 'energy') required final String? energy,
-      @JsonKey(name: 'distance') required final int? distance,
-      @JsonKey(name: 'energy_max') required final String? energyMax,
-      @JsonKey(name: 'distance_max')
-      required final int? distanceMax}) = _$_WalkingData;
+abstract class _WalkingDataDto implements WalkingDataDto {
+  factory _WalkingDataDto(
+          {@JsonKey(name: 'user') required final WalkingUserDto user,
+          @JsonKey(name: 'sneakers')
+          required final List<WalkingSneakerDto> sneakers,
+          @JsonKey(name: 'balance') required final String? balance,
+          @JsonKey(name: 'energy') required final String? energy,
+          @JsonKey(name: 'distance') required final int? distance,
+          @JsonKey(name: 'energy_max') required final String? energyMax,
+          @JsonKey(name: 'distance_max') required final int? distanceMax}) =
+      _$_WalkingDataDto;
 
-  factory _WalkingData.fromJson(Map<String, dynamic> json) =
-      _$_WalkingData.fromJson;
+  factory _WalkingDataDto.fromJson(Map<String, dynamic> json) =
+      _$_WalkingDataDto.fromJson;
 
   @override
   @JsonKey(name: 'user')
-  WalkingUser get user;
+  WalkingUserDto get user;
   @override
   @JsonKey(name: 'sneakers')
-  List<WalkingSneaker> get sneakers;
+  List<WalkingSneakerDto> get sneakers;
   @override
   @JsonKey(name: 'balance')
   String? get balance;
@@ -753,6 +757,6 @@ abstract class _WalkingData implements WalkingData {
   int? get distanceMax;
   @override
   @JsonKey(ignore: true)
-  _$$_WalkingDataCopyWith<_$_WalkingData> get copyWith =>
+  _$$_WalkingDataDtoCopyWith<_$_WalkingDataDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

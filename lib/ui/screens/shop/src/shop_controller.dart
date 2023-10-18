@@ -15,7 +15,7 @@ import 'package:vfx_flutter_common/getx_helpers.dart';
 class ShopController extends StatexController with StreamSubscriberMixin {
   var selectedTabIndex = 0.obs;
   final ApiService _apiService = ApiService(Dio());
-  final RxList<SneakerShop> sneakerList = RxList<SneakerShop>();
+  final RxList<SneakerShopDto> sneakerList = RxList<SneakerShopDto>();
   final RxString selectedPriceFilter = RxString('LOWER');
 
   ShopController() {

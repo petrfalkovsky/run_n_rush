@@ -7,7 +7,7 @@ part 'buy_sneaker.g.dart';
 class SneakerPostRequest with _$SneakerPostRequest {
   factory SneakerPostRequest({
     @JsonKey(name: 'id') required String? id,
-  }) = _SneakerPostRequest;
+  }) = _SneakerDtoPostRequest;
 
   factory SneakerPostRequest.fromJson(Map<String, dynamic> json) =>
       _$SneakerPostRequestFromJson(json);
@@ -26,7 +26,7 @@ class SneakerPostResponse with _$SneakerPostResponse {
     @JsonKey(name: 'earned_amount') required String? earnedAmount,
     @JsonKey(name: 'steps_amount') required int? stepsAmount,
     @JsonKey(name: 'is_dressed') required bool? isDressed,
-  }) = _SneakerPostResponse;
+  }) = _SneakerDtoPostResponse;
 
   factory SneakerPostResponse.fromJson(Map<String, dynamic> json) =>
       _$SneakerPostResponseFromJson(json);
