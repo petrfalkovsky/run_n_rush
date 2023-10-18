@@ -26,6 +26,8 @@ mixin _$EditUserDto {
   String? get lastName => throw _privateConstructorUsedError;
   @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'updated_user_id')
+  String? get updatedUserID => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +44,8 @@ abstract class $EditUserDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'first_name') String? firstName,
       @JsonKey(name: 'last_name') String? lastName,
-      @JsonKey(name: 'email') String? email});
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'updated_user_id') String? updatedUserID});
 }
 
 /// @nodoc
@@ -61,6 +64,7 @@ class _$EditUserDtoCopyWithImpl<$Res, $Val extends EditUserDto>
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? email = freezed,
+    Object? updatedUserID = freezed,
   }) {
     return _then(_value.copyWith(
       firstName: freezed == firstName
@@ -74,6 +78,10 @@ class _$EditUserDtoCopyWithImpl<$Res, $Val extends EditUserDto>
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      updatedUserID: freezed == updatedUserID
+          ? _value.updatedUserID
+          : updatedUserID // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -90,7 +98,8 @@ abstract class _$$_EditUserDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'first_name') String? firstName,
       @JsonKey(name: 'last_name') String? lastName,
-      @JsonKey(name: 'email') String? email});
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'updated_user_id') String? updatedUserID});
 }
 
 /// @nodoc
@@ -107,6 +116,7 @@ class __$$_EditUserDtoCopyWithImpl<$Res>
     Object? firstName = freezed,
     Object? lastName = freezed,
     Object? email = freezed,
+    Object? updatedUserID = freezed,
   }) {
     return _then(_$_EditUserDto(
       firstName: freezed == firstName
@@ -121,6 +131,10 @@ class __$$_EditUserDtoCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
+      updatedUserID: freezed == updatedUserID
+          ? _value.updatedUserID
+          : updatedUserID // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -131,7 +145,8 @@ class _$_EditUserDto implements _EditUserDto {
   const _$_EditUserDto(
       {@JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName,
-      @JsonKey(name: 'email') required this.email});
+      @JsonKey(name: 'email') required this.email,
+      @JsonKey(name: 'updated_user_id') required this.updatedUserID});
 
   factory _$_EditUserDto.fromJson(Map<String, dynamic> json) =>
       _$$_EditUserDtoFromJson(json);
@@ -145,10 +160,13 @@ class _$_EditUserDto implements _EditUserDto {
   @override
   @JsonKey(name: 'email')
   final String? email;
+  @override
+  @JsonKey(name: 'updated_user_id')
+  final String? updatedUserID;
 
   @override
   String toString() {
-    return 'EditUserDto(firstName: $firstName, lastName: $lastName, email: $email)';
+    return 'EditUserDto(firstName: $firstName, lastName: $lastName, email: $email, updatedUserID: $updatedUserID)';
   }
 
   @override
@@ -160,12 +178,15 @@ class _$_EditUserDto implements _EditUserDto {
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.updatedUserID, updatedUserID) ||
+                other.updatedUserID == updatedUserID));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, firstName, lastName, email);
+  int get hashCode =>
+      Object.hash(runtimeType, firstName, lastName, email, updatedUserID);
 
   @JsonKey(ignore: true)
   @override
@@ -185,7 +206,9 @@ abstract class _EditUserDto implements EditUserDto {
   const factory _EditUserDto(
       {@JsonKey(name: 'first_name') required final String? firstName,
       @JsonKey(name: 'last_name') required final String? lastName,
-      @JsonKey(name: 'email') required final String? email}) = _$_EditUserDto;
+      @JsonKey(name: 'email') required final String? email,
+      @JsonKey(name: 'updated_user_id')
+      required final String? updatedUserID}) = _$_EditUserDto;
 
   factory _EditUserDto.fromJson(Map<String, dynamic> json) =
       _$_EditUserDto.fromJson;
@@ -199,6 +222,9 @@ abstract class _EditUserDto implements EditUserDto {
   @override
   @JsonKey(name: 'email')
   String? get email;
+  @override
+  @JsonKey(name: 'updated_user_id')
+  String? get updatedUserID;
   @override
   @JsonKey(ignore: true)
   _$$_EditUserDtoCopyWith<_$_EditUserDto> get copyWith =>

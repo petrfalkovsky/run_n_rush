@@ -1,20 +1,6 @@
 {
     "@@locale": "en",
 
-
-    "///   ЭКРАН АККАУНТ   ":  "",
-    "account": "Account",
-    "save_changes": "Save Changes",
-    "email": "Email",
-    "login": "Login",
-    "your_email": "Your Email",
-    "verification_code": "Verification Code",
-    "sendcode": "Sendcode",
-    "ref_ID": "Referral ID (Optional)",
-    "privacy_policy_agree": "I agree to RUN&RUSH Terms of Use & Privacy Policy",
-    "login_sing_up": "Login / Sign Up",
-
-
     "///   ВЕЛКАМ ЭКРАН   ":  "",
     "welcome_to": "Welcome to best play-to-earn project!",
     "transaction_history": "Transaction History",
@@ -26,11 +12,9 @@
     "///   ЭКРАН БАЛАНСА   ":  "",
     "balance": "Balance",
 
-
     "///   ЭКРАН ИНТЕРЕНТ СОЕДИНЕНИЯ   ":  "",
     "no_internet_connection": "No internet connection",
     "connection_lost": "Connection lost!",
-
 
     "///   ЭКРАН ИНВЕНТОРИ (склад)   ":  "",
     "inventory": "Inventory",
@@ -41,12 +25,9 @@
     "LOWER": "Lower price",
     "HIGHER": "Higher price",
 
-
-
     "///   ЭКРАН СТАРТ   ":  "",
     "start": "Start",
     "thousand": "k",
-    
 
     "///   ЭКРАН РЕФЕРАЛЬНОЙ ПРОГРАММЫ   ":  "",
     "referrals": "Referrals",
@@ -71,10 +52,23 @@
     "privacy_policy": "Privacy Policy",
     "runner": "Runner",
 
+    "///   ЭКРАН АККАУНТ   ":  "",
+    "account": "Account",
+    "save_changes": "Save Changes",
+    "email": "Email",
+    "login": "Login",
+    "your_email": "Your Email",
+    "verification_code": "Verification Code",
+    "sendcode": "Sendcode",
+    "ref_ID": "Referral ID (Optional)",
+    "privacy_policy_agree": "I agree to RUN&RUSH Terms of Use & Privacy Policy",
+    "login_sing_up": "Login / Sign Up",
+    "input_new_name": "Input your new nickname",
+    "input_new_lastname": "input your new lastname",
+    "input_new_email": "input your new email",
 
-    "///   ЭКРАН ГЛАВНЫЙ (main)   ":  "",
+    "///   ЭКРАН ГЛАВНЫЙ (start)   ":  "",
     "jogger_2023": "Jogger 2023",
-
 
     "///   ЭКРАН ВИТРИНЫ   ":  "",
     "shop": "Shop",
@@ -89,12 +83,10 @@
     "made_buy": "You made a great buy!",
     "sneakers_not_founded": "You're still barefoot",
 
-
     "///   СИМВОЛЫ В ТЕКСТЕ   ":  "",
     "plus_sign": "+",
     "slash_sign": "/",
-    
-    
+
     "///   ВРЕМЕННЫЕ РЫБЫ   ":  "удалить",
     "amount_coins_example_one": "74.32",
     "amount_coins_example_two": "273.54",
@@ -113,8 +105,6 @@
     "amount_four_example": "4.32",
     "amount_thirty_two_example": "32:41",
 
-
-   
     "///   ВАРНИНГИ И ОШИБКИ   ":  "",
     "error": "Error",
     "something_went_wrong": "Something went wrong, try entering the data again",
@@ -124,7 +114,6 @@
     "specify_email": "Specify the email address so that we send the verification code",
     "we_ve_sent":"We have sent the verification code to the specified email address",
     "copy_it": "Copy it from the email and paste it into the field to log in",
-
 
     "///   ЛОГИ   ":  "",
     "ref_screen": "экран реферальной программы",

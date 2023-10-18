@@ -19,9 +19,6 @@ class Settings extends StatexWidget<SettingsController> {
 
   @override
   Widget buildWidget(BuildContext context) {
-    // ignore: no_leading_underscores_for_local_identifiers
-    RxBool _switchValue = true.obs;
-
     return Obx(
       () => GeneralScaffold(
           backgroundColor: const AppColorsThemeLight().other.black,
@@ -56,7 +53,7 @@ class Settings extends StatexWidget<SettingsController> {
                           Row(
                             children: [
                               Text(
-                                "364",
+                                '${controller.totalDistance.value}',
                                 style: AppStyles.plainTextMedium
                                     .andWeight(FontWeight.bold)
                                     .andColor(AppColors.text.primary),
@@ -92,9 +89,9 @@ class Settings extends StatexWidget<SettingsController> {
                           const Spacer(),
                           CupertinoSwitch(
                             activeColor: AppColors.accent[1],
-                            value: _switchValue.value,
+                            value: controller.sound.value,
                             onChanged: (newValue) {
-                              _switchValue.value = newValue;
+                              controller.sound.value = newValue;
                             },
                           ),
                         ],
@@ -234,44 +231,48 @@ class AboutUserWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 23),
-      child: Row(
-        children: [
-          BlurredAvatar(
-            innerContainer: 65,
-            borderColor: Colors.white.withOpacity(0.3),
-            containerSize: 75,
-            positionInsets: const EdgeInsets.all(5),
-            avatarSize: 28,
-          ),
-          16.w,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              12.h,
-              Text(
-                "runner".tr(),
-                style: AppStyles.headline
-                    .andWeight(FontWeight.w600)
-                    .andColor(AppColors.text.primary),
-              ),
-              18.h,
-              Text(
-                "email_example_two".tr(),
-                style: AppStyles.plainTextSmall
-                    .andWeight(FontWeight.normal)
-                    .andColor(AppColors.text.primary),
-              ),
-              12.h,
-            ],
-          ),
-          const Spacer(),
-          InkWell(
-            onTap: () => Get.toNamed(AppRoutes.account),
-            child: AppIcons.svgWidget(AppIcons.arrowForward, width: 8),
-          ),
-        ],
+    final SettingsController controller = Get.find<SettingsController>();
+    return Obx(
+      () => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 23),
+        child: Row(
+          children: [
+            BlurredAvatar(
+              imageUrl: controller.avatar.value,
+              innerContainer: 65,
+              borderColor: Colors.white.withOpacity(0.3),
+              containerSize: 75,
+              positionInsets: const EdgeInsets.all(5),
+              avatarSize: 28,
+            ),
+            16.w,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                12.h,
+                Text(
+                  controller.firstName.value ?? 'waiting..',
+                  style: AppStyles.headline
+                      .andWeight(FontWeight.w600)
+                      .andColor(AppColors.text.primary),
+                ),
+                18.h,
+                Text(
+                  controller.email.value ?? 'waiting..',
+                  style: AppStyles.plainTextSmall
+                      .andWeight(FontWeight.normal)
+                      .andColor(AppColors.text.primary),
+                ),
+                12.h,
+              ],
+            ),
+            const Spacer(),
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.account),
+              child: AppIcons.svgWidget(AppIcons.arrowForward, width: 8),
+            ),
+          ],
+        ),
       ),
     );
   }

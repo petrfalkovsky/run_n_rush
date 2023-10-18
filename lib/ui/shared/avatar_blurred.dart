@@ -10,6 +10,7 @@ class BlurredAvatar extends StatelessWidget {
   final Color borderColor;
   final Color? containerColor;
   final Widget? customWidget;
+  final String? imageUrl;
 
   const BlurredAvatar({
     Key? key,
@@ -20,6 +21,7 @@ class BlurredAvatar extends StatelessWidget {
     required this.borderColor,
     this.containerColor,
     this.customWidget,
+    this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -56,13 +58,21 @@ class BlurredAvatar extends StatelessWidget {
               color: containerColor ?? const Color(0xFF01B8FF),
             ),
             child: Center(
-              child: customWidget ??
-                  Image.asset(
-                    AppIcons.avatar,
-                    width: avatarSize,
-                    height: avatarSize,
-                    fit: BoxFit.cover,
-                  ),
+              child: ClipOval(
+                child: imageUrl != null
+                    ? Image.network(
+                        imageUrl ?? AppIcons.avatar,
+                        width: innerContainer,
+                        height: innerContainer,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.asset(
+                        AppIcons.avatar,
+                        width: avatarSize,
+                        height: avatarSize,
+                        fit: BoxFit.cover,
+                      ),
+              ),
             ),
           ),
         ),

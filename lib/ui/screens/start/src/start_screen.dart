@@ -12,7 +12,6 @@ import 'package:run_n_rush/ui/screens/start/widgets/play.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
-import 'package:run_n_rush/ui/shared/widgets/buttons/play.dart';
 import 'package:run_n_rush/ui/shared/widgets/speedometer.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
