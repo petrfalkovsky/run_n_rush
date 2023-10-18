@@ -299,7 +299,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<WalkingStartDto> walkingStart(Map<String, dynamic> data) async {
+  Future<WalkingStartDto> walkingStart() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

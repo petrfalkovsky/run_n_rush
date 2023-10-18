@@ -67,7 +67,7 @@ abstract class ApiService {
   Future<WalkingDataDto> getWalkingData();
 
   @POST('/api/sneaker/walking/start')
-  Future<WalkingStartDto> walkingStart(Map<String, dynamic> data);
+  Future<WalkingStartDto> walkingStart();
 
   @POST('/api/sneaker/walking/update')
   Future<WalkingUpdateDto> walkingUpdate(@Body() Map<String, dynamic> data);

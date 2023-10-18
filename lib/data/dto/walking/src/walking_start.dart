@@ -12,8 +12,8 @@ class WalkingStartDto with _$WalkingStartDto {
     @JsonKey(name: 'earned_coins') required String? earnedCoins,
     @JsonKey(name: 'spend_energy') required String? spendEnergy,
     @JsonKey(name: 'started') required String? started,
-    @JsonKey(name: 'finished') required int? finished,
-    @JsonKey(name: 'energy') required int? energy,
+    @JsonKey(name: 'finished') required String? finished,
+    @JsonKey(name: 'energy') required String? energy,
   }) = _WalkingStartDto;
 
   factory WalkingStartDto.fromJson(Map<String, dynamic> json) =>

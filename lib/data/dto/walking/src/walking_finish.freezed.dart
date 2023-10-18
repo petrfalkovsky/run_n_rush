@@ -33,9 +33,9 @@ mixin _$WalkingFinishDto {
   @JsonKey(name: 'started')
   String? get started => throw _privateConstructorUsedError;
   @JsonKey(name: 'finished')
-  int? get finished => throw _privateConstructorUsedError;
+  String? get finished => throw _privateConstructorUsedError;
   @JsonKey(name: 'energy')
-  int? get energy => throw _privateConstructorUsedError;
+  String? get energy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,8 +56,8 @@ abstract class $WalkingFinishDtoCopyWith<$Res> {
       @JsonKey(name: 'earned_coins') String? earnedCoins,
       @JsonKey(name: 'spend_energy') String? spendEnergy,
       @JsonKey(name: 'started') String? started,
-      @JsonKey(name: 'finished') int? finished,
-      @JsonKey(name: 'energy') int? energy});
+      @JsonKey(name: 'finished') String? finished,
+      @JsonKey(name: 'energy') String? energy});
 }
 
 /// @nodoc
@@ -110,11 +110,11 @@ class _$WalkingFinishDtoCopyWithImpl<$Res, $Val extends WalkingFinishDto>
       finished: freezed == finished
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       energy: freezed == energy
           ? _value.energy
           : energy // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -134,8 +134,8 @@ abstract class _$$_WalkingFinishDtoCopyWith<$Res>
       @JsonKey(name: 'earned_coins') String? earnedCoins,
       @JsonKey(name: 'spend_energy') String? spendEnergy,
       @JsonKey(name: 'started') String? started,
-      @JsonKey(name: 'finished') int? finished,
-      @JsonKey(name: 'energy') int? energy});
+      @JsonKey(name: 'finished') String? finished,
+      @JsonKey(name: 'energy') String? energy});
 }
 
 /// @nodoc
@@ -186,11 +186,11 @@ class __$$_WalkingFinishDtoCopyWithImpl<$Res>
       finished: freezed == finished
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       energy: freezed == energy
           ? _value.energy
           : energy // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -231,10 +231,10 @@ class _$_WalkingFinishDto implements _WalkingFinishDto {
   final String? started;
   @override
   @JsonKey(name: 'finished')
-  final int? finished;
+  final String? finished;
   @override
   @JsonKey(name: 'energy')
-  final int? energy;
+  final String? energy;
 
   @override
   String toString() {
@@ -288,8 +288,8 @@ abstract class _WalkingFinishDto implements WalkingFinishDto {
           @JsonKey(name: 'earned_coins') required final String? earnedCoins,
           @JsonKey(name: 'spend_energy') required final String? spendEnergy,
           @JsonKey(name: 'started') required final String? started,
-          @JsonKey(name: 'finished') required final int? finished,
-          @JsonKey(name: 'energy') required final int? energy}) =
+          @JsonKey(name: 'finished') required final String? finished,
+          @JsonKey(name: 'energy') required final String? energy}) =
       _$_WalkingFinishDto;
 
   factory _WalkingFinishDto.fromJson(Map<String, dynamic> json) =
@@ -315,10 +315,10 @@ abstract class _WalkingFinishDto implements WalkingFinishDto {
   String? get started;
   @override
   @JsonKey(name: 'finished')
-  int? get finished;
+  String? get finished;
   @override
   @JsonKey(name: 'energy')
-  int? get energy;
+  String? get energy;
   @override
   @JsonKey(ignore: true)
   _$$_WalkingFinishDtoCopyWith<_$_WalkingFinishDto> get copyWith =>

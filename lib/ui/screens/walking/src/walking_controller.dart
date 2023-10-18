@@ -13,9 +13,6 @@ import 'package:run_n_rush/data/storage/hive/hive.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
 class WalkingController extends StatexController {
-  /// управляет показом изображения
-  // final RxBool showImage = true.obs;
-
   /// апи инстансы
   final ApiService _apiService = ApiService(Dio());
   WalkingDataDto? walkingData;
@@ -194,14 +191,4 @@ class WalkingController extends StatexController {
   //     debugPrint('Token refresh not found.');
   //   }
   // }
-
-  // общий метод данных и обработки ошибок
-  Future<T?> getDataAndHandleError<T>(Future<T> Function() getData) async {
-    try {
-      return await getData();
-    } catch (e) {
-      handleApiError(e);
-      return null;
-    }
-  }
 }

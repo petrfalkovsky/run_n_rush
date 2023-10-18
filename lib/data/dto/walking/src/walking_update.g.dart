@@ -14,8 +14,8 @@ _$_WalkingUpdateDto _$$_WalkingUpdateDtoFromJson(Map<String, dynamic> json) =>
       earnedCoins: json['earned_coins'] as String?,
       spendEnergy: json['spend_energy'] as String?,
       started: json['started'] as String?,
-      finished: json['finished'] as int?,
-      energy: json['energy'] as int?,
+      finished: json['finished'] as String?,
+      energy: json['energy'] as String?,
     );
 
 Map<String, dynamic> _$$_WalkingUpdateDtoToJson(_$_WalkingUpdateDto instance) =>

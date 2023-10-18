@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
+import 'package:run_n_rush/ui/screens/start/widgets/play.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
@@ -30,185 +31,181 @@ class Start extends StatexWidget<StartController> {
 
   @override
   Widget buildWidget(BuildContext context) {
-    return GeneralScaffold(
-      backgroundColor: const AppColorsThemeLight().other.black,
-      navBarEnable: false,
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(227),
-        child: AppBarWidget(),
-      ),
-      child: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              ShaderMask(
-                shaderCallback: (Rect bounds) {
-                  return const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF101113),
-                      Colors.transparent,
-                    ],
-                  ).createShader(bounds);
-                },
-                blendMode: BlendMode.darken,
-                child: Image.asset(
-                  AppIcons.logoFrame,
-                  width: MediaQuery.of(context).size.width,
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
+    return Obx(
+      () => GeneralScaffold(
+        backgroundColor: const AppColorsThemeLight().other.black,
+        navBarEnable: false,
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(227),
+          child: AppBarWidget(),
+        ),
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Spacer(),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16),
-                          child: Text(
-                            'amount_eleven_example'.tr(),
-                            style: AppStyles.body
-                                .andColor(AppColors.accent)
-                                .andWeight(FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        11.h,
-                        SizedBox(
-                          width: 22,
-                          child: Icon(
-                            Icons.speed,
-                            color: Colors.grey.withOpacity(0.7),
-                          ),
-                        ),
+                ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color(0xFF101113),
+                        Colors.transparent,
                       ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        Text(
-                          'amount_four_example'.tr(),
-                          style: AppStyles.largeTitle
-                              .andColor(AppColors.accent)
-                              .andWeight(FontWeight.bold),
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          'kilometers'.tr(),
-                          style: AppStyles.body
-                              .andColor(AppColors.text.secondary)
-                              .andWeight(FontWeight.bold),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16),
-                          child: Text(
-                            'amount_thirty_two_example'.tr(),
-                            style: AppStyles.body
-                                .andColor(AppColors.accent)
-                                .andWeight(FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        11.h,
-                        SizedBox(width: 22, child: Image.asset(AppIcons.steps)),
-                      ],
-                    ),
-                    const Spacer(),
-                  ],
-                ),
-                36.h,
-                AnimatedProgressBar(
-                  text: Row(
-                    children: [
-                      Text(
-                        'result_example'.tr(),
-                        style: AppStyles.body.andColor(AppColors.accent),
-                      ),
-                      Text(
-                        'thousand'.tr().toUpperCase(),
-                        style: AppStyles.body.andColor(AppColors.accent),
-                      ),
-                      2.w,
-                      Text(
-                        'slash_sign'.tr(),
-                        style: AppStyles.body.andColor(AppColors.accent),
-                      ),
-                      Text(
-                        '50_steps_example'.tr(),
-                        style: AppStyles.body.andColor(AppColors.accent),
-                      ),
-                      Text(
-                        'thousand'.tr().toUpperCase(),
-                        style: AppStyles.body.andColor(AppColors.accent),
-                      )
-                    ],
+                    ).createShader(bounds);
+                  },
+                  blendMode: BlendMode.darken,
+                  child: Image.asset(
+                    AppIcons.logoFrame,
+                    width: MediaQuery.of(context).size.width,
                   ),
-                  size: 32,
-                  icon: SizedBox(
-                    width: 28,
-                    child: AppIcons.svgWidget(AppIcons.lightning),
-                  ),
-                  progressColor: AppColors.accent[1] ?? Colors.transparent,
-                  backgroundColor:
-                      AppColors.background[1] ?? Colors.transparent,
-                  borderRadius: BorderRadius.circular(50),
-                  currentValue: 60,
-                ),
-                30.h,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AppIcons.coinLarge,
-                      width: 48,
-                    ),
-                    11.w,
-                    Text(
-                      'plus_sign'.tr(),
-                      style: AppStyles.title
-                          .andColor(AppColors.accent)
-                          .andWeight(FontWeight.bold),
-                    ),
-                    2.w,
-                    Text(
-                      'amount_coins_example_two'.tr(),
-                      style: AppStyles.title
-                          .andColor(AppColors.accent)
-                          .andWeight(FontWeight.bold),
-                    ),
-                  ],
-                ),
-                30.h,
-                Row(
-                  children: [
-                    const Spacer(),
-                    AppIcons.svgWidget(AppIcons.map, width: 26),
-                    const Spacer(),
-                    const PlayPauseWidget(),
-                    const Spacer(),
-                    AppIcons.svgWidget(AppIcons.sneaker, width: 32),
-                    const Spacer(),
-                  ],
                 ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: Text(
+                              'amount_eleven_example'.tr(),
+                              style: AppStyles.body
+                                  .andColor(AppColors.accent)
+                                  .andWeight(FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          11.h,
+                          SizedBox(
+                            width: 22,
+                            child: Icon(
+                              Icons.speed,
+                              color: Colors.grey.withOpacity(0.7),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Text(
+                            controller.getKMText(controller),
+                            style: AppStyles.largeTitle
+                                .andColor(AppColors.accent)
+                                .andWeight(FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            'meters'.tr(),
+                            style: AppStyles.body
+                                .andColor(AppColors.text.secondary)
+                                .andWeight(FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: Text(
+                              controller.getStepsText(controller),
+                              style: AppStyles.body
+                                  .andColor(AppColors.accent)
+                                  .andWeight(FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          11.h,
+                          SizedBox(
+                              width: 22, child: Image.asset(AppIcons.steps)),
+                        ],
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
+                  36.h,
+                  AnimatedProgressBar(
+                    text: Row(
+                      children: [
+                        Text(
+                          controller.getEnergy(controller).toStringAsFixed(1),
+                          style: AppStyles.body.andColor(AppColors.accent),
+                        ),
+                        2.w,
+                        Text(
+                          'slash_sign'.tr(),
+                          style: AppStyles.body.andColor(AppColors.accent),
+                        ),
+                        Text(
+                          'amount_hundred_example'.tr(),
+                          style: AppStyles.body.andColor(AppColors.accent),
+                        ),
+                      ],
+                    ),
+                    size: 32,
+                    icon: SizedBox(
+                      width: 28,
+                      child: AppIcons.svgWidget(AppIcons.lightning),
+                    ),
+                    progressColor: AppColors.accent[1] ?? Colors.transparent,
+                    backgroundColor:
+                        AppColors.background[1] ?? Colors.transparent,
+                    borderRadius: BorderRadius.circular(50),
+                    // залитый синий цвет прогрессбара, сколько энергии осталось
+                    currentValue: controller.getEnergy(controller),
+                  ),
+                  30.h,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        AppIcons.coinLarge,
+                        width: 48,
+                      ),
+                      11.w,
+                      Text(
+                        'plus_sign'.tr(),
+                        style: AppStyles.title
+                            .andColor(AppColors.accent)
+                            .andWeight(FontWeight.bold),
+                      ),
+                      2.w,
+                      // заработано
+                      Text(
+                        controller.getCoinsText(controller),
+                        style: AppStyles.title
+                            .andColor(AppColors.accent)
+                            .andWeight(FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  30.h,
+                  Row(
+                    children: [
+                      const Spacer(),
+                      AppIcons.svgWidget(AppIcons.map, width: 26),
+                      const Spacer(),
+                      const PlayPauseWidget(),
+                      const Spacer(),
+                      AppIcons.svgWidget(AppIcons.sneaker, width: 32),
+                      const Spacer(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
