@@ -6,4 +6,4 @@ import 'package:get_it/get_it.dart';
 import 'package:run_n_rush/core/utils/stream_subscriber.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-class SettingsController extends StatexController with StreamSubscriberMixin {}
+class SettingsController extends StatexController {}

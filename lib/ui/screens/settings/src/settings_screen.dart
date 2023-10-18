@@ -1,7 +1,3 @@
-// ignore_for_file: unused_import, unnecessary_import
-
-import 'dart:ui';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +8,12 @@ import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
-import 'package:run_n_rush/ui/screens/referral/referral.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 
-class Settings extends StatexWidget<ReferralsController> {
-  Settings({Key? key}) : super(() => ReferralsController(), key: key) {
+import '../settings.dart';
+
+class Settings extends StatexWidget<SettingsController> {
+  Settings({Key? key}) : super(() => SettingsController(), key: key) {
     debugPrint('settings_screen'.tr());
   }
 
