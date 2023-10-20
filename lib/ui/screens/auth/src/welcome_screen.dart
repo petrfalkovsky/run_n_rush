@@ -73,6 +73,12 @@ class WelcomeScreen extends StatexWidget<WelcomeController> {
                                 StdInput(
                                   controller: emailController,
                                   hintText: 'your_email'.tr(),
+                                  // только малые буквы можно вводить
+                                  onChanged: (value) {
+                                    emailController.value = TextEditingValue(
+                                        text: value.toLowerCase(),
+                                        selection: emailController.selection);
+                                  },
                                 ),
                                 15.h,
                                 StdInput(
