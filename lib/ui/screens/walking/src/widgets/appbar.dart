@@ -13,7 +13,7 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final SettingsController controller = Get.find<SettingsController>();
+    final SettingsController controller = Get.find<SettingsController>();
     return Obx(
       () => Stack(
         children: [
@@ -50,7 +50,7 @@ class AppBarWidget extends StatelessWidget {
                       innerContainer: 136,
                       borderColor: Colors.white.withOpacity(0.3),
                       avatarSize: 59,
-                      imageUrl: Get.find<SettingsController>().avatar.value,
+                      imageUrl: controller.avatar.value,
                     )
                   ],
                 ),
