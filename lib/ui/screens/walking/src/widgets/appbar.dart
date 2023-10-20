@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
-import 'package:run_n_rush/ui/screens/walking/walking.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/icons.dart';
 

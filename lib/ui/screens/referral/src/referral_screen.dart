@@ -3,6 +3,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
@@ -69,10 +70,10 @@ class Referral extends StatexWidget<ReferralController> {
                   ),
                   8.h,
                   StdButton(
+                    backgroundColor: Colors.white,
                     fontWeight: FontWeight.normal,
                     fontSize: 20,
                     textColor: Colors.black,
-                    color: Colors.white,
                     text: controller.code.value ?? 'ref_ID_example'.tr(),
                     isActive: false,
                     onPress: () {},
