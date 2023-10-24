@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/shared/themes/app_colors_theme.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/button_animator.dart';
 import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/custom_bottom_appbar.dart';
 import 'package:run_n_rush/ui/shared/widgets/general_scaffold/src/general_scaffold_service.dart';
 
@@ -172,12 +173,14 @@ class _BottomAppBarButton extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 21.5),
-            child: SvgPicture.asset(
-              iconAsset,
-              height: 21,
-              color: isSelected ? selectedColor : unselectedColor,
+          ButtonAnimator(
+            childWidget: Container(
+              padding: const EdgeInsets.symmetric(vertical: 21.5),
+              child: SvgPicture.asset(
+                iconAsset,
+                height: 21,
+                color: isSelected ? selectedColor : unselectedColor,
+              ),
             ),
           ),
         ],

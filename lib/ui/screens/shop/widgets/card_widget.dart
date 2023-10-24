@@ -7,6 +7,7 @@ import 'package:run_n_rush/ui/screens/shop/shop.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/button_animator.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 class CardItemShop extends StatelessWidget {
@@ -131,22 +132,24 @@ class CardItemShop extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                StdButton(
-                  height: 36,
-                  width: 97,
-                  text: 'buy'.tr().toUpperCase(),
-                  isActive: true,
-                  onPress: () {
-                    CustomModal.show(
-                      color: Colors.black,
-                      context,
-                      child: BottomSheetChildWidget(
-                        sneakerShop: sneakerShop,
-                        sneaker: sneaker,
-                        shopController: shopController,
-                      ),
-                    );
-                  },
+                ButtonAnimator(
+                  childWidget: StdButton(
+                    height: 36,
+                    width: 97,
+                    text: 'buy'.tr().toUpperCase(),
+                    isActive: true,
+                    onPress: () {
+                      CustomModal.show(
+                        color: Colors.black,
+                        context,
+                        child: BottomSheetChildWidget(
+                          sneakerShop: sneakerShop,
+                          sneaker: sneaker,
+                          shopController: shopController,
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

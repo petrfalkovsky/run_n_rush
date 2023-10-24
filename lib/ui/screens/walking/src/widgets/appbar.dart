@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:run_n_rush/ui/router/routing.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/icons.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/button_animator.dart';
 
 import '../../../settings/settings.dart';
 
@@ -33,6 +34,7 @@ class AppBarWidget extends StatelessWidget {
               children: const [],
             ),
           ),
+          // кнопка настройки
           const SettingsIconWidget(),
 
           /// аватар
@@ -44,13 +46,15 @@ class AppBarWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    BlurredAvatar(
-                      containerSize: 152,
-                      positionInsets: const EdgeInsets.all(8),
-                      innerContainer: 136,
-                      borderColor: Colors.white.withOpacity(0.3),
-                      avatarSize: 59,
-                      imageUrl: controller.avatar.value,
+                    ButtonAnimator(
+                      childWidget: BlurredAvatar(
+                        containerSize: 152,
+                        positionInsets: const EdgeInsets.all(8),
+                        innerContainer: 136,
+                        borderColor: Colors.white.withOpacity(0.3),
+                        avatarSize: 59,
+                        imageUrl: controller.avatar.value,
+                      ),
                     )
                   ],
                 ),
@@ -83,9 +87,11 @@ class SettingsIconWidget extends StatelessWidget {
             ),
           ],
         ),
-        child: InkWell(
-            onTap: () => Get.toNamed(AppRoutes.settings),
-            child: AppIcons.svgWidget(AppIcons.settings, width: 26.5)),
+        child: ButtonAnimator(
+          childWidget: InkWell(
+              onTap: () => Get.toNamed(AppRoutes.settings),
+              child: AppIcons.svgWidget(AppIcons.settings, width: 26.5)),
+        ),
       ),
     );
   }
