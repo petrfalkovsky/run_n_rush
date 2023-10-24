@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -76,9 +77,16 @@ class AddSneakerWidgetState extends State<AddSneakerWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                sneakerList[0].title ?? 'jogger_2023'.tr(),
-                style: AppStyles.headline.andColor(AppColors.accent),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Container(
+                  constraints:
+                      const BoxConstraints(maxWidth: 160, maxHeight: 30),
+                  child: AutoSizeText(
+                    sneakerList[0].title ?? 'jogger_2023'.tr(),
+                    style: AppStyles.headline.andColor(AppColors.accent),
+                  ),
+                ),
               ),
               17.h,
               Text(

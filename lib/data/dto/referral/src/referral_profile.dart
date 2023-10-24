@@ -14,7 +14,7 @@ class ReferralProfileDto with _$ReferralProfileDto {
     @JsonKey(name: 'referrer_id') required String? referrerID,
     @JsonKey(name: 'balance') required String? balance,
     @JsonKey(name: 'balance_currency') required String? balanceCurrency,
-    @JsonKey(name: 'referrals_count') required double? referralsCount,
+    @JsonKey(name: 'referrals_count') required int? referralsCount,
     @JsonKey(name: 'commission') required String? commission,
   }) = _ReferralProfileDto;
 
