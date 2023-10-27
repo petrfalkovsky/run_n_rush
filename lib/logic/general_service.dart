@@ -4,6 +4,7 @@ import 'package:run_n_rush/ui/screens/auth/welcome.dart';
 import 'package:run_n_rush/ui/screens/inventory/inventory.dart';
 import 'package:run_n_rush/ui/screens/internet/internet.dart';
 import 'package:run_n_rush/ui/screens/language/language.dart';
+import 'package:run_n_rush/ui/screens/settings/src/settings_controller.dart';
 import 'package:run_n_rush/ui/screens/walking/walking.dart';
 import 'package:run_n_rush/ui/screens/referral/referral.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_service.dart';
@@ -35,6 +36,7 @@ class GeneralService extends GetxService {
       ..lazyPut(() => InventoryService())
       ..lazyPut(() => InventoryController())
       ..lazyPut(() => ShopService())
-      ..lazyPut(() => StartController());
+      ..lazyPut(() => StartController())
+      ..lazyPut(() => SettingsController(), fenix: true);
   }
 }

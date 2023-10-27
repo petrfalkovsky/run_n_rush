@@ -15,7 +15,7 @@ _$_ReferralProfileDto _$$_ReferralProfileDtoFromJson(
       referrerID: json['referrer_id'] as String?,
       balance: json['balance'] as String?,
       balanceCurrency: json['balance_currency'] as String?,
-      referralsCount: (json['referrals_count'] as num?)?.toDouble(),
+      referralsCount: json['referrals_count'] as int?,
       commission: json['commission'] as String?,
     );
 

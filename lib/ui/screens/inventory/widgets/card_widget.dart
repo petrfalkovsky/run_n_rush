@@ -6,6 +6,7 @@ import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/ui/shared/all_shared.dart';
 import 'package:run_n_rush/ui/shared/constants/app_colors.dart';
+import 'package:run_n_rush/ui/shared/widgets/buttons/button_animator.dart';
 import 'package:run_n_rush/ui/shared/widgets/std_button.dart';
 
 import '../src/inventory_controller.dart';
@@ -128,37 +129,39 @@ class CardItemInventory extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                StdButton(
-                  backgroundColor: inventory.isDressed == false
-                      ? AppColors.accent[1]
-                      : AppColors.accent[3],
-                  textColor: inventory.isDressed == false
-                      ? AppColors.accent[0]
-                      : AppColors.text[3],
-                  height: 36,
-                  width: 97,
-                  text: inventory.isDressed == false
-                      ? 'put_on'.tr().toUpperCase()
-                      : 'dressed'.tr().toUpperCase(),
-                  onPress: () {
-                    final sneakerId = inventory.id;
-                    if (sneakerId != null && isButtonActive) {
-                      if (inventory.isDressed == false) {
-                        // Если isDressed равен false, вызываем метод putOn
-                        Get.find<InventoryController>().putOn(sneakerId);
-                      } else {
-                        // Если isDressed равен true, вызываем метод takeOff
-                        Get.find<InventoryController>().takeOff(sneakerId);
-                      }
+                ButtonAnimator(
+                  childWidget: StdButton(
+                    backgroundColor: inventory.isDressed == false
+                        ? AppColors.accent[1]
+                        : AppColors.accent[3],
+                    textColor: inventory.isDressed == false
+                        ? AppColors.accent[0]
+                        : AppColors.text[3],
+                    height: 36,
+                    width: 97,
+                    text: inventory.isDressed == false
+                        ? 'put_on'.tr().toUpperCase()
+                        : 'dressed'.tr().toUpperCase(),
+                    onPress: () {
+                      final sneakerId = inventory.id;
+                      if (sneakerId != null && isButtonActive) {
+                        if (inventory.isDressed == false) {
+                          // Если isDressed равен false, вызываем метод putOn
+                          Get.find<InventoryController>().putOn(sneakerId);
+                        } else {
+                          // Если isDressed равен true, вызываем метод takeOff
+                          Get.find<InventoryController>().takeOff(sneakerId);
+                        }
 
-                      // Обновляем экран после нажатия кнопки
-                      Get.find<InventoryController>().fetchDataIfChanged();
-                    } else {
-                      debugPrint('ой чот кнопка не сработала');
-                      // Обработка случая, когда sneaker.id равно null.
-                    }
-                  },
-                  isActive: true,
+                        // Обновляем экран после нажатия кнопки
+                        Get.find<InventoryController>().fetchDataIfChanged();
+                      } else {
+                        debugPrint('ой чот кнопка не сработала');
+                        // Обработка случая, когда sneaker.id равно null.
+                      }
+                    },
+                    isActive: true,
+                  ),
                 )
               ],
             ),

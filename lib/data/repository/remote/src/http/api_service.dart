@@ -3,6 +3,7 @@ import 'package:retrofit/http.dart';
 import 'package:run_n_rush/data/dto/account/account.dart';
 import 'package:run_n_rush/data/dto/auth/src/user_data/user_data_token.dart';
 import 'package:run_n_rush/data/dto/referral/referral.dart';
+import 'package:run_n_rush/data/dto/settings/settings.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/inventory.dart';
 import 'package:run_n_rush/data/dto/sneakers/src/shop.dart';
 import 'package:run_n_rush/data/dto/walking/walking.dart';
@@ -77,11 +78,11 @@ abstract class ApiService {
 
   /// referral program
 
-  @GET('/api/referral/rewards')
-  Future<List<ReferralRewardsDto>> referallRewards();
-
   @GET('/api/referral/profile')
   Future<ReferralProfileDto> getReferralProfile();
+
+  @GET('/api/referral/rewards')
+  Future<List<ReferralRewardsDto>> referallRewards();
 
   /// account
 
@@ -93,4 +94,34 @@ abstract class ApiService {
 
   @GET('/api/account/transactions')
   Future<List<GetTransactionDto>> getTransactions();
+
+  /// users/settings
+
+  @GET('/api/users/me')
+  Future<GetUserDto> getUser();
+
+  @DELETE('/api/users/me')
+  Future<DeleteUserDto> deleteUser();
+
+  @PATCH('/api/users/me')
+  Future<EditUserDto> editUser(@Body() Map<String, dynamic> data);
+
+  /// settings/users
+
+  @GET('/api/users/settings')
+  Future<GetPatchSettingsUserDto> getSettings();
+
+  @PATCH('/api/users/settings')
+  Future<GetPatchSettingsUserDto> patchSettings(
+      @Body() Map<String, dynamic> data);
+
+  @GET('/api/users/avatar')
+  Future<UserAvatarDto> getAvatar();
+
+// пока чот не понятно как генерить с мультиплтформ, надо поискать-почитать
+  // @POST('/api/users/avatar/upload')
+  // Future<UserAvatarDto> uploadAvatar(@Part() MultipartFile image);
+
+  @DELETE('/api/users/avatar/delete')
+  Future<UserAvatarDto> deleteAvatar();
 }

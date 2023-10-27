@@ -7,12 +7,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:run_n_rush/ui/router/routing.dart';
+import 'package:run_n_rush/ui/screens/settings/src/settings_controller.dart';
 import 'package:run_n_rush/ui/screens/shop/src/shop_screen.dart';
 import 'package:run_n_rush/ui/screens/start/widgets/play.dart';
 import 'package:run_n_rush/ui/shared/avatar_blurred.dart';
 import 'package:run_n_rush/ui/shared/widgets/animated_progress_bar.dart';
 import 'package:run_n_rush/ui/shared/widgets/bottom_sheet_modal.dart';
-import 'package:run_n_rush/ui/shared/widgets/buttons/play.dart';
 import 'package:run_n_rush/ui/shared/widgets/speedometer.dart';
 import 'package:vfx_flutter_common/getx_helpers.dart';
 
@@ -304,38 +304,39 @@ class AvatarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 48),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              /// todo убрать инквелл после того, ка квнедрю модалку в логику коннекшна
-              InkWell(
-                onTap: () {
-                  CustomModal.show(
-                    heightFactor: 0.5,
-                    color: AppColors.background[5]!.withOpacity(0.9),
-                    context,
-                    child: const BottomSheetConnectionWidget(),
-                  );
-                },
-                child: BlurredAvatar(
-                  containerColor: AppColors.background,
-                  customWidget: const Speedometer(),
-                  containerSize: 152,
-                  positionInsets: const EdgeInsets.all(7),
-                  innerContainer: 138,
-                  borderColor: Colors.white.withOpacity(0.3),
-                  avatarSize: 59,
-                ),
-              )
-            ],
+    final SettingsController controller = Get.find<SettingsController>();
+    return Obx(
+      () => Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 48),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                /// todo убрать инквелл после того, ка квнедрю модалку в логику коннекшна
+                InkWell(
+                    onTap: () {
+                      CustomModal.show(
+                        heightFactor: 0.5,
+                        color: AppColors.background[5]!.withOpacity(0.9),
+                        context,
+                        child: const BottomSheetConnectionWidget(),
+                      );
+                    },
+                    child: BlurredAvatar(
+                      containerSize: 152,
+                      positionInsets: const EdgeInsets.all(8),
+                      innerContainer: 136,
+                      borderColor: Colors.white.withOpacity(0.3),
+                      avatarSize: 59,
+                      imageUrl: controller.avatar.value,
+                    ))
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
